@@ -82,6 +82,17 @@ cp -r marketingagentskills/skills/* ~/.claude/skills/
 git submodule add https://github.com/realjaymes/marketingagentskills.git .claude/marketingagentskills
 ```
 
+### For Claude Web & Desktop App
+
+Claude Code skills can also be used in the web app (claude.ai) and desktop app:
+
+1. Go to **Settings → Capabilities → Skills**
+2. Upload your skills in one of two formats:
+   - **Single skill**: Upload the `SKILL.md` file directly
+   - **Multiple skills**: Zip the `skills` folder and upload the `.zip` file
+
+To get the skills, either download this repo or locate your installed skills at `~/.claude/skills/`
+
 ---
 
 ## Usage
