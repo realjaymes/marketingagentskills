@@ -234,4 +234,4 @@ That's the kind of connection we build for.
 
 ## References
 
-See [references/style-guide.md](references/style-guide.md) for the complete "Write Like a Human" rules.
+See [knowledge/style-guide.md](knowledge/style-guide.md) for the complete "Write Like a Human" rules.
