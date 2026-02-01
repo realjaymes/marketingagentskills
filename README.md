@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Cline, Roo Code).
+20 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Cline, Roo Code).
 
 ---
 
