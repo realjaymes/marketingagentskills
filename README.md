@@ -6,16 +6,13 @@
 
 I'm [James](https://www.jamespraise.xyz), founder of [Marketing In Action](https://marketinginaction.xyz) and a Product & Growth Marketing consultant with close to a decade of startup experience. I've been a founding marketer multiple times, building marketing functions and systems from scratch.
 
-I am currently experimenting with vibe coding, and this is one of the projects I'm building with that knowledge.
-
 This repo is the Claude skills version of the [MIA Resources](https://marketinginaction.xyz/resources/) I have developed:
 
-1. **Product Marketing Templates & Resources Library**: 50+ Product & Growth Marketing templates, frameworks, and resources to execute marketing with clarity.
-2. **AI Prompt Frameworks & Templates for Marketers**: 50+ frameworks and templates that marketers and founders use to produce consistent, high-quality outputs from AI tools like ChatGPT Projects, Claude Projects, Gemini Gems, Custom GPTs & OpenAI Assistants.
+- **100+ marketing templates and AI prompt frameworks** for execution and consistent AI-assisted outputs
 
 These skills make it easier to unify and apply the knowledge and prompts from the knowledge files and custom GPTs/prompts.
 
-You can also check out the vibe-coded repo of the MIA website here: [github.com/realjaymes/marketinginaction](https://github.com/realjaymes/marketinginaction)
+I am currently experimenting with vibe coding, and this is one of the projects I'm building with that knowledge. You can also check out the vibe-coded repo of the MIA website here: [github.com/realjaymes/marketinginaction](https://github.com/realjaymes/marketinginaction)
 
 ---
 
