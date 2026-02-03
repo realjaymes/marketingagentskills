@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-20 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Cline, Roo Code).
+21 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Cline, Roo Code).
 
 ---
 
@@ -34,6 +34,7 @@ Skills are markdown files that give AI agents specialized knowledge to execute s
 | [icp-persona](skills/icp-persona) | Generate ICP and buyer/user persona documents for B2B and B2C products |
 | [landing-page](skills/landing-page) | Create landing page copy using modular section templates for homepages, feature pages, and campaigns |
 | [lifecycle-marketing-campaigns](skills/lifecycle-marketing-campaigns) | Create lifecycle marketing campaign flows for SaaS, digital products, and service businesses |
+| [marketing-advantages](skills/marketing-advantages) | Identify product marketing advantages and develop strategies across PLG, Market/Ecosystem, and Brand categories |
 | [marketing-product-ideas](skills/marketing-product-ideas) | Generate marketing and product ideas grounded in behavioral principles and proven PLG experiments |
 | [n8n-automation](skills/n8n-automation) | Design, build, debug, and document n8n workflows and AI agent automations |
 | [openclaw](skills/openclaw) | Design, build, debug, and document OpenClaw workflows and AI assistant configurations |
@@ -121,7 +122,7 @@ You can also invoke skills directly:
 ## Skill Categories
 
 ### Strategy & Positioning
-`product-positioning` `product-messaging` `product-launch-gtm`
+`product-positioning` `product-messaging` `product-launch-gtm` `marketing-advantages`
 
 ### Content & Copy
 `landing-page` `saas-landing-pages` `press-release` `copy-anatomy` `ai-humanizer`
