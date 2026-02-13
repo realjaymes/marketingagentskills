@@ -11,7 +11,7 @@ Focus areas:
 - Signal detection and monitoring
 - AI-powered enrichment and personalization
 - Outbound email sequence generation
-- Integration with sequencing tools (Lemlist, Outreach, Instantly)
+- Integration with sequencing tools (Smartlead, Lemlist, Outreach, Instantly)
 - ABM and advertising intelligence
 
 ## Task
