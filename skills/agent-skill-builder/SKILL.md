@@ -1,19 +1,19 @@
 ---
 name: agent-skill-builder
-description: Creates new Claude skills or translates ChatGPT GPT projects into Claude skills. Use when the user wants to create a skill, convert a GPT, migrate prompts to Claude, or set up a new slash command.
+description: Creates new Claude skills or translates ChatGPT projects into Claude skills. Use when the user wants to create a skill, convert a ChatGPT project, migrate prompts to Claude, or set up a new slash command.
 version: "1.1.0"
-argument-hint: "[new|translate] [skill-name or GPT-name]"
+argument-hint: "[new|translate] [skill-name or ChatGPT-project-name]"
 ---
 
 # Agent Skill Builder
 
-Creates new Claude skills from scratch or translates ChatGPT GPT projects into the Claude skill format.
+Creates new Claude skills from scratch or translates ChatGPT projects into the Claude skill format.
 
 ## Trigger Conditions
 
 Invoke this skill when the user:
 - Wants to "create a skill" or "make a new skill"
-- Wants to "translate a GPT" or "convert a GPT to Claude"
+- Wants to "translate a ChatGPT project" or "convert a GPT Project to Claude"
 - Mentions "migrate prompts" or "convert ChatGPT project"
 - Asks about "slash commands" or "custom commands"
 - Says "create a /command" or similar
@@ -24,9 +24,9 @@ Invoke this skill when the user:
 
 Creates a fresh Claude skill with proper structure and best practices.
 
-### Mode 2: Translate GPT (`/skill-builder translate [name]`)
+### Mode 2: Translate ChatGPT Project (`/skill-builder translate [name]`)
 
-Converts an existing ChatGPT GPT project into a Claude skill.
+Converts an existing ChatGPT project into a Claude skill.
 
 ---
 
@@ -173,19 +173,19 @@ Reference from SKILL.md:
 
 ---
 
-## Workflow: Translate GPT to Claude Skill
+## Workflow: Translate ChatGPT Project to Claude Skill
 
-### Step 1: Extract GPT Components
+### Step 1: Extract ChatGPT Components
 
 Request from user:
-- GPT system prompt/instructions
+- ChatGPT system prompt/instructions
 - Knowledge files (PDFs, docs, etc.)
 - Conversation starters (optional)
 - Actions/API configurations (if any)
 
-### Step 2: Map GPT → Claude
+### Step 2: Map ChatGPT Project → Claude
 
-| GPT Component | Claude Equivalent | Location |
+| ChatGPT Component | Claude Equivalent | Location |
 |---------------|-------------------|----------|
 | Name | `name` in frontmatter | SKILL.md |
 | Description | `description` in frontmatter | SKILL.md |
@@ -197,7 +197,7 @@ Request from user:
 
 ### Step 3: Convert Instructions
 
-| GPT Pattern | Claude Equivalent |
+| ChatGPT Pattern | Claude Equivalent |
 |-------------|-------------------|
 | "You are a [role]..." | "## Role" section |
 | "Your task is to..." | "## Instructions" section |
@@ -239,24 +239,24 @@ Add entry to the skills table:
 
 ---
 
-## GPT-Specific Translation Notes
+## ChatGPT-Specific Translation Notes
 
-### GPT "Memory" → Claude
+### ChatGPT "Memory" → Claude
 
-GPT memory has no direct equivalent. Options:
+ChatGPT memory has no direct equivalent. Options:
 - Store in `~/.claude/memory.json`
 - Use project-specific context files
 - Include as "background" section in skill
 
-### GPT "Actions" → MCP Servers
+### ChatGPT "Actions" → MCP Servers
 
-GPT Actions (API calls) require MCP server setup in `~/.claude/mcp.json`.
+ChatGPT Actions (API calls) require MCP server setup in `~/.claude/mcp.json`.
 
-### GPT "Code Interpreter" → Claude Tools
+### ChatGPT "Code Interpreter" → Claude Tools
 
 Claude has native access to: `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`
 
-### GPT Conversation Starters
+### ChatGPT Conversation Starters
 
 Document in skill's "## Examples" section or CLAUDE.md usage hints.
 

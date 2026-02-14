@@ -30,7 +30,7 @@ See demo:
 
 | Skill | Description |
 |-------|-------------|
-| [agent-skill-builder](skills/agent-skill-builder) | Create new Claude skills from scratch or translate ChatGPT GPT projects into the Claude skill format |
+| [agent-skill-builder](skills/agent-skill-builder) | Create new Claude skills from scratch or translate ChatGPT projects into the Claude skill format |
 | [ai-humanizer](skills/ai-humanizer) | Detect AI-written text, provide line-by-line recommendations, and rewrite content to sound genuinely human |
 | [case-study-builder](skills/case-study-builder) | Create professional case studies, engagement summaries, and project summaries |
 | [clay-gtm-outbound](skills/clay-gtm-outbound) | Design and optimize Clay-powered GTM workflows for prospecting, signal detection, and outbound automation |

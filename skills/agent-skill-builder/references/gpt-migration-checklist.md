@@ -1,12 +1,12 @@
-# GPT to Claude Skill Migration Checklist
+# ChatGPT to Claude Skill Migration Checklist
 
-Use this checklist when converting a ChatGPT GPT project to a Claude skill.
+Use this checklist when converting a ChatGPT project to a Claude skill.
 
 ---
 
-## Phase 1: Extract GPT Components
+## Phase 1: Extract ChatGPT Components
 
-- [ ] **System prompt/instructions**: Copy the full GPT instructions
+- [ ] **System prompt/instructions**: Copy the full ChatGPT instructions
 - [ ] **Knowledge files**: List all uploaded files (PDFs, docs, etc.)
 - [ ] **Conversation starters**: Note any preset prompts
 - [ ] **Actions/APIs**: Document any configured actions
@@ -32,9 +32,9 @@ Use this checklist when converting a ChatGPT GPT project to a Claude skill.
 
 ## Phase 3: Convert Instructions
 
-### Map GPT Sections to Claude Format
+### Map ChatGPT Sections to Claude Format
 
-| GPT Section | Claude Section | Status |
+| ChatGPT Section | Claude Section | Status |
 |-------------|----------------|--------|
 | Role definition | `## Role` | [ ] |
 | Task description | `## Instructions` | [ ] |
@@ -45,7 +45,7 @@ Use this checklist when converting a ChatGPT GPT project to a Claude skill.
 
 ### Clean Up Instructions
 
-- [ ] Remove GPT-specific references ("As a GPT...", "ChatGPT...")
+- [ ] Remove ChatGPT-specific references ("As a ChatGPT...", "ChatGPT...")
 - [ ] Adapt for Claude's capabilities
 - [ ] Simplify overly complex instructions
 - [ ] Keep under 500 lines (move details to supporting files)
@@ -93,22 +93,22 @@ version: "1.0.0"
 
 ---
 
-## Phase 6: Handle Special GPT Features
+## Phase 6: Handle Special ChatGPT Features
 
-### GPT Actions → MCP Servers
+### ChatGPT Actions → MCP Servers
 - [ ] Document required API endpoints
 - [ ] Plan MCP server configuration
 - [ ] Note: Requires separate MCP setup
 
-### GPT Code Interpreter → Claude Tools
+### ChatGPT Code Interpreter → Claude Tools
 - [ ] Map to Bash, Read, Write, Edit tools
 - [ ] Claude has native file/code access
 
-### GPT Memory → Claude Options
+### ChatGPT Memory → Claude Options
 - [ ] Consider `~/.claude/memory.json`
 - [ ] Or include as "Background" section in skill
 
-### GPT Browsing → Claude Options
+### ChatGPT Browsing → Claude Options
 - [ ] Use WebFetch or WebSearch tools
 - [ ] Or MCP server for web access
 
@@ -145,7 +145,7 @@ version: "1.0.0"
 - [ ] Test with arguments: `/skill-name [args]`
 - [ ] Test auto-invocation with matching keywords
 - [ ] Verify `/context` shows skill
-- [ ] Test edge cases from original GPT
+- [ ] Test edge cases from original ChatGPT project
 
 ---
 
@@ -158,7 +158,7 @@ version: "1.0.0"
 
 ## Component Mapping Quick Reference
 
-| GPT | Claude | Notes |
+| ChatGPT | Claude | Notes |
 |-----|--------|-------|
 | Instructions | SKILL.md content | Main skill body |
 | Knowledge files | `knowledge/*.md` | Convert to Markdown |
