@@ -13,7 +13,7 @@ Creates new Claude skills from scratch or translates ChatGPT projects into the C
 
 Invoke this skill when the user:
 - Wants to "create a skill" or "make a new skill"
-- Wants to "translate a ChatGPT project" or "convert a GPT Project to Claude"
+- Wants to "translate a ChatGPT project" or "convert a ChatGPT Project to Claude"
 - Mentions "migrate prompts" or "convert ChatGPT project"
 - Asks about "slash commands" or "custom commands"
 - Says "create a /command" or similar
