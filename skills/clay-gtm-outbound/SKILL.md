@@ -215,6 +215,7 @@ See the `/references` folder for:
 - Clay Personalization & Sequencing on Lemlist guide
 - Clay Signals comprehensive guide
 - Prospecting with Clay workflow guide
+- Saving Clay Credits guide (credit optimization, waterfall enrichment, tool cost matrix)
 
 ## Invocation
 
