@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-22 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+23 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -50,6 +50,7 @@ See demo:
 | [product-messaging](skills/product-messaging) | Create complete messaging frameworks including value propositions, taglines, and elevator pitches |
 | [product-onboarding-activation](skills/product-onboarding-activation) | Design complete onboarding, activation, retention, and expansion lifecycles for SaaS products |
 | [product-positioning](skills/product-positioning) | Create complete positioning frameworks with target customers, competitive differentiation, and market categories |
+| [remotion](skills/remotion) | Create programmatic videos in React with a structured 7-step process from creative brief to rendered output |
 | [saas-landing-pages](skills/saas-landing-pages) | Generate complete SaaS landing page drafts using 7 framework templates for different page types |
 | [vibe-coding](skills/vibe-coding) | Guide beginner-to-intermediate developers through web development, Claude skills creation, and AI-assisted coding |
 
@@ -141,7 +142,7 @@ You can also invoke skills directly:
 `experimentation` `marketing-product-ideas` `performance-marketing` `lifecycle-marketing-campaigns` `product-onboarding-activation`
 
 ### Automation & Technical
-`n8n-automation` `openclaw` `clay-gtm-outbound` `vibe-coding`
+`n8n-automation` `openclaw` `clay-gtm-outbound` `remotion` `vibe-coding`
 
 ### Meta Skills
 `agent-skill-builder`
