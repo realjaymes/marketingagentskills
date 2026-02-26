@@ -1,5 +1,6 @@
 ---
 name: press-release
+version: 1.0.0
 description: Creates complete press release packages with newsworthiness evaluation. Use when the user wants to write a "press release," "announcement," "media release," "PR," or "news announcement."
 ---
 

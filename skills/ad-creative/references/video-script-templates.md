@@ -30,6 +30,7 @@ All examples use a hypothetical B2B SaaS product: **DataFlow** (automated report
 | **Video idea** | Creator | 1-2 sentence concept describing the video |
 | **Core angle** | Creator | The single reason someone would stop and watch |
 | **One-line promise** | Creator | What the viewer gets or learns by watching |
+| **Audience context** | Creator | Target market, audience pain points, cultural trends, local language/slang, and platform conversations that informed this creative. From web research, social media, forums, or social listening. |
 | **Hook type** | Creator | Financial data, pain statement, bold claim, question, story opener, pattern break |
 | **Hook line** | Creator | Exact words said or shown in the first 1-3 seconds |
 | **Timestamp** | Creator | Time marker for each scene (e.g., 0:00-0:03) |
@@ -67,6 +68,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:**
 - **Core angle:**
 - **One-line promise:**
+- **Audience context:**
 
 ### Hook (0:00 - 0:03)
 - **Hook type:**
@@ -129,6 +131,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Show the weekly reporting nightmare that marketing teams endure, then reveal there is a better way without pitching the product hard.
 - **Core angle:** The time cost of manual reporting is invisible but massive.
 - **One-line promise:** You will see your own weekly pain reflected back at you.
+- **Audience context:** Reddit r/marketing threads show marketers complaining about "spending Sunday nights formatting reports for Monday." G2 reviews mention "death by spreadsheet." The phrase "Sunday Scaries" is trending on LinkedIn.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Pain statement
@@ -188,6 +191,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Quantify the annual cost of manual reporting in salary hours, then contrast it with the cost of automation.
 - **Core angle:** Manual reporting is not free. It costs $23,000+ per marketer per year in lost time.
 - **One-line promise:** You will see the real dollar cost of a problem you have normalized.
+- **Audience context:** LinkedIn discussions among marketing ops leaders quantify time waste at 10-15 hrs/week. CFO-focused content on Twitter frames reporting as a hidden labor cost. "Marketing efficiency" is a trending topic in B2B.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Financial data
@@ -247,6 +251,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Screen recording walkthrough showing DataFlow building a full marketing report in under 60 seconds, from connecting sources to finished dashboard.
 - **Core angle:** Seeing is believing. Show the product doing the thing competitors only promise.
 - **One-line promise:** Watch a full marketing report build itself in real time.
+- **Audience context:** G2 reviews for reporting tools show users want "one-click reporting" and "no SQL required." TikTok has a trend of "satisfying automation" videos showing manual tasks being replaced.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Bold claim
@@ -306,6 +311,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Teach marketing teams the 3-step framework for building a reporting system that updates itself, with DataFlow as the tool that makes step 3 effortless.
 - **Core angle:** Teach one useful thing first. The product is the bridge, not the lesson.
 - **One-line promise:** Learn the 3-step reporting framework that eliminates manual updates.
+- **Audience context:** LinkedIn carousel posts about "marketing frameworks" get high engagement. Reddit r/marketingautomation shows demand for step-by-step guides. Audience prefers educational content before product pitches.
 
 ### Hook (0:00 - 0:05)
 - **Hook type:** How-to + curiosity
@@ -365,6 +371,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** A marketing director at a 200-person SaaS company describes how DataFlow eliminated their Monday reporting ritual and freed 12 hours per week for the team.
 - **Core angle:** One real person with one specific outcome.
 - **One-line promise:** Hear from someone who had your exact problem and solved it.
+- **Audience context:** B2B buyers on LinkedIn say they trust peer reviews over vendor claims. G2 and Capterra reviews are the first stop for evaluation. "Real results from real teams" is a recurring phrase in successful B2B ads.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Outcome quote
@@ -423,6 +430,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Tell the story of how a 50-person e-commerce company went from 15 hours/week of manual reporting to fully automated dashboards in one sprint, resulting in 85% time savings and faster decision-making.
 - **Core angle:** Before state, what changed, measurable result. Show repeatability.
 - **One-line promise:** See a real company's reporting transformation in 45 seconds.
+- **Audience context:** LinkedIn B2B audiences engage most with specific metrics and named companies. "Before and after" is a high-performing format on both LinkedIn and Meta retargeting. Audiences want proof from companies their size.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Before/after metric
@@ -482,6 +490,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** DataFlow's founder explains why they built the product. It started from their own frustration as a marketing lead spending Sundays preparing Monday reports.
 - **Core angle:** The founder lived the problem. The product exists because the existing solutions did not.
 - **One-line promise:** Understand why this product exists and the experience behind it.
+- **Audience context:** LinkedIn personal stories from founders get 3-5x more engagement than brand posts. Authenticity and "building in public" resonate with early-adopter audiences. Candid footage outperforms polished corporate video.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Personal frustration / origin
@@ -541,6 +550,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Contrast the old way of reporting (BI tools that require analysts, spreadsheets that require manual updates) with the new way (DataFlow: self-serve, auto-updating, no SQL).
 - **Core angle:** The decision is not "DataFlow or not." It is "modern reporting or legacy reporting."
 - **One-line promise:** See the difference between how marketing teams used to report and how the best ones do it now.
+- **Audience context:** Reddit threads in r/analytics and r/marketing show frustration with legacy BI tools being "too complex for marketers." The "old way vs new way" format trends on LinkedIn and TikTok for B2B.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Old way vs new way
@@ -599,6 +609,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Address the #1 objection: "We already have a BI tool." Show that DataFlow is not a BI replacement. It is the layer between your data and your BI tool that removes manual work.
 - **Core angle:** Name the objection, validate it, dissolve it.
 - **One-line promise:** If you thought DataFlow replaces your BI tool, this clarifies what it actually does.
+- **Audience context:** G2 reviews and sales call transcripts reveal top objections: "we already have a BI tool," "too expensive," and "my team won't adopt it." Retargeting audiences have seen the product but need objection resolution.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Objection statement
@@ -656,6 +667,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** DataFlow's VP of Marketing shares a strong POV: "Dashboards are not strategy. Most marketing teams confuse having data with using data."
 - **Core angle:** Lead with an insight that makes the audience think, not a product pitch.
 - **One-line promise:** A perspective on reporting that reframes how you think about your dashboards.
+- **Audience context:** LinkedIn and X reward strong opinions in B2B. "Dashboards are not strategy" aligns with a growing backlash against vanity metrics in marketing ops communities. Contrarian takes earn saves and shares.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Strong POV / contrarian
@@ -714,6 +726,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Clip from a podcast/interview where a respected CMO answers: "What is the biggest waste of time in marketing ops?" Their answer aligns with the problem DataFlow solves.
 - **Core angle:** Borrow credibility from a respected voice. The insight matters more than the brand.
 - **One-line promise:** Hear a CMO explain why most marketing teams waste their best hours.
+- **Audience context:** Podcast-style content is growing on LinkedIn and YouTube. B2B audiences trust third-party voices over brand messaging. Quoting a respected CMO borrows credibility the brand hasn't earned yet.
 
 ### Hook (0:00 - 0:03)
 - **Hook type:** Provocative answer
@@ -772,6 +785,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Show a marketing team lead's Monday morning when reports are automated. No spreadsheets, no panic. Just coffee, strategy, and calm.
 - **Core angle:** Sell the outcome, not the tool. Make the viewer want this version of Monday.
 - **One-line promise:** See what Monday morning looks like when you stop building reports.
+- **Audience context:** Instagram and TikTok "morning routine" and "day in my life" content resonates with prosumer audiences. The aspiration is not the product but the calm, strategic workday it enables. Warm, natural aesthetics outperform corporate visuals.
 
 ### Hook (0:00 - 0:02)
 - **Hook type:** Aspirational scene
@@ -830,6 +844,7 @@ Copy this template and fill in for any creative type.
 - **Video idea:** Use the "expectation vs reality" meme format. Expectation: marketing team doing creative strategy. Reality: marketing team in a spreadsheet at 11 PM on Sunday. Twist: "unless you use DataFlow."
 - **Core angle:** Use insider humor to signal "we understand your world."
 - **One-line promise:** Laugh at yourself, then realize there is a fix.
+- **Audience context:** Marketing Twitter and Reddit r/marketing actively share memes about reporting pain. Drake format and "expectation vs reality" templates trend regularly. Self-deprecating humor about manual work lands well with marketing ops.
 
 ### Hook (0:00 - 0:02)
 - **Hook type:** Pattern break / meme format

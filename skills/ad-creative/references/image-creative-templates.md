@@ -29,6 +29,7 @@ All examples use a hypothetical B2B SaaS product: **DataFlow** (automated report
 | **Angle** | Creator | The single reason someone would stop scrolling |
 | **Core message** | Creator | One sentence summarizing what this ad communicates |
 | **Emotional tone** | Creator | The feeling the image should evoke (urgent, calm, aspirational, provocative) |
+| **Audience context** | Creator | Target market, audience pain points, cultural trends, local language/slang, and platform conversations that informed this creative. From web research, social media, forums, or social listening. |
 | **Headline** | Creator | Primary text on the image (largest text element) |
 | **Supporting text** | Creator | Secondary text that adds context or proof |
 | **CTA text** | Creator | Button or action text |
@@ -66,6 +67,7 @@ Copy this template and fill in for any creative type.
 - **Angle:**
 - **Core message:**
 - **Emotional tone:**
+- **Audience context:**
 
 ### Copy
 - **Headline:**
@@ -121,6 +123,7 @@ Copy this template and fill in for any creative type.
 - **Angle:** The invisible time cost of manual reporting
 - **Core message:** Marketing teams waste their best hours on spreadsheet work that should not exist.
 - **Emotional tone:** Frustration, recognition ("that's me")
+- **Audience context:** Reddit r/marketing threads show marketers complaining about "spending Sunday nights formatting reports for Monday." G2 reviews mention "death by spreadsheet." The phrase "Sunday Scaries" is trending on LinkedIn.
 
 ### Copy
 - **Headline:** "You didn't become a marketer to build spreadsheets."
@@ -172,6 +175,7 @@ Copy this template and fill in for any creative type.
 - **Angle:** Quantify the annual cost of manual reporting in dollars
 - **Core message:** Manual reporting is not free. It costs $23,400 per marketer per year in lost time.
 - **Emotional tone:** Controlled urgency. Facts, not fear.
+- **Audience context:** LinkedIn discussions among marketing ops leaders quantify time waste at 10-15 hrs/week. CFO-focused content on Twitter frames reporting as a hidden labor cost. "Marketing efficiency" is a trending topic in B2B.
 
 ### Copy
 - **Headline:** "$23,400"
@@ -223,6 +227,7 @@ Copy this template and fill in for any creative type.
 - **Angle:** The product builds reports faster than you can explain what you need
 - **Core message:** See a full marketing report auto-generated from live data in one click.
 - **Emotional tone:** Confidence, clarity, "this just works"
+- **Audience context:** G2 reviews for reporting tools show users want "one-click reporting" and "no SQL required." TikTok has a trend of "satisfying automation" videos showing manual tasks being replaced.
 
 ### Copy
 - **Headline:** "One click. Full report."
@@ -274,6 +279,7 @@ Copy this template and fill in for any creative type.
 - **Angle:** Teach the 3-step reporting framework. Position DataFlow as the tool that makes step 3 effortless.
 - **Core message:** Automated reporting follows three steps: centralize, define, automate.
 - **Emotional tone:** Helpful, educational, authoritative
+- **Audience context:** LinkedIn carousel posts about "marketing frameworks" get high engagement. Reddit r/marketingautomation shows demand for step-by-step guides. Audience prefers educational content before product pitches.
 
 ### Copy
 - **Headline:** "3 steps to never build a report manually again"
@@ -328,6 +334,7 @@ Copy this template and fill in for any creative type.
 - **Angle:** One real customer, one specific measurable outcome
 - **Core message:** A marketing director saved 12 hours a week for her team using DataFlow.
 - **Emotional tone:** Trust, credibility, proof
+- **Audience context:** B2B buyers on LinkedIn say they trust peer reviews over vendor claims. G2 and Capterra reviews are the first stop for evaluation. "Real results from real teams" is a recurring phrase in successful B2B ads.
 
 ### Copy
 - **Headline:** "We got 12 hours a week back. That's not a guess. We tracked it."
@@ -379,6 +386,7 @@ Copy this template and fill in for any creative type.
 - **Angle:** A real company's transformation from manual reporting to full automation
 - **Core message:** Relay Commerce cut reporting time by 85% and launched 2 new channels with the time saved.
 - **Emotional tone:** Credibility, proof, "this could be you"
+- **Audience context:** LinkedIn B2B audiences engage most with specific metrics and named companies. "Before and after" is a high-performing format on both LinkedIn and Meta retargeting. Audiences want proof from companies their size.
 
 ### Copy
 - **Headline:** "How Relay Commerce cut reporting time by 85%"
@@ -444,6 +452,7 @@ launched (no time)       launched (time freed)
 - **Angle:** The personal frustration that led to building DataFlow
 - **Core message:** The founder built DataFlow because they spent Sundays preparing Monday reports. The product exists because the existing solutions did not work.
 - **Emotional tone:** Authentic, relatable, honest
+- **Audience context:** LinkedIn personal stories from founders get 3-5x more engagement than brand posts. Authenticity and "building in public" resonate with early-adopter audiences. Candid photos outperform polished headshots.
 
 ### Copy
 - **Headline:** "I built DataFlow because I was tired of spending Sundays on Monday's reports."
@@ -495,6 +504,7 @@ launched (no time)       launched (time freed)
 - **Angle:** Old way vs new way of marketing reporting. Reframe the category.
 - **Core message:** The choice is not between tools. It is between manual reporting and automated reporting.
 - **Emotional tone:** Confident contrast. Not attacking competitors. Reframing the category.
+- **Audience context:** Reddit threads in r/analytics and r/marketing show frustration with legacy BI tools being "too complex for marketers." The "old way vs new way" format trends on LinkedIn and TikTok for B2B.
 
 ### Copy
 - **Headline (left):** "The Old Way"
@@ -548,6 +558,7 @@ launched (no time)       launched (time freed)
 - **Angle:** Address the #1 objection directly: "We already have a BI tool."
 - **Core message:** DataFlow is not a BI replacement. It is the automation layer that feeds your BI tool.
 - **Emotional tone:** Calm, reassuring, clarifying (not defensive)
+- **Audience context:** G2 reviews and sales call transcripts reveal top objections: "we already have a BI tool," "too expensive," and "my team won't adopt it." Retargeting audiences have seen the product but need objection resolution.
 
 ### Copy
 - **Headline:** "'We already have Looker.'"
@@ -599,6 +610,7 @@ launched (no time)       launched (time freed)
 - **Angle:** A strong POV on dashboards vs strategy that reframes how the audience thinks about reporting
 - **Core message:** Dashboards are not strategy. Most marketing teams confuse having data with using data.
 - **Emotional tone:** Provocative, intelligent, authoritative
+- **Audience context:** LinkedIn and X reward strong opinions in B2B. "Dashboards are not strategy" aligns with a growing backlash against vanity metrics in marketing ops communities. Contrarian takes earn saves and shares.
 
 ### Copy
 - **Headline:** "Dashboards are not strategy."
@@ -650,6 +662,7 @@ launched (no time)       launched (time freed)
 - **Angle:** Borrow credibility from a respected CMO's take on the biggest time waste in marketing
 - **Core message:** A respected CMO says reporting is the biggest time waste in marketing ops.
 - **Emotional tone:** Authority, credibility, curiosity ("I want to hear more")
+- **Audience context:** Podcast-style content is growing on LinkedIn and YouTube. B2B audiences trust third-party voices over brand messaging. Quoting a respected CMO borrows credibility the brand hasn't earned yet.
 
 ### Copy
 - **Headline:** "The biggest time waste in marketing? Reporting. Hands down."
@@ -701,6 +714,7 @@ launched (no time)       launched (time freed)
 - **Angle:** Show what Monday morning looks like when reports are automated. Sell the feeling, not the feature.
 - **Core message:** This is what calm, strategic Monday mornings look like when you stop building reports.
 - **Emotional tone:** Aspirational, calm, desirable
+- **Audience context:** Instagram and TikTok "morning routine" and "day in my life" content resonates with prosumer audiences. The aspiration is not the product but the calm, strategic workday it enables. Warm, natural aesthetics outperform corporate visuals.
 
 ### Copy
 - **Headline:** "Monday morning when your reports build themselves."
@@ -752,6 +766,7 @@ launched (no time)       launched (time freed)
 - **Angle:** Use the "Drake preference" meme format. Top: thing marketers reject (manual reporting). Bottom: thing marketers prefer (automated reporting).
 - **Core message:** Manual reporting is the thing everyone hates but keeps doing. There is a better option.
 - **Emotional tone:** Self-deprecating humor, insider recognition, shareable
+- **Audience context:** Marketing Twitter and Reddit r/marketing actively share memes about reporting pain. Drake format and "expectation vs reality" templates trend regularly. Self-deprecating humor about manual work lands well with marketing ops.
 
 ### Copy
 - **Headline (top/reject):** "Building a 47-tab spreadsheet every Monday morning"

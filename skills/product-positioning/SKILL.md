@@ -1,5 +1,6 @@
 ---
 name: product-positioning
+version: 1.0.0
 description: Creates complete positioning frameworks for products. Use when the user wants to "position my product," "create positioning," "positioning framework," "competitive positioning," "how to differentiate," or "positioning statement."
 version: "1.0.0"
 argument-hint: "[product name]"

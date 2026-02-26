@@ -1,5 +1,6 @@
 ---
 name: copy-anatomy
+version: 1.0.0
 description: Reverse-engineers copy into reusable templates. Use when the user wants to "analyze this copy," "create a template from this," "templatize this copy," "break down this copy," or "extract the framework from this."
 version: "1.0.0"
 argument-hint: "[paste copy to analyze]"

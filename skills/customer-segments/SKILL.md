@@ -1,5 +1,6 @@
 ---
 name: customer-segments
+version: 1.0.0
 description: Creates customer and user segment documents. Use when the user wants to "segment customers," "customer segments," "user segments," "lifecycle segments," or "audience segmentation."
 version: "1.0.0"
 argument-hint: "[product name or paste positioning docs]"

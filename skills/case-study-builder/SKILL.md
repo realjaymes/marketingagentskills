@@ -1,5 +1,6 @@
 ---
 name: case-study-builder
+version: 1.0.0
 description: Creates professional case studies, engagement summaries, and project summaries. Use when the user wants to create a "case study," "client success story," "engagement summary," "project summary," or "portfolio piece."
 ---
 

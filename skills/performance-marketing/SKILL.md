@@ -1,5 +1,6 @@
 ---
 name: performance-marketing
+version: 1.0.0
 description: Plans, reviews, and optimizes paid advertising campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, and Snapchat. Use when the user mentions "paid ads," "performance marketing," "ad campaign," "creative strategy," "ad copy," "media buying," "ROAS," "CPA," "campaign audit," or platform-specific ad help.
 version: "1.0.0"
 argument-hint: "[platform] [task]"

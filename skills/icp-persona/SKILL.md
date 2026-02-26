@@ -1,5 +1,6 @@
 ---
 name: icp-persona
+version: 1.0.0
 description: Generates ICP and persona documents. Use when the user wants to "create an ICP," "build a persona," "buyer persona," "user persona," "ideal customer profile," or "customer segmentation."
 version: "1.0.0"
 argument-hint: "[B2B ICP | B2B Buyer Persona | B2B User Persona | B2C User Persona]"

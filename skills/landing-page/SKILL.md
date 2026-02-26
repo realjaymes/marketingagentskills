@@ -1,9 +1,13 @@
 ---
 name: landing-page
+version: 1.0.0
 description: Creates landing page copy using modular section templates. Use when the user wants to "write a homepage," "create landing page copy," "landing page sections," or "homepage template."
 ---
 
 # Landing Page Assistant
+
+**Check for product marketing context first:**
+If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Generate structured, conversion-focused landing page copy using James Praise's modular section framework.
 

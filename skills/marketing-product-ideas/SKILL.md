@@ -1,5 +1,6 @@
 ---
 name: marketing-product-ideas
+version: 1.0.0
 description: "When the user needs marketing or product ideas grounded in behavioral principles and proven experiments. Use when the user mentions 'marketing ideas,' 'product ideas,' 'awareness experiments,' 'conversion experiments,' 'growth experiments,' 'PLG tactics,' 'top of funnel,' 'trial to paid,' or 'self-serve SaaS strategies.' This skill provides a 5-layer mental model, 30 foundational marketing principles, and tested experiments for awareness and conversion."
 ---
 
