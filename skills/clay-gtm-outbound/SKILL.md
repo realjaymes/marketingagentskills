@@ -210,8 +210,9 @@ For outbound tables, ensure:
 ## Reference Materials
 
 See the `/references` folder for:
+- Outbound Email Frameworks & Templates (master reference: copywriting frameworks, sequence archetypes, hook patterns, CTA formulas, subject line formulas, conditional logic patterns)
+- Clay Outbound Email Prompt templates (3 and 4 email sequences with multi-use templates)
 - Clay Automated Outbound Certification rubric
-- Outbound Email Prompt templates (3 and 4 email sequences)
 - Clay Personalization & Sequencing on Lemlist guide
 - Clay Signals comprehensive guide
 - Prospecting with Clay workflow guide
