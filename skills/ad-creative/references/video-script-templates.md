@@ -878,6 +878,240 @@ Copy this template and fill in for any creative type.
 
 ---
 
+### 14. Before/After Ad
+
+**When to use:** Any funnel stage. Products with visible transformation. Showing a clear state change (messy → clean, slow → fast, manual → automated).
+**Strategic role:** Let the visual contrast do the selling. The viewer should feel the transformation without needing to read much.
+**Default hook style:** Split screen reveal or time-lapse transition
+**Audio approach:** Minimal VO or VO-driven contrast. "This is what [thing] looked like before. This is what it looks like now."
+**Recommended b-roll:** Before: cluttered workspace, slow loading screens, manual processes, frustration. After: clean UI, fast results, calm workspace, satisfaction.
+
+#### Worked Example: Before/After Ad
+
+```
+## Video Script Brief
+
+### Creative Brief
+- **Creative type:** Before/After
+- **Funnel stage:** MOFU
+- **Platform:** Meta (Reels + Feed)
+- **Awareness level:** Solution-aware
+- **Duration:** 30 seconds
+- **Aspect ratio:** 9:16
+
+### Concept
+- **Video idea:** Split the screen between the old way (manual reporting chaos) and the new way (DataFlow automation). Let the visual contrast create the desire.
+- **Core angle:** The transformation from reporting chaos to reporting calm is instant and visible.
+- **One-line promise:** See what your reporting workflow looks like before and after DataFlow.
+- **Audience context:** LinkedIn and Twitter are full of "my desk on Monday" vs. "my desk after automating" style posts. The before/after format is native to social media. Marketing ops teams share workspace screenshots as flex/commiseration content.
+
+### Hook (0:00 - 0:03)
+- **Hook type:** Visual contrast setup
+- **Hook line:** Text overlay: "Same marketer. Same data. Different Monday."
+- **Visual:** Split screen. Left side dark and chaotic. Right side bright and clean. Both sides frozen, building anticipation.
+- **Audio:** Tense ambient sound on left, silence on right
+- **Text overlay:** "Same marketer. Same data. Different Monday."
+
+### Body
+
+| Timestamp | Script / VO | On-Screen Visual | B-Roll | Text Overlay | Sound / Music |
+|-----------|------------|-----------------|--------|-------------|---------------|
+| 0:03-0:10 | "Before DataFlow, Monday morning meant six tabs, three dashboards, and a spreadsheet someone renamed 'FINAL_v3_REAL.'" | Left side animates: screen recording of tab-switching chaos, messy spreadsheet, copy-paste frenzy | Hands frantically clicking, coffee spilling, clock showing 8 AM → 2 PM | "BEFORE" label, top-left | Stressful, slightly chaotic music. Keyboard clacking SFX |
+| 0:10-0:15 | "After DataFlow..." | Transition: wipe or dissolve from left to right side. Clean DataFlow dashboard loads in one click. | Person leaning back, calm. Single monitor, clean desk. | "AFTER" label, top-right | Music shifts to calm, resolved tone. Satisfying "click" SFX |
+| 0:15-0:22 | "One connection. Every report. Updated automatically. Every Monday at 8 AM, before you open your laptop." | Right side: DataFlow dashboard with live data, auto-updating charts. Quick cuts showing different report views. | Person checking phone, report already there. Walking in with coffee, dashboard ready. | "Connected once. Reports forever." | Calm, confident music continues |
+
+### CTA (0:22 - 0:30)
+- **CTA line:** "See your own before and after. Try DataFlow free for 14 days."
+- **Visual:** End card with split design — left side dark (BEFORE), right side brand blue (AFTER). Logo centered on the dividing line.
+- **End card:** DataFlow logo, "dataflow.io/try", "14-day free trial" badge
+- **Audio:** VO delivers CTA, music resolves
+
+### Production Notes
+- **Music / mood:** Two distinct moods: chaotic/tense for the before section, calm/satisfying for the after section. The transition should be audible.
+- **Sound effects:** Keyboard clacking and notification overload (0:03-0:10), clean "click" transition sound (0:10), gentle notification ping showing report is ready (0:15)
+- **Pacing:** Before section: fast cuts, visual overload, rushed. After section: slow, deliberate, breathing room. The pacing itself tells the story.
+- **Brand constraints:** DataFlow blue (#2563EB) dominates the "after" section. Before section should look realistic, not exaggerated.
+- **Reference links:** [Workspace transformation TikToks], [Monday.com before/after campaign]
+- **Variations needed:** 1:1 feed version, 15s cut (skip to 0:10 transition), side-by-side static thumbnail for YouTube
+```
+
+---
+
+### 15. Problem/Solution Ad
+
+**When to use:** Cold to warm audiences. When you want to name the pain and present the fix in one ad. More emotionally driven than Before/After.
+**Strategic role:** Build empathy with the problem, then resolve the tension with the solution. The emotional arc is: frustration → recognition → relief → action.
+**Default hook style:** Pain statement or relatable frustration
+**Audio approach:** VO-driven with emotional shift. First half: empathetic, "I see you" tone. Second half: confident, solution-forward.
+**Recommended b-roll:** Problem: overwhelmed person, cluttered screens, wasted time visuals. Solution: product UI in action, calm workspace, results on screen.
+
+#### Worked Example: Problem/Solution Ad
+
+```
+## Video Script Brief
+
+### Creative Brief
+- **Creative type:** Problem/Solution
+- **Funnel stage:** TOFU
+- **Platform:** Meta (Reels + Feed) + TikTok
+- **Awareness level:** Problem-aware
+- **Duration:** 30 seconds
+- **Aspect ratio:** 9:16
+
+### Concept
+- **Video idea:** Open with the emotional weight of manual reporting (not just the task, but how it makes marketers feel), then pivot to DataFlow as the resolution.
+- **Core angle:** The problem is not the spreadsheet. The problem is what the spreadsheet takes away from you — creative time, strategic thinking, your evenings.
+- **One-line promise:** Feel your own frustration reflected back, then see the exit.
+- **Audience context:** Twitter threads from marketing managers describe "dreading Monday morning" because of reporting. Facebook groups for digital marketers have posts asking "how do you guys handle weekly reporting without losing your mind?" The emotional framing resonates more than the rational one.
+
+### Hook (0:00 - 0:03)
+- **Hook type:** Relatable frustration
+- **Hook line:** "You spent four years learning marketing. You spend four hours a week formatting cells."
+- **Visual:** Close-up of someone's face lit by a laptop screen, late at night. Eyes tired.
+- **Audio:** VO delivers the hook line, flat and matter-of-fact. No music yet.
+- **Text overlay:** "4 years learning marketing. 4 hours formatting cells."
+
+### Body
+
+| Timestamp | Script / VO | On-Screen Visual | B-Roll | Text Overlay | Sound / Music |
+|-----------|------------|-----------------|--------|-------------|---------------|
+| 0:03-0:10 | "Every week, the same ritual. Pull data from five sources. Copy it into a template someone made in 2019. Pray nothing breaks." | Screen recording: tab switching, copy-paste sequences, broken formula errors | Hands on keyboard late at night, empty coffee cups, phone showing 11 PM | "Pull. Paste. Pray." | Slow, melancholic piano. Keyboard SFX |
+| 0:10-0:14 | "You did not sign up for this." | Person pushing laptop away, rubbing eyes. Beat of silence. | Calendar showing "Weekly Report" recurring every Monday | "You didn't sign up for this." (centered, large) | Music pauses. Silence for 1 second. |
+| 0:14-0:22 | "DataFlow connects your tools once. Then it builds your reports automatically. Every week. While you do the work that actually matters." | Transition: screen lights up with DataFlow dashboard. Data flowing in automatically. Person smiling, working on a strategy doc instead. | Product UI with auto-populated charts, person in a brainstorm session, sticky notes and whiteboards | "Connect once. Reports forever." | Music shifts to hopeful, upbeat. Whoosh transition SFX |
+
+### CTA (0:22 - 0:30)
+- **CTA line:** "Stop building reports. Start building strategy. Try DataFlow free."
+- **Visual:** Clean end card. Product logo. URL.
+- **End card:** DataFlow logo centered, "dataflow.io/try", "Free 14-day trial" badge
+- **Audio:** VO delivers CTA with confidence, music resolves
+
+### Production Notes
+- **Music / mood:** Two-act structure. Act 1 (problem): melancholic, slow, empathetic. Act 2 (solution): hopeful, confident, forward-moving. The music transition at 0:14 is the emotional turning point.
+- **Sound effects:** Keyboard typing (0:03), error notification sound (0:08), silence beat (0:12-0:14), whoosh transition (0:14), satisfying completion ding (0:18)
+- **Pacing:** Problem section: slow, deliberate, heavy. Let the pain sit. Solution section: faster cuts, energy, momentum. The pacing shift mirrors the emotional shift.
+- **Brand constraints:** Problem section should feel real, not dramatized. Solution section should show actual product UI.
+- **Reference links:** [Slack "before Slack" campaign], [Asana workload campaign]
+- **Variations needed:** 1:1 feed version, 15s version (problem 0:00-0:07, solution 0:07-0:15), static thumbnail with "Pull. Paste. Pray." headline
+```
+
+---
+
+### 16. Incentive Ad
+
+**When to use:** BOFU, retargeting, trial conversion, seasonal campaigns. When the offer itself is the primary motivator.
+**Strategic role:** Remove the last barrier to conversion by making the offer too good or too easy to ignore. The incentive should feel generous, not desperate.
+**Default hook style:** Offer announcement or value-forward statement
+**Audio approach:** Confident, clear VO. No hard sell. The offer speaks for itself.
+**Recommended b-roll:** Product in action (brief), happy customers, clean UI, the deliverable they will receive.
+
+#### Worked Example: Incentive Ad
+
+```
+## Video Script Brief
+
+### Creative Brief
+- **Creative type:** Incentive
+- **Funnel stage:** BOFU
+- **Platform:** Meta (Feed + Stories)
+- **Awareness level:** Product-aware
+- **Duration:** 15 seconds
+- **Aspect ratio:** 9:16
+
+### Concept
+- **Video idea:** Announce an extended 30-day free trial for DataFlow. Keep it simple, generous, and confident. Let the offer do the work.
+- **Core angle:** If 14 days was not enough to evaluate, 30 days removes the excuse entirely.
+- **One-line promise:** You get 30 days free. No credit card. No catch.
+- **Audience context:** G2 and Capterra reviews for competitors show "free trial too short" as a recurring complaint. Reddit r/SaaS mentions "trial anxiety." Extending the trial is a genuine value-add, not a tactic.
+
+### Hook (0:00 - 0:03)
+- **Hook type:** Offer announcement
+- **Hook line:** "30 days. Completely free. No credit card."
+- **Visual:** "30 DAYS FREE" animates onto screen in bold white text on brand blue background
+- **Audio:** VO delivers line with confidence. No music, just voice.
+- **Text overlay:** "30 DAYS FREE" (large, centered)
+
+### Body
+
+| Timestamp | Script / VO | On-Screen Visual | B-Roll | Text Overlay | Sound / Music |
+|-----------|------------|-----------------|--------|-------------|---------------|
+| 0:03-0:07 | "Most tools give you two weeks and hope you figure it out. We are giving you a full month." | Quick product UI montage: dashboard loading, reports auto-generating, data sources connecting | None needed — product UI is the visual | "Most: 14 days. DataFlow: 30 days." | Light, confident background music begins |
+| 0:07-0:11 | "Connect your tools. See your first automated report. Decide if you want to keep it." | Screen recording: user connecting a data source → first report appears automatically | Satisfied person looking at screen, slight nod | "Connect. See. Decide." | Music continues, building slightly |
+
+### CTA (0:11 - 0:15)
+- **CTA line:** "Start your free 30-day trial. Link below."
+- **Visual:** End card with "30 Days Free" and URL
+- **End card:** DataFlow logo, "dataflow.io/try", "30-day free trial — no credit card"
+- **Audio:** VO delivers CTA, music resolves with a clean ending
+
+### Production Notes
+- **Music / mood:** Light, confident, clean. Not celebratory or sale-like. The tone is "we are confident enough to give you 30 days."
+- **Sound effects:** Subtle UI interaction sounds during product montage (click, whoosh, data loading)
+- **Pacing:** Brisk and confident. No scene longer than 4 seconds. The ad is short and the offer is clear.
+- **Brand constraints:** Do not make it look like a sale or clearance. The tone is generous, not urgent. Use brand blue, not red/yellow.
+- **Reference links:** [Notion free tier ads], [Linear promotional content]
+- **Variations needed:** 1:1 feed version, version with "50% off annual" offer for paid conversion, version with "free template pack" as lead magnet
+```
+
+---
+
+### 17. Urgency Ad
+
+**When to use:** BOFU, retargeting, time-bound offers, trial expiration, cart abandonment, launch windows. When there is a genuine deadline.
+**Strategic role:** Convert hesitant, product-aware prospects by creating a real time constraint. The deadline does the selling.
+**Default hook style:** Countdown, deadline statement, or "last chance" framing
+**Audio approach:** VO-driven with controlled tension. Firm, not frantic. The voice should sound like a final reminder, not a panic alarm.
+**Recommended b-roll:** Countdown timers, calendar dates, clock imagery, the product/offer they will lose access to.
+
+#### Worked Example: Urgency Ad
+
+```
+## Video Script Brief
+
+### Creative Brief
+- **Creative type:** Urgency
+- **Funnel stage:** BOFU
+- **Platform:** Meta (Stories + Feed)
+- **Awareness level:** Product-aware
+- **Duration:** 15 seconds
+- **Aspect ratio:** 9:16
+
+### Concept
+- **Video idea:** A 15-second countdown-style ad reminding retargeted users that the 40% annual discount expires in 48 hours. No fluff. Just the facts and the deadline.
+- **Core angle:** You have seen the product. You know the price. The discount disappears Friday. This is a reminder, not a pitch.
+- **One-line promise:** The 40% discount you saw is real and it ends Friday.
+- **Audience context:** Retargeting pool: users who visited the pricing page or started a trial in the last 30 days. SaaS pricing page abandonment is 60-70%. A real deadline with a real discount converts the "I'll do it later" segment.
+
+### Hook (0:00 - 0:03)
+- **Hook type:** Countdown / deadline
+- **Hook line:** "48 hours left."
+- **Visual:** Dark background. "48 HOURS LEFT" appears in red/orange text, large. Subtle pulsing animation.
+- **Audio:** VO: "Forty-eight hours left." Firm, calm tone. Ticking clock SFX underneath.
+- **Text overlay:** "48 HOURS LEFT" (large, centered, red/orange on dark)
+
+### Body
+
+| Timestamp | Script / VO | On-Screen Visual | B-Roll | Text Overlay | Sound / Music |
+|-----------|------------|-----------------|--------|-------------|---------------|
+| 0:03-0:07 | "DataFlow annual plans are 40% off until Friday at midnight. After that, full price." | "40% OFF" animates in, followed by "ENDS FRIDAY MIDNIGHT" below it. Simple typography on dark background. | None — text IS the visual | "40% OFF → ENDS FRIDAY" | Ticking clock continues. Low, tense background tone |
+| 0:07-0:11 | "If you have been thinking about it, this is your window." | Brief flash of product dashboard (1-2 seconds) as a reminder of what they get. Then back to deadline framing. | Quick product UI shot, pricing page screenshot | "This is your window." | Clock ticking intensifies slightly |
+
+### CTA (0:11 - 0:15)
+- **CTA line:** "Lock in 40% off before Friday. Link below."
+- **Visual:** End card — dark background, "LOCK IN 40% OFF" in white, URL below, countdown graphic
+- **End card:** DataFlow logo, "dataflow.io/pricing", "Ends Friday midnight. No extensions."
+- **Audio:** VO delivers CTA. Clock ticking stops. Clean silence.
+
+### Production Notes
+- **Music / mood:** Tense, minimal. Not panic-inducing. The ticking clock is the primary audio texture. Music is ambient and dark, not dramatic.
+- **Sound effects:** Ticking clock throughout (consistent rhythm), brief "whoosh" on text animations, silence on final frame (the absence of ticking is the punctuation)
+- **Pacing:** Tight. Every second counts. No scene longer than 4 seconds. The ad itself should feel time-pressured.
+- **Brand constraints:** Urgency must be genuine. Do not use countdown language without a real deadline. "No extensions" means no extensions. If the offer gets extended after the ad runs, trust is broken.
+- **Reference links:** [SaaS end-of-year deal ads], [Black Friday countdown ads with restraint]
+- **Variations needed:** "24 Hours Left" version for day-before, "Last Day" version for final push, "Trial expires in 3 days" version for trial conversion, 1:1 feed version
+```
+
+---
+
 ## Quick Reference: Creative Type Selection
 
 | Creative Type | Best Funnel Stage | Best Platforms | Hook Style |
@@ -895,6 +1129,10 @@ Copy this template and fill in for any creative type.
 | Interview | TOFU-MOFU | LinkedIn, YouTube | Provocative answer |
 | Lifestyle | TOFU | TikTok, Meta Reels | Aspirational scene |
 | Memes / Humor | TOFU | TikTok, X, Reddit | Pattern break |
+| Before/After | TOFU-BOFU | Meta, TikTok, LinkedIn | Visual contrast / reveal |
+| Problem/Solution | TOFU-MOFU | Meta, TikTok, LinkedIn | Relatable frustration |
+| Incentive | BOFU | Meta retargeting, Display | Offer announcement |
+| Urgency | BOFU | Meta retargeting, Display | Countdown / deadline |
 
 ---
 

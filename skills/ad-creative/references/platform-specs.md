@@ -139,13 +139,16 @@ Complete character limits, format requirements, and best practices for each ad p
 
 ## TikTok Ads
 
-### In-Feed Ads
+### In-Feed Ads — Complete Creative Elements
 
-| Element | Recommended | Maximum | Notes |
-|---------|-------------|---------|-------|
-| Ad text | 80 chars | 100 chars | Above the video |
-| Display name | N/A | 40 chars | Brand name |
-| CTA button | Platform options | Predefined | Select from TikTok's options |
+| Element | Limit | Required | Notes |
+|---------|-------|----------|-------|
+| Ad text | 100 characters | Yes | Hook text shown above the video. Must be a strong, scroll-stopping hook. |
+| Product name | 40 characters | Yes | Product title displayed in the ad unit |
+| Selling points | 25 characters each, 3-4 recommended | Optional | Short proof/benefit tags displayed on the ad |
+| CTA button | Platform preset | Yes | Shop Now, Learn More, Contact Us, Sign Up, Download, etc. |
+| Destination URL | No limit | Yes | Website, store page, WhatsApp link (wa.me/number), or landing page |
+| Promo code or offer | No strict limit | Optional | Highlighted by TikTok to boost engagement and ad performance (e.g., "Extra 50% off", "Early bird pricing") |
 
 ### Spark Ads (Boosted Organic)
 
@@ -155,12 +158,54 @@ Complete character limits, format requirements, and best practices for each ad p
 | CTA button | Added by advertiser |
 | Display name | Original creator's handle |
 
-**TikTok-specific guidelines:**
+### Video Specs
+
+| Element | Requirement |
+|---------|-------------|
+| Format | Vertical (9:16) only |
+| Recommended ad length | 15-60 seconds |
+| Identity | TikTok business account posting the ad |
+| Show through ads only | Checkbox — limits to paid traffic. Unchecking allows organic reach on your profile |
+| Ad variations | TikTok auto-generates combinations from your ad text, selling points, and CTA |
+
+**Recommended video length by objective:**
+- Awareness / traffic: 15-30 seconds
+- Conversion / purchase: 30-60 seconds
+- Videos over 60 seconds underperform as ads (save long-form for organic)
+
+### TikTok-Specific Guidelines
+
+**Creative:**
 - Native content outperforms polished ads
 - First 2 seconds determine if they watch
-- Use trending sounds and formats
+- Use trending sounds and formats when relevant
 - Text overlay is essential (most watch with sound off)
 - Vertical video only (9:16)
+
+**Ad text (100 chars):**
+- Treat as a hook, not a description
+- Categorize variations by type: hook-driven, problem-aware, proof-driven, fear-driven, offer-driven, social-proof
+- Generate 5-6 variations per angle across at least 3 types
+- Recommend top 5 for rotation with reasoning
+
+**Selling points (25 chars each):**
+- Must be outcome-driven and specific to the product
+- Avoid generic TikTok suggestions ("Limited-time offer", "Best seller", "Free returns") unless genuinely applicable
+- Good examples: "5 handbooks in 1 bundle", "Step-by-step, no fluff", "Zero experience needed", "20x ROI case study inside"
+- Keep to 3-4 max — more dilutes signal
+
+**CTA button selection:**
+- Match CTA to product type and purchase intent
+- "Shop Now" for direct purchase products (digital products, e-commerce)
+- "Learn More" for educational content or high-consideration products
+- "Contact Us" only when human interaction is the conversion path
+- "Sign Up" for free trials, waitlists, or account creation
+- Keep to 2-3 CTA variations for testing — 10 CTAs dilutes optimization signal
+
+**Promo code or offer:**
+- If you have a discount, add the promo code — TikTok highlights it in the ad unit
+- Reinforces discount claims made in selling points or ad text
+- Leave empty if no active promotion
 
 ---
 
@@ -205,9 +250,11 @@ Complete character limits, format requirements, and best practices for each ad p
 
 When creating for multiple platforms simultaneously, start with the most restrictive format:
 
-1. **Google Search headlines** (30 chars) — forces the tightest messaging
-2. **Expand to Meta headlines** (40 chars) — add a word or two
-3. **Expand to LinkedIn intro text** (150 chars) — add context and proof
-4. **Expand to Meta primary text** (125+ chars) — full hook and value prop
+1. **TikTok selling points** (25 chars) — forces the absolute tightest proof/benefit tags
+2. **Google Search headlines** (30 chars) — tightest messaging for search intent
+3. **Meta headlines** (40 chars) / **TikTok product name** (40 chars) — add a word or two
+4. **TikTok ad text** (100 chars) — strong hook, categorized by type
+5. **Meta primary text** (125 chars) — full hook and value prop
+6. **LinkedIn intro text** (150 chars) — add context and proof
 
 This cascading approach ensures your core message works everywhere, then gets enriched for platforms that allow more space.

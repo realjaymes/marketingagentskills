@@ -2,7 +2,7 @@
 name: ad-creative
 description: "When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad variations — for any paid advertising platform. Also use when the user mentions 'ad copy variations,' 'ad creative,' 'generate headlines,' 'RSA headlines,' 'bulk ad copy,' 'ad iterations,' 'creative testing,' or 'ad performance optimization.' This skill covers generating ad creative at scale, iterating based on performance data, and enforcing platform character limits. For campaign strategy and targeting, see paid-ads. For landing page copy, see copywriting."
 metadata:
-  version: 2.1.0
+  version: 2.3.0
 ---
 
 # Ad Creative
@@ -45,6 +45,20 @@ Gather this context (ask if not provided):
 - Compliance requirements? (Industry regulations, platform policies)
 - Any mandatory elements? (Brand name, trademark symbols, disclaimers)
 
+### 6. Creative Style (Image & Video Ad Creative Only)
+
+When generating image briefs or video scripts, ask if style is not specified:
+
+> "Do you prefer **aggressive/emotionally direct** style or **standard** style for this creative?"
+
+**Default: Aggressive/emotionally direct** — especially for Nigerian market, diaspora audiences, and MIA Academy products.
+
+The aggressive style uses competitor comparison hooks, ₦/$ financial tension framing, CAPS/bold/emoji for emphasis, a Pain-Vision-CTA arc, and a Two Choices close. It is not appropriate for every product or audience — ask if the target market or product context is unclear.
+
+For text-only ad copy (Google RSAs, headlines/descriptions), style is determined by audience tone and platform, not this setting.
+
+See [references/aggressive-creative-templates.md](references/aggressive-creative-templates.md) for complete templates and worked examples.
+
 ---
 
 ## How This Skill Works
@@ -62,6 +76,55 @@ The core loop:
 ```
 Pull performance data → Identify winning patterns → Generate new variations → Validate specs → Deliver
 ```
+
+---
+
+## Creative Type Selection (Required Step)
+
+**Before generating any creative, always present the full list of available creative types, make recommendations based on the user's context, and ask the user to choose which types they want.**
+
+Present this table to the user:
+
+| # | Creative Type | Best Funnel Stage | Best For |
+|---|--------------|-------------------|----------|
+| 1 | **Pain Point** | TOFU | Naming a specific frustration the audience feels |
+| 2 | **Cost of Inaction** | MOFU | Quantifying what inaction costs (dollars, time, opportunity) |
+| 3 | **Product Demo** | MOFU | Showing the product in action for solution-aware audiences |
+| 4 | **How-To / Explainer** | TOFU | Teaching something useful, building authority |
+| 5 | **Testimonial** | BOFU | Customer quotes and social proof for warm audiences |
+| 6 | **Case Study** | MOFU-BOFU | Before/after metrics from a specific customer |
+| 7 | **Founder's Story** | TOFU-MOFU | Origin story, personal credibility, brand building |
+| 8 | **Us vs Them** | MOFU | Direct comparison with competitors or the old way |
+| 9 | **Objection Handling** | BOFU | Addressing the top reason people do not buy |
+| 10 | **Thought Leader** | TOFU | Strong POV or industry insight that earns authority |
+| 11 | **Interview** | TOFU-MOFU | Expert or customer conversation, borrowed credibility |
+| 12 | **Lifestyle** | TOFU | Aspirational imagery showing the desired end state |
+| 13 | **Memes / Humor** | TOFU | Insider humor, cultural moments, shareability |
+| 14 | **Before/After** | TOFU-BOFU | Visual transformation showing a clear state change |
+| 15 | **Problem/Solution** | TOFU-MOFU | Pairing the felt problem with the fix in one ad |
+| 16 | **Incentive** | BOFU | Offer, discount, bonus, or free trial as the hero |
+| 17 | **Urgency** | BOFU | Time-bound deadline, countdown, scarcity |
+
+After presenting the table, add recommendations based on context:
+
+**Recommendation logic:**
+- If the user has not specified funnel stage, recommend a mix across TOFU, MOFU, and BOFU
+- If the user specified a funnel stage, recommend 3-4 types that match that stage
+- If the user is retargeting, recommend: Testimonial, Objection Handling, Incentive, Urgency, Before/After
+- If the user is launching a new product, recommend: Pain Point, Problem/Solution, Product Demo, Founder's Story
+- If the user is running seasonal/promotional campaigns, recommend: Incentive, Urgency, Before/After
+- If the user wants brand awareness, recommend: Thought Leader, Lifestyle, Memes/Humor, Founder's Story
+
+Example recommendation format:
+
+> **Based on your context, I recommend these creative types:**
+> - **Pain Point** — Your audience is problem-aware, and this grounds the campaign in their daily frustration
+> - **Problem/Solution** — Pairs well with Pain Point but adds the resolution in one ad
+> - **Testimonial** — You mentioned having strong customer results, this is where they shine
+>
+> **You can pick any combination from the full list above.** Which types do you want me to generate?
+
+**Do not skip this step.** Always present the options and wait for the user's selection before generating creative.
 
 ---
 
@@ -86,12 +149,16 @@ Pull performance data → Identify winning patterns → Generate new variations 
 
 ### Meta Ads (Facebook/Instagram)
 
-| Element | Limit | Notes |
-|---------|-------|-------|
-| Primary text | 125 chars visible (up to 2,200) | Front-load the hook |
-| Headline | 40 characters recommended | Below the image |
-| Description | 30 characters recommended | Below headline |
+| Element | Recommended Limit | Notes |
+|---------|-------------------|-------|
+| Primary text | 125 characters | Text above the creative. Front-load the hook. May be further truncated on some placements and devices. |
+| Headline | 40 characters | Bold text below the creative. Keep as short as possible to avoid truncation. |
+| Description | 25 characters | Text below the headline. May not display on all placements. |
 | URL display link | 40 characters | Optional |
+
+**Meta truncation warning:** These are Meta's recommended maximums. Text may be further truncated across various placements and devices. Keep text as short as possible within these limits.
+
+**5x5x5 production rule for Meta ads:** Every ad angle must produce **5 headlines, 5 primary texts, and 5 descriptions**. This gives 125 possible combinations per angle for testing. Headlines, primary texts, and descriptions within the same angle should be mix-and-matchable.
 
 ### LinkedIn Ads
 
@@ -103,10 +170,22 @@ Pull performance data → Identify winning patterns → Generate new variations 
 
 ### TikTok Ads
 
-| Element | Limit | Notes |
-|---------|-------|-------|
-| Ad text | 80 chars recommended (100 max) | Above the video |
-| Display name | 40 characters | Brand name |
+| Element | Limit | Required | Notes |
+|---------|-------|----------|-------|
+| Ad text | 100 characters | Yes | Hook text above the video. Must be a strong, scroll-stopping hook. |
+| Product name | 40 characters | Yes | Product title displayed in the ad unit |
+| Selling points | 25 chars each, 3-4 recommended | Optional | Short proof/benefit tags (e.g., "Step-by-step, no fluff", "Used by 5,000+ owners") |
+| CTA button | Platform preset | Yes | Shop Now, Learn More, Contact Us, Sign Up, Download, etc. |
+| Destination URL | No limit | Yes | Website, store page, WhatsApp link (wa.me/number), or landing page |
+| Promo code or offer | No strict limit | Optional | Highlighted by TikTok to boost engagement (e.g., "Extra 50% off") |
+
+**TikTok video specs:** Vertical 9:16 only. 15-30s for awareness, 30-60s for conversion. Videos over 60s underperform as ads.
+
+**TikTok ad text rules:** Categorize variations by type (hook-driven, problem-aware, proof-driven, fear-driven, offer-driven, social-proof). Generate 5-6 variations per angle across at least 3 types. Recommend top 5 for rotation with reasoning.
+
+**TikTok selling point rules:** Must be outcome-driven and product-specific. Avoid generic suggestions ("Limited-time offer", "Best seller") unless genuinely applicable. Keep to 3-4 max.
+
+**TikTok CTA rules:** Match CTA to purchase intent. "Shop Now" for direct purchase, "Learn More" for educational content, "Contact Us" only when human interaction is the path. Keep to 2-3 variations for testing.
 
 ### Twitter/X Ads
 
@@ -126,8 +205,9 @@ For structured production briefs that can be filled in by a creator and handed t
 
 - [Video Script Templates](references/video-script-templates.md) — Universal video script template + 13 creative type variants with fully worked examples. Covers: concept, hook, scene-by-scene body (timestamp, script/VO, visuals, b-roll, text overlays, sound), CTA, and production notes.
 - [Image Creative Brief Templates](references/image-creative-templates.md) — Universal single image brief + 13 creative type variants with fully worked examples. Covers: concept, copy, visual direction, composition, elements, and production notes.
+- [Aggressive Creative Templates](references/aggressive-creative-templates.md) — Aggressive/emotionally direct style image briefs and video scripts with worked MIA Academy examples. **Default for Nigerian market, diaspora audiences, and MIA Academy products.** Covers: competitor comparison hooks, ₦/$ financial tension, CAPS/bold/emoji emphasis, Pain-Vision-CTA arc, Two Choices close, and cultural context guidance.
 
-Both template files are structured for dual use: Claude can auto-fill them from product-marketing-context, and humans can fill them manually.
+All template files are structured for dual use: Claude can auto-fill them from product-marketing-context, and humans can fill them manually.
 
 ---
 
@@ -347,7 +427,9 @@ Descriptions should complement headlines, not repeat them. Use descriptions to:
 
 ### Standard Output
 
-Organize by angle, with character counts:
+Organize by angle, with character counts. For Meta ads, always produce the full 5x5x5 set per angle.
+
+**Google Ads output:**
 
 ```
 ## Angle: [Pain Point — Manual Reporting]
@@ -362,6 +444,94 @@ Organize by angle, with character counts:
 1. "Marketing teams save 10+ hours/week with automated reporting. Start free." (73)
 2. "Connect your data sources once. Get automated reports forever. No code required." (80)
 ```
+
+**Meta Ads output (5x5x5 per angle):**
+
+```
+## Angle: [Income Gap]
+
+### Headlines (40 char max)
+1. "They Earn in USD. You Don't." (28)
+2. "Your Classmate Signed a USD Contract" (36)
+3. "Same Degree. Different Salary." (30)
+4. "$3K/Month. Same Work. Different Proof." (39)
+5. "The Gap Is 12 Weeks. Not Talent." (33)
+
+### Primary Texts (125 char max)
+1. "Same degree. Same NYSC. They have 12 deliverables. You have a CV. That's the only difference. Fix it in 12 weeks." (114)
+2. "Your colleagues bill $3K/month in USD. Same work. The difference is proof, not talent. Build yours." (99)
+3. [...]
+4. [...]
+5. [...]
+
+### Descriptions (25 char max)
+1. "12 weeks. 12 deliverables." (OVER — trim)
+   -> "12 weeks. Real proof." (21)
+2. "Build your portfolio." (21)
+3. "Start earning in USD." (21)
+4. "No theory. Execution." (22)
+5. "Full refund guarantee." (23)
+```
+
+The 5x5x5 format produces 125 combinations per angle. Headlines, primary texts, and descriptions should work in any combination within the same angle.
+
+**TikTok Ads output (complete creative per angle):**
+
+```
+## Angle: [Angle Name]
+
+### Ad Texts (100 char max)
+
+**Hook-driven**
+1. "Your marketing has 5 connected parts. Most business owners have only fixed one." (79)
+2. "Fixing one part of your marketing is like buying one wheel for your car." (72)
+
+**Problem-aware**
+3. "Your ads work. Your page kills the sale. Your DMs are too slow. That's 3 leaks." (80)
+4. "Ads, page, automations, account recovery, community. Break one, the whole system leaks." (90)
+
+**Proof-driven**
+5. "N30M in sales from N1.5M ad spend. 20x ROI. Most businesses haven't fixed one gap." (84)
+
+**Offer-driven**
+6. "5 handbooks. Live workshop. WhatsApp community. N45,000 before the price goes up." (83)
+
+### Recommended Top 5 for Rotation
+
+| Slot | # | Chars | Type | Why |
+|------|---|-------|------|-----|
+| 1 | #1 | 79 | Hook | Establishes the framework, matches video hook |
+| 2 | #3 | 80 | Problem | Concrete pain stack the audience recognizes |
+| 3 | #2 | 72 | Hook | Simple analogy, memorable and shareable |
+| 4 | #4 | 90 | Problem | Lists all parts, works as summary for scanners |
+| 5 | #5 | 84 | Proof | Hard numbers create credibility |
+
+### Product Name (40 char max)
+`Online Marketing Bundle for Business Owners` (40) <- AT LIMIT
+
+### Selling Points (25 char max each, pick 3-4)
+- `5 handbooks in 1 bundle` (25)
+- `Live workshop included` (23)
+- `Step-by-step, no fluff` (24)
+- `Used by 5,000+ owners` (23)
+
+### CTA Button
+Shop Now
+> Rationale: Digital product with direct purchase intent. "Learn More" if the video is educational and the audience needs more context before buying.
+
+### Destination URL
+[Selar store page / website / landing page URL]
+
+### Promo Code or Offer (optional)
+55% off — N45,000 instead of full price. Price increases every month.
+```
+
+**TikTok output rules:**
+- **Ad texts:** Generate 5-6 variations per angle, categorized by type (hook-driven, problem-aware, proof-driven, fear-driven, offer-driven, social-proof). Always show character count in parentheses. Flag any text over 100 characters and provide a trimmed alternative.
+- **Recommended rotation:** Always recommend top 5 with a table showing slot, text number, character count, type, and reasoning.
+- **Selling points:** Must be outcome-driven and specific to the product. Avoid generic TikTok suggestions ("Limited-time offer", "Best seller", "Free returns") unless genuinely applicable. Show character count. Flag anything over 25 characters.
+- **CTA button:** Include rationale for the CTA selection based on product type and purchase intent.
+- **Product name:** Show character count. Flag if at or over 40 characters.
 
 ### Bulk CSV Output
 

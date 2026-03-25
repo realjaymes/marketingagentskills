@@ -6,14 +6,88 @@ All examples use a hypothetical B2B SaaS product: **DataFlow** (automated report
 
 ---
 
+## On-Image Copy: The #1 Performance Differentiator
+
+The on-image copy (headline, supporting text, CTA text) is the single biggest driver of ad performance for image ads. The platform copy (primary text, headline, description in the ads manager) is secondary. If the on-image copy does not stop the scroll and create resonance with a cold audience, the ad fails regardless of how good the platform copy is.
+
+### Why On-Image Copy Matters More
+
+- **The image is all that exists in the feed.** Users see the image first. They may never read the platform copy. The on-image text IS your ad.
+- **Cold audiences have no context.** They don't know who you are. The on-image copy must earn attention in under 2 seconds through relevance, specificity, and emotional resonance.
+- **The algorithm selects for engagement.** Higher stop rates = more delivery. On-image copy that resonates gets shown to more people. Bland copy gets buried.
+
+### On-Image Copy Quality Standards
+
+Every on-image headline must pass this test: **Would the target audience screenshot this and share it on Twitter/X?**
+
+If the answer is no, the copy is too generic. Rewrite it.
+
+**Strong on-image copy:**
+- Sounds like something the audience says to themselves or to friends, not something a brand says to them
+- Uses the audience's own language, slang, and cultural references
+- Names a specific, felt pain or desire, not a category or feature
+- Creates an emotional reaction: recognition ("that's me"), curiosity ("wait, what?"), tension ("I need to know more"), or aspiration ("I want that")
+- Is specific enough that a person outside the target audience would NOT relate to it (this means it's well-targeted)
+
+**Weak on-image copy (avoid):**
+- Generic benefit statements that could apply to any product ("Save time and grow your career")
+- Feature descriptions dressed up as headlines ("A complete system for learning X")
+- Corporate-sounding language that no human would say out loud ("Unlock your potential with our framework")
+- Informational statements that explain rather than provoke ("This course covers 9 disciplines")
+- Copy that describes the product instead of describing the audience's reality
+
+### Cultural Resonance for Target Markets
+
+For any audience, the on-image copy must reflect how that audience actually talks about their problems on their native platforms (Twitter/X, LinkedIn, Facebook Groups, Reddit, TikTok).
+
+**Checklist before finalizing on-image copy:**
+1. Does this sound like a post from the audience's feed, or like a brand talking at them?
+2. Does this reference a specific situation, number, or reality the audience lives daily?
+3. Would this copy feel out of place if posted in a group where the audience hangs out?
+4. Is there an emotional charge (frustration, aspiration, recognition, tension) in the first 8 words?
+5. Is the language register correct for the market? (Formal vs. casual, local slang vs. standard English, cultural references)
+
+**Example — weak vs. strong for Nigerian marketers:**
+- Weak: "Learn product marketing and advance your career"
+- Strong: "Your oga thinks you're just a social media person. You know you're a strategist."
+- Weak: "Master positioning, GTM, and sales enablement"
+- Strong: "₦350K/month doing 'a bit of everything.' You're worth more than that."
+
+The on-image copy should feel like an intercepted thought from the audience's own mind, not a brand message.
+
+---
+
+## Dimensions: Dual Format for Meta
+
+When creating Meta (Facebook/Instagram) image ads, always produce creative in both dimensions:
+
+| Format | Dimensions | Aspect Ratio | Placements |
+|--------|-----------|-------------|------------|
+| Square | 1080x1080 | 1:1 | Feed (Facebook & Instagram) |
+| Vertical | 1080x1920 | 9:16 | Stories, Reels (Facebook & Instagram) |
+
+**Why both:** Meta's algorithm selects the best placement for each impression. Providing both 1:1 and 9:16 versions allows the algorithm to serve the ad across feed, Stories, and Reels, maximizing reach and allowing Meta to optimize delivery. If you only provide 1:1, you lose Stories and Reels placements. If you only provide 9:16, feed performance suffers.
+
+**Design considerations for dual format:**
+- Design the 1:1 version first (it's more constrained), then adapt to 9:16
+- The 9:16 version has more vertical space — use it for additional context, not empty space
+- Ensure the headline is visible and impactful in both formats
+- CTA placement shifts: bottom-third for 1:1, bottom-quarter for 9:16 (above the swipe-up zone)
+- Logo placement may shift between formats
+
+In the creative brief, always set Dimensions to: **1080x1080 (1:1) & 1080x1920 (9:16)**
+
+---
+
 ## How to Use These Templates
 
 1. **Pick the creative type** that matches your funnel stage and strategic goal
 2. **Copy the blank template** (Section 1) or start from the worked example for your chosen type
 3. **Fill in the brief and copy fields** (strategic context and all text that appears on the image)
-4. **Complete the visual direction** (what the designer needs to produce)
-5. **Add production notes** (constraints, references, variations)
-6. **Share the completed brief** with your graphic designer
+4. **Fill in the platform copy fields** (text that goes into the ad platform's UI, not on the image itself)
+5. **Complete the visual direction** (what the designer needs to produce)
+6. **Add production notes** (constraints, references, variations)
+7. **Share the completed brief** with your graphic designer (on-image copy + visual direction) and your media buyer (platform copy)
 
 ---
 
@@ -25,14 +99,18 @@ All examples use a hypothetical B2B SaaS product: **DataFlow** (automated report
 | **Funnel stage** | Creator | TOFU (cold), MOFU (warm), or BOFU (hot) |
 | **Platform** | Creator | Meta, LinkedIn, TikTok, Google Display, X, etc. |
 | **Placement** | Creator | Feed, Stories, Display, Card, etc. |
-| **Dimensions** | Creator/Designer | Pixel dimensions and aspect ratio |
+| **Dimensions** | Creator/Designer | Pixel dimensions and aspect ratio. For Meta: always 1080x1080 (1:1) & 1080x1920 (9:16) |
 | **Angle** | Creator | The single reason someone would stop scrolling |
 | **Core message** | Creator | One sentence summarizing what this ad communicates |
 | **Emotional tone** | Creator | The feeling the image should evoke (urgent, calm, aspirational, provocative) |
 | **Audience context** | Creator | Target market, audience pain points, cultural trends, local language/slang, and platform conversations that informed this creative. From web research, social media, forums, or social listening. |
 | **Headline** | Creator | Primary text on the image (largest text element) |
 | **Supporting text** | Creator | Secondary text that adds context or proof |
-| **CTA text** | Creator | Button or action text |
+| **CTA text** | Creator | Button or action text on the image |
+| **Platform primary text** | Creator | Text above the image in the ad platform (Meta: 125 chars visible, up to 2,200; LinkedIn: 150 chars recommended, 600 max) |
+| **Platform headline** | Creator | Text below the image in the ad platform (Meta: 40 chars recommended; LinkedIn: 70 chars recommended) |
+| **Platform description** | Creator | Text below the headline in the ad platform (Meta: 30 chars recommended; LinkedIn: 100 chars recommended) |
+| **CTA button** | Creator | The platform CTA button label (e.g., Learn More, Sign Up, Download, Get Offer) |
 | **Primary visual** | Creator/Designer | What dominates the image (product UI, person, data viz, text) |
 | **Composition** | Creator/Designer | Layout description (centered, split, asymmetric, text-heavy) |
 | **Color palette / mood** | Creator/Designer | Colors, contrast, light/dark, energy level |
@@ -61,7 +139,7 @@ Copy this template and fill in for any creative type.
 - **Funnel stage:** TOFU / MOFU / BOFU
 - **Platform:**
 - **Placement:**
-- **Dimensions:**
+- **Dimensions:** 1080x1080 (1:1) & 1080x1920 (9:16)
 
 ### Concept
 - **Angle:**
@@ -69,10 +147,16 @@ Copy this template and fill in for any creative type.
 - **Emotional tone:**
 - **Audience context:**
 
-### Copy
+### Copy (On-Image)
 - **Headline:**
 - **Supporting text:**
 - **CTA text:**
+
+### Copy (Ad Platform)
+- **Primary text:**
+- **Headline:**
+- **Description:**
+- **CTA button:**
 
 ### Visual Direction
 - **Primary visual:**
@@ -796,6 +880,216 @@ launched (no time)       launched (time freed)
 
 ---
 
+### 14. Before/After Ad
+
+**When to use:** Any funnel stage. Showing transformation visually. Products with clear state changes (messy → clean, manual → automated, confused → confident, slow → fast).
+**Default visual approach:** Split layout — left/top shows the "before" state, right/bottom shows the "after" state. The contrast does the selling.
+**Recommended headline formula:** "Before [product]: [pain state]. After [product]: [desired state]." or simply label each side and let the visual contrast speak.
+**Typical composition:** Two-panel split (vertical or horizontal). Before side is visually chaotic, dull, or cluttered. After side is clean, bright, and resolved. Dividing line or arrow between them.
+
+#### Worked Example: Before/After Image Ad
+
+```
+## Single Image Creative Brief
+
+### Creative Brief
+- **Creative type:** Before/After
+- **Funnel stage:** MOFU
+- **Platform:** Meta (Facebook + Instagram)
+- **Placement:** Feed
+- **Dimensions:** 1080x1080 (1:1) & 1080x1920 (9:16)
+
+### Concept
+- **Angle:** The visual chaos of manual reporting vs. the calm of automated dashboards
+- **Core message:** Your reporting workflow does not have to look like this. It can look like this instead.
+- **Emotional tone:** Relief, aspiration, recognition
+- **Audience context:** Marketing ops managers on LinkedIn share screenshots of messy spreadsheets as "Monday mood." Reddit r/analytics has recurring posts showing cluttered dashboards with captions like "this is what I inherited." The visual mess is a shared experience.
+
+### Copy
+- **Headline (before side):** "Your Monday morning."
+- **Headline (after side):** "Your Monday morning with DataFlow."
+- **Supporting text:** "Same data. Zero spreadsheets."
+- **CTA text:** "See the difference →"
+
+### Visual Direction
+- **Primary visual:** Side-by-side split. Left: chaotic spreadsheet with 47 tabs, red cells, broken formulas visible. Right: clean DataFlow dashboard, organized metrics, green indicators.
+- **Composition:** Vertical split down the middle. "BEFORE" label top-left, "AFTER" label top-right. Supporting text and CTA below the split.
+- **Color palette / mood:** Before side: desaturated, slightly gray/yellow tint (feels old, stale). After side: full color, bright, DataFlow blue (#2563EB) accents. The color shift IS the message.
+- **Typography direction:** Bold sans-serif labels for BEFORE/AFTER. Clean sans-serif for supporting text. The labels should be large enough to read instantly.
+
+### Elements
+- **Background:** White border framing both panels. Thin dividing line or lightning bolt separator in the center.
+- **Foreground subject:** Left: messy spreadsheet screenshot (real or mocked). Right: clean product UI screenshot.
+- **Text placement:** "BEFORE" / "AFTER" labels at the top of each panel. Supporting text centered below the split. CTA bottom center.
+- **Logo placement:** Bottom-right corner, small.
+- **Overlays / graphics:** Optional: red X marks or scribbles on the before side. Green checkmarks on the after side. Subtle, not overdone.
+
+### Production Notes
+- **Brand constraints:** The "before" screenshot should look realistic, not exaggerated to the point of being unbelievable. The "after" side should show actual product UI or a realistic mock.
+- **Reference images:** Monday.com before/after ads, Notion workspace transformation posts, fitness transformation ad layouts (adapted for SaaS).
+- **What to avoid:** Making the before side so ugly it looks fake. Using stock photos of people instead of actual workflow screenshots. Adding too much text that competes with the visual contrast.
+- **Variations needed:** 9:16 version (stack vertically: before on top, after on bottom). Horizontal split version for LinkedIn (1200x627).
+```
+
+---
+
+### 15. Problem/Solution Ad
+
+**When to use:** Cold to warm audiences. Products that solve a specific, well-known pain point. When you want to show both the pain and the fix in one ad unit.
+**Default visual approach:** Two-part layout. Top/left shows the problem (visually tense, dark, cluttered). Bottom/right shows the solution (clean, bright, resolved). Unlike Before/After, the emphasis is on the *felt experience* of the problem, not just a state change.
+**Recommended headline formula:** "Tired of [problem]? [Product] [solves it]." or frame the problem as a question, solution as a statement.
+**Typical composition:** Split frame or sequential layout. Problem section takes 40-50% of the image. Solution section takes 50-60%. The solution side should feel like a relief after the tension of the problem side.
+
+#### Worked Example: Problem/Solution Image Ad
+
+```
+## Single Image Creative Brief
+
+### Creative Brief
+- **Creative type:** Problem/Solution
+- **Funnel stage:** TOFU
+- **Platform:** Meta (Facebook + Instagram)
+- **Placement:** Feed
+- **Dimensions:** 1080x1080 (1:1) & 1080x1920 (9:16)
+
+### Concept
+- **Angle:** The emotional weight of report-building vs. the relief of automation
+- **Core message:** The problem is not the data. The problem is the 12 hours you spend assembling it every week. The solution exists.
+- **Emotional tone:** Tension → relief. Frustration → clarity.
+- **Audience context:** Twitter threads from marketing managers describe "dreading Monday morning" because of reporting. Facebook groups for digital marketers have posts asking "how do you guys handle weekly reporting without losing your mind?" The emotional framing resonates more than the rational one.
+
+### Copy
+- **Headline (problem):** "12 hours every week. Copy. Paste. Format. Repeat."
+- **Headline (solution):** "Or connect once and never build a report again."
+- **Supporting text:** "DataFlow automates your reporting pipeline."
+- **CTA text:** "See how it works →"
+
+### Visual Direction
+- **Primary visual:** Top half: dark, cluttered workspace. Bottom half: clean, minimal workspace with DataFlow on screen.
+- **Composition:** Horizontal split. Top: problem scene (40%). Bottom: solution scene (60%). The bottom section is intentionally larger to signal resolution.
+- **Color palette / mood:** Problem: warm orange/red tint, dim lighting, visual noise. Solution: cool blue (#2563EB), bright, clean. The color temperature shift creates the emotional arc.
+- **Typography direction:** Problem headline in a slightly rough or compressed font. Solution headline in clean, confident sans-serif. The typography reflects the mood of each section.
+
+### Elements
+- **Background:** Problem: dark desk surface with scattered papers, multiple monitors. Solution: clean white desk, single monitor showing DataFlow.
+- **Foreground subject:** Problem: close-up of hands surrounded by sticky notes, printouts, and a half-empty coffee cup. Solution: clean screen, person leaning back, hands behind head.
+- **Text placement:** Problem headline overlaid on the top section (white text on dark background). Solution headline overlaid on the bottom section (dark text on light background). CTA at the very bottom.
+- **Logo placement:** Bottom-right of the solution section.
+- **Overlays / graphics:** Thin dividing line between sections. Optional: downward arrow from problem to solution.
+
+### Production Notes
+- **Brand constraints:** The problem section should feel authentic, not cartoonish. Real desk clutter, real screen mess. The solution section should feature recognizable product UI.
+- **Reference images:** Slack "before Slack" campaign, Asana workload ads, any ad that creates a visual tension between two states.
+- **What to avoid:** Using the same visual treatment for both sections (the contrast is the point). Making the problem section too text-heavy. Adding too many product features in the solution section.
+- **Variations needed:** 9:16 version (problem top, solution bottom with more vertical space). Single-panel version where the problem is text-only and the solution is a product screenshot.
+```
+
+---
+
+### 16. Incentive Ad
+
+**When to use:** BOFU audiences, retargeting, cart abandonment, trial conversion, seasonal campaigns. When the offer itself is the primary motivator.
+**Default visual approach:** The offer/incentive is the hero element. Large discount percentage, bonus callout, or deal terms dominate the image. Everything else supports the offer.
+**Recommended headline formula:** "[X]% off [product]." or "Get [bonus] free when you [action]." or "Free [trial/tool/resource] — no credit card required."
+**Typical composition:** Offer/discount number takes 40-50% of the visual space. Brief context below. CTA at the bottom. Clean, high-contrast design that makes the offer impossible to miss.
+
+#### Worked Example: Incentive Image Ad
+
+```
+## Single Image Creative Brief
+
+### Creative Brief
+- **Creative type:** Incentive
+- **Funnel stage:** BOFU
+- **Platform:** Meta (Facebook + Instagram)
+- **Placement:** Feed + Stories
+- **Dimensions:** 1080x1080 (1:1) & 1080x1920 (9:16)
+
+### Concept
+- **Angle:** Extended free trial as a risk-removal incentive for hesitant prospects
+- **Core message:** If 14 days was not enough, take 30. No credit card. No catch.
+- **Emotional tone:** Generous, confident, low-pressure
+- **Audience context:** G2 and Capterra reviews for competitors show "free trial too short to evaluate properly" as a recurring complaint. Reddit r/SaaS discussions mention "trial anxiety" — users sign up but never activate because they feel rushed. Extending the trial addresses a real objection.
+
+### Copy
+- **Headline:** "30 Days Free"
+- **Supporting text:** "Most tools give you 14. We give you 30. No credit card. Cancel anytime."
+- **CTA text:** "Start your free 30-day trial →"
+
+### Visual Direction
+- **Primary visual:** "30 Days Free" in large, bold typography dominates the image. This is the hero.
+- **Composition:** Offer headline centered, taking up 50% of image height. Supporting text below in smaller font. CTA as a pill button at the bottom.
+- **Color palette / mood:** DataFlow blue (#2563EB) background. White text for the offer. High contrast, confident, clean.
+- **Typography direction:** Extra bold sans-serif for "30 Days Free" (weight 900, large). Regular weight for supporting text. The number "30" should be visually dominant.
+
+### Elements
+- **Background:** Solid brand blue (#2563EB). No images, no distractions. The offer IS the visual.
+- **Foreground subject:** Typography only. The text is the design.
+- **Text placement:** "30 Days Free" centered, upper 60%. Supporting text centered below. CTA pill button bottom center.
+- **Logo placement:** Top-left corner, small, white.
+- **Overlays / graphics:** Optional: subtle sparkle or glow effect around "30". Optional: small "No credit card" badge in the corner.
+
+### Production Notes
+- **Brand constraints:** Keep it clean and confident. The offer should feel generous, not desperate. No "HURRY!" or "ACT NOW!" language.
+- **Reference images:** Notion's "Free for personal use" ads, Linear's clean promotional banners, Figma's free tier promotions.
+- **What to avoid:** Cluttering the image with features or screenshots. Making it look like a clearance sale. Using red/yellow urgency colors (save those for urgency ads).
+- **Variations needed:** Version with "50% off annual" for paid conversion campaigns. Version with "Free reporting template" as a lead magnet incentive. 9:16 Stories version.
+```
+
+---
+
+### 17. Urgency Ad
+
+**When to use:** BOFU, retargeting, limited-time offers, seasonal campaigns, trial expiration, cart abandonment, launch windows. When there is a genuine, time-bound reason to act now.
+**Default visual approach:** Countdown, deadline, or scarcity element is the visual anchor. Design creates tension through color (reds, oranges, dark backgrounds) and time-related visual cues.
+**Recommended headline formula:** "[X] hours left." or "Offer ends [date]." or "Only [X] spots remaining." or "[Deadline]: Last chance to [action]."
+**Typical composition:** Deadline/countdown is the dominant element. Brief context for what they are missing. CTA with action verb. The design should feel time-pressured without being spammy.
+
+#### Worked Example: Urgency Image Ad
+
+```
+## Single Image Creative Brief
+
+### Creative Brief
+- **Creative type:** Urgency
+- **Funnel stage:** BOFU
+- **Platform:** Meta (Facebook + Instagram)
+- **Placement:** Feed + Stories
+- **Dimensions:** 1080x1080 (1:1) & 1080x1920 (9:16)
+
+### Concept
+- **Angle:** Annual pricing discount closing in 48 hours for retargeted free trial users
+- **Core message:** The 40% discount you saw last week expires Friday. This is not a tactic. It is a deadline.
+- **Emotional tone:** Controlled urgency. Factual, not frantic. The deadline creates the pressure, not the copy.
+- **Audience context:** Retargeting pool of users who visited the pricing page or started a trial in the last 30 days. These users are product-aware and price-sensitive. SaaS pricing page abandonment is 60-70%. A real deadline with a real discount moves the undecided segment.
+
+### Copy
+- **Headline:** "48 Hours Left"
+- **Supporting text:** "40% off annual plans ends Friday at midnight. No extensions."
+- **CTA text:** "Lock in 40% off →"
+
+### Visual Direction
+- **Primary visual:** "48 Hours Left" in large, bold typography. A subtle countdown visual element (clock icon, timer bar, or ticking animation for video variant).
+- **Composition:** Headline centered, upper 50%. Supporting text with the deadline date below. CTA pill button at bottom. Clock or timer icon beside or above the headline.
+- **Color palette / mood:** Dark background (#0d0d0d or deep navy). Red/orange accent (#FF4136 or #FF6B35) for the headline and countdown. White for supporting text. The dark background with warm accents creates visual tension.
+- **Typography direction:** Extra bold sans-serif for the countdown (weight 900). "48" should be the largest element. Regular weight for supporting text.
+
+### Elements
+- **Background:** Dark, nearly black (#0d0d0d). Subtle gradient or vignette to add depth.
+- **Foreground subject:** Typography and countdown element. No product screenshots (the urgency is the message, not the product).
+- **Text placement:** "48 Hours Left" centered, large. "40% off annual plans ends Friday at midnight" below in white. "No extensions." on its own line (adds finality). CTA at bottom.
+- **Logo placement:** Top-left, small, white or light gray.
+- **Overlays / graphics:** Optional: thin progress bar at the top showing time running out (mostly depleted). Optional: small clock icon. Optional: "ENDS FRIDAY" badge in the corner.
+
+### Production Notes
+- **Brand constraints:** Urgency must be genuine. Do not use countdown language if there is no real deadline. Do not say "limited spots" unless spots are actually limited. False urgency destroys trust and violates platform policies.
+- **Reference images:** Black Friday countdown ads (but classier), airline "last seats" notifications, SaaS end-of-year deal promotions.
+- **What to avoid:** ALL CAPS SCREAMING. Excessive exclamation marks. Flashing or garish colors. "HURRY!!!" or "DON'T MISS OUT!!!" language. If the ad looks like spam, it will perform like spam.
+- **Variations needed:** Version with "24 Hours Left" for day-before. Version with "Last Day" for final push. Version with "Trial expires in 3 days" for trial conversion. 9:16 Stories version with swipe-up CTA.
+```
+
+---
+
 ## Quick Reference: Creative Type Selection
 
 | Creative Type | Best Funnel Stage | Best Platforms | Primary Visual |
@@ -813,6 +1107,10 @@ launched (no time)       launched (time freed)
 | Interview | TOFU-MOFU | LinkedIn, YouTube | Guest photo + quote card |
 | Lifestyle | TOFU | TikTok, Meta (Instagram) | Aspirational photography |
 | Memes / Humor | TOFU | TikTok, X, Reddit | Meme template format |
+| Before/After | TOFU-BOFU | Meta, LinkedIn, TikTok | Split before/after comparison |
+| Problem/Solution | TOFU-MOFU | Meta, LinkedIn, X | Two-part problem → solution layout |
+| Incentive | BOFU | Meta retargeting, Display, Email | Offer/discount as hero element |
+| Urgency | BOFU | Meta retargeting, Display, Email | Countdown/deadline as visual anchor |
 
 ---
 
