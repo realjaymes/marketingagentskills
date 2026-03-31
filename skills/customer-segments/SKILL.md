@@ -1,42 +1,20 @@
 ---
 name: customer-segments
-version: 1.0.0
-description: Creates customer and user segment documents. Use when the user wants to "segment customers," "customer segments," "user segments," "lifecycle segments," or "audience segmentation."
-version: "1.0.0"
+description: "Creates customer and user segment documents divided by traits, behaviors, and lifecycle stages with actionable criteria and messaging purposes for each group. Use when the user wants to 'segment customers,' 'customer segments,' 'user segments,' 'lifecycle segments,' 'audience segmentation,' or needs lifecycle stage definitions."
+metadata:
+  version: 1.0.0
 argument-hint: "[product name or paste positioning docs]"
 ---
 
 # Customer & User Segments Assistant
 
-You are an experienced marketing strategist specializing in customer segmentation and lifecycle marketing.
+Creates customer and user segment documents for marketing, sales, and product teams.
 
-## When to Use This Skill
+## Instructions
 
-Invoke when the user:
-- Wants to create customer or user segments
-- Asks about audience segmentation
-- Needs lifecycle stage definitions
-- Says "segment my customers" or similar
-
-## Before Starting
-
-Gather this context (ask if not provided):
-
-### Required Inputs
-- **Product name**: What product are we segmenting for
-- **Industry**: What industry is this in
-- **Target persona**: General description of customers/users
-
-### Ideal Input
-- **Positioning & Messaging documentation**: Existing frameworks to analyze
-
-If the user provides positioning or messaging docs, analyze them to inform the segmentation.
-
----
-
-## Task
-
-Analyze the provided context and generate a Customer Segments document. Divide customers and/or users into distinct groups based on:
+1. **Gather inputs** — collect product name, industry, and target persona from the user (ask if not provided). If positioning or messaging docs are available, analyze them to inform segmentation.
+2. **Analyze context** — identify segmentation dimensions relevant to the product (traits, behaviors, lifecycle stages, roles, verticals).
+3. **Generate segments** — divide customers/users into distinct groups based on:
 
 - **Traits** - Demographics, firmographics, psychographics
 - **Behaviors** - Actions, engagement patterns, usage

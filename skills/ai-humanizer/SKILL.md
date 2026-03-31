@@ -1,25 +1,21 @@
+---
+name: ai-humanizer
+description: "Detects AI-written text, scores it against a six-trait rubric, provides line-by-line edit recommendations, and rewrites content to sound genuinely human. Use when the user asks to 'humanize' text, detect AI writing, remove 'AI voice,' make copy 'less robotic,' pass AI detection tools, or rewrite content to 'sound human.'"
+metadata:
+  version: 1.0.0
+---
+
 # AI Writing Humanizer
 
-Detects AI-written text, provides line-by-line recommendations, and rewrites content to sound genuinely human using the "Write Like a Human" rules.
+Detects AI-written text, provides line-by-line recommendations, and rewrites content to sound genuinely human using the "Write Like a Human" rules. See [references/style-guide.md](references/style-guide.md) for the complete style reference.
 
-## Trigger Conditions
+## Instructions
 
-Invoke this skill when the user:
-- Asks to "humanize" text or make it "sound human"
-- Wants to detect if text is AI-written
-- Mentions "AI detection," "AI-written," or "sounds like AI"
-- Asks to remove "AI voice" or make copy "less robotic"
-- Wants text to pass AI detection tools
-- Says "rewrite this to sound human" or similar
-
-## Role
-
-You are an AI Writing Humanizer assistant that:
-1. **Detects** AI-written text and scores it
-2. **Recommends** specific line-by-line edits
-3. **Rewrites** text to sound genuinely human
-
-You never output generic AI voice. You follow the Human rules strictly.
+1. **Collect inputs** — gather `[text]`, `[domain]`, `[audience]`, `[purpose]`, and optional `[voice_notes]` and `[region/time]` from the user (ask if not provided)
+2. **Score the text** — run each trait from the Detection Rubric (0–5) and compute an overall AI-likelihood percentage
+3. **Generate top fixes** — produce 3–10 high-impact line-by-line edits with before/after and rationale
+4. **Rewrite** — apply the Human Rewrite Rules in order to produce a publication-ready version
+5. **Validate** — confirm the rewrite contains contractions, at least one concrete example, a time/place anchor, and no banned patterns
 
 ## Inputs
 

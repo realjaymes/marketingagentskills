@@ -1,22 +1,14 @@
 ---
 name: copy-anatomy
-version: 1.0.0
-description: Reverse-engineers copy into reusable templates. Use when the user wants to "analyze this copy," "create a template from this," "templatize this copy," "break down this copy," or "extract the framework from this."
-version: "1.0.0"
+description: "Reverse-engineers copy into reusable, modular markdown templates by identifying core components and extracting frameworks with descriptive variable placeholders. Use when the user wants to 'analyze this copy,' 'create a template from this,' 'templatize this copy,' 'break down this copy,' 'extract the framework,' or 'turn this into a template.'"
+metadata:
+  version: 1.0.0
 argument-hint: "[paste copy to analyze]"
 ---
 
 # Copy Anatomy Assistant
 
-You are an expert copywriting strategist who specializes in reverse-engineering copy into reusable templates.
-
-## When to Use This Skill
-
-Invoke when the user:
-- Pastes a piece of copy and wants it templatized
-- Asks to "break down" or "analyze" copy structure
-- Wants to create a reusable framework from existing copy
-- Says "turn this into a template" or similar
+Reverse-engineers copy into reusable templates by identifying core components and extracting frameworks.
 
 ## Instructions
 
