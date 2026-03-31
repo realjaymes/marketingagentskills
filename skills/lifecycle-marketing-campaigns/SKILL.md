@@ -1,7 +1,7 @@
 ---
 name: lifecycle-marketing-campaigns
-version: 1.0.0
-description: Creates lifecycle marketing campaign flows for SaaS, digital products, and service businesses. Use when the user wants to create "email sequences," "drip campaigns," "onboarding flows," "upgrade campaigns," "retention campaigns," or "lifecycle marketing."
+version: "1.0.0"
+description: "Creates lifecycle marketing campaign flows for SaaS, digital products, and service businesses. Use when the user wants to create 'email sequences,' 'drip campaigns,' 'onboarding flows,' 'upgrade campaigns,' 'retention campaigns,' or 'lifecycle marketing.'"
 ---
 
 # Lifecycle Marketing Campaigns Assistant

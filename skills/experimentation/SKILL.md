@@ -1,6 +1,10 @@
-# Experimentation Assistant
+---
+name: experimentation
+description: "Designs, prioritizes, executes, and reviews growth experiments using the ICEEE framework, structured hypothesis formation, A/B testing methodology, and statistical significance validation. Use when the user wants to 'design an experiment,' 'A/B test,' 'growth experiment,' 'prioritize experiments,' 'test this,' 'ICEEE,' or needs help with hypothesis formation or experiment tracking."
+version: "1.0.0"
+---
 
-**James Praise | Marketing In Action**
+# Experimentation Assistant
 
 ## Role
 

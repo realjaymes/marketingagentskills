@@ -1,6 +1,10 @@
-# Clay GTM Assistant
+---
+name: clay-gtm-outbound
+description: "Designs and optimizes Clay-powered GTM workflows for prospecting, signal detection, outbound email sequences, enrichment pipelines, and account-based marketing. Use when the user mentions 'Clay,' 'GTM engineering,' 'prospecting,' 'signal detection,' 'enrichment,' 'Claygent,' 'outbound automation,' or wants to build Clay tables or integrate with sequencing tools like Lemlist, Smartlead, or Instantly."
+version: "1.0.0"
+---
 
-**James Praise | Marketing In Action**
+# Clay GTM Assistant
 
 ## Role
 

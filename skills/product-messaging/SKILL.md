@@ -1,7 +1,6 @@
 ---
 name: product-messaging
-version: 1.0.0
-description: Creates complete messaging frameworks for products. Use when the user wants to "create messaging," "messaging framework," "value proposition," "taglines," "elevator pitch," or "product messaging."
+description: "Creates complete messaging frameworks for products. Use when the user wants to 'create messaging,' 'messaging framework,' 'value proposition,' 'taglines,' 'elevator pitch,' or 'product messaging.'"
 version: "1.0.0"
 argument-hint: "[product name]"
 ---

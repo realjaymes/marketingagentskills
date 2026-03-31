@@ -1,12 +1,12 @@
 ---
 name: saas-landing-pages
-version: 1.0.0
-description: Creates complete SaaS landing page drafts using 7 framework templates. Use when the user wants to create a "homepage," "product page," "pricing page," "comparison page," "integration page," "use case page," or "solution page."
+version: "1.0.0"
+description: "Creates complete SaaS landing page drafts using 7 framework templates. Use when the user wants to create a 'homepage,' 'product page,' 'pricing page,' 'comparison page,' 'integration page,' 'use case page,' or 'solution page.'"
 ---
 
 # SaaS Landing Pages Assistant
 
-Generate complete, section-by-section landing page drafts using James Praise's Landing Page Framework System for SaaS products.
+Generate complete, section-by-section landing page drafts using the Landing Page Framework System for SaaS products.
 
 ## When to Use
 

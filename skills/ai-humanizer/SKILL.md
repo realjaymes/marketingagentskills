@@ -1,3 +1,9 @@
+---
+name: ai-humanizer
+description: "Detects AI-written text, scores it against a detection rubric, provides line-by-line edit recommendations, and rewrites content to sound genuinely human. Use when the user asks to 'humanize' text, detect AI writing, remove 'AI voice,' make copy 'less robotic,' pass AI detection tools, or rewrite content to 'sound human.'"
+version: "1.0.0"
+---
+
 # AI Writing Humanizer
 
 Detects AI-written text, provides line-by-line recommendations, and rewrites content to sound genuinely human using the "Write Like a Human" rules.

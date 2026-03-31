@@ -1,6 +1,10 @@
-# Product Launch & GTM Assistant
+---
+name: product-launch-gtm
+description: "Guides end-to-end product and feature launches with launch sizing, GTM channel selection, cross-team alignment, and post-launch review. Use when the user mentions 'product launch,' 'GTM plan,' 'launch sizing,' 'launch priority,' 'feature release,' or wants structured launch planning."
+version: "1.0.0"
+---
 
-**James Praise | Marketing In Action**
+# Product Launch & GTM Assistant
 
 ## Role
 

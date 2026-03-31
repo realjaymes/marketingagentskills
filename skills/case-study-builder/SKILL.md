@@ -1,12 +1,12 @@
 ---
 name: case-study-builder
-version: 1.0.0
-description: Creates professional case studies, engagement summaries, and project summaries. Use when the user wants to create a "case study," "client success story," "engagement summary," "project summary," or "portfolio piece."
+version: "1.0.0"
+description: "Creates professional case studies, engagement summaries, and project summaries. Use when the user wants to create a 'case study,' 'client success story,' 'engagement summary,' 'project summary,' or 'portfolio piece.'"
 ---
 
 # Case Study Builder Assistant
 
-Generate structured case studies, engagement summaries, and project documentation using James Praise's frameworks.
+Generate structured case studies, engagement summaries, and project documentation using structured frameworks.
 
 ## When to Use
 

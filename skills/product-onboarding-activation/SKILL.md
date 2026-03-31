@@ -1,3 +1,9 @@
+---
+name: product-onboarding-activation
+description: "Designs complete onboarding, activation, retention, and expansion lifecycles for SaaS products. Use when the user mentions 'onboarding lifecycle,' 'activation strategy,' 'user onboarding,' 'time to value,' 'aha moment,' 'onboarding audit,' 'retention lifecycle,' or 'lifecycle design.'"
+version: "1.0.0"
+---
+
 # Product Onboarding & Activation
 
 Design complete onboarding, activation, retention, and expansion lifecycles for SaaS products.

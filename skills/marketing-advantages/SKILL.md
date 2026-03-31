@@ -1,3 +1,9 @@
+---
+name: marketing-advantages
+description: "Identifies a product's marketing advantages and develops strategies to leverage them for growth. Use when the user wants to identify marketing advantages, asks 'what are my marketing advantages,' mentions PLG, virality, network effects, distribution strategies, or wants to know how to market based on product strengths."
+version: "1.0.0"
+---
+
 # Marketing Advantages & Strategy
 
 Helps products identify their marketing advantages and develop strategies to leverage them for growth.
@@ -245,6 +251,3 @@ When analyzing a product, provide:
 
 ---
 
-## Attribution
-
-Framework by James Praise x Marketing In Action
