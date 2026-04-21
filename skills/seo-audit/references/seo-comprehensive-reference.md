@@ -2419,6 +2419,8 @@ Create a custom channel group in GA4:
 
 Segment analytics by this channel to measure traffic from AI sources.
 
+**Looker Studio reporting layer:** Build a custom Looker Studio report that pulls GA4 data and filters by session source/medium for these domains, so AI traffic sits alongside organic, paid, and direct in one unified view. This makes the AI channel legible to stakeholders and clients who don't live inside GA4's custom channel group configuration, and lets you trend AI-driven sessions, engaged users, and conversions over time without rebuilding the query each report cycle.
+
 ### AI Citation Monitoring Tools
 
 - **Profound:** Monitors brand mentions in AI responses
