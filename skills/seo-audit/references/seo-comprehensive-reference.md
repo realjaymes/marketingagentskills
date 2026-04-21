@@ -1262,6 +1262,8 @@ Use tools to find related keywords at scale.
 - **Semrush Keyword Gap:** Similar function.
 - **DataforSEO Labs API (Domain Intersection / Competitors):** Programmatic competitor gap. Pull every keyword a competitor ranks for, intersect with your own ranked keywords, output the delta. Best for large-scale or recurring gap analysis where you want the data in your own database, dashboard, or AI workflow rather than a vendor UI.
 
+**For each gap keyword that survives prioritization, also analyze the SERP angle and content quality level competitors are using.** A keyword competitors rank for is only an opportunity if your team can match or exceed the angle and quality bar already in the SERP. See [[#Content Angle Framework]] (analyze the existing angles, find the underserved one) and [[#Content Quality Framework: Five Levels (Ahrefs)]] (price the production realistically — don't try to win a Level 4 SERP with a Level 1 piece). Gap analysis without angle analysis just produces a long list of keywords you'll publish against and lose to.
+
 **Step 4: Refinement**
 
 Filter the expanded list by:
@@ -1419,6 +1421,86 @@ A publishing schedule for the next 30, 60, 90 days. Includes:
 - Related pillar
 
 Common cadence for B2B SaaS: 4 to 12 articles per month at 1,500 to 3,000 words each.
+
+---
+
+## Content Angle Framework
+
+Topical authority gets you in the conversation. The **content angle** decides whether you actually rank against the pages already in it.
+
+The angle is the unique "hook" or approach a piece of content takes. Two well-researched, similarly comprehensive articles on the same topic will rank very differently if one has a distinct angle (personal experience, expert commentary, original data) and the other reads as an undifferentiated summary.
+
+This framework is from Ahrefs' content team, condensed for working use.
+
+### Step 1: Analyze the SERP for Existing Angles
+
+Search the target keyword and study the top 10 results. Identify the angle each top-ranking page is taking. Common angles:
+
+- **Personal experience.** First-person account: "I tried X for 6 months, here's what happened."
+- **Best / Listicle.** Aggregated, curated comparison: "The 12 best X for Y in 2026."
+- **Expert commentary.** Insights and quotes from named industry experts.
+- **For beginners.** Plain-language introduction to a complex topic.
+- **Specific outcome.** Tied to a concrete, measurable result.
+- **Freshness.** Up-to-date take that explicitly improves on dated information: "[Topic] in 2026: what's changed."
+
+A single SERP often shows three or four of these angles competing. The angle that's missing or underserved is your opportunity.
+
+### Step 2: Determine the Content Type and Format
+
+Identify the dominant format on the SERP. Are the top results:
+
+- Blog posts or in-depth guides?
+- Product pages or pricing pages?
+- Listicles or comparison tables?
+- Video-first results?
+- Tools or interactive resources?
+
+Match the format to what the SERP rewards. Trying to rank a written guide for a query Google answers with video carousels and tools is fighting the SERP.
+
+### Step 3: Pick a Better or Different Angle, Then Out-Execute
+
+Two paths:
+
+1. **Better.** Same angle as the top result, but executed at higher quality: more depth, better data, clearer structure, stronger expertise signals, fresher updates.
+2. **Different.** Adopt an angle the SERP underserves. If five pages are listicles, ship a deeply researched personal-experience piece. If the SERP is all expert commentary, ship a beginner-friendly version.
+
+The differentiation has to be visible from the SERP snippet (title, description, first sentence) or users won't click through to discover it.
+
+### Combine With Topical Authority
+
+Content angle works on top of topical authority, not instead of it. A site without topical authority and a single great-angle piece may rank short-term but won't sustain. A site with topical authority publishing undifferentiated content will rank for a long-tail keyword set but lose to better-angled competitors on the high-value head terms. Senior SEO operators do both.
+
+---
+
+## Content Quality Framework: Five Levels (Ahrefs)
+
+A useful mental model for content investment decisions, also from Ahrefs. Move up the levels as topical authority and budget allow. Most B2B sites publish at Levels 1-2 and wonder why they don't outrank competitors investing at Levels 3-5.
+
+| Level | Format | Production Cost | Defensibility |
+|---|---|---|---|
+| **1: Basic listicles** | Aggregated information, simple lists, surface-level comparisons. Quick to produce, easy to copy. | Low | Low. Anyone can replicate. |
+| **2: Advanced listicles** | Detailed, curated lists with real evaluation criteria, in-depth explanations per item, judgment shown. | Low to medium | Medium. Requires editorial judgment. |
+| **3: Deep dives / guides** | Comprehensive guides covering nearly all aspects of a topic. Authoritative reference material. | Medium to high | Medium-high. Hard to copy without significant time investment. |
+| **4: Experiments and surveys** | Data-driven content based on original research, surveys, or experiments. | High | High. Original data is hard to fake. |
+| **5: Original ideas / studies** | Thought leadership establishing new industry concepts, frameworks, or terminology that other operators cite. | Very high | Very high. Becomes the canonical reference once cited. |
+
+### How to Apply the Five Levels
+
+- **Audit the existing content portfolio** by level. Most under-performing content sites are 80%+ at Level 1-2.
+- **Plan the next quarter's content with deliberate level mix.** A workable target for a B2B site investing in SEO seriously: 50% Level 2 (volume), 30% Level 3 (depth), 15% Level 4 (data), 5% Level 5 (thought leadership).
+- **Price the work accordingly.** Level 1-2 can be produced fast with AI-assisted workflows. Level 4-5 requires real research time, named contributors, and editorial leadership.
+- **Use Levels 4-5 for the highest-stakes pillar pages** and the topics where you most need to defend rankings against well-resourced competitors. Don't try to compete on a high-value head term with Level 1-2 content; you'll spend the production budget and not move the rankings.
+
+### Why Level 4-5 Is the GEO/AEO Multiplier
+
+The five-level framework also maps directly onto AI search citation behavior. Level 4-5 content (original data, surveys, frameworks) gets cited by AI answer engines disproportionately because:
+
+- Original statistics give the AI something quotable that's not available elsewhere
+- Named frameworks and concepts give the AI a discrete entity to reference
+- Surveys with proprietary methodology become the de facto source on a topic
+- Thought leadership defines the language the AI uses to describe the space
+
+If GEO and AEO performance is a goal (see [[#Optimizing for AI Citation]]), Level 4-5 investment is the lever, not Level 1-2 volume.
 
 ---
 
