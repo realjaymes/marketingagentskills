@@ -867,6 +867,8 @@ Measures visual stability. CLS is the sum of unexpected layout shifts as the pag
 ### Measurement Tools
 
 - **PageSpeed Insights:** Single-page audit with field data (CrUX) and lab data (Lighthouse)
+- **GTmetrix:** Independent speed audit with waterfall diagrams, video playback of page load, and historical tracking on free tier. Useful as a second opinion against PageSpeed Insights.
+- **Pingdom Tools:** Quick speed test from multiple geographic locations. Free, no account required.
 - **Chrome DevTools Performance panel:** Deep investigation of specific pages
 - **CrUX Dashboard:** Real user metrics over time
 - **Web Vitals Chrome Extension:** Inline display while browsing
@@ -1585,6 +1587,7 @@ Structure the page content into scannable sections.
 - **Dimensions:** set `width` and `height` attributes to prevent layout shift
 - **Responsive images:** use `srcset` for different viewport sizes
 - **Lazy loading:** for below-the-fold images
+- **AI-generated illustrations:** [NapkinAI](https://napkin.ai/) generates clean, brand-neutral illustrations from a text prompt — useful for content production when you need original visuals without stock-photo overhead. Always export as WebP (or convert) before publishing.
 
 ### Internal Linking
 
@@ -1646,7 +1649,11 @@ Creating large numbers of pages from structured data templates to capture long-t
 - **Product combination pages:** `[Brand] [Product] [Variant]`
 - **Comparison pages:** `[Tool A] vs [Tool B]`
 - **Integration pages:** `[Tool A] + [Tool B] integration`
-- **Use case pages:** `[Tool] for [Persona]` (CRM for real estate agents)
+- **Persona pages:** `[Tool] for [Persona]` (CRM for real estate agents, project management for freelancers)
+- **Industry pages:** `[Solution] for [Industry]` (analytics for SaaS, payroll for restaurants, CRM for healthcare)
+- **Use case pages:** `How to [Use Case]` or `[Use Case] templates` (how to write cold emails, abandoned cart email templates, customer onboarding workflow examples)
+- **Category best-of pages:** `Best [Category] for [Use Case]` or `Best [Category] [Year]` (best CRMs for cold outreach, best project management tools 2026)
+- **Industry + category pages:** `[Industry] [Category]` (SaaS pricing pages, fintech onboarding flows, ecommerce checkout examples) — useful for inspiration galleries and benchmark directories
 - **Glossary pages:** `What is [Term]?`
 
 ### Execution
@@ -1665,6 +1672,8 @@ Creating large numbers of pages from structured data templates to capture long-t
 - **Unique meta tags per page** (title, description)
 - **Unique primary content per page** (more than just swapped variables)
 - **Avoid thin pages.** Programmatic pages that fail to satisfy search intent get mass-deindexed.
+
+**Content-at-scale platforms:** [Machined.AI](https://machined.ai/) generates and publishes hundreds to thousands of programmatic articles from a keyword list, with built-in internal linking, schema, and CMS publishing (Webflow, WordPress, Shopify, Sanity). Useful for solo operators or lean teams running programmatic plays without engineering capacity to build the dataset, template, and publish pipeline themselves. Quality still depends on keyword selection and template design, the same rules apply (test 50 before scaling, monitor indexation, ensure unique value per page).
 
 **Success example:** Zapier's integration pages (thousands of `Tool A + Tool B` combinations), Yelp's location pages, Tripadvisor's destination pages.
 
@@ -2849,6 +2858,7 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **Ahrefs Keywords Explorer:** Primary keyword research tool (UI, subscription)
 - **Semrush Keyword Magic:** Alternative with strong SERP features data (UI, subscription)
 - **DataforSEO Keywords Data API + Labs API:** Programmatic, pay-per-request alternative. Best when keyword data needs to feed custom workflows, AI pipelines, or programmatic content generation. Significantly cheaper at scale than Ahrefs/Semrush.
+  - **No-code wrapper:** [DataForSEO Google Sheets Extension](https://workspace.google.com/marketplace/) lets you query the same APIs from a spreadsheet without writing code. Useful for ad-hoc keyword pulls, quick competitor checks, or handing the data layer to a non-technical teammate while keeping cost-per-request economics.
 - **Google Keyword Planner:** Free, direct from Google
 - **Keyword Insights:** Keyword clustering
 - **AnswerThePublic:** Question-based keywords
@@ -2876,6 +2886,7 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **Clearscope**
 - **Frase**
 - **MarketMuse**
+- **SEOwallet (Chrome extension):** In-browser on-page SEO checker. Surfaces title/meta/H1, word count, headings, image alt coverage, and basic schema while you read or edit a page. Useful for quick spot-checks during content review without opening Screaming Frog or running a crawl.
 
 ### Analytics
 
