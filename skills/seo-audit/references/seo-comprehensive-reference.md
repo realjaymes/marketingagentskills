@@ -491,9 +491,9 @@ Forecasting makes SEO budgetable. Without a forecast, executives treat SEO as sp
 ### Method 1: Keyword-Based Forecasting
 
 1. Pull target keyword list (usually 100 to 500 priority keywords).
-2. Get search volume for each (Ahrefs, Semrush, Keyword Planner).
+2. Get search volume **and Traffic Potential** for each (Ahrefs is the primary source for Traffic Potential; Semrush approximates via Estimated Traffic). Traffic Potential is usually the better number to forecast against — it captures the full traffic the top-ranking page actually earns from the entire keyword cluster, not just the single seed keyword's volume.
 3. Estimate ranking position at 3, 6, 12 months based on current position and difficulty.
-4. Apply Click-Through Rate (CTR) curve: position 1 is ~28% CTR, position 3 is ~11%, position 5 is ~6%, position 10 is ~2.5%.
+4. Apply Click-Through Rate (CTR) curve: position 1 is ~28% CTR, position 3 is ~11%, position 5 is ~6%, position 10 is ~2.5%. (Apply to search volume, or use Traffic Potential directly as the position-1 ceiling.)
 5. Multiply projected impressions by projected CTR for projected clicks.
 6. Apply conversion rate to projected clicks for projected leads or sales.
 7. Apply lead-to-revenue ratio for projected pipeline value.
@@ -1274,6 +1274,7 @@ Filter the expanded list by:
 ### Keyword Metrics to Track
 
 - **Search volume:** Average monthly searches (available from Ahrefs, Semrush, Google Keyword Planner, DataforSEO Keywords Data API)
+- **Traffic Potential:** Estimates the total monthly organic traffic the top-ranking page receives, which is often more accurate than just looking at the search volume of one keyword. A page that ranks for "best CRM software" also captures traffic from "top CRM tools," "CRM software reviews," and dozens of related variants. Traffic Potential aggregates all of those into one number, giving a truer picture of the upside of ranking for the cluster. Available in Ahrefs Keywords Explorer (the canonical "Traffic Potential" metric) and approximated in Semrush via Estimated Traffic. Use TP as the primary opportunity-sizing metric for any keyword you'd build a dedicated page for.
 - **Keyword difficulty (KD):** Ahrefs 0 to 100 scale, Semrush 0 to 100 scale, DataforSEO has its own difficulty score plus the raw SERP data needed to compute custom difficulty models
 - **Cost Per Click (CPC):** Indicates commercial value; high-CPC keywords usually convert well
 - **Search intent:** Informational, navigational, commercial, transactional. DataforSEO Labs API has a search-intent classification endpoint that returns intent per keyword programmatically (useful for clustering and prioritization at scale)

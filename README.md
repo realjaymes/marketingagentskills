@@ -55,7 +55,7 @@ See demo:
 | [product-positioning](skills/product-positioning) | Create complete positioning frameworks with target customers, competitive differentiation, and market categories |
 | [remotion](skills/remotion) | Create programmatic videos in React with a structured 7-step process from creative brief to rendered output |
 | [saas-landing-pages](skills/saas-landing-pages) | Generate complete SaaS landing page drafts using 7 framework templates for different page types |
-| [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions. Includes a deep ~2,900-line comprehensive SEO reference (fork of [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit)) |
+| [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions |
 | [skill-to-prompt](skills/skill-to-prompt) | Convert Claude skills into ChatGPT Project format (prompt instructions + knowledge files as .docx) |
 | [vibe-coding](skills/vibe-coding) | Guide beginner-to-intermediate developers through web development, Claude skills creation, and AI-assisted coding |
 
