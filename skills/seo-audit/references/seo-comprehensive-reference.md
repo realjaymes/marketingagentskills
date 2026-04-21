@@ -2863,7 +2863,8 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
   - **No-code wrapper:** [DataForSEO Google Sheets Extension](https://workspace.google.com/marketplace/) lets you query the same APIs from a spreadsheet without writing code. Useful for ad-hoc keyword pulls, quick competitor checks, or handing the data layer to a non-technical teammate while keeping cost-per-request economics.
 - **Google Keyword Planner:** Free, direct from Google
 - **Keyword Insights:** Keyword clustering
-- **AnswerThePublic:** Question-based keywords
+- **AnswerThePublic:** Question-based keywords from autocomplete data (paid after free tier was removed)
+- **AnswerSocrates:** Free alternative to AnswerThePublic. Surfaces the same autocomplete-derived questions without the paywall. Good fallback when the AnswerThePublic free tier runs out.
 - **AlsoAsked:** People Also Ask scraping
 
 ### Rank Tracking
@@ -2940,6 +2941,10 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **Qwoted**
 - **Featured.com**
 - **Muck Rack, Cision:** Journalist databases, enterprise pricing
+
+**Paid link marketplaces (use with caution):**
+
+- **GetMeLinks:** Marketplace for buying backlink placements. Works — links are delivered — but paid links that pass PageRank without `rel="sponsored"` or `rel="nofollow"` violate [Google's Link Spam Policy](https://developers.google.com/search/docs/essentials/spam-policies#link-spam) and can trigger manual actions or algorithmic devaluation. Use only for `rel="sponsored"` placements tied to legitimate promotions, or treat as higher-risk experimental budget rather than a core link-building tactic. Earned digital PR (Connectively, Qwoted, data studies) and guest posting compound more reliably with no policy risk.
 
 ### Competitor Research
 
