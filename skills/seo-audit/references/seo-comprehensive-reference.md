@@ -1775,10 +1775,12 @@ The highest-value link acquisition strategy. Creating newsworthy content that ea
 
 **5. Pitching**
 
-- **Connectively (formerly HARO):** Respond to journalist queries
-- **Qwoted:** Similar platform
-- **Featured.com:** Structured Q&A pitching
-- **Direct outreach:** Journalist databases (Muck Rack, Cision), manual research
+Two modes: **respond to journalist queries** (reactive, lower friction, higher hit rate) or **direct outreach** (proactive, harder, but bigger placements when it lands).
+
+- **Connectively (formerly HARO):** Journalists post queries like "I'm writing about X, looking for an expert to comment." You answer with a tight quote plus credentials. If used, you get a quote in the article plus a backlink. The query is pre-qualified (journalist has intent, deadline, and a publication), so you skip the cold-pitch step entirely. Hit rate is low per reply, the play is volume and speed (reply within an hour, lead with the punchy quote, include credentials). A 5-minute reply can land a placement on a high-DR domain like Forbes, Inc., or HubSpot — the kind of dofollow link you can't realistically buy. Compounds for both classic SEO (E-E-A-T signals, authority) and AI search visibility (AI engines weight third-party mentions heavily for entity authority).
+- **Qwoted:** Same shape as Connectively. Smaller volume of queries, but often higher quality. Worth running both in parallel.
+- **Featured.com:** Structured Q&A pitching. Journalists post a question, multiple experts answer, the journalist picks quotes for the article. Lower friction than Connectively because the format is fixed. Best for thought-leadership topics where you have a sharp opinion.
+- **Direct outreach (Muck Rack, Cision):** Journalist databases for cold pitching. You research the journalist's beat, recent articles, and angle, then send a personalized pitch with your data, story, or expert source. Harder than reactive pitching (no signal of intent), but the upside is bigger — you can pitch a custom angle to a top-tier reporter rather than competing with 50 other respondents. Used for proprietary data studies, exclusive launches, and tier-1 placements.
 
 **6. Amplification**
 
