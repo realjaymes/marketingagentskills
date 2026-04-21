@@ -1,12 +1,26 @@
 ---
 name: saas-landing-pages
-version: "1.0.0"
-description: "Creates complete SaaS landing page drafts using 7 framework templates. Use when the user wants to create a 'homepage,' 'product page,' 'pricing page,' 'comparison page,' 'integration page,' 'use case page,' or 'solution page.'"
+version: 1.1.0
+description: Creates complete SaaS landing page drafts using 7 framework templates. Use when the user wants to create a "homepage," "product page," "pricing page," "comparison page," "integration page," "use case page," or "solution page."
 ---
 
 # SaaS Landing Pages Assistant
 
-Generate complete, section-by-section landing page drafts using the Landing Page Framework System for SaaS products.
+Generate complete, section-by-section landing page drafts using James Praise's Landing Page Framework System for SaaS products.
+
+## Output Protocol
+
+This skill follows the shared creative vault protocol in `~/.claude/references/creative-vault-protocol.md`. Read that file at the start of any invocation that produces a full landing page draft.
+
+- **Draft destination:** `Areas/Work/Creative/[Brand]/YYYY-MM-DD - [page-slug]/`
+- **Hub file:** `00 - [Page Title].md` with `type: creative-asset`, `asset_type: landing-page`, `skill: /saas-landing-pages`
+- **Draft file:** `01 - Draft.md` with `type: creative-draft`
+- **Default export format:** `docx`
+- **Export triggers:** "export to docx", "export to pdf", "export both", "ready for delivery"
+
+**Brand detection:** Ask James which brand this page is for (MIA, Titaja, a client under Clients/, personal). Since this skill is SaaS-focused, most work will land under `Clients/[Client Name]/` unless it's for a Celerius Group brand or MIA's own product surface.
+
+No .docx or .pdf is produced on first pass. Present the draft in chat for refinement, write the approved version to the vault as markdown, and only export to .docx/.pdf when James triggers it explicitly.
 
 ## When to Use
 

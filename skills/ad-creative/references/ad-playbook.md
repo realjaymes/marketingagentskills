@@ -146,7 +146,7 @@ For capturing contact information.
 ### 3. Urgency & Scarcity CTAs
 For time-sensitive or limited offers.
 
-- "We only have 50 spots left. Don't wait on this one."
+- "We only have 50 spots remaining. Don't wait on this one."
 - "This price goes back up on Sunday. Lock it in now."
 - "The early bird discount ends tonight at midnight."
 

@@ -306,7 +306,7 @@ CTA: Closing, not inviting. "Apply now." not "Learn more."
 - Aspect ratio: 9:16
 
 **Concept**
-- Video idea: Creator speaks directly to camera addressing the gap between Nigerian marketers who have skills but no portfolio and the ones getting $2,000–$3,000/month USD roles. Closes with Two Choices frame.
+- Video idea: Creator speaks directly to camera addressing the gap between Nigerian marketers who have skills but no portfolio and the ones getting $2,000–$5,000/month USD roles. Closes with Two Choices frame.
 - Core angle: Same market, same skills, different result — the difference is proof, not ability
 - One-line promise: You'll understand exactly why you're not getting the interviews and what to do about it in 13 weeks
 - Audience context: Nigerian marketers watching peers post LinkedIn updates about USD contracts, applying to international roles and never hearing back, frustrated that skill isn't translating to opportunity
