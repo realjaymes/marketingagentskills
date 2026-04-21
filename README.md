@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-25 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+26 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -55,6 +55,7 @@ See demo:
 | [product-positioning](skills/product-positioning) | Create complete positioning frameworks with target customers, competitive differentiation, and market categories |
 | [remotion](skills/remotion) | Create programmatic videos in React with a structured 7-step process from creative brief to rendered output |
 | [saas-landing-pages](skills/saas-landing-pages) | Generate complete SaaS landing page drafts using 7 framework templates for different page types |
+| [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions. Includes a deep ~2,900-line comprehensive SEO reference (fork of [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit)) |
 | [skill-to-prompt](skills/skill-to-prompt) | Convert Claude skills into ChatGPT Project format (prompt instructions + knowledge files as .docx) |
 | [vibe-coding](skills/vibe-coding) | Guide beginner-to-intermediate developers through web development, Claude skills creation, and AI-assisted coding |
 
@@ -155,11 +156,26 @@ You can also invoke skills directly:
 ### Growth & Experimentation
 `experimentation` `marketing-product-ideas` `performance-marketing` `lifecycle-marketing-campaigns` `product-onboarding-activation`
 
+### SEO
+`seo-audit`
+
 ### Automation & Technical
 `n8n-automation` `openclaw` `clay-gtm-outbound` `remotion` `vibe-coding`
 
 ### Meta Skills
 `agent-skill-builder`
+
+---
+
+## Forks and Attribution
+
+Some skills in this repo are enhanced forks of skills from other open marketing-skills repos. They are credited here, in the skill's `metadata.upstream` frontmatter, and in an `## Attribution` section inside the skill's `SKILL.md`.
+
+| Skill | Upstream | Upstream Version Forked From | What's Added |
+|---|---|---|---|
+| [seo-audit](skills/seo-audit) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit) | 1.1.0 | Comprehensive ~2,900-line SEO reference (`references/seo-comprehensive-reference.md`) covering technical, on-page, off-page, analytics, GEO/AEO, scenario playbooks, and the programmatic-API-first tool stack including DataforSEO. |
+
+If you maintain an upstream skill listed here and want to discuss merging changes back, get in touch via the contact links below.
 
 ---
 
