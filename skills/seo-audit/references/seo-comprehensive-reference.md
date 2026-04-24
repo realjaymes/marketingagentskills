@@ -1192,6 +1192,7 @@ High-stakes engagements. Getting migrations wrong causes permanent ranking loss.
 - **Export backlink profile** from Ahrefs or Semrush. Critical for identifying pages that need redirects based on external link value.
 - **Export GA4 organic sessions** by landing page for last 12 months. Traffic baseline.
 - **Build URL mapping document** pairing every old URL to its new URL. Spreadsheet format. Include redirect type (301 in almost all cases). Flag pages being consolidated or removed.
+- **Wayback Machine baseline capture.** Pull [web.archive.org](https://web.archive.org/) snapshots of the top 20 to 50 priority URLs as of the pre-migration date. Stored evidence if ranking drops force a rollback discussion or post-mortem. Wayback is the external source of truth when the client's own pre-migration export is incomplete or lost.
 
 ### Pre-Migration Checklist (T-7 Days)
 
@@ -1227,6 +1228,7 @@ High-stakes engagements. Getting migrations wrong causes permanent ranking loss.
 - Check for accidental `noindex` tags
 - Re-submit problem URLs via URL Inspection
 - Earn fresh external signals (digital PR or social amplification) to signal authority on new URLs
+- **Compare pre- and post-migration via Wayback Machine.** For the affected URL group, pull the pre-migration snapshot and diff against the new page: content parity, heading changes, template shifts, internal link density. Template regressions (e.g., removed FAQ section, flattened heading hierarchy, content shortened) are a common silent cause of post-migration rank drop that a technical crawl alone will not surface.
 
 **Example outcome when executed well:** WordPress to Webflow migration with full URL mapping, benchmark exports, staging audit, and 14-day daily monitoring. Rankings protected, traffic stayed within normal post-migration variance, inbound pipeline intact.
 
@@ -2552,11 +2554,11 @@ Covered in [[#Diagnosing an Algorithm Hit]]. Short version:
 For specific pages that dropped in rankings.
 
 1. **URL Inspection in GSC:** Is the page still indexed? Any crawl errors?
-2. **On-page audit:** Any recent content change? Title tag change?
+2. **On-page audit:** Any recent content change? Title tag change? **Historical comparison via [Wayback Machine](https://web.archive.org/):** pull a snapshot from 30/60/90 days before the drop and diff against the current page. Template changes, removed FAQ sections, shortened content, altered heading hierarchy, and removed author/credibility signals are common silent causes of ranking drops that don't appear in GSC, analytics, or a crawl alone. Wayback is the default tool when the client has no version history or staging diffs to reference.
 3. **SERP check:** What's ranking now? Is the SERP type changing (e.g., now showing video, forum, or AI results)? **Programmatic comparison:** the DataforSEO SERP API returns historical SERP snapshots, so you can compare today's SERP against a snapshot from before the drop and see exactly which competitors moved up, what new SERP features appeared, and whether the SERP intent has shifted.
 4. **Backlink profile:** Did the page lose any important backlinks? Pull the DataforSEO Backlinks API "lost backlinks" report for the URL to see exact lost links and their referring-domain authority.
-5. **Competitor check:** Did a competitor publish better or earn significant links?
-6. **Internal linking:** Did the page lose internal links (e.g., navigation redesign)?
+5. **Competitor check:** Did a competitor publish better or earn significant links? Use Wayback to confirm the competitor's page actually changed (vs gained links without changing).
+6. **Internal linking:** Did the page lose internal links (e.g., navigation redesign)? Wayback snapshots of the homepage and category hubs show whether key internal links to the page were removed in a recent redesign.
 
 **Fix options:**
 
@@ -2857,6 +2859,10 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **OnCrawl:** Cloud-based, technical SEO focus, integrates with logs.
 - **Botify:** Enterprise crawler with log file analysis.
 
+### Historical Site Data & Diagnostics
+
+- **[Wayback Machine](https://web.archive.org/):** Free historical snapshots of websites. Load-bearing in three senior-SEO workflows: (1) **site migrations** — capture pre-migration baselines and diff pre/post templates when rankings drop (see [[#Site Migrations]]), (2) **ranking drop diagnostics** — compare a page's content, headings, internal links, and template against a pre-drop snapshot to isolate silent causes not visible in GSC, analytics, or a crawl (see [[#Ranking Drop Diagnosis]]), (3) **competitor evolution tracking** — see how competitor sites, content cadence, and positioning changed over time. The external source of truth when the client has no version history, no staging diffs, or lost pre-migration exports.
+
 ### Keyword Research
 
 - **Ahrefs Keywords Explorer:** Primary keyword research tool (UI, subscription)
@@ -2954,7 +2960,7 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **Semrush Domain Overview**
 - **Similarweb:** Traffic estimates
 - **DataforSEO Labs API (Domain Analytics + Domain Intersection):** Programmatic competitor intel. Pull traffic estimates, ranked keywords, content gaps, and SERP overlap with competitors at scale. Designed to feed custom dashboards and automated reports.
-- **Wayback Machine:** Historical snapshots
+- **[Wayback Machine](https://web.archive.org/):** Historical snapshots of competitor sites. Trace how a competitor's IA, service-line pages, content cadence, or positioning evolved over time. Useful when evaluating whether a competitor's recent ranking gains are from content changes vs pure link acquisition. See also the full tool entry under [[#Historical Site Data & Diagnostics]].
 
 ### Programmatic and API-First SEO Data
 
