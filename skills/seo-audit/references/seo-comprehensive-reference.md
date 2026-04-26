@@ -1242,13 +1242,91 @@ Keyword research is the foundation of on-page SEO. Without understanding what yo
 
 ### Methodology
 
-**Step 1: Seed keywords**
+**Step 1: Seed keywords (dimension-based + intent-prioritized)**
 
-Start with the 10 to 20 obvious terms for the business. "CRM software," "marketing automation," "email marketing tool."
+Don't start with a flat 10–20-term brainstorm. A senior SEO operator approaches seed keywords as a **system** with two structural axes: dimensions of the business, and intent stages of the buyer journey. The output is a structured keyword universe that maps cleanly to revenue, not a vague list.
+
+**Step 1a — Identify the dimensions for the business.**
+
+Map the variables that define the keyword universe. Six dimensions cover most B2B and B2C scenarios:
+
+| Dimension | What it captures | Example values (B2B consulting) |
+|---|---|---|
+| `[service]` | Top-level service line | AI Consulting, Microsoft Consulting, Data Analytics, Cybersecurity |
+| `[subservice]` | Specific offering within a service | Microsoft → Azure, Dynamics 365, M365, Power Platform, Copilot |
+| `[category]` | Industry/analyst-recognized solution category (RFP, Gartner, Forrester language) | Generative AI, Predictive Analytics, CRM, Cloud Infrastructure, Business Intelligence |
+| `[industry]` | Vertical the buyer operates in | Financial services, healthcare, manufacturing, retail, public sector |
+| `[use case]` | The job/problem the buyer wants solved (pain-point language) | Customer churn prediction, fraud detection, ERP modernization, cloud migration |
+| `[location]` | Geographic served market | Boston, Chicago, Seattle, Indianapolis |
+
+Not every business uses all six. E-commerce often skips `[use case]` and `[industry]`. SaaS often skips `[location]`. Local services lean heavily on `[location]`. Pick the dimensions that genuinely apply.
+
+**Step 1b — Prioritize intent stages by revenue distance.**
+
+Group queries by intent type. Order them by revenue distance — closest to revenue gets researched and addressed first:
+
+1. **Transactional** (BOFU, closest to revenue): hire/buy/engage intent
+2. **Commercial Investigation** (active shortlisting): comparing options, evaluating providers
+3. **Navigational** (brand-aware): mixed intent, but pre-purchase signals (reviews, case studies) live here
+4. **Informational** (TOFU, longest payback but compounds): research, education
+
+This ordering intentionally flips the legacy "start with informational thought leadership" advice. **Senior operators start with the queries that drive revenue and work upstream** — informational/TOFU is built once the BOFU pipeline is captured, because uncaptured BOFU is leaking revenue right now.
+
+**Step 1c — Build formulas per intent type.**
+
+For each intent type, write 1–5 formulas combining dimensions. Use slash-separated alternates (`a / b / c`) to indicate "any of these can fill the slot." The formulas become the system; the dimension values fill them in.
+
+Worked example formula library for B2B consulting:
+
+**Transactional (2 formulas):**
+
+1. `[use case] / [subservice] / [category] consulting services for [industry]`
+2. `[use case] / [subservice] / [category] consulting service provider in [location]`
+
+**Commercial Investigation (5 formulas — each query-pattern modifier triggers a different SERP shape and needs a different content asset):**
+
+1. `best / top [use case] / [subservice] / [category] consulting firms for [industry]` (listicle territory; brand needs to be IN the third-party listicles)
+2. `best / top [use case] / [subservice] / [category] consulting firms / partners in [location]` (listicle + local)
+3. `[subservice] / [category] vs [alternative-subservice / alternative-category]` (comparison content; brand-built)
+4. `alternative to [competitor]` / `[competitor] alternatives` / `top [subservice] / [category] alternatives` (switch intent; brand-built)
+5. `[brand] / [competitor] / [subservice] / [category] reviews` (third-party review sites: Clutch, G2, Glassdoor)
+
+**Navigational (2 formulas + standalone):**
+
+1. `[brand] [service] / [subservice] / [category] / [use case] / [location] / [industry]` (branded long tail)
+2. `[brand] careers / reviews / case studies / leadership / glassdoor` (administrative branded queries)
+- Plus standalone `[brand]` for brand SERP baseline
+
+**Informational (3 pattern families — too diverse to compress further):**
+
+1. `how to [use case]` / `how to implement [subservice] / [category]` / `how to choose [service] consulting partner`
+2. `what is [subservice] / [category]` / `[subservice] / [category] vs [alternative]` / `[subservice] / [category] best practices for [industry]`
+3. `[use case] / [subservice] / [category] roi / cost / benefits / use cases for [industry]`
+
+**Step 1d — Use formulas to brainstorm all possible keywords.**
+
+Multiply dimensions × formulas. Rough math for the worked example: 6 dimensions × ~12 formulas across 4 intents → roughly 8,000–15,000 candidate queries depending on dimension cardinality. **Don't inspect them all.** Pick the highest-revenue-weighted permutations first.
+
+**V1 manual prioritization order** (when working without GA4/GSC access):
+
+1. Top revenue service (URL prominence + nav order + case study depth as proxies)
+2. Top revenue subservices within that service
+3. Top 1–2 use cases per priority service (the BOFU bridge from informational pain to transactional intent)
+4. Top 2–3 locations (where service has local presence)
+5. Top 1–2 industries (where it sharpens commercial signal)
+6. Intent type biased to BOFU first (transactional → commercial → navigational → informational)
+
+Inspecting 15–30 strategically-chosen permutations beats inspecting 200 random ones. The patterns repeat.
+
+**V2 programmatic expansion:** feed the full permutation through DataforSEO Keywords Data API → get volume + KD + intent classification per query → cluster by SERP overlap (per [[#Keyword Clustering]]) → dedupe near-duplicates → land on the 200–500 keywords actually worth ranking for.
+
+**Why this beats a flat seed list:**
+
+A flat 10–20-term brainstorm works for tiny businesses. For real B2B businesses with multiple service lines, multiple industries, and multiple geographies, a flat list misses entire keyword opportunities (the use-case dimension alone unlocks language buyers actually use that vendor-language never captures). The dimension-based framework forces coverage of every commercially relevant angle. The intent prioritization forces revenue-first thinking instead of vanity TOFU traffic. Together, they produce a keyword universe that maps cleanly to revenue and reads as senior-strategist methodology in any client-facing deliverable.
 
 **Step 2: Expansion**
 
-Use tools to find related keywords at scale.
+Expand the brainstormed list using tools, focused on the highest-priority intent bucket first (transactional → commercial → navigational → informational, per Step 1b). The tool list below applies to all intents; what changes is which permutations you feed into them first.
 
 - **Ahrefs Keywords Explorer:** Seed → Related, Questions, Also Rank For, Terms Match. Subscription-based UI tool.
 - **Semrush Keyword Magic Tool:** Same concept, different data sources. Subscription-based UI tool.
@@ -1331,6 +1409,8 @@ Matching content type to search intent is the single most important on-page fact
 - Query patterns: "buy," "price," "discount," "sign up," "book"
 - Best content type: product page, pricing page, signup page, checkout
 - Example: "Ahrefs pricing" → pricing page
+
+**Revenue-distance ordering:** When prioritizing keyword research and content production, work BOFU → TOFU (transactional → commercial investigation → navigational → informational). Closest-to-revenue queries get researched and addressed first; informational/TOFU is built once the BOFU pipeline is captured. This intentionally flips the legacy "start with informational thought leadership" advice — uncaptured BOFU is leaking revenue *now*. See [[#Keyword Research]] Step 1b for the full framework, including how this ordering pairs with the dimension-based seed-keyword system.
 
 ### Determining Intent
 
