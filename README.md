@@ -173,7 +173,7 @@ Some skills in this repo are enhanced forks of skills from other open marketing-
 
 | Skill | Upstream | Upstream Version Forked From | What's Added |
 |---|---|---|---|
-| [seo-audit](skills/seo-audit) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit) | 1.1.0 | Comprehensive ~2,900-line SEO reference (`references/seo-comprehensive-reference.md`) covering technical, on-page, off-page, analytics, GEO/AEO, scenario playbooks, and the programmatic-API-first tool stack including DataforSEO. |
+| [seo-audit](skills/seo-audit) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit) | 1.2.0 | Comprehensive ~2,900-line SEO reference (`references/seo-comprehensive-reference.md`) covering technical, on-page, off-page, analytics, GEO/AEO, scenario playbooks, and the programmatic-API-first tool stack including DataforSEO. Preserved title-tag guidance noting that SERPs append brand names automatically. |
 
 If you maintain an upstream skill listed here and want to discuss merging changes back, get in touch via the contact links below.
 
