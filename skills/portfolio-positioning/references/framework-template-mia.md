@@ -9,8 +9,6 @@ companion_article: How To Launch a Second Product Without Breaking the First One
 
 [James Praise | Marketing In Action](https://marketinginaction.xyz)
 
-> 👉 To use this template, simply "make a copy" of this Google Doc.
-
 # Portfolio Positioning Framework Template
 
 According to April Dunford, "Positioning is defining how you are the best at something that a market cares a lot about." That definition is built for a single product. The moment a company has more than one product, positioning expands into a layered system.
