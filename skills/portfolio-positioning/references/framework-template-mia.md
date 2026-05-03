@@ -353,4 +353,4 @@ Thirteen worked examples across the three brand architectures. Use these as anal
 
 ---
 
-[Marketing Newsletter](https://newsletter.marketinginaction.xyz) | [Marketing Academy](https://marketinginaction.xyz/academy/) | [Marketing Resources](https://marketinginaction.xyz/resources/) | [Marketing Services](https://www.jamespraise.xyz/services)
+[Product x Growth x AI Bootcamp](https://marketinginaction.xyz/academy/pro-bootcamp/) | [Marketing Newsletter](https://newsletter.marketinginaction.xyz/) | [Marketing Services](https://marketinginaction.xyz/consulting/)
