@@ -7,7 +7,7 @@ companion_skill: portfolio-positioning
 companion_article: How To Launch a Second Product Without Breaking the First One
 ---
 
-[James Praise | Marketing In Action](https://www.jamespraise.xyz)
+[James Praise | Marketing In Action](https://marketinginaction.xyz)
 
 > 👉 To use this template, simply "make a copy" of this Google Doc.
 
