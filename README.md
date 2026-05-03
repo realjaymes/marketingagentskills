@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-26 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+27 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -48,6 +48,7 @@ See demo:
 | [n8n-automation](skills/n8n-automation) | Design, build, debug, and document n8n workflows and AI agent automations |
 | [openclaw](skills/openclaw) | Design, build, debug, and document OpenClaw workflows and AI assistant configurations |
 | [performance-marketing](skills/performance-marketing) | Plan, review, and optimize paid campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, Snapchat |
+| [portfolio-positioning](skills/portfolio-positioning) | Position, audit, or launch into a multi-product company. Forces a brand architecture decision (branded house / house of brands / endorsed) before producing core narrative, per-product positioning cascade, messaging hierarchy, and launch sequencing |
 | [press-release](skills/press-release) | Create complete press release packages with newsworthiness evaluation and multiple headlines |
 | [product-launch-gtm](skills/product-launch-gtm) | Guide end-to-end product and feature launch planning with launch sizing, GTM strategy, and success measurement |
 | [product-messaging](skills/product-messaging) | Create complete messaging frameworks including value propositions, taglines, and elevator pitches |
@@ -145,7 +146,7 @@ You can also invoke skills directly:
 ## Skill Categories
 
 ### Strategy & Positioning
-`product-positioning` `product-messaging` `product-launch-gtm` `marketing-advantages`
+`portfolio-positioning` `product-positioning` `product-messaging` `product-launch-gtm` `marketing-advantages`
 
 ### Content & Copy
 `ad-creative` `landing-page` `saas-landing-pages` `press-release` `copy-anatomy` `ai-humanizer`
