@@ -68,24 +68,11 @@ See demo:
 
 Claude.ai (the web app) and the Claude desktop app support skills via **Settings → Capabilities → Skills**. Each skill is uploaded individually as a `.zip` file (or a single `SKILL.md` for one-file skills). You cannot upload a folder containing multiple skills at once. That is a constraint of how Claude.ai imports skills today.
 
-**Option 1: Download pre-zipped skills from Releases (Recommended)**
+**Download pre-zipped skills from Releases**
 
 1. Open the [latest Release](https://github.com/realjaymes/marketingagentskills/releases/latest)
 2. Download the individual `.zip` files for the skills you want (for example, `product-positioning.zip`). To grab everything in one go, download `all-skills.zip` and unzip it once. You will get 27 individual skill `.zip` files inside, ready to upload as-is
 3. In Claude, go to **Settings → Capabilities → Skills**, click **Upload skill**, and select the `.zip` for each skill you want to install
-
-No unzipping and re-zipping of the repo. The zips in Releases are auto-generated on every update.
-
-**Option 2: Download the full repo (the long way)**
-
-If you would rather work from the repo directly:
-
-1. Click the green **Code** button above, then **Download ZIP**
-2. Unzip the downloaded file
-3. For each skill you want, re-zip just that skill's folder inside `skills/` (for example, zip `ad-creative/` into `ad-creative.zip`)
-4. In Claude, upload each `.zip` one at a time via **Settings → Capabilities → Skills**
-
-This is the default flow Claude provides today. Option 1 skips the unzip-and-rezip step entirely.
 
 ### For Claude Code Users
 
