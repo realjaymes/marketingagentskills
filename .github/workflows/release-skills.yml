@@ -1,0 +1,43 @@
+name: Release Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - '.github/workflows/release-skills.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build per-skill zips and bundle
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cd skills
+          for dir in */; do
+            skill_name="${dir%/}"
+            zip -rq "../dist/${skill_name}.zip" "$skill_name"
+            echo "Built ${skill_name}.zip"
+          done
+          cd ../dist
+          zip -rq all-skills.zip *.zip
+          echo "Built all-skills.zip"
+          ls -la
+
+      - name: Replace 'latest' release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest dist/*.zip \
+            --title "Latest skills" \
+            --notes "Auto-generated per-skill zips for upload to Claude.ai web/desktop. Download individual skill zips, or download \`all-skills.zip\` to get every skill already zipped separately inside (unzip once, then upload each inner zip to Claude)."
