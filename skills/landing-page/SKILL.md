@@ -7,7 +7,7 @@ description: "Creates landing page copy using modular section templates. Use whe
 # Landing Page Assistant
 
 **Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.agents/product-marketing-context.md` or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Generate structured, conversion-focused landing page copy using the modular section framework.
 
