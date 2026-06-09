@@ -69,7 +69,6 @@ A ready-to-use project package lives in `assets/chatgpt-project/`. It turns this
 
 - `project-instructions.md` — paste into the Project or Gem instructions.
 - `knowledge/` — upload these files as the project knowledge.
-- `README.md` — setup steps for each of the three platforms.
 
 ## References
 
