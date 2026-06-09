@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-27 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+28 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -34,6 +34,7 @@ See demo:
 |-------|-------------|
 | [ad-creative](skills/ad-creative) | Generate, iterate, and scale ad creative (headlines, descriptions, primary text, full ad variations) for any paid advertising platform |
 | [agent-skill-builder](skills/agent-skill-builder) | Create new Claude skills from scratch or translate ChatGPT projects into the Claude skill format |
+| [ai-content-generation](skills/ai-content-generation) | Step-by-step, copy-paste-prompt playbooks for AI image and video content: faceless influencer, AI clone and talking head, AI ad creative (including UGC), and faceless YouTube. Ships with a ChatGPT, Claude, and Gemini project package |
 | [ai-humanizer](skills/ai-humanizer) | Detect AI-written text, provide line-by-line recommendations, and rewrite content to sound genuinely human |
 | [case-study-builder](skills/case-study-builder) | Create professional case studies, engagement summaries, and project summaries |
 | [clay-gtm-outbound](skills/clay-gtm-outbound) | Design and optimize Clay-powered GTM workflows for prospecting, signal detection, and outbound automation |
@@ -71,7 +72,7 @@ Claude.ai (the web app) and the Claude desktop app support skills via **Settings
 **Download pre-zipped skills from Releases**
 
 1. Open the [latest Release](https://github.com/realjaymes/marketingagentskills/releases/latest)
-2. Download the individual `.zip` files for the skills you want (for example, `product-positioning.zip`). To grab everything in one go, download `all-skills.zip` and unzip it once. You will get 27 individual skill `.zip` files inside, ready to upload as-is
+2. Download the individual `.zip` files for the skills you want (for example, `product-positioning.zip`). To grab everything in one go, download `all-skills.zip` and unzip it once. You will get all of the individual skill `.zip` files inside, ready to upload as-is
 3. In Claude, go to **Settings → Capabilities → Skills**, click **Upload skill**, and select the `.zip` for each skill you want to install
 
 ### For Claude Code Users
@@ -135,7 +136,7 @@ You can also invoke skills directly:
 `portfolio-positioning` `product-positioning` `product-messaging` `product-launch-gtm` `marketing-advantages`
 
 ### Content & Copy
-`ad-creative` `landing-page` `saas-landing-pages` `press-release` `copy-anatomy` `ai-humanizer`
+`ad-creative` `landing-page` `saas-landing-pages` `press-release` `copy-anatomy` `ai-humanizer` `ai-content-generation`
 
 ### Research & Segmentation
 `icp-persona` `customer-segments` `case-study-builder`
