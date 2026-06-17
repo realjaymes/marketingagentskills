@@ -53,6 +53,14 @@ hour]. Same phone-camera, natural-light, slightly imperfect look.
 
 Save a small set: front, side, smiling, a couple of settings. That is your reusable asset library.
 
+**Lock the face harder with a JSON prompt and your tool's native face reference.** A plain re-upload works, but two upgrades make the same person hold across different tools, not just inside ChatGPT.
+
+- **Get a JSON face prompt.** Upload your hero image to ChatGPT and paste: "Analyze this photo and write me a detailed JSON prompt describing this person's face, skin tone, hair, facial features, and overall appearance. Format it for use in AI image generation." A structured JSON block (face shape, skin tone, eye color, hairline, and so on) travels between tools far more reliably than loose prose. Save it and reuse the same block every time.
+
+- **Combine the JSON with a style reference.** When you want a specific look, an outfit, a lighting, a setting, grab a reference image of that vibe from Pinterest or Instagram. Then feed the tool two things: your JSON face prompt (what the character looks like) and the style reference (the look you want). The JSON holds the identity, the reference sets the scene.
+
+- **Turn on the native face-reference feature.** Most image tools have one and it beats a plain re-upload: Midjourney Omni Reference (`--oref`, strength 300 to 500; the older `--cref` is V6 only), Leonardo Image Reference with Character mode, FLUX Kontext face reference, Kling face reference, and Gemini Nano Banana, which locks a face in-app. Use the JSON prompt and the face reference together: the prompt says what the face is, the reference shows it.
+
 ### Step 4 — Give them a voice
 
 Go to ElevenLabs. Pick a library voice that fits your character, or design one from a description. Save it. Set Stability around 40 to 50 (natural, with some variation) and Similarity high. You will use this same voice on every video so the persona sounds consistent.

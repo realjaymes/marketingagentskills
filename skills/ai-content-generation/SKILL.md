@@ -2,7 +2,7 @@
 name: ai-content-generation
 description: "When the user wants to create AI-generated image or video content: a faceless influencer or persona for TikTok and Instagram, a faceless YouTube channel, an AI clone or talking-head of themselves, or AI ad creative (UGC, product video, static images). Also use when the user mentions 'faceless influencer,' 'faceless channel,' 'AI avatar,' 'AI UGC,' 'talking head,' 'clone myself,' 'AI ad creative,' 'AI video ads,' or tools like Veo, Google Flow, Kling, Higgsfield, Seedance, Runway, ElevenLabs, HeyGen, Arcads, Nano Banana, Midjourney, or Ideogram. Gives step-by-step, copy-paste-prompt playbooks for each use case plus the realism rules that beat AI slop. For paid-ad strategy and targeting, see performance-marketing or paid-ads."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # AI Content Generation
@@ -41,6 +41,7 @@ The user does not need all of these. Each playbook names the few it uses. Start 
 |---|---|---|
 | Ideas, scripts, prompts | ChatGPT, Gemini, Claude | Gemini for grounded/current research, Claude for natural voice |
 | Voice and voice cloning | ElevenLabs | Free to test, Starter to ship |
+| Free voiceover (no cloning) | Speechma | Free, no signup, browser-based library voices; ship narration before you clone a voice |
 | Video generation | Veo 3, Google Flow (directs Veo with a scene builder and camera controls), Kling 3.0 via Higgsfield, Seedance | Veo or Flow for hero shots, Kling for cheap volume, Seedance for lowest cost |
 | Images and in-image text | Gemini Nano Banana, Midjourney, Ideogram | Nano Banana locks a face, Ideogram nails legible text, Midjourney for the best look |
 | Avatars and UGC actors | HeyGen, Arcads | HeyGen to clone yourself, Arcads for ad UGC |

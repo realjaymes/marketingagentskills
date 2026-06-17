@@ -114,6 +114,12 @@ real-skin imperfection.
 
 You now have a written face description plus a clean reference image. Download the image. Keep the written description, you will reuse it.
 
+**Make the description a JSON prompt and use your tool's face lock.** Two upgrades keep the same you across tools instead of drifting between them.
+
+- **Ask for JSON, not just prose.** Run this on your photo, either folded into the prompt above or on its own: "Analyze this photo and write me a detailed JSON prompt describing this person's face, skin tone, hair, facial features, and overall appearance. Format it for use in AI image generation." A structured JSON face block reuses cleanly across every tool and drifts less than a paragraph does.
+
+- **Turn on the native face-reference lock.** Pair the JSON prompt with the tool's own face feature so your identity holds: Midjourney Omni Reference (`--oref`, strength 300 to 500; `--cref` is V6 only), Leonardo Image Reference with Character mode, FLUX Kontext face reference, Kling face reference, and Gemini Nano Banana in-app. The JSON says what your face is, the reference shows it.
+
 ### Step 6 — Bring the image into Higgsfield (or pick your HeyGen avatar)
 
 If you built a HeyGen avatar in Step 3, just open HeyGen and select it, then jump to Step 8.

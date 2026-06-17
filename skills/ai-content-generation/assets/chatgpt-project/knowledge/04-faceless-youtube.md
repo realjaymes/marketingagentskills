@@ -10,7 +10,7 @@ Build a YouTube channel (long-form videos and shorts) where you are never on cam
 | Job | Tool | Cost | Swap options |
 |---|---|---|---|
 | Research + script | ChatGPT (or Claude) | Free or ~$20/mo | Gemini for cited research |
-| Narration | ElevenLabs | ~$22/mo (Creator unlocks voice cloning) | MiniMax, Hume |
+| Narration | ElevenLabs | ~$22/mo (Creator unlocks voice cloning) | MiniMax, Hume, Speechma (free, no cloning) |
 | Moving visuals | Veo 3 or Kling, plus free stock (Pexels, Pixabay) | Veo via AI Pro; Kling ~$34/mo; stock free | Google Flow (direct Veo), Runway, Luma, Seedance |
 | Thumbnail text | Ideogram or Gemini Nano Banana | Free app tiers; ~$15+/mo | Midjourney + type text in Canva |
 | Edit | CapCut or Premiere | CapCut free; Premiere sub | Descript, DaVinci Resolve |
@@ -168,6 +168,8 @@ Look, this is the part that matters.
 ```
 
 Do not generate a 1,200-word script in one block. It drifts and glitches. Generate in chunks, one script section or every ~300 to 500 words, using the same voice, model, and settings every time so they stitch together. If one chunk glitches, regenerate only that chunk, not the whole thing.
+
+**Free alternative if you are not cloning a voice.** When you just need clean narration and not your own cloned voice, Speechma (speechma.com) is a 100% free, no-signup browser TTS with 400+ library voices and a commercial license on the output. It clones nothing, so the voice is a library voice, not yours. Use it to ship for free, then move to a cloned ElevenLabs voice once you want a narrator that is uniquely your channel's. A common zero-cost stack is ChatGPT for the script, Speechma for the narration, and CapCut for the edit.
 
 ### Step 5 — Plan the visuals scene by scene
 

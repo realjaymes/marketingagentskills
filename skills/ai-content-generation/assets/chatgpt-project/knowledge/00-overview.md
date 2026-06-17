@@ -34,6 +34,7 @@ These tools repeat across the set. Each playbook tells you exactly which ones it
 |---|---|---|
 | ChatGPT / Gemini / Claude | Ideas, scripts, prompts. Claude for voice, Gemini for grounded research. | Free tiers, then ~$20/mo each |
 | ElevenLabs | Voiceover and voice cloning. | Free to test, $5/mo Starter to ship |
+| Speechma | Free no-signup browser voiceover (library voices, no cloning). Good for faceless narration before you clone a voice. | Free at speechma.com |
 | Veo 3, Google Flow, Kling (via Higgsfield), Seedance | Video generation. Veo for hero shots, Google Flow to direct Veo with a scene builder and camera controls, Kling for cheap volume, Seedance for the lowest cost. | Higgsfield ~$34/mo for Kling at volume |
 | Gemini Nano Banana, Midjourney, Ideogram | Images and in-image text. Nano Banana locks a face, Ideogram nails text, Midjourney for the best look. | Nano Banana free in-app, Ideogram free tier |
 | HeyGen, Arcads | Talking-head avatars and UGC actors. HeyGen to clone yourself, Arcads for ad UGC. | HeyGen free 3/mo, then $29/mo |
