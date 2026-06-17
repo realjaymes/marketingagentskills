@@ -319,12 +319,15 @@ Do not jump to automated bidding without conversion data.
 
 **Campaign Objectives:**
 
-| Objective | Real Use Case |
-|---|---|
-| Awareness | Cheap reach, early signal collection |
-| Traffic | Content distribution, warm-up |
-| Leads | Lead magnets, forms, demos |
-| Sales | Retargeting and proven offers |
+| Objective | Real Use Case | Trap to Avoid |
+|---|---|---|
+| Awareness | Cheap reach, early signal collection | Treating it as conversion |
+| Traffic | Content distribution, warm-up, retargeting feed | Running it for sales when Sales objective is available |
+| Leads | Lead magnets, native forms, demos | Celebrating low CPL when Lead-to-Sale rate is unknown |
+| Sales | Retargeting and proven offers, all checkout funnels with pixel | Skipping it because account lacks tracking (fix tracking first) |
+| Messages / WhatsApp | Conversation-led businesses (NG SMBs, B2B intake, high-touch retail) | Optimizing for cheap clicks instead of qualified conversations |
+
+**Funnel Types Nigerian SMBs Run:** Direct purchase (Sales → checkout), Website Traffic (ad → landing page → action), Lead Gen (ad → native form → follow-up → sale), Click-to-WhatsApp (ad → DM → sale), and Profile Visit (ad → IG profile → DM → sale). Each funnel type uses a different Meta-reported metric. For target-setting and CPA translation across funnels, see [client-engagement-playbook.md](client-engagement-playbook.md) → Funnel-Aware Target Translation.
 
 **Creative by Funnel:**
 - TOFU: Pain point, lifestyle, meme, POV
@@ -369,6 +372,8 @@ Do not jump to automated bidding without conversion data.
 | In-Feed Ads | Primary acquisition and testing |
 | Spark Ads | Scale proven organic or creator content |
 
+**Funnel Types Nigerian SMBs Run on TikTok:** Direct purchase (TikTok Shop or Web Conversions), Website Traffic (Bio Link or LP), Lead Gen (Lead Generation objective), and Profile Visit (TikTok's equivalent IG-style funnel via Bio Link or profile clicks). TikTok's lead gen and traffic objectives carry slightly weaker quality than Meta's because the audience skews entertainment-first. For target-setting and CPA translation across funnels, see [client-engagement-playbook.md](client-engagement-playbook.md) → Funnel-Aware Target Translation.
+
 **Creative by Funnel:**
 - TOFU: Hooks, POVs, lifestyle, memes
 - MOFU: Demos, explainers, UGC
@@ -379,6 +384,29 @@ Do not jump to automated bidding without conversion data.
 **What Fails:** Polished brand ads, slow pacing, over-scripted messaging
 
 **Specs:** 9:16 aspect ratio, 5-60 seconds
+
+#### Ad Disclaimer field (generate one when the ad makes a claim)
+
+TikTok exposes an optional **Disclaimer** field at the creative level (Ad Details → Disclaimer). It renders on TikTok placements only and must be **under 90 characters** ("less than 90" = ≤89; write to ~85 for margin). It is a lightweight, platform-native compliance hedge that sits *on top of* already-compliant creative — it does not replace scrubbing figures, trigger words, or earnings screens from the creative itself.
+
+**Generate a disclaimer whenever the TikTok ad touches any of these claim types. Pull from this bank (all ≤89 char):**
+
+| Claim in the ad (copy or visuals) | Disclaimer (char count) |
+|---|---|
+| Income / earnings / revenue (figures, "I made ₦X", withdrawal screens) | `Results reflect individual experiences and are not guaranteed.` (61) |
+| Testimonials / student or customer results | `Testimonials reflect individual experiences, not guaranteed outcomes.` (69) |
+| Both income + testimonial | `Results & testimonials reflect individual experiences, not guarantees.` (70) |
+| "Make money" / business outcome, no figure | `Outcomes vary by effort and circumstance. Results are not guaranteed.` (68) |
+| Health / fitness / body | `Individual results vary. Not medical advice.` (45) |
+| Financial / trading / investment | `Not financial advice. Capital at risk. Returns not guaranteed.` (62) |
+| Before/after or transformation visuals | `Individual results vary and are not typical.` (44) |
+
+**Rules:**
+- **No claim → no disclaimer.** Pure brand, feature, or curiosity creative gets a blank field; an unnecessary disclaimer flattens a soft creative.
+- **Count it before you save.** The field rejects ≥90 characters. A common just-over example is "Testimonials & results reflect individual experiences & do not guarantee specific outcomes" — that is exactly **90** (one over). Trim to "Testimonials & results reflect individual experiences, not guaranteed outcomes" (76) or use the bank above.
+- **NG / regulated audiences:** when income or results creative targets Nigerian/diaspora or any regulated vertical, default to adding the income or testimonial line even if you are unsure.
+
+**Platform note:** this is a **TikTok-only** field. Meta has no creative-level disclaimer equivalent — Meta compliance is handled in-copy. (MIA retired its in-copy earnings-disclaimer *line* on 2026-06-11; do not reintroduce it on Meta. The TikTok disclaimer field is a separate mechanism, platform-native, and does not consume ad-text characters.)
 
 ---
 
@@ -430,20 +458,86 @@ Do not jump to automated bidding without conversion data.
 
 ### Twitter (X) Ads
 
-**Mindset:** Opinion-driven and real-time. Strong ideas outperform strong visuals.
+**Mindset:** Opinion-driven, real-time, POV-led. Strong ideas outperform strong visuals. The 2026 Ads Manager rebuild (xAI-powered) rewired retrieval/ranking but kept the objective taxonomy intact.
 
-**Buyer Intent:** Problem-aware, reacting to trends
+**Buyer Intent:** Problem-aware, reactive to trends and category-leader takes. Browsing context is between Google's high intent and Meta's low intent.
+
+**Account access (NG operational gates):**
+- Ad account currency must be set to **USD at creation** &mdash; NGN triggers ~50% surcharge on non-NG spend, not reversible.
+- Fund with virtual USD card (EverTry / Payora / GeegPay / Grey / Cardtonic) or domiciliary Visa. NG NGN cards (most Verve) rejected on auth.
+- Keep card balance &ge; 7 days of planned daily spend or campaigns pause mid-flight.
+- No business document verification for self-serve; sensitive verticals (crypto, gambling, political) require manual application.
+
+**Campaign Objectives (2026 taxonomy):**
+
+| Funnel | Objective | Optimization Event |
+|---|---|---|
+| Awareness | Reach, Video Views, Pre-Roll Views | Impressions / views |
+| Consideration | Engagements, Website Traffic, Followers | Engagements / clicks / follows |
+| Conversion | Website Conversions, App Installs, App Re-engagement | Purchase, Lead, Subscribe, AddToCart, ContentView, CompleteRegistration |
+
+Purchase optimization specifically uses **Website Conversions** with the event set to **Purchase**. There is no Meta-style "Sales" objective with on-platform checkout.
+
+**Bidding:**
+- **Autobid** (default, lowest cost in budget)
+- **Maximum Bid** (manual ceiling)
+- **Target Cost** (CPM/CPA averaging)
+
+**Learning Phase:** Practitioner consensus &mdash; conversion campaigns stabilize around **40-60 events/week per ad group**. Below that, the ML allocator under-delivers and CPAs are unstable. Drop to a higher-funnel event (Lead, AddToCart, ContentView) until volume catches up. The xAI ranker reportedly needs less event volume than legacy but isn't independently benchmarked yet &mdash; default to 40-60 until own data validates.
+
+**Audiences & Targeting:**
+- **Follower Lookalikes** (paste competitor / thought-leader handles) &mdash; strongest targeting lever in 2026
+- **Keyword targeting** &mdash; users who posted, searched, or engaged with specific terms; use entity terms and event names, not single broad words
+- **Conversation Topics** (10,000+) &mdash; users active in conversations around topics
+- **Interest targeting** (350+ across 25 categories) &mdash; weaker than Follower LAL
+- **Event targeting** &mdash; sport, entertainment, cultural moments
+- **Custom Audiences** &mdash; list upload (email/phone/X handle/mobile IDs), Pixel-based, app activity
+- **Retargeting** &mdash; site (Pixel), engagement (organic/paid post engagers), CRM list
+- **Cut/thinned post-2024:** TV viewership data, deep telco/carrier segments. **New 2026:** Grok-assisted audience suggestion from URL.
+
+**Geo (NG):** state and metro-level. Default Nigeria stack: Lagos + Abuja (FCT) + Rivers + Oyo + Kano.
+
+**Tracking:** X Pixel (browser) + Conversions API (server-side) is **mandatory** for any Purchase or Lead campaign. Pixel-only loses 30-45% of events. CAPI deploys via direct snippet, GTM, GTM Server-side, Segment, Stape, or Shopify integration. Standard events: Purchase, Lead, CompleteRegistration, Subscribe, StartTrial, InitiateCheckout, AddPaymentInfo, AddToCart, AddToWishlist, ContentView, Search, PageView, CustomEvent. Offline conversions supported via CAPI.
+
+**Ad Formats & Specs (2026):**
+
+| Format | Dimensions | Length | Notes |
+|---|---|---|---|
+| Promoted Post (image) | 1200&times;628 (1.91:1) or 1200&times;1200 (1:1), max 5MB | n/a | Headline 70 chars; body 280 chars (links count 23) |
+| Promoted Post (video) | 16:9, 1:1, or 9:16; &le;1GB MP4/MOV | &le;2:20 (best 15-30s) | Same text limits |
+| Vertical Video / Immersive Media Viewer | 1080&times;1920 (9:16) | &le;2:20 (best 15-30s) | Captions &le;90 chars across 3 lines &mdash; matured into a primary format in 2026 |
+| Carousel | Image: 800&times;418/800&times;800. Video: 800&times;450/800&times;800. 2-6 slides | n/a | All slides same aspect ratio (default 1:1) or render breaks |
+| Thread Promoted Post | n/a (text) | 3-7 tweets typical | 280 chars/tweet |
+| Amplify Pre-Roll | 1200&times;1200 (1:1 recommended), &le;1GB | &le;2:20 | Pre-roll alongside premium publisher video |
+| Trend / Timeline Takeover | Premium placements | n/a | $150K-$250K+/day, not self-serve |
+
+**Aesthetic Score (Grok):** Per-creative visual quality grade. Higher scores get lower CPMs and better placement priority. Below Average is an auction penalty &mdash; fix visuals before iterating copy.
+
+**Grok Prefill:** Auto-generates draft creative (headline, body, image suggestion) from a URL. Useful for starter variants; never ship as-is &mdash; output is generic, no POV.
 
 **Creative by Funnel:**
-- TOFU: POVs, memes, observations
-- MOFU: Threads, explainers
-- BOFU: Testimonials, offers
+- TOFU: POVs, contrarian takes, founder threads, observation hooks
+- MOFU: Threads, comparisons, demos, case studies
+- BOFU: Testimonials, objection handlers, urgency, brand-defense
 
-**What Works:** Clear opinions, concise writing, timely relevance
+**Pricing Benchmarks (2026):**
 
-**What Fails:** Corporate tone, repurposed Meta creatives, overdesigned visuals
+| Metric | Global Self-Serve | NG (hypothesis &mdash; validate in first $50-$100 test) |
+|---|---|---|
+| CPM | $2-$6 median; $5.80 average | $1.50-$3.50 (NGN 2,300-5,400) |
+| CPC | $0.50-$2 typical; $3-$5 in competitive verticals | $0.10-$0.40 (NGN 150-620) |
+| Cost per engagement | $0.50-$2 | $0.02-$0.04 (NGN 30-65) |
+| Cost per follow | $1.01-$2 | varies |
 
-**Specs:** 1:1 or 16:9 video, short scannable text
+No platform minimum daily budget. Practical floor for Website Conversions optimization: $15-$25/day per ad group to clear 40-60 weekly events.
+
+**Auction dynamics (2026):** 52% of advertisers reduced X budgets citing brand safety. Auction pressure thinner than Meta/TikTok &mdash; lower CPMs on most placements, but lower conversion volume per dollar. Reply engagement dropped 19% YoY in 2026 (bot inflation) &mdash; Engagement-optimized campaigns produce more noise per dollar.
+
+**What Works:** Clear opinions, concise writing, timely relevance, founder POV at scale, Follower Lookalikes seeded from competitor + thought-leader handles, 9:16 vertical for Immersive Viewer placement, Aesthetic Score &ge; Average
+
+**What Fails:** Corporate tone, repurposed Meta creatives, overdesigned visuals, optimizing for Engagement when goal is sales (#1 budget waster), broad single-word keyword targeting, ignoring Aesthetic Score, country-level NG geo, NGN-set ad account currency, Pixel-only tracking
+
+**Specs:** 1:1 or 16:9 video (feed), 9:16 vertical (Immersive Viewer), short scannable text
 
 ---
 
@@ -464,6 +558,99 @@ Do not jump to automated bidding without conversion data.
 
 **Specs:** 9:16 aspect ratio, 5-15 seconds
 
+---
+
+### ChatGPT Ads / AI Answer Engine Ads (Emerging Surface)
+
+**Status:** Emerging. Treat as a surface category covering ChatGPT proper (OpenAI), Microsoft Copilot (via Microsoft Ads), Google AI Overviews / AI Mode (via Google Ads), Perplexity (closed to new advertisers since Oct 2025), and Brave Search Ads.
+
+**Mindset:** Answer engine, not feed. Buyers arrive question-shaped, not browse-shaped. Creative reads like a credible recommendation that completes the user's intent, not like a banner. Most failures are surface-level (buying ChatGPT Ads when the audience can only be reached via Microsoft Copilot or Google AIO).
+
+**Buyer Intent:** Question-driven, research-driven, ready to act once the answer satisfies. Higher intent than social, lower volume than search.
+
+**NG advertiser reality (June 2026):**
+- **ChatGPT Ads proper is NOT buyable from NG** &mdash; OpenAI's self-serve Ads Manager opened to all US advertisers May 5, 2026 and to Canada, Australia, New Zealand. Announced Phase 2: UK, Brazil, Mexico, Japan, South Korea (no date). Nigeria not on either list.
+- ChatGPT Ads does not deliver to NG users either &mdash; even via a US entity, the audience is US/CA/AU/NZ only. Viable for diaspora-targeted (US/CA/AU/NZ) campaigns through a US partner; not viable for NG-targeted.
+- **For NG-targeted AI-answer ad coverage:** route through **Microsoft Copilot (via Microsoft Ads)** + **Google AI Overviews (via Google Ads)** &mdash; both buyable from NG today and reach NG users.
+
+**ChatGPT Ads access model:**
+- Approved geos for advertisers: US, CA, AU, NZ
+- Self-serve Ads Manager open to all approved-geo advertisers
+- Vetting: business registration docs, domain verification, product/service detail
+- Manual review 3-7 business days for initial approval; ~24h for subsequent creative
+
+**Approved categories at launch (April 2026 policy):** lifestyle &amp; household goods, local services, travel &amp; experiences, digital products &amp; education.
+
+**Disallowed at launch:** dating/sexual, health claims, alcohol &amp; drugs, healthcare, financial services, legal services, gambling, political content. Healthcare/financial/legal reviewed case-by-case.
+
+**Ad Units:**
+
+| Surface | Format | Specs |
+|---|---|---|
+| **ChatGPT Ads** | Sponsored Recommendation Card (text-only, single unit) | Headline 50-80 chars / Description 150-200 chars / Proof element 80-120 chars. No image, video, or carousel formats yet |
+| **Microsoft Copilot** (via Microsoft Ads) | RSA, Multimedia Ads, Shopping, PMax &mdash; inherits from existing Microsoft Ads campaigns | 15 headlines (30 chars), 4 descriptions (90 chars); multi-asset for PMax |
+| **Google AI Overviews** (via Google Ads) | RSA, Shopping, PMax, Demand Gen &mdash; inherits from existing Google Ads campaigns | Standard Google Ads specs |
+
+**Auction & Bidding (ChatGPT proper):**
+- CPM (default $60 floor) and CPC (recommended $3-$5 starting bid)
+- Reported CPMs from early advertisers: $25-$60
+- Auction mechanism: relevance-weighted second-price
+- **Conversion-optimized bidding rolled out June 5, 2026** (accounts with conversions configured by June 1 got early access)
+- No minimum budget since May 5, 2026
+
+**Targeting (ChatGPT proper):**
+- **Conversational intent** (primary lever; entire active thread informs match)
+- **Geo**: US state, DMA, ZIP code (added May 22, 2026; country-only before)
+- **Language**
+- **Custom audiences** (CSV/TXT hashed email/phone upload, 512MB max; inclusion or exclusion, added May 14, 2026)
+- **User-tier filter (built-in, not configurable):** ads serve to Free + ChatGPT Go logged-in adults in approved geos only
+
+**Not available on ChatGPT proper:** demographic targeting (age/gender/income), interest categories, lookalike audiences, retargeting from pixel-tagged visits (pixel exists; retargeting feature not shipped), publisher-content targeting.
+
+**Targeting on Microsoft Ads / Google Ads (Copilot + AIO eligible):** Full standard targeting suite &mdash; keyword/search intent, demographic, in-market, custom audiences, lookalikes, customer match, remarketing.
+
+**Tracking & Attribution (the defining challenge):**
+
+| Surface | Pixel | CAPI | Attribution Window |
+|---|---|---|---|
+| ChatGPT Ads | OpenAI Pixel (first-party cookie `__oppref`) | Yes (May 5, 2026) | 30 days (720h) |
+| Microsoft Copilot | UET tag | Microsoft Conversions API | Standard |
+| Google AIO | Google Tag | Google Enhanced Conversions | Standard |
+
+**Conversation Gap:** ~60% of attributable conversions on AI answer surfaces happen hours/days/weeks after the immediate post-click session (user returns directly, googles brand later). Pixel-only attribution undercounts true ROAS by ~60%. **Required stack:** Pixel + CAPI + post-purchase survey ("How did you hear about us?" with AI surface options) + branded search lift modeling. Use blended (pixel + survey) attribution for ROAS decisions.
+
+**Pricing Benchmarks (2026):**
+
+| Surface | CPM | CPC |
+|---|---|---|
+| ChatGPT Ads | $25-$60 | $3-$5 starting bid |
+| Microsoft Copilot (via Microsoft Ads) | $5-$15 (inherits) | $0.50-$3 |
+| Google AIO (via Google Ads) | Inherits existing Search/Shopping CPCs | Inherits |
+| Perplexity (closed) | $30-$60 (reference) | n/a |
+
+ChatGPT CPMs are 2-6&times; typical Meta CPMs. Plan AI-surface campaigns as **experimental budget**, not core media spend.
+
+**Creative by Funnel:**
+- TOFU (definitional / problem-aware queries): Educational answers, comparison primers
+- MOFU (comparison / research queries): "best X for Y" framing, proof-led answers
+- BOFU (transactional / brand-defense queries): Conversion-direct creative, brand-defense for branded queries
+
+**Funnel-Aware Structure:**
+
+| Stage | Surface Mix | Creative Style |
+|---|---|---|
+| TOFU | Microsoft Copilot + Google AIO | Definitional, problem-framing |
+| MOFU | All three surfaces | Comparison, proof, "best X" |
+| BOFU | Google AIO (search-intent), Microsoft Copilot | Brand defense, transactional |
+
+**What Works:** Proof-led copy with receipts (specific numbers, customer counts, certifications), question-completing answers, brand-defense coverage on branded queries, multi-surface routing (Copilot + AIO + ChatGPT where geo allows), post-purchase survey calibration
+
+**What Fails:** Treating ChatGPT like a social platform (audience targeting, lookalikes don't exist on ChatGPT proper), running ChatGPT for NG-only campaigns (geo mismatch), pixel-only attribution (misses 60%), bait-and-switch destinations (OpenAI rejects), creative that mimics chatbot voice (OpenAI rejects), disallowed categories without approval
+
+**Specs:** ChatGPT proper &mdash; text only, 3-element format (50-80 / 150-200 / 80-120). Microsoft + Google inherit existing campaign formats.
+
+**Watchlist (run quarterly):** ChatGPT Ads geo expansion (UK, Brazil, Mexico, Japan, South Korea announced; Nigeria not yet on roadmap); new ad units (image, video, sidebar, citation-embedded); Perplexity reopens; approved-category changes (healthcare, financial, legal currently restricted).
+
 ### Section 4 Quick Reference
 
 | Platform | Mindset | Buyer Intent | Best Creative by Funnel | What Works | What Fails | Specs |
@@ -474,8 +661,9 @@ Do not jump to automated bidding without conversion data.
 | TikTok | Entertainment-first | Unaware, curiosity-driven | TOFU: Hooks/POV, MOFU: Demos | Creator-style, fast pacing | Polished ads, slow starts | 9:16 |
 | YouTube | Education + storytelling | Problem to solution-aware | TOFU: Education, MOFU: Demos, BOFU: Case studies | Teaching one idea well | Long intros, feature dumping | 16:9, 9:16 |
 | Reddit | Community-first | Highly problem-aware | TOFU: Education, MOFU: Comparisons | Honest copy, context fit | Sales language, corporate tone | 1:1, MP4 |
-| Twitter (X) | Opinion + real-time | Problem-aware, reactive | TOFU: POVs, MOFU: Threads | Strong opinions, clarity | Corporate polish, recycled ads | 1:1, 16:9 |
+| Twitter (X) | Opinion + real-time, POV-led | Problem-aware, reactive | TOFU: POVs/contrarian, MOFU: Threads/comparisons, BOFU: Testimonials | Follower Lookalikes, Aesthetic Score ≥ Average, vertical video for Immersive Viewer | Corporate polish, recycled ads, Engagement-as-Sales-proxy, NGN-set ad account currency | 1:1, 16:9, 9:16 (Immersive) |
 | Snapchat | Impulse + visuals | Low intent, emotion-led | TOFU: Lifestyle | Fast pacing, visual payoff | Text-heavy, B2B messaging | 9:16 |
+| ChatGPT (AI Answer) | Answer engine | Question-driven, research-driven | MOFU: comparison/best-X, BOFU: brand-defense | Proof-led copy with receipts, multi-surface (Copilot + AIO + ChatGPT) | Country-level targeting, pixel-only attribution, bait-and-switch destinations, NG-only campaigns on ChatGPT proper | Text 50-80/150-200/80-120 (ChatGPT); inherits RSA on Microsoft/Google |
 
 ---
 
@@ -500,8 +688,9 @@ Do not jump to automated bidding without conversion data.
 | LinkedIn | Insight Tag | Professional intent and retargeting |
 | TikTok | TikTok Pixel + Events API | Creative engagement signals |
 | Reddit | Reddit Pixel | Click and conversion feedback |
-| X | X Pixel | Engagement and site actions |
+| X | X Pixel + Conversions API | Engagement and site actions; CAPI mandatory (Pixel-only loses 30-45%) |
 | Snapchat | Snap Pixel | Mobile behavior and purchases |
+| ChatGPT (OpenAI) | OpenAI Pixel + CAPI | First-party `__oppref` cookie; 30-day window; conversation gap (~60% of conversions captured post-session) requires survey + branded-search lift to close |
 | Mobile Apps | Appsflyer / Adjust (MMP) | Install attribution, post-install events, fraud-filtered signals |
 
 Rule: Pixels alone are no longer sufficient. Server-side tracking (CAPI, Enhanced Conversions) is required for reliable signal delivery.
@@ -542,6 +731,7 @@ Before scaling:
 - Analytics numbers directionally aligned
 - MMP SDK installed correctly (mobile)
 - Events deduplicated between MMP and platform
+- Campaign objective matches funnel intent (Sales for checkout funnels, Messages for WhatsApp, Leads for native forms, Traffic only for warm-up)
 
 Never scale on broken tracking.
 
