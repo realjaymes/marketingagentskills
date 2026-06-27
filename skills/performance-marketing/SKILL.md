@@ -1,6 +1,6 @@
 ---
 name: performance-marketing
-version: "2.1.0"
+version: "2.2.0"
 description: Plans, reviews, and optimizes paid advertising campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, and Snapchat. Use when the user mentions "paid ads," "performance marketing," "ad campaign," "creative strategy," "ad copy," "media buying," "ROAS," "CPA," "campaign audit," "client onboarding," "launch checklist," "campaign reporting," or platform-specific ad help.
 argument-hint: "[platform] [task]"
 ---
@@ -75,7 +75,7 @@ When onboarding a new client or running a full engagement, follow the 11-step li
 7. **Budget** — Calculate funnel splits, apply platform minimum budgets
 8. **Launch** — Run the 25-item pre-flight checklist, confirm GO/NO-GO
 9. **Optimize** — Apply kill/scale decision rules, run weekly optimization checklist
-10. **Report** — Use weekly/monthly report templates, apply client language bank
+10. **Report** — Use weekly/monthly report templates, apply client language bank. At every scheduled live-campaign read (Day 3/5/7/12 or the cadence in the campaign hub's Next Actions) and before any kill/scale decision, generate or update the **Funnel-Layer Diagnostic** ([references/funnel-layer-diagnostic.md](references/funnel-layer-diagnostic.md)) in the campaign build doc's Live Monitoring section, newest-on-top. It is not optional or memory-dependent — a campaign past a scheduled read with no diagnostic is incomplete.
 11. **Scale** — Verify scaling readiness, calculate budget ramp schedule
 
 ### Mode 2: Campaign Planning
@@ -158,6 +158,8 @@ For detailed guidance, consult:
 - [Client Engagement Playbook](references/client-engagement-playbook.md) - Onboarding, naming conventions, budgets, launch checklists, optimization rules, reporting templates, scaling
 - [Platform Specs & Benchmarks](references/platform-specs-benchmarks.md) - Ad format specs, KPI benchmarks, objective selection matrices
 - [Operating Checklist](references/operating-checklist.md) - Pre-launch and review checklist
+- [Funnel-Layer Diagnostic](references/funnel-layer-diagnostic.md) - The fill-in template + trigger for the Live Monitoring read on every live campaign (Delivery → CPM → Creative → Audience → LP/Offer → CPA/ROAS, 🟢🟡🔴, layer-breaking, action-gated)
+- [Account Safety & Ban Recovery](references/account-safety-and-ban-recovery.md) - the **account-behaviour** layer **across ad platforms** (new-account warm-up, payment-method discipline, one-identity/fingerprint rule, login/2FA, asset sourcing, special-category declaration) + per-platform notes (Meta/Google/TikTok/LinkedIn/etc.) + the universal 5-step rejection-recovery protocol ("never blind-resubmit"). Load **before scaling spend** and **at any ad rejection**. Complements (never replaces) the creative/policy compliance in the playbook.
 
 ## Constraints
 
@@ -167,5 +169,8 @@ For detailed guidance, consult:
 - Always test message before format, format before audience
 - One variable at a time in tests
 - Always run §1.5 Audience Research before Strategy on new client engagements; outputs feed §3 Strategy and §6 Creative briefs
-- Reports must diagnose by funnel layer (Pre-flight → Creative → Audience → LP/Destination → Offer); name which layer is breaking before recommending action
+- Reports must diagnose by funnel layer (Pre-flight → CPM → Creative → Audience → LP/Destination → Offer); read CPM first after pre-flight, name which layer is breaking before recommending action, and gate the action on that read. Use the Funnel-Layer Diagnostic template at every scheduled read
+- Low CVR with healthy CTR is a destination OR offer problem (audit the page first; if it's sound, the offer/price is the leak) — never only "fix the destination"
+- ABO for testing (forces signal per angle/audience), CBO for scaling (algorithm allocates to winners); never test on CBO — it concentrates budget on the first ad set to get traction and starves the rest
+- One ad set = one angle. An angle is a belief/desire/fear the audience holds (not a content structure or hook); the angle goes in the ad-set name, the hook is the ad-level test variable (see [[Creative Strategy Framework]])
 - For **TikTok** ads making income, earnings, testimonial, results, health, or financial claims, generate a creative-level **Disclaimer** (≤89 char, from the bank in the TikTok playbook section); count it before saving (TikTok rejects ≥90). Leave it blank for pure brand/feature/curiosity creative. Meta has no equivalent field — handle Meta compliance in-copy.

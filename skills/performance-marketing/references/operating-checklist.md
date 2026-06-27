@@ -23,6 +23,22 @@ Before touching a platform, confirm:
 
 ---
 
+## SECTION 1.5: Audience Research Check
+
+*(From §1.5 in each platform playbook — do before Strategy on new engagements)*
+
+- [ ] Business + ICP restated in one paragraph from discovery inputs
+- [ ] Existing customer profile pulled from client CRM / DM history / order export
+- [ ] Competitor Ad Library teardown done (3-5 competitors, ads running 30-60+ days captured)
+- [ ] Per-ad capture: hook style, format, copy length, offer framing, CTA, social proof type, destination target
+- [ ] Comments mined on competitor ads AND client's own posts (for buyer language and objections)
+- [ ] Audience Language Doc deliverable saved (5 pain quotes, 5 desire quotes, 3 objection patterns, 5 competitor hooks, and where buyers convert: WhatsApp DM, landing page, checkout, or lead form)
+- [ ] Doc location: `Areas/Work/MIA/Clients/[Name]/[NN] – Audience Research.md` or `Areas/Work/MIA/Academy/Ads/[Offer]/[Campaign Folder]/02 – Audience Research.md`
+
+If Audience Research is skipped, Strategy is guessing. Don't proceed without it on new engagements.
+
+---
+
 ## SECTION 2: Funnel Alignment Check
 
 *(Creative Selection Starts With Funnel Stage)*
@@ -70,6 +86,26 @@ For each creative in the campaign:
 - [ ] One ad group = one keyword theme (4-6 keywords)
 - [ ] 1-2 RSAs per ad group
 - [ ] Headline mirrors keyword intent
+
+**X (Twitter):**
+- [ ] Ad account currency set to USD (NGN setting triggers 50% surcharge)
+- [ ] Virtual USD card / dom Visa funded with ≥7 days of planned spend
+- [ ] One campaign = one objective (no Engagement + Website Conversions mixed)
+- [ ] 1-3 ad groups per campaign; each ad group = one audience hypothesis (Follower LAL seed, keyword stack, or list)
+- [ ] 3-6 ads per ad group
+- [ ] Pixel + CAPI both deployed (Pixel-only loses 30-45% of events)
+- [ ] Aesthetic Score ≥ Average on every creative before launch
+- [ ] Revenue campaigns use Website Conversions optimized for Purchase &mdash; NOT Engagements
+
+**ChatGPT / AI Answer Engine Ads:**
+- [ ] Advertiser geo eligible for chosen surface (ChatGPT proper requires US/CA/AU/NZ entity; Microsoft Copilot + Google AIO buyable from NG)
+- [ ] Target user geo deliverable on chosen surface (ChatGPT proper doesn't reach NG users)
+- [ ] Offer category approved (no healthcare/financial/dating/gambling/political on ChatGPT proper without manual approval)
+- [ ] One campaign per surface + objective combo (don't mix ChatGPT and Microsoft inventory in one unit)
+- [ ] One ad group = one intent cluster (comparison / how-to / best-X / definitional / brand-defense / transactional)
+- [ ] 3-5 ads per ad group, each testing a different intent angle
+- [ ] Pixel + CAPI + post-purchase survey + branded search baseline all live before launch (conversation gap = pixel undercount of ~60%)
+- [ ] For ChatGPT proper: 3-element creative format compliant (50-80 / 150-200 / 80-120 chars); no chatbot-mimicking voice; destination consistent with promise
 
 **Universal:**
 - [ ] Each testing cell has enough budget
@@ -152,6 +188,8 @@ Never scale on broken tracking.
 **Signal Reading:**
 - [ ] I know how to diagnose CTR vs CVR vs CPA
 - [ ] I won't misattribute landing page issues to ads
+- [ ] Every diagnosis names the funnel layer breaking (Pre-flight / Creative / Audience / LP / Offer) before recommending action
+- [ ] Weekly reports walk top-to-bottom through the layers; first red layer is the only one being acted on this cycle
 
 ---
 

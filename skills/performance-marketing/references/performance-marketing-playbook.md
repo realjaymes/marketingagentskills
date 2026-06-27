@@ -824,7 +824,7 @@ Campaign structure determines how clean your data is, how fast you learn, how ef
 
 **Ad Set Level:**
 - 1-3 ad sets max per campaign during testing
-- Each ad set = one audience hypothesis (Broad, Lookalike, Interest stack, Retargeting segment)
+- Each ad set = one audience hypothesis (Broad, Lookalike, Retargeting segment — not interest stacks; interest targeting is not used)
 - Do not create 10+ ad sets unless budget justifies it
 
 **Ad Level:**
