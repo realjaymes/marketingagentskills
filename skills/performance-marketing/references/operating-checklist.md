@@ -83,9 +83,11 @@ For each creative in the campaign:
 
 **Google Search:**
 - [ ] Brand and non-brand separated
-- [ ] One ad group = one keyword theme (4-6 keywords)
-- [ ] 1-2 RSAs per ad group
-- [ ] Headline mirrors keyword intent
+- [ ] One ad group = one keyword theme (4-8 keywords) = one intent-matched landing page
+- [ ] 2-3 RSAs per ad group, Ad Strength "Good"+
+- [ ] Keyword-mirror headline pinned to Position 1 where message-match matters (max 2 pins)
+- [ ] Descriptions role-mapped (D1 benefit / D2 proof / D3 objection / D4 CTA)
+- [ ] Assets attached + message-matched: sitelinks ≥4 (25c), callouts ≥6 (25c), ≥1 structured-snippet header; call/price/promotion where the offer supports them
 
 **X (Twitter):**
 - [ ] Ad account currency set to USD (NGN setting triggers 50% surcharge)

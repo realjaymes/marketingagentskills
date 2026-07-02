@@ -289,14 +289,15 @@ Creative strategy is translation, not duplication.
 | Performance Max | Incremental reach + retargeting support | Primary learning channel |
 
 **Ad Structure (Responsive Search Ads):**
-- 1 ad group = 1 intent theme
-- 4-6 keywords max per ad group
-- 15 headlines, 4 descriptions
-- Headline 1: Keyword mirror
-- Headline 2: Primary benefit
-- Headline 3: CTA or qualifier
+- 1 ad group = 1 intent theme = 1 intent-matched landing page (no shared generic page)
+- 4-8 keywords max per ad group; match types: `[exact]`, `"phrase"`, broad (broad only with Smart Bidding)
+- 15 headlines (30 chars), 4 descriptions (90 chars)
+- Headlines cover 7 roles: keyword mirror · primary benefit · differentiation · social proof · CTA/qualifier · urgency/freshness · brand name
+- **Pinning (deliberate, max 2):** pin the keyword-mirror or brand headline to Position 1 where message-match matters (high-intent + brand); pin a legal/offer line to Position 2 only if it must always show; leave the rest unpinned. Default is unpinned.
+- **Descriptions role-mapped:** D1 expand benefit · D2 proof/differentiator · D3 handle objection · D4 CTA + urgency
+- **Assets/extensions (message-matched, char limits):** sitelinks 4-6+ (25c text, 35c desc lines), callouts 6-10 (25c), structured snippets (25c values), plus call/price/promotion where the offer supports them. Provision enough to hit "Good"+ Ad Strength.
 
-**What Works:** Exact and phrase match, clear qualifiers, strong landing page alignment
+**What Works:** Exact and phrase match, clear qualifiers, strong landing page alignment (query → ad → LP echo)
 
 **What Fails:** Generic value propositions, clever but vague headlines, broad match without negatives
 
