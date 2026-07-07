@@ -75,6 +75,22 @@ For each creative in the campaign:
 - [ ] Budget not fragmented across too many ad sets
 - [ ] CBO vs ABO decision is intentional
 
+**TikTok:**
+- [ ] One campaign = one objective
+- [ ] 1-3 ad groups max during testing phase
+- [ ] 3-5 ads per ad group
+- [ ] ACO (Automated Creative Optimization) vs manual creative splits is intentional
+- [ ] Native creator-style creative (not repurposed Meta assets); Spark Ads authorized where using organic posts
+- [ ] Budget floor at 3-5× target CPA per ad group; CBO only after ABO testing identifies winners
+
+**Snapchat:**
+- [ ] One campaign = one objective
+- [ ] 1-3 ad sets max during testing phase
+- [ ] 3-5 ads per ad set
+- [ ] Public Profile linked (required for paid ads)
+- [ ] Manual ABO for testing; CBO-equivalent only after winners proven
+- [ ] Budget floor at 4-6× target CPA per ad set (higher than Meta &mdash; thinner pixel pools); report CTC and VTC separately
+
 **LinkedIn:**
 - [ ] One campaign = one audience hypothesis
 - [ ] No over-layered targeting
@@ -113,6 +129,11 @@ For each creative in the campaign:
 - [ ] Each testing cell has enough budget
 - [ ] If budget is small, simplify structure
 - [ ] If results are messy, fix structure before changing creative
+
+**Audience naming & combining (universal):**
+- [ ] Every saved audience named `Type | Descriptor | Geo or Window` (the Cold / Warm / Retargeting token matches the audience token in the ad set or ad group name)
+- [ ] Cold, warm, and retargeting used for their funnel role (find new buyers / re-engage interested / convert near-buyers)
+- [ ] Same-type audiences may share a campaign; cold and retargeting kept in separate campaigns; retargeting layers use exclusions so they don't double-serve
 
 ---
 
@@ -192,6 +213,11 @@ Never scale on broken tracking.
 - [ ] I won't misattribute landing page issues to ads
 - [ ] Every diagnosis names the funnel layer breaking (Pre-flight / Creative / Audience / LP / Offer) before recommending action
 - [ ] Weekly reports walk top-to-bottom through the layers; first red layer is the only one being acted on this cycle
+
+**Breakdowns (placement, age, gender, or the platform's equivalents):**
+- [ ] Pulled the delivery breakdowns once each segment has enough spend (about 1× target cost per result)
+- [ ] Cut wasteful placements and tightened converting age/gender or firmographics (turn off audience expansion to hold a tight segment; duplicate rather than edit a live winner so learning doesn't reset)
+- [ ] Any demographic cut cross-checked against the client's real sales record first
 
 ---
 

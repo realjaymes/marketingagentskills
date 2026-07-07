@@ -49,6 +49,19 @@ The diagnostic only works if Ads Manager shows the right columns. Build a saved 
 
 ---
 
+## READING THE BREAKDOWNS (placement, age, gender)
+
+The funnel-layer read tells you **which ad or ad set** is breaking. The delivery breakdowns tell you **where inside a working ad set** spend is wasted or won. Pull them from the same saved column set, one breakdown at a time (by placement, by age, by gender), at the Day 5/7/12 reads once each segment has spent about 1× target CPA. Cross-check any demographic against the Selar/sales export before cutting — the platform undercounts, so a segment that looks dead can be the one actually buying.
+
+- **Placement.** Advantage+ Placements spreads budget across every placement. On low-volume purchase/message campaigns, after ~3 days, if spend is leaking into placements with no results (often Reels, Stories, Audience Network), switch to manual placements and keep the converters (Instagram Feed in-app tends to win on low volume). Scale by concentrating budget on the winning placement.
+- **Age.** Advantage+ Audience overrides the age cap, so an age limit only binds with Advantage+ Audience off or in a duplicated ad set. Tighten to the converting bands after enough spend.
+- **Gender.** Narrow only after enough spend and only when the Selar record agrees.
+- Editing placement, age, or gender on a live ad set can reset learning — duplicate with the tighter targeting for significant changes rather than editing the winner.
+
+Quality Ranking is not available in the placement/age breakdown exports (see the column-setup note above); pull it from the main campaign view.
+
+---
+
 ## THE TEMPLATE (copy, fill, append newest-on-top)
 
 ```markdown
