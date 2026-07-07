@@ -1,7 +1,7 @@
 ---
 name: performance-marketing
 version: "2.2.0"
-description: Plans, reviews, and optimizes paid advertising campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, and Snapchat. Use when the user mentions "paid ads," "performance marketing," "ad campaign," "creative strategy," "ad copy," "media buying," "ROAS," "CPA," "campaign audit," "client onboarding," "launch checklist," "campaign reporting," or platform-specific ad help.
+description: Plans, reviews, and optimizes paid advertising campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, Snapchat, and ChatGPT / AI answer engines. Use when the user mentions "paid ads," "performance marketing," "ad campaign," "creative strategy," "ad copy," "media buying," "ROAS," "CPA," "campaign audit," "client onboarding," "launch checklist," "campaign reporting," or platform-specific ad help.
 argument-hint: "[platform] [task]"
 ---
 
@@ -57,7 +57,7 @@ If an ad is not working, assume the problem is **clarity before creativity**. Fi
 
 **What resets learning:** budget changes >20%, audience changes, optimization event changes, creative swaps, bid strategy changes, pausing for 7+ days.
 
-If kill rules trigger before learning exits, fix the budget or optimization event first. Detailed per-platform context lives in the platform playbooks (Meta / TikTok / Google / LinkedIn) and in [references/client-engagement-playbook.md](references/client-engagement-playbook.md).
+If kill rules trigger before learning exits, fix the budget or optimization event first. Detailed per-platform context lives in the platform playbooks (Meta / TikTok / Google / LinkedIn / Snapchat / X / ChatGPT) and in [references/client-engagement-playbook.md](references/client-engagement-playbook.md).
 
 ## Workflow
 
