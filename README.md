@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-28 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+29 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -52,6 +52,7 @@ See demo:
 | [portfolio-positioning](skills/portfolio-positioning) | Position, audit, or launch into a multi-product company. Forces a brand architecture decision (branded house / house of brands / endorsed) before producing core narrative, per-product positioning cascade, messaging hierarchy, and launch sequencing |
 | [press-release](skills/press-release) | Create complete press release packages with newsworthiness evaluation and multiple headlines |
 | [product-launch-gtm](skills/product-launch-gtm) | Guide end-to-end product and feature launch planning with launch sizing, GTM strategy, and success measurement |
+| [product-marketing-metrics](skills/product-marketing-metrics) | Build a product marketing measurement framework: north star, metric tree, funnel-stage and PMM-outcome metrics, leading vs lagging indicators, attribution, and a fill-in measurement plan, with worked examples across business models |
 | [product-messaging](skills/product-messaging) | Create complete messaging frameworks including value propositions, taglines, and elevator pitches |
 | [product-onboarding-activation](skills/product-onboarding-activation) | Design complete onboarding, activation, retention, and expansion lifecycles for SaaS products |
 | [product-positioning](skills/product-positioning) | Create complete positioning frameworks with target customers, competitive differentiation, and market categories |
@@ -133,7 +134,7 @@ You can also invoke skills directly:
 ## Skill Categories
 
 ### Strategy & Positioning
-`portfolio-positioning` `product-positioning` `product-messaging` `product-launch-gtm` `marketing-advantages`
+`portfolio-positioning` `product-positioning` `product-messaging` `product-marketing-metrics` `product-launch-gtm` `marketing-advantages`
 
 ### Content & Copy
 `ad-creative` `landing-page` `saas-landing-pages` `press-release` `copy-anatomy` `ai-humanizer` `ai-content-generation`
