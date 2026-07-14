@@ -60,6 +60,7 @@ See demo:
 | [saas-landing-pages](skills/saas-landing-pages) | Generate complete SaaS landing page drafts using 7 framework templates for different page types |
 | [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions |
 | [skill-to-prompt](skills/skill-to-prompt) | Convert Claude skills into ChatGPT Project format (prompt instructions + knowledge files as .docx) |
+| [tweetclaw-social-automation](skills/tweetclaw-social-automation) | Design and run safety-first X/Twitter workflows through TweetClaw: search tweets, search tweet replies, post tweets, export audiences, monitor mentions, and manage giveaway draws |
 | [vibe-coding](skills/vibe-coding) | Guide beginner-to-intermediate developers through web development, Claude skills creation, and AI-assisted coding |
 
 ---
@@ -149,7 +150,7 @@ You can also invoke skills directly:
 `seo-audit`
 
 ### Automation & Technical
-`n8n-automation` `openclaw` `clay-gtm-outbound` `remotion` `vibe-coding`
+`clay-gtm-outbound` `n8n-automation` `openclaw` `remotion` `tweetclaw-social-automation` `vibe-coding`
 
 ### Meta Skills
 `agent-skill-builder`
