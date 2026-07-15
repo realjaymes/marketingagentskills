@@ -12,7 +12,7 @@ Build a YouTube channel (long-form videos and shorts) where you are never on cam
 | Research + script | ChatGPT (or Claude) | Free or ~$20/mo | Gemini for cited research |
 | Narration | ElevenLabs | ~$22/mo (Creator unlocks voice cloning) | MiniMax, Hume, Speechma (free, no cloning) |
 | Moving visuals | Veo 3 or Kling, plus free stock (Pexels, Pixabay) | Veo via AI Pro; Kling ~$34/mo; stock free | Google Flow (direct Veo), Runway, Luma, Seedance |
-| Thumbnail text | Ideogram or Gemini Nano Banana | Free app tiers; ~$15+/mo | Midjourney + type text in Canva |
+| Thumbnail text | ChatGPT (GPT Image) | ~$20/mo (free tier limited) | Ideogram or Gemini Nano Banana (fallback when ChatGPT falls short), Midjourney + type text in Canva |
 | Edit | CapCut or Premiere | CapCut free; Premiere sub | Descript, DaVinci Resolve |
 
 **End result:** a faceless channel publishing 2 to 4 retention-built videos a week.
@@ -110,7 +110,7 @@ Keep on-thumbnail text under 5 words. After the 3 concepts, recommend one and sa
 why it wins the click.
 ```
 
-Now generate the actual thumbnail image with legible text in Ideogram or Gemini Nano Banana (both have free tiers and ~95% text accuracy):
+Now generate the actual thumbnail image with the text baked in. Default to ChatGPT (GPT Image), which spells thumbnail text reliably and renders the scene and text in one pass. Drop to Ideogram or Gemini Nano Banana only if ChatGPT falls short:
 
 ```
 Create a YouTube thumbnail, 16:9, high contrast for a small sidebar render.
@@ -225,7 +225,7 @@ Negative: morphing, warping, melting, face changes, floating, jelly motion,
 slow-motion, plastic, oversaturated.
 ```
 
-Say "push in" or "dolly in," never "zoom" (zoom produces lens warp). For a longer take, generate sequential clips, each seeded from the end frame of the prior clip.
+Say "push in" or "dolly in," never "zoom" (zoom produces lens warp). For a longer take, generate sequential clips, each seeded from the end frame of the prior clip. Never ask a video model (Veo, Kling) for on-screen text, it garbles it. Any titles, lower-thirds, or callouts go on in CapCut at Step 7. (This is video only, your thumbnail text at Step 2 is baked in by an image model, GPT Image or Ideogram, which renders text cleanly.)
 
 ### Step 7 — Edit and assemble
 

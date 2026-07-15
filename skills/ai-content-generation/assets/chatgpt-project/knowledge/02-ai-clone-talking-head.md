@@ -10,11 +10,26 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 | Job | Tool | Cost | Swap options |
 |---|---|---|---|
 | Describe your face + write animation prompts | ChatGPT (or Gemini) | Free or ~$20/mo | Gemini works the same way |
-| Talking video (face animation) | Higgsfield (Kling 3.0) or HeyGen avatar | ~$9-34/mo | HeyGen for a reusable avatar, Higgsfield for one-off clips |
-| Voice clone | ElevenLabs | ~$5-22/mo | Cartesia, MiniMax |
+| Talking video (face animation) | Google Labs (Flow / Veo) | ~$20+/mo | Higgsfield (Kling) for one-off clips, HeyGen for a reusable avatar |
+| Voice clone + re-voicing the video | ElevenLabs (clone + Voice Changer) | ~$5-22/mo | Cartesia, MiniMax |
 | Editing | CapCut | Free | Descript, Premiere |
 
 **End result:** an AI version of you that says any script on camera, so you write the script and a clip comes out the other side.
+
+---
+
+## The recommended pipeline (start here)
+
+This is the primary way to clone yourself in your own voice, and it solves lip sync. The HeyGen and Higgsfield routes still work and are kept below as alternatives, but reach for this first. The detailed how-to for each step lives in the sections that follow; this is the map.
+
+1. **Build your character in ChatGPT.** Run the image-clone sequence in Step 5: multiple reference angles → a written face and body breakdown → one clean reference image → a multi-angle mashup to confirm consistency → a reusable JSON prompt you keep forever.
+2. **Animate in Google Labs (Flow / Veo), with voice.** Drop your locked character into Flow and animate it *speaking your script*. Veo generates the clip with a spoken voice. Generate in ~10-second clips, one beat per clip (never the whole script in one prompt). No on-screen text in the prompt.
+3. **Assemble in Flow's scene builder.** Sequence the 10-second clips into one continuous scene, then export the assembled video from Google Labs.
+4. **Clone your own voice in ElevenLabs** (Step 2 below, the voice-capture read).
+5. **Re-voice with ElevenLabs Voice Changer.** Upload the exported Google Labs video (or its audio) and run Voice Changer (speech-to-speech) to regenerate the exact same dialogue in your own cloned voice. It preserves the original timing and cadence, so the mouth movements Veo generated still match.
+6. **Swap the audio in CapCut.** Replace the Google Labs audio track with the ElevenLabs voice-changed track, align it, then add captions and any on-screen text in post.
+
+**Why it works:** Veo drives the mouth off its own generated speech, and Voice Changer keeps that speech's timing, so your voice lands on the same lip movements. This avoids the drift of trying to lip-sync a fresh voice track onto silent footage.
 
 ---
 
@@ -114,17 +129,26 @@ real-skin imperfection.
 
 You now have a written face description plus a clean reference image. Download the image. Keep the written description, you will reuse it.
 
+**Then confirm consistency with a multi-angle mashup.** Before you lock the character, ask for the same face from several angles in one image, so you can see it holds together:
+
+```
+Produce a mashup of this character's face from different angles (front,
+three-quarter, side) in one image, to confirm the identity stays consistent.
+```
+
+If any angle drifts into a different person, regenerate the reference image before moving on. Feeding multiple reference angles up front (a headshot, a side view, a full-body shot) makes this hold better.
+
 **Make the description a JSON prompt and use your tool's face lock.** Two upgrades keep the same you across tools instead of drifting between them.
 
 - **Ask for JSON, not just prose.** Run this on your photo, either folded into the prompt above or on its own: "Analyze this photo and write me a detailed JSON prompt describing this person's face, skin tone, hair, facial features, and overall appearance. Format it for use in AI image generation." A structured JSON face block reuses cleanly across every tool and drifts less than a paragraph does.
 
 - **Turn on the native face-reference lock.** Pair the JSON prompt with the tool's own face feature so your identity holds: Midjourney Omni Reference (`--oref`, strength 300 to 500; `--cref` is V6 only), Leonardo Image Reference with Character mode, FLUX Kontext face reference, Kling face reference, and Gemini Nano Banana in-app. The JSON says what your face is, the reference shows it.
 
-### Step 6 — Bring the image into Higgsfield (or pick your HeyGen avatar)
+### Step 6 — Bring the image into your video tool
 
-If you built a HeyGen avatar in Step 3, just open HeyGen and select it, then jump to Step 8.
+**Primary: Google Labs (Flow).** Open Flow and add your locked character (drop in the reference image, or use Flow's face-scan avatar). This is the recommended route: Flow runs Veo, animates the character *speaking*, and lets you assemble clips into one scene. You will paste the animation prompt in the next step.
 
-Otherwise, open Higgsfield.ai. You will upload the reference image in the next step when you set up the video.
+**Alternatives:** if you built a HeyGen avatar in Step 3, open HeyGen and select it, then jump to Step 8. Or open Higgsfield.ai (Kling) for one-off photo-to-video clips.
 
 ### Step 7 — Give ChatGPT your script and ask for an animation prompt
 
@@ -144,19 +168,31 @@ one tight paragraph I can paste into a video tool.
 
 Copy the animation prompt it gives you.
 
-### Step 8 — Generate the clip
+**Segment the script into ~10-second beats.** Do not paste the whole script into one generation. Ask ChatGPT to split it into ~10-second beats and give you one animation prompt per beat, each carrying only that beat's spoken line plus the same scene description. You will generate one clip per beat and stitch them. Do not put any on-screen text in these prompts (video models garble it); captions go on in CapCut later.
 
-**In Higgsfield:** scroll to Create Video. Upload your reference image. Paste the animation prompt. Generate. Keep clips short, around 5 to 15 seconds each. If you have a longer script, generate it in a few short clips rather than one long one. Long single clips drift and the face warps.
+### Step 8 — Generate the clips and assemble the scene
 
-**In HeyGen:** pick your avatar, paste your script straight in, and generate. HeyGen handles the lip sync to your cloned voice. Keep each talking take under about 15 seconds, then plan a cut.
+**Primary — Google Labs (Flow / Veo), with voice.** In Flow, paste your first beat's animation prompt and generate a ~10-second clip. Veo generates it with a spoken voice (a generic AI voice for now; you swap it to your own in Step 8b). Generate one clip per ~10-second beat, then use Flow's scene builder to sequence the clips into one continuous scene and export the assembled video. Generate one beat at a time; if a clip glitches, regenerate only that beat. No on-screen text in the prompt, faces and physics drift past ~10 seconds, so short clips stitched together beat one long generation.
+
+**Alternative — Higgsfield (Kling):** scroll to Create Video. Upload your reference image. Paste the animation prompt. Generate. Keep clips short, around 5 to 15 seconds each. If you have a longer script, generate it in a few short clips rather than one long one. Long single clips drift and the face warps.
+
+**Alternative — HeyGen:** pick your avatar, paste your script straight in, and generate. HeyGen handles the lip sync to your cloned voice directly, so you can skip Step 8b. Keep each talking take under about 15 seconds, then plan a cut.
 
 Test one short clip first before you generate the whole thing.
 
-### Step 9 — Realism pass and edit in CapCut
+### Step 8b — Re-voice the video in your own voice (ElevenLabs Voice Changer)
 
-Drop your clip (or clips) on the CapCut timeline in order. Then do the moves that hide the weak spots.
+If you animated in Google Labs or Higgsfield, the clip is speaking in a generic AI voice. Swap it to your cloned voice without breaking lip sync.
 
-Cut away to b-roll every 8 to 12 seconds so the viewer is not staring at the face the whole time. This is also where you hide any moment where the lip sync looks slightly off: cut to a supporting visual for those seconds and let your voice carry. Add auto-captions. Add a light grain layer to re-inject texture, since AI renders look a bit plastic. Color grade the whole thing, it is the single biggest fix for the synthetic look. Keep background music low in the mix.
+Open ElevenLabs, go to Voice Changer (speech-to-speech), upload the exported Google Labs video (or its extracted audio), and select your cloned voice from Step 2. It regenerates the exact same dialogue in your voice while preserving the original timing and cadence, so the mouth movements still match. Download the new audio.
+
+(Skip this step if you used HeyGen, it already spoke in your cloned voice.)
+
+### Step 9 — Swap the audio and edit in CapCut
+
+Drop your clip (or the assembled scene) on the CapCut timeline in order. First, replace the audio: mute or delete the original Google Labs voice track, drop in the ElevenLabs voice-changed track from Step 8b, and nudge it into alignment. Then do the moves that hide the weak spots.
+
+Cut away to b-roll every 8 to 12 seconds so the viewer is not staring at the face the whole time. This is also where you hide any moment where the lip sync looks slightly off: cut to a supporting visual for those seconds and let your voice carry. Add auto-captions and any on-screen text here (never in the generation prompt). Add a light grain layer to re-inject texture, since AI renders look a bit plastic. Color grade the whole thing, it is the single biggest fix for the synthetic look. Keep background music low in the mix.
 
 ### Step 10 — Publish
 

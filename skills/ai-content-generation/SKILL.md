@@ -2,7 +2,7 @@
 name: ai-content-generation
 description: "When the user wants to create AI-generated image or video content: a faceless influencer or persona for TikTok and Instagram, a faceless YouTube channel, an AI clone or talking-head of themselves, or AI ad creative (UGC, product video, static images). Also use when the user mentions 'faceless influencer,' 'faceless channel,' 'AI avatar,' 'AI UGC,' 'talking head,' 'clone myself,' 'AI ad creative,' 'AI video ads,' or tools like Veo, Google Flow, Kling, Higgsfield, Seedance, Runway, ElevenLabs, HeyGen, Arcads, Nano Banana, Midjourney, or Ideogram. Gives step-by-step, copy-paste-prompt playbooks for each use case plus the realism rules that beat AI slop. For paid-ad strategy and targeting, see performance-marketing or paid-ads."
 metadata:
-  version: 1.2.0
+  version: 1.4.0
 ---
 
 # AI Content Generation
@@ -48,7 +48,7 @@ Three buckets:
 | ChatGPT | Assistant | OpenAI | LLM for scripts and ideas |
 | Gemini | Assistant | Google | LLM, and the front door to Google's image (Nano Banana) and video (Omni) models |
 | Claude | Assistant | Anthropic | LLM, best for natural voice and writing |
-| Google Flow | Wrapper | Google | Runs Veo 3.1 and Gemini Omni with a scene builder and shot controls |
+| Google Flow | Wrapper | Google | Runs Veo 3.1 and Gemini Omni with a scene builder and shot controls. Paid (Google AI plan, credit-based). Has a QR face-scan avatar to drop yourself into any scene; work image-first to save credits |
 | Higgsfield | Wrapper | Higgsfield | Runs Kling and other video models in one UI, cheap at volume |
 | Gemini Omni | Video model | Google | Conversational generation and editing, multi-input, 1080p, ~10s clips. Now the default in the Gemini app, Flow, and YouTube Shorts |
 | Veo 3.1 | Video model | Google | Cinematic, 4K, longer shots, stable API. Best for brand films and ads |
@@ -56,7 +56,8 @@ Three buckets:
 | Seedance | Video model | ByteDance | Lowest-cost video |
 | Nano Banana | Image model | Google | Locks a face, edits inside an image. Lives in the Gemini app |
 | Midjourney | Image model | Midjourney | Best aesthetic look |
-| Ideogram | Image model | Ideogram | Legible text inside an image |
+| GPT Image | Image model | OpenAI | Renders the scene and legible in-image text in one pass. Lives in ChatGPT |
+| Ideogram | Image model | Ideogram | Legible text inside an image, fallback when GPT Image falls short |
 | ElevenLabs | Voice model | ElevenLabs | Voiceover and voice cloning |
 | Speechma | Voice app | Speechma | Free library voices, no cloning |
 | HeyGen | Avatar app | HeyGen | Talking-head avatars, clone yourself |
@@ -82,9 +83,9 @@ The user does not need all of these. Each playbook names the few it uses. Start 
 | Voice and voice cloning | ElevenLabs | Free to test, Starter to ship |
 | Free voiceover (no cloning) | Speechma | Free, no signup, browser-based library voices; ship narration before you clone a voice |
 | Video generation | Gemini Omni, Veo 3.1, Google Flow (runs Veo and Omni with a scene builder and shot controls), Kling 3.0 via Higgsfield, Seedance | Omni for conversational edits and consistent clips (default in the Gemini app and Flow), Veo 3.1 for cinematic 4K hero shots, Kling for cheap volume, Seedance for lowest cost |
-| Images and in-image text | Gemini Nano Banana, Midjourney, Ideogram | Nano Banana locks a face, Ideogram nails legible text, Midjourney for the best look |
+| Images and in-image text | ChatGPT (GPT Image), Gemini Nano Banana, Midjourney, Ideogram | ChatGPT (GPT Image) is the default for headline/CTA/thumbnail text, short or long (scene and text in one pass); Nano Banana locks a face; Ideogram is the fallback when ChatGPT falls short; Midjourney for the best look |
 | Avatars and UGC actors | HeyGen, Arcads | HeyGen to clone yourself, Arcads for ad UGC |
-| All-in-one (quick, lower ceiling) | Google Vids | Doc to scenes with stock, AI voiceover, avatars; fast but weaker for faceless or cinematic |
+| All-in-one (quick, lower ceiling) | Google Vids | Free tier does real work: free Veo AI video (~10 generations/month, the only free way to make AI video), free voiceover, and slides-to-video (File → Convert Slides → narrated video). Talking-head avatars/ingredients are Pro/Ultra only. Fast but weaker for faceless or cinematic |
 | Editing | CapCut | Captions, color, music; free |
 
 ## The rule that beats AI slop
@@ -96,6 +97,10 @@ Realism is controlled imperfection. The default settings and generic prompts pro
 - Put real pauses, breaths, and a filler before the key line in voice scripts. Flat delivery is the number one AI-audio tell.
 
 - Keep clips short (3 to 10 seconds) and cut. Faces and physics drift past that.
+
+- Segment the script before generating video. Break the finished script into ~10-second beats and generate one beat per clip, each with its own scene and only that beat's spoken line. Never hand a video model the whole 30 to 45 second script in one prompt. If a clip glitches, regenerate only that clip, then stitch in CapCut.
+
+- No on-screen text in a video prompt. Video models (Veo, Flow, Kling, Gemini Omni) garble any text you ask them to render on screen. Add all captions, hook text, and CTAs in CapCut after generating. Baked-in text stays fine only for the still-image models (GPT Image, Ideogram, Nano Banana), which are chosen precisely because they render legible text.
 
 - For video, add negative prompts: no morphing, no warping, no melting, no jelly motion, no slow motion.
 

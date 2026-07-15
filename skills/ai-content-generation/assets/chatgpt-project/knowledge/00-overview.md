@@ -49,7 +49,8 @@ Three buckets:
 | Seedance | Video model | ByteDance | Lowest-cost video |
 | Nano Banana | Image model | Google | Locks a face, edits inside an image. Lives in the Gemini app |
 | Midjourney | Image model | Midjourney | Best aesthetic look |
-| Ideogram | Image model | Ideogram | Legible text inside an image |
+| GPT Image | Image model | OpenAI | Renders the scene and legible in-image text in one pass. Lives in ChatGPT |
+| Ideogram | Image model | Ideogram | Legible text inside an image, fallback when GPT Image falls short |
 | ElevenLabs | Voice model | ElevenLabs | Voiceover and voice cloning |
 | Speechma | Voice app | Speechma | Free library voices, no cloning |
 | HeyGen | Avatar app | HeyGen | Talking-head avatars, clone yourself |
@@ -77,7 +78,7 @@ These tools repeat across the set. Each playbook tells you exactly which ones it
 | ElevenLabs | Voiceover and voice cloning. | Free to test, $5/mo Starter to ship |
 | Speechma | Free no-signup browser voiceover (library voices, no cloning). Good for faceless narration before you clone a voice. | Free at speechma.com |
 | Gemini Omni, Veo 3.1, Google Flow, Kling (via Higgsfield), Seedance | Video generation. Gemini Omni for conversational edits and quick consistent clips (now default in the Gemini app and Flow), Veo 3.1 for cinematic 4K hero shots, Google Flow to direct shots with a scene builder, Kling for cheap volume, Seedance for the lowest cost. | Omni in the Gemini app free tier; Higgsfield ~$34/mo for Kling at volume |
-| Gemini Nano Banana, Midjourney, Ideogram | Images and in-image text. Nano Banana locks a face, Ideogram nails text, Midjourney for the best look. | Nano Banana free in-app, Ideogram free tier |
+| ChatGPT (GPT Image), Gemini Nano Banana, Midjourney, Ideogram | Images and in-image text. ChatGPT (GPT Image) is the default for headlines/CTA/thumbnail text, short or long (scene and text in one pass). Nano Banana locks a face, Ideogram is the fallback when ChatGPT falls short, Midjourney for the best look. | ChatGPT ~$20/mo, Nano Banana free in-app, Ideogram free tier |
 | HeyGen, Arcads | Talking-head avatars and UGC actors. HeyGen to clone yourself, Arcads for ad UGC. | HeyGen free 3/mo, then $29/mo |
 | Google Vids | All-in-one quick video inside Google Workspace: turns a doc into scenes with stock, AI voiceover, and avatars. Beginner-friendly and fast, but a lower ceiling than the dedicated tools for faceless or cinematic work. | Included with Google Workspace |
 | CapCut | Editing, captions, color, music. | Free |
@@ -90,7 +91,36 @@ Start lean: free tiers plus ElevenLabs Starter ($5) is enough to ship. Scale up 
 
 Realism is controlled imperfection. Prompt for a phone-camera look (natural light, slight grain, real-time pace) and drop the words "cinematic", "8K", and "perfect", because those trigger the waxy plastic look. Put real pauses and breaths in the voice so it does not sound robotic. Keep clips short so faces do not warp.
 
+Two hard rules for video generation specifically (Veo, Google Flow, Kling, Gemini Omni):
+
+- **No on-screen text in a video prompt.** These models garble any text you ask them to render on screen. Add all captions, hook text, and CTAs in CapCut after generating. Baked-in text stays fine only for the still-image models (GPT Image, Ideogram, Nano Banana), which are chosen because they render legible text, so keep it in static-image and thumbnail prompts.
+- **Segment the script into ~10-second beats before generating.** Never hand a video model the whole 30 to 45 second script in one prompt. Break it into ~10-second beats, generate one clip per beat (each with only that beat's spoken line), and stitch them in CapCut. If a clip glitches, regenerate only that beat.
+
 Each playbook has its own version of this rule tuned to its use case. Read it before you publish.
+
+---
+
+## Appendix: Google's cheap on-ramp (Flow & Vids)
+
+Two Google tools give beginners the fastest, cheapest first win. Neither replaces the four playbooks above. Use them when you want a quick result, or before you are ready to pay for the dedicated stack.
+
+### Google Flow — put yourself in any scene
+
+Flow runs on a Google AI plan (credits: Pro = 1,000/mo, Ultra = 10,000), so it is not free, but it makes one thing easy that the others do not: an avatar of you.
+
+- Open Flow (labs.google/fx/tools/flow), start a project, click the plus icon in the prompt box, choose Avatar.
+- First time only: it shows a QR code. Scan it with your phone, scan your face on the page that opens, and Flow builds your avatar.
+- Add your avatar to any image or video prompt to drop yourself into a scene ("me on a beach at sunset explaining X").
+- Work image-first: generate and lock the still (cheap credits), then animate it (video costs far more). Watch the credit counter before every generation.
+
+### Google Vids — free AI video and slides-to-video
+
+Vids lives inside Google Workspace and its free tier does real work.
+
+- Free AI video: open vids.new, click Veo, describe a shot. Free up to 10 generations per month, the only free way to make AI video (Gemini's free plan will not). Continue a shot by screenshotting the last frame and using "animate an image".
+- Slides to video: File → Convert Slides, pick a Google Slides deck, and Vids writes a script, adds an AI voiceover, and drops in music. The fastest way to turn a deck into a narrated video.
+- Free voiceover: paste a script, pick a voice, insert. Good narration before you clone a voice.
+- Note: talking-head avatars and ingredients in Vids are Pro/Ultra only (grayed out on free). For an avatar of yourself, Flow above is the route (also paid, on a Google AI plan); for a reusable talking-head clone see the AI Clone & Talking Head playbook.
 
 ---
 

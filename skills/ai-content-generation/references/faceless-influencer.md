@@ -53,6 +53,15 @@ hour]. Same phone-camera, natural-light, slightly imperfect look.
 
 Save a small set: front, side, smiling, a couple of settings. That is your reusable asset library.
 
+**Confirm consistency with a multi-angle mashup.** Before you trust the character, ask for the same face from several angles in one image and check it holds together:
+
+```
+Produce a mashup of this character's face from different angles (front,
+three-quarter, side) in one image, to confirm the identity stays consistent.
+```
+
+If any angle turns into a different person, regenerate the hero image before you build your library on top of it.
+
 **Lock the face harder with a JSON prompt and your tool's native face reference.** A plain re-upload works, but two upgrades make the same person hold across different tools, not just inside ChatGPT.
 
 - **Get a JSON face prompt.** Upload your hero image to ChatGPT and paste: "Analyze this photo and write me a detailed JSON prompt describing this person's face, skin tone, hair, facial features, and overall appearance. Format it for use in AI image generation." A structured JSON block (face shape, skin tone, eye color, hairline, and so on) travels between tools far more reliably than loose prose. Save it and reuse the same block every time.
@@ -117,7 +126,9 @@ not slow motion. Photoreal, slight grain, not cinematic, not over-lit.
 
 Generate in 5 to 10 second clips, one shot at a time. Make the talking shot plus 2 or 3 b-roll shots (the thing they are talking about). For b-roll, swap the line above for the object or scene, same "phone-camera, real-time, slight grain" ending.
 
-Do not try to generate the whole video in one prompt. Short separate clips stay consistent; long single clips drift, warp, and change the face.
+Break the script into ~10-second beats and generate one clip per beat, each with only that beat's spoken line. Do not try to generate the whole video in one prompt. Short separate clips stay consistent; long single clips drift, warp, and change the face.
+
+Do not ask the prompt for any on-screen text. Video models garble it. All captions and text overlays go on in CapCut in the next step.
 
 ### Step 9 — Edit it together in CapCut
 

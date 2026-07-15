@@ -12,7 +12,7 @@ Make paid ad creative with AI at volume: UGC-style actor ads, product and b-roll
 | Brief, hooks, scripts | ChatGPT (or Claude, Gemini) | Free or ~$20/mo | Claude for scripts, Gemini for bulk hooks |
 | AI UGC actors | Arcads, or Creatify | ~$11/video (Arcads), Creatify ~$49/mo | Seedance for cheap volume, HeyGen for a recurring presenter |
 | Product / b-roll video | Veo 3, or Seedance | ~$0.15/s (Veo), ~$0.05 per 5s (Seedance) | Google Flow (Veo with shot controls), Kling, Runway, Pika (to insert a real product) |
-| Static image ads | Gemini Nano Banana + Ideogram | Free tiers, subs ~$15-42/mo | FLUX, Midjourney, Recraft (for logos/vector) |
+| Static image ads | ChatGPT (GPT Image) | ~$20/mo (free tier limited) | Gemini Nano Banana or Ideogram (fallback when ChatGPT falls short), FLUX, Midjourney, Recraft (logos/vector) |
 | Voiceover | ElevenLabs | Free tier, ~$22/mo for cloning | MiniMax Audio (cheap multilingual) |
 | Assemble | CapCut | Free | Descript, Premiere |
 
@@ -98,6 +98,8 @@ Then give me a separate ad-text block (primary text + headline) from the
 same emotional core.
 ```
 
+The ON-SCREEN-TEXT lines are instructions for your CapCut editor, not for the video model. Strip them out before you paste anything into Veo, Flow, or Kling, video models garble text you ask them to render on screen. You burn these captions in during assembly (Step 5).
+
 Match the length to the placement before you generate. A 15 to 20 second script fits TikTok and Reels cold creative. A 30 to 45 second script suits Meta feed.
 
 ### Step 2 — Pick the format
@@ -109,6 +111,8 @@ Pick the format from the angle, not from the tool you happen to own.
 - **Product or b-roll video** when you need to show the thing moving (a demo, a pour, a rotate). Rarely a whole ad on its own, usually a cutaway inside UGC.
 
 - **Static image ad** when you want to test an angle and headline cheaply before spending video budget.
+
+- **AI character or presenter video ad** when you want a consistent branded presenter, a built faceless persona or your own clone, delivering the ad at volume, beyond a stock UGC actor. You lock the character once and animate it in Google Labs from the ad script. See the pipeline in Step 3.
 
 ### Step 3 — Generate it
 
@@ -149,6 +153,37 @@ Output:
 Keep each face take under 15s before a cutaway.
 ```
 
+#### AI character or presenter video ads (the Google Labs pipeline)
+
+When you want your own consistent presenter, a built faceless persona or your own clone, delivering the ad instead of a stock Arcads actor, run the same character-to-video pipeline the clone playbook uses, driven by the ad script from Step 1.
+
+1. **Build or reuse the presenter.** Build a faceless character (see 01 - Faceless Influencer) or clone yourself (see 02 - AI Clone & Talking Head). Lock the face with the multi-angle mashup and a reusable JSON prompt so the same person holds across every ad and every scene.
+
+2. **Turn the ad script into scenes.** Take the locked script from Step 1 and split it into ~10-second beats, one generation prompt per beat. Paste:
+
+```
+You turn a finished video ad script into per-scene generation prompts for an AI
+video tool (Veo, Google Flow, Kling). Split the script into ~10-second beats.
+For each beat output a row: Beat # | Spoken line (only this beat's words) |
+Scene (setting, subject, one real action, framing, motivated light) | Generation
+prompt (phone-camera look, natural light, slight grain, real-time pace, subtle
+motion) | Negative prompt (morphing, warping, melting, plastic, slow motion).
+Lock the same character and style descriptors VERBATIM across every beat for
+continuity. Do NOT put any on-screen text in the prompts, the model garbles it.
+
+Ad script: [PASTE LOCKED SCRIPT].
+Character/style lock: [PASTE JSON FACE PROMPT or persona descriptors].
+Platform: [Meta/TikTok]. Ratio: [9:16 / 4:5 / 1:1].
+```
+
+3. **Animate each scene in Google Labs (Flow / Veo), with voice.** Generate one ~10-second clip per beat; Veo speaks the line. Never feed it the whole script and never ask for on-screen text. Assemble the clips into one scene in Flow's scene builder and export.
+
+4. **Re-voice in your own voice (optional).** If the presenter is your clone, run the exported video through ElevenLabs Voice Changer (speech-to-speech) to swap the generic Veo voice for your cloned voice without breaking lip sync (it keeps the timing, so the mouth still matches). For a built persona, keep Veo's voice or design one consistent ElevenLabs voice for the character.
+
+5. **Assemble in CapCut.** Swap the audio if you re-voiced, cut to b-roll every 8 to 12 seconds, burn in captions and any on-screen text here (never in the generation prompt), and apply one color grade.
+
+This is how you run branded-presenter or founder-face ads at volume: one locked character, many scripts, each script split into ~10-second scenes.
+
 #### Product and b-roll video (ecommerce)
 
 For ecommerce, one rule beats everything: the product on screen must be YOUR exact item. The viewer is about to buy that specific object. If the model invents a slightly different bottle, label, or color, you get returns, disputes, and policy flags. So never let a text-to-video model draw your product from scratch. Always start from a real, clean product photo and animate from there.
@@ -181,15 +216,17 @@ PACE: real-time, natural everyday pace, NOT slow motion.
 LOOK: phone-grade, soft grain, unretouched.
 ```
 
+Generate one ~10-second shot per prompt in Veo, Flow, or Kling, and never ask for on-screen text in the shot, video models garble it and faces and physics drift past ~10 seconds. If the script is longer, break it into ~10-second beats and generate one clip per beat, then stitch. All captions and headlines go on in CapCut.
+
 The ecommerce UGC archetypes worth templating: unboxing or first-look, in-hand testimonial, problem-then-solution demo, before and after, "it made me buy it" reaction, founder or origin story, lifestyle or aspirational, and comparison ("why this, not that"). Cold traffic usually wins on problem-then-solution, in-hand testimonial, or the reaction. Warmer audiences respond to founder story and comparison.
 
 Hands are the hardest thing for AI to render. When fingers wrap around the product, cut to a clean product-only shot at the exact moment a glitch would show.
 
 #### Static image ads
 
-Two jobs, two tools. Use a visual model for the scene, and Ideogram for the headline and CTA text (it spells text legibly, where pure-aesthetic models garble it). Do not ask one model to do both well.
+One model, one pass. ChatGPT (GPT Image) now spells headline and CTA text legibly, short or long, so you no longer need to generate the scene and add the text layer separately. Ask it for the scene and the exact copy in the same prompt, with the copy in double quotes. Fall back to the two-step split (visual model for the scene, then Ideogram or Nano Banana for the text) only when ChatGPT falls short, whether it garbles a word, the warm tint fights the brand, or a policy check blocks the render.
 
-Generate the scene:
+Generate the scene and the text together in ChatGPT, putting the exact copy in double quotes:
 
 ```
 You write image prompts for static ad creative. Engineer controlled
@@ -203,15 +240,13 @@ Give me a full prompt with: subject + wardrobe + real setting; one motivated
 light source; a realism block (natural skin texture, slight asymmetry, candid
 expression); camera (shot on iPhone or Canon 5D, 85mm, shallow depth of field,
 film grain); and a negative prompt (plastic skin, waxy, airbrushed, 3D render).
-```
-
-Then add the text layer in Ideogram, putting the exact copy in double quotes:
-
-```
-Headline reads exactly "[HEADLINE, MAX 8 WORDS]" in a heavy condensed sans-serif,
-top third, white on deep navy. CTA button reads exactly "[CTA]".
+Then render it with the on-image text baked in:
+headline reads exactly "[HEADLINE, MAX 8 WORDS]" in a heavy condensed sans-serif,
+top third, white on deep navy; CTA button reads exactly "[CTA]".
 Spelling must be exact, text sharp and fully legible, no garbled or extra letters.
 ```
+
+If a word comes out garbled, either re-roll or generate the scene clean and set the copy in Ideogram, Nano Banana, or Canva. Typed or Ideogram text still beats generated text when legibility has to be perfect.
 
 ### Step 4 — Make variations
 
@@ -311,7 +346,7 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 
 - Letting AI redraw your ecommerce product. Wrong label or color drives returns and policy flags. Start from the real photo.
 
-- Garbled in-image text. Use Ideogram for headlines, exact copy in double quotes, under 8 words.
+- Garbled in-image text. Default to ChatGPT (GPT Image) for the headline, exact copy in double quotes, under 8 words. If it garbles, re-roll or fall back to Ideogram or typed text in Canva.
 
 - Skipping captions. Most paid impressions play muted.
 
