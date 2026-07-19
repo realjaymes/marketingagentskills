@@ -1,7 +1,7 @@
 ---
 name: ai-humanizer
 description: "Detects AI-written text, scores it against a detection rubric, provides line-by-line edit recommendations, and rewrites content to sound genuinely human. Use when the user asks to 'humanize' text, detect AI writing, remove 'AI voice,' make copy 'less robotic,' pass AI detection tools, or rewrite content to 'sound human.'"
-version: "1.0.0"
+version: "1.1.0"
 ---
 
 # AI Writing Humanizer
@@ -86,11 +86,11 @@ The final, publication-ready version applying all rules.
 
 | Trait | What to Look For |
 |-------|------------------|
-| **Jargon/Cliche** | "leverage," "synergy," "paradigm shift," cliche transitions ("at the end of the day"), X/Y juxtapositions |
-| **Dash & Punctuation** | Frequent em-dashes, unnatural dash habits, incorrect spacing |
-| **Hedging/Vagueness** | "very," "really," "quite," "actually," generic claims without specifics |
-| **Structure/Monotony** | Repetitive sentence length, paragraph stuffing, no white space |
-| **Missing Humanity** | No contractions, no concrete dates/places, no honest asides, no perspective shifts |
+| **Jargon/Cliche** | "leverage," "synergy," "paradigm shift," AI vocabulary ("delve," "tapestry," "realm," "crucial," "pivotal," "showcase," "underscore," "harness"), copula avoidance ("serves as," "stands as," "boasts"), cliche transitions ("at the end of the day"), X/Y juxtapositions |
+| **Dash & Punctuation** | Frequent em-dashes, unnatural dash habits, incorrect spacing, Title Case headings, stray smart quotes/arrows pasted from chat |
+| **Hedging/Vagueness** | "very," "really," "quite," "actually," hedge preambles ("it's worth noting that"), phantom authority ("studies show," "experts say"), generic claims without specifics |
+| **Structure/Monotony** | Repetitive sentence length (low burstiness), rule-of-three padding, "-ing" significance tails, formal transition openers ("Furthermore," "Moreover"), signposted conclusions, paragraph stuffing, no white space |
+| **Missing Humanity** | No contractions, no concrete dates/places, no honest asides, no perspective shifts, no first-person opinion or committed stance |
 | **Command Phrasing** | "Remember," "Keep in mind," "Don't forget" (always mark as AI-like) |
 
 ---
@@ -103,7 +103,17 @@ The final, publication-ready version applying all rules.
 |---------|---------|-----|
 | Question sentences | "The result? Improved conversions." | "This led to improved conversions." |
 | X/Y juxtapositions | "It's not just about features, it's about benefits." | "Features matter less than benefits." |
-| Em-dash overuse | Breaking sentences with — | Use periods to create separate sentences |
+| Negation-reveal fragments | "The gap isn't talent. It's action." / "It was never about the money. It was about freedom." | Collapse into one specific, provable claim: "Most people know the playbook. Under 5% ship it in week one." |
+| Copula avoidance | "Notion serves as a testament to flexible workflows." / "The page boasts three tiers." | Let it "be": "Notion is flexible." / "The page has three tiers." |
+| "-ing" significance tails | "They launched a free tier, highlighting their commitment to accessibility." | End at the fact, or state the real consequence: "They launched a free tier. Signups tripled." |
+| Rule-of-three padding | "Fast, powerful, and intuitive." / "Plan, build, and scale." | Break the count. Use one, two, or four: "Fast. Almost annoyingly so." |
+| Formal transition openers | "Furthermore," "Moreover," "Additionally," "Notably," "Consequently" | "It also...," or start with the substance |
+| Hedge preambles | "It's worth noting that," "It's important to note that," "One might argue that" | Cut the preamble, state the point |
+| Phantom authority | "Studies show...," "Experts say...," "Research suggests..." | Name the real source, or make the claim in your own voice with a number |
+| Signposted conclusions | "In conclusion," "In summary," "Ultimately," "the possibilities are endless" | End on your last real point. No wind-down |
+| Stakes inflation | "a new era of," "leaves an indelible mark," "a pivotal moment," "reshaping the industry" | State the concrete effect: "saves about an hour a week" |
+| AI vocabulary | "delve," "tapestry," "realm," "crucial," "pivotal," "intricate," "meticulous," "showcase," "garner," "foster," "underscore," "bolster," "harness," "unlock," "elevate," "embark," "navigate" | Plain words: "look at," "area," "important," "show," "gather," "build" |
+| Title Case headings | "How To Improve Your Conversion Rate" | Sentence case: "How to improve your conversion rate" |
 | Generic jargon | "leverage," "utilize," "synergy," "game-changer," "paradigm shift" | Plain, specific language |
 | Intro phrases | "picture this," "in the realm of," "in the world of" | Start with substance |
 | False urgency | "you need to," "you must," "essential" | State facts, let readers decide |
@@ -111,6 +121,10 @@ The final, publication-ready version applying all rules.
 | Cliche transitions | "at the end of the day," "when all is said and done" | Natural transitions or none |
 | Command phrases | "Remember," "Keep in mind," "Don't forget" | Reframe as statements |
 | Filler openers | "It's time to...," "Let's dive in," "The future of X is here" | Cut entirely |
+
+**Pattern-level, not single-instance:** rule-of-three, stakes inflation, and AI vocabulary occur in good human writing too. Flag them when they cluster or repeat, not on one appearance. No single tell is proof on its own; these models learned the patterns from human editorial prose, so weigh the stack, not one line.
+
+**Scope note (bold-label lists):** AI often opens every bullet with a bolded label that just restates the sentence after it ("**Flexibility:** The tool is flexible"). Flag that in *prose*. Do NOT flag James's deliberate `**Label:** value` metadata blocks in briefs, READMEs, and content packages — that is house style, not an AI tell.
 
 ### Buzzword Replacements
 
@@ -129,17 +143,21 @@ The final, publication-ready version applying all rules.
 
 When suggesting fixes:
 
-1. Replace cliches/jargon with plain words
+1. Replace cliches/jargon and AI vocabulary ("delve," "realm," "harness") with plain words
 2. Convert fragments ("The result? ...") into complete sentences
 3. Reduce/replace em-dashes with periods/commas (max 1 dash per piece)
 4. Add contractions, specific dates/places, an aside, and at least one concrete example
-5. Alternate short, punchy sentences with longer, detailed ones
+5. Alternate short, punchy sentences with longer, detailed ones (raise the burstiness — variance in sentence length is the hardest signal for detectors to miss)
 6. Keep one idea per paragraph; end with impactful takeaway
 7. Start paragraphs with decisive, result-first statements
 8. Use white space for organic transitions
 9. Replace buzzwords with proof (metrics, examples, screenshots)
 10. Add inclusive, bias-free phrasing
 11. Add cultural or contextual references when natural
+12. Swap inflated copulas ("serves as," "boasts") for plain "is/are"
+13. Cut "-ing" significance tails and signposted conclusions; stop when the argument stops
+14. Repeat a plain noun instead of synonym-cycling ("the tool... the tool," not "the platform... the solution... the offering")
+15. Put in one committed opinion or admitted limitation ("this won't work if your list is under 500") — AI hedges toward neutral balance
 
 ---
 
