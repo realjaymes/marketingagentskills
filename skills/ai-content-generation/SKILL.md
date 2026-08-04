@@ -2,7 +2,7 @@
 name: ai-content-generation
 description: "When the user wants to create AI-generated image or video content: a faceless influencer or persona for TikTok and Instagram, a faceless YouTube channel, an AI clone or talking-head of themselves, or AI ad creative (UGC, product video, static images). Also use when the user mentions 'faceless influencer,' 'faceless channel,' 'AI avatar,' 'AI UGC,' 'talking head,' 'clone myself,' 'AI ad creative,' 'AI video ads,' or tools like Veo, Google Flow, Kling, Higgsfield, Seedance, Runway, ElevenLabs, HeyGen, Arcads, Nano Banana, Midjourney, or Ideogram. Gives step-by-step, copy-paste-prompt playbooks for each use case plus the realism rules that beat AI slop. For paid-ad strategy and targeting, see performance-marketing or paid-ads."
 metadata:
-  version: 1.4.0
+  version: 1.5.0
 ---
 
 # AI Content Generation
@@ -101,6 +101,8 @@ Realism is controlled imperfection. The default settings and generic prompts pro
 - Segment the script before generating video. Break the finished script into ~10-second beats and generate one beat per clip, each with its own scene and only that beat's spoken line. Never hand a video model the whole 30 to 45 second script in one prompt. If a clip glitches, regenerate only that clip, then stitch in CapCut.
 
 - No on-screen text in a video prompt. Video models (Veo, Flow, Kling, Gemini Omni) garble any text you ask them to render on screen. Add all captions, hook text, and CTAs in CapCut after generating. Baked-in text stays fine only for the still-image models (GPT Image, Ideogram, Nano Banana), which are chosen precisely because they render legible text.
+
+- Lock the scene and reuse it across clips. Set the environment, outfit, background, camera angle, lighting, and style once, then repeat that same scene description in every beat's prompt. Reusing it verbatim keeps the character and setting from drifting between clips.
 
 - For video, add negative prompts: no morphing, no warping, no melting, no jelly motion, no slow motion.
 

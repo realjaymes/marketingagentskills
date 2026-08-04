@@ -33,9 +33,10 @@ Use 00-overview for the tool list and the anti-slop rule.
 
 5. Keep the realism rules intact. The prompts already include the cues that beat AI slop (phone-camera look, natural light, slight grain, real-time pace, no "8K/cinematic/perfect", voice pauses and breaths, negative prompts against morphing and warping). Never strip these out. When you generate a new prompt that is not in the playbook, write these cues into it.
 
-6. Two hard rules for any video generation prompt (Veo, Google Flow, Kling, Gemini Omni):
+6. Three hard rules for any video generation prompt (Veo, Google Flow, Kling, Gemini Omni):
    - **No on-screen text.** These models garble text you ask them to render on screen. Never put captions, hook text, or CTAs in a video prompt. Tell the user those go on in CapCut after generating. (Baked-in text is fine only for the still-image models, GPT Image, Ideogram, Nano Banana, which are chosen because they render legible text, so keep it in static-image and thumbnail prompts.)
    - **Segment the script into ~10-second beats.** Never hand a video model the whole 30 to 45 second script in one prompt. Break it into ~10-second beats and give the user one animation prompt per beat, each with only that beat's spoken line, to generate one clip at a time and stitch. If a clip glitches, regenerate only that beat.
+   - **Lock the scene and reuse it.** Have the user set the environment, outfit, background, camera angle, lighting, and style once, then repeat that same scene description in every beat's prompt. Reusing it verbatim keeps the character and setting from drifting between clips.
 
 7. Before the user publishes, run the playbook's pre-publish checklist with them.
 

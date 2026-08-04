@@ -23,11 +23,12 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 This is the primary way to clone yourself in your own voice, and it solves lip sync. The HeyGen and Higgsfield routes still work and are kept below as alternatives, but reach for this first. The detailed how-to for each step lives in the sections that follow; this is the map.
 
 1. **Build your character in ChatGPT.** Run the image-clone sequence in Step 5: multiple reference angles → a written face and body breakdown → one clean reference image → a multi-angle mashup to confirm consistency → a reusable JSON prompt you keep forever.
-2. **Animate in Google Labs (Flow / Veo), with voice.** Drop your locked character into Flow and animate it *speaking your script*. Veo generates the clip with a spoken voice. Generate in ~10-second clips, one beat per clip (never the whole script in one prompt). No on-screen text in the prompt.
-3. **Assemble in Flow's scene builder.** Sequence the 10-second clips into one continuous scene, then export the assembled video from Google Labs.
-4. **Clone your own voice in ElevenLabs** (Step 2 below, the voice-capture read).
-5. **Re-voice with ElevenLabs Voice Changer.** Upload the exported Google Labs video (or its audio) and run Voice Changer (speech-to-speech) to regenerate the exact same dialogue in your own cloned voice. It preserves the original timing and cadence, so the mouth movements Veo generated still match.
-6. **Swap the audio in CapCut.** Replace the Google Labs audio track with the ElevenLabs voice-changed track, align it, then add captions and any on-screen text in post.
+2. **Set the scene and environment.** Before you animate, decide where the character is (a room, a podcast desk, a stage, a desk, walking outside, a studio) and lock the outfit, background, camera angle, lighting, and overall visual style. Write it once as a reusable scene description and reuse it on every clip, so the setting holds together across the 10-second beats.
+3. **Animate in Google Labs (Flow / Veo), with voice.** Drop your locked character into Flow and animate it *speaking your script*. Veo generates the clip with a spoken voice. Generate in ~10-second clips, one beat per clip (never the whole script in one prompt). No on-screen text in the prompt.
+4. **Assemble in Flow's scene builder.** Sequence the 10-second clips into one continuous scene, then export the assembled video from Google Labs.
+5. **Clone your own voice in ElevenLabs** (Step 2 below, the voice-capture read).
+6. **Re-voice with ElevenLabs Voice Changer.** Upload the exported Google Labs video (or its audio) and run Voice Changer (speech-to-speech) to regenerate the exact same dialogue in your own cloned voice. It preserves the original timing and cadence, so the mouth movements Veo generated still match.
+7. **Swap the audio in CapCut.** Replace the Google Labs audio track with the ElevenLabs voice-changed track, align it, then add captions and any on-screen text in post.
 
 **Why it works:** Veo drives the mouth off its own generated speech, and Voice Changer keeps that speech's timing, so your voice lands on the same lip movements. This avoids the drift of trying to lip-sync a fresh voice track onto silent footage.
 
@@ -152,6 +153,8 @@ If any angle drifts into a different person, regenerate the reference image befo
 
 ### Step 7 — Give ChatGPT your script and ask for an animation prompt
 
+**First, decide the scene and environment.** Pick where your character is for this video (a room, a podcast desk, a stage, a desk, walking outside, a studio) and settle the outfit, background, camera angle, and lighting before you write the prompt. This becomes a fixed scene description you paste into every beat, so the character, wardrobe, and room stay identical from clip to clip instead of drifting.
+
 Back in ChatGPT, paste your script and this.
 
 ```
@@ -160,7 +163,9 @@ Here is the script my character will say out loud:
 
 Write me a single animation prompt for a talking-head video of my character
 (the person you described earlier) saying this script to camera. Describe:
-the person talking directly to camera, casual phone-camera framing, natural
+the setting and environment (where they are, e.g. a room, a podcast desk, a
+stage, a desk, outdoors, a studio), their outfit and the background, the
+person talking directly to camera, casual phone-camera framing, natural
 light, subtle natural head and hand movement, real-time pace (not slow
 motion), photoreal, slight grain, not cinematic, not over-lit. Keep it to
 one tight paragraph I can paste into a video tool.

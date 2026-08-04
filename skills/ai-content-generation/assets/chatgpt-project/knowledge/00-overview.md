@@ -91,10 +91,11 @@ Start lean: free tiers plus ElevenLabs Starter ($5) is enough to ship. Scale up 
 
 Realism is controlled imperfection. Prompt for a phone-camera look (natural light, slight grain, real-time pace) and drop the words "cinematic", "8K", and "perfect", because those trigger the waxy plastic look. Put real pauses and breaths in the voice so it does not sound robotic. Keep clips short so faces do not warp.
 
-Two hard rules for video generation specifically (Veo, Google Flow, Kling, Gemini Omni):
+Three hard rules for video generation specifically (Veo, Google Flow, Kling, Gemini Omni):
 
 - **No on-screen text in a video prompt.** These models garble any text you ask them to render on screen. Add all captions, hook text, and CTAs in CapCut after generating. Baked-in text stays fine only for the still-image models (GPT Image, Ideogram, Nano Banana), which are chosen because they render legible text, so keep it in static-image and thumbnail prompts.
 - **Segment the script into ~10-second beats before generating.** Never hand a video model the whole 30 to 45 second script in one prompt. Break it into ~10-second beats, generate one clip per beat (each with only that beat's spoken line), and stitch them in CapCut. If a clip glitches, regenerate only that beat.
+- **Lock the scene and reuse it.** Set the environment, outfit, background, camera angle, lighting, and style once, then paste that same scene description into every beat's prompt. Reusing it verbatim is what keeps the character and setting from drifting between clips.
 
 Each playbook has its own version of this rule tuned to its use case. Read it before you publish.
 

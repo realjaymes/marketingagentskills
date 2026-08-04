@@ -159,7 +159,7 @@ When you want your own consistent presenter, a built faceless persona or your ow
 
 1. **Build or reuse the presenter.** Build a faceless character (see 01 - Faceless Influencer) or clone yourself (see 02 - AI Clone & Talking Head). Lock the face with the multi-angle mashup and a reusable JSON prompt so the same person holds across every ad and every scene.
 
-2. **Turn the ad script into scenes.** Take the locked script from Step 1 and split it into ~10-second beats, one generation prompt per beat. Paste:
+2. **Set the scene, then turn the ad script into scenes.** First decide the environment your presenter is in (a room, a podcast desk, a stage, a desk, outdoors, a studio) and lock the outfit, background, camera angle, lighting, and style. Then take the locked script from Step 1 and split it into ~10-second beats, one generation prompt per beat, carrying that same scene description on each beat. Paste:
 
 ```
 You turn a finished video ad script into per-scene generation prompts for an AI
