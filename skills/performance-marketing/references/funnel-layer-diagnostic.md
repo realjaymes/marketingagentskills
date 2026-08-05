@@ -1,8 +1,8 @@
 # Funnel-Layer Diagnostic — Template + Trigger
 
-The standard read for a live paid campaign. It walks the funnel **top to bottom by layer**, marks each layer 🟢/🟡/🔴, names the **one layer that is breaking**, and gates every action on that read. This is the canonical format for the **Live Monitoring** section of a campaign build doc (the `00 - …Campaign…md` hub in `Areas/Work/MIA/Academy/Ads/[Offer]/[YYYY-MM-DD - … Campaign]/`).
+The standard read for a live paid campaign. It walks the funnel **top to bottom by layer**, marks each layer 🟢/🟡/🔴, names the **one layer that is breaking**, and gates every action on that read. This is the canonical format for the **Live Monitoring** section of a campaign build doc (the `00 - …Campaign…md` hub in the offer's campaign folder).
 
-It exists so campaign reads are consistent and complete instead of memory-dependent. Source spec: the platform playbook's §9 **Metric Diagnosis Table** (e.g. `[[Meta Ads Playbook]]` §9). Canonical complete exemplar: `MIA/Academy/Ads/Meta Account Recovery Handbook/2026-05-21 - Recovery Workshop Meta Campaign v3/00 - …v3.md` (Day 12 diagnostic).
+It exists so campaign reads are consistent and complete instead of memory-dependent. Source spec: the platform playbook's §9 **Metric Diagnosis Table** (e.g. the Meta Ads Playbook §9).
 
 ---
 
@@ -10,7 +10,7 @@ It exists so campaign reads are consistent and complete instead of memory-depend
 
 Generate or update a diagnostic block **at every scheduled read** and **before any kill/scale decision**:
 
-- **Day 1** (or first morning after launch): confirm delivery + spend pacing only — too early for performance reads (see [[Meta Ads Playbook]] 72-hour rule).
+- **Day 1** (or first morning after launch): confirm delivery + spend pacing only — too early for performance reads (see Meta Ads Playbook 72-hour rule).
 - **Day 3** — first real read once the algorithm has learning data.
 - **Day 5, Day 7, Day 12** — and at any cadence the campaign's `## Next Actions` schedules.
 - **Any time a kill or scale rule is being considered** — the decision must be gated on a fresh diagnostic, not a glance at ROAS.
@@ -31,7 +31,7 @@ Read the layers in this order and stop diagnosing downstream once you find the b
 
 - **Delivery / pre-flight first** — if the ad is off/rejected/under-pacing, nothing else matters.
 - **CPM is the first performance metric** read after pre-flight. It's the rawest signal of whether the platform thinks the ad is worth showing; a high CPM inflates every cost beneath it, so an unaddressed CPM problem makes everything downstream look worse than it is.
-- **Landing-page layer = destination OR offer.** Low CVR with healthy CTR means people clicked but didn't buy. Audit the page first (message-match, mobile speed, CTA clarity). If the page is sound, the **offer or price is the leak** — clicks-without-conversions is the classic offer-problem signal (see [[Meta Ads Conversion Playbook]] Reasons 1-2).
+- **Landing-page layer = destination OR offer.** Low CVR with healthy CTR means people clicked but didn't buy. Audit the page first (message-match, mobile speed, CTA clarity). If the page is sound, the **offer or price is the leak** — clicks-without-conversions is the classic offer-problem signal (see Meta Ads Conversion Playbook Reasons 1-2).
 - **Selar (or platform sales backend) is truth.** Meta/TikTok undercount; always cross-check attributed purchases against the sales export and report the capture rate. Never assume the processor — it may be Selar, Paystack, Flutterwave, Stripe, Gumroad, or a manual transfer log.
 - **Webinar / multi-stage funnels split the destination layer into three.** For a webinar funnel (ad → registration → live/replay → checkout) the platform optimizes for the Lead (registration) and cannot see the sale at all. Insert two breakpoints between the Landing-page layer and the Full-funnel layer: **Registration → Show-up** (attendance rate, from the webinar room / Sheet) and **Show-up → Purchase** (from the backend export). CPL is the only ad-side number; everything past registration is read downstream, not from the platform. A healthy CPL with weak full-funnel ROAS almost always breaks at Show-up→Purchase — the fix is the webinar and the close, not the campaign.
 
@@ -67,7 +67,7 @@ Quality Ranking is not available in the placement/age breakdown exports (see the
 ```markdown
 ### Funnel-Layer Diagnostic — Day [N] ([YYYY-MM-DD])
 
-Per [[Meta Ads Playbook]] §9 Metric Diagnosis Table.
+Per Meta Ads Playbook §9 Metric Diagnosis Table.
 
 **Snapshot date:** [YYYY-MM-DD] ([Day N cumulative / window])
 

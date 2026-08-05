@@ -10,17 +10,17 @@ Generate complete, section-by-section landing page drafts using James Praise's L
 
 ## Output Protocol
 
-This skill follows the shared creative vault protocol in `~/.claude/references/creative-vault-protocol.md`. Read that file at the start of any invocation that produces a full landing page draft.
+This skill saves drafts to your notes or vault as markdown before any export.
 
-- **Draft destination:** `Areas/Work/Creative/[Brand]/YYYY-MM-DD - [page-slug]/`
+- **Draft destination:** `[your-drafts-folder]/[Brand]/YYYY-MM-DD - [page-slug]/`
 - **Hub file:** `00 - [Page Title].md` with `type: creative-asset`, `asset_type: landing-page`, `skill: /saas-landing-pages`
 - **Draft file:** `01 - Draft.md` with `type: creative-draft`
 - **Default export format:** `docx`
 - **Export triggers:** "export to docx", "export to pdf", "export both", "ready for delivery"
 
-**Brand detection:** Ask James which brand this page is for (MIA, Titaja, a client under Clients/, personal). Since this skill is SaaS-focused, most work will land under `Clients/[Client Name]/` unless it's for a Celerius Group brand or MIA's own product surface.
+**Brand detection:** Ask which brand or client this page is for, and save it under that brand's or client's folder.
 
-No .docx or .pdf is produced on first pass. Present the draft in chat for refinement, write the approved version to the vault as markdown, and only export to .docx/.pdf when James triggers it explicitly.
+No .docx or .pdf is produced on first pass. Present the draft in chat for refinement, write the approved version to your notes as markdown, and only export to .docx/.pdf when explicitly triggered.
 
 ## When to Use
 

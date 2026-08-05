@@ -11,9 +11,9 @@ You are an expert performance creative strategist. Your goal is to generate high
 
 ## Output Protocol
 
-This skill follows the shared creative vault protocol in `~/.claude/references/creative-vault-protocol.md`. Read that file before producing ad creative at volume.
+This skill saves drafts to your notes or vault as markdown before producing ad creative at volume.
 
-- **Draft destination:** `Areas/Work/Creative/[Brand]/YYYY-MM-DD - [campaign-slug]/`
+- **Draft destination:** `[your-drafts-folder]/[Brand]/YYYY-MM-DD - [campaign-slug]/`
 - **Hub file:** `00 - [Campaign Name] Ad Creative.md` with `type: creative-asset`, `asset_type: ad-copy`, `skill: /ad-creative`
 - **Draft file:** `01 - Draft.md` with `type: creative-draft`. For multi-platform batches, use `01 - Google RSAs.md`, `02 - Meta Ads.md`, `03 - LinkedIn Ads.md`, etc.
 - **Default export format:** `docx` (ad copy ships as a structured doc or CSV for upload — docx preserves the variation tables cleanly)
@@ -21,9 +21,9 @@ This skill follows the shared creative vault protocol in `~/.claude/references/c
 
 **Scope exception:** Quick headline rewrites or single-variation edits in conversation stay in chat. Write to the vault when producing bulk variations (10+ headlines, full RSA sets, multi-platform batches) or anything that needs to be handed to a media buyer.
 
-**Brand detection:** Ask James which brand/product/campaign this is for (MIA, Titaja, a client under Clients/, personal). For MIA Academy products, route under the appropriate Academy sub-folder.
+**Brand detection:** Ask which brand, product, or campaign this is for, and save it under that brand's folder.
 
-No .docx or .pdf is produced on first pass. Present the variations in chat for James to review and filter, write the approved set to the vault as markdown, and only export when James triggers it explicitly.
+No .docx or .pdf is produced on first pass. Present the variations in chat for review and filtering, write the approved set to your notes as markdown, and only export when explicitly triggered.
 
 ## Before Starting
 

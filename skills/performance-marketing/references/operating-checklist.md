@@ -33,7 +33,7 @@ Before touching a platform, confirm:
 - [ ] Per-ad capture: hook style, format, copy length, offer framing, CTA, social proof type, destination target
 - [ ] Comments mined on competitor ads AND client's own posts (for buyer language and objections)
 - [ ] Audience Language Doc deliverable saved (5 pain quotes, 5 desire quotes, 3 objection patterns, 5 competitor hooks, and where buyers convert: WhatsApp DM, landing page, checkout, or lead form)
-- [ ] Doc location: `Areas/Work/MIA/Clients/[Name]/[NN] – Audience Research.md` or `Areas/Work/MIA/Academy/Ads/[Offer]/[Campaign Folder]/02 – Audience Research.md`
+- [ ] Doc location: save the Audience Research as a numbered doc in the engagement's workspace (e.g. `[client]/[NN] – Audience Research.md` or `[offer]/[campaign]/02 – Audience Research.md`)
 
 If Audience Research is skipped, Strategy is guessing. Don't proceed without it on new engagements.
 

@@ -256,7 +256,7 @@ Each level captures a different decision dimension. Pipe-separated for clean par
 
 **Audience (Ad Set-level):** specific segment (Broad, LAL1-Buyers, Interest-Marketing, RT-Site30d, RT-AddToCart7d)
 
-**Angle (Ad Set-level):** the one belief, desire, or fear this ad set speaks to — one angle per ad set (AI Fear, Cost of Living, Financial Freedom, Job Security, Speed). An angle is a desire/fear, not a content structure (testimonial, social proof, origin story are content structures, not angles). See the angle layer in [[Creative Strategy Framework]].
+**Angle (Ad Set-level):** the one belief, desire, or fear this ad set speaks to — one angle per ad set (AI Fear, Cost of Living, Financial Freedom, Job Security, Speed). An angle is a desire/fear, not a content structure (testimonial, social proof, origin story are content structures, not angles). See the angle layer in Creative Strategy Framework.
 
 **Country:** ISO code or region (NG, US, UK, EU, DIASPORA)
 
@@ -276,7 +276,7 @@ Each level captures a different decision dimension. Pipe-separated for clean par
 
 **What an angle is.** An angle is a **belief, desire, or fear the audience holds** — the specific reason this audience pays attention to this offer. It is *what you're saying*, not how you say it. Formula: **Product + Audience + Desire or Fear = Angle.** The test: if a label describes how you organize or prove the message (testimonial, case study, founder story, social proof, demo) that's a **content structure**, not an angle; if it's the opening line or visual, that's a **hook**. Those live at lower layers. Don't put a content structure or a hook in the angle slot.
 
-Example angles: AI Fear, Cost of Living, Financial Freedom, Job Security, Speed. This is the angle layer of the [[Creative Strategy Framework]] (Offer → Angle → Content Structure → Creative Format → Style → Hook → Platform).
+Example angles: AI Fear, Cost of Living, Financial Freedom, Job Security, Speed. This is the angle layer of the Creative Strategy Framework (Offer → Angle → Content Structure → Creative Format → Style → Hook → Platform).
 
 ### Date Format
 
@@ -544,7 +544,7 @@ Note: AI answer surface CPMs are 2-6&times; Meta CPMs. Treat as experimental bud
 | CPA | > 1.3x target after 2x cycle | Funnel or targeting issue | Review landing page, audience, offer |
 | CPA | < target for 3+ days | Winning combination | Scale 20% every 3 days |
 | Frequency | > 2.5 | Audience fatigue | Refresh creative or expand audience |
-| CVR (post-click) | < 1% | Destination OR offer problem (not the ad) — message mismatch, slow load, weak CTA, wrong audience, or a weak offer/price | Audit the page first (message-match, mobile speed, CTA clarity). If the page is sound, the offer/price is the leak. Fix the destination before changing ads. See [[Meta Ads Conversion Playbook]] |
+| CVR (post-click) | < 1% | Destination OR offer problem (not the ad) — message mismatch, slow load, weak CTA, wrong audience, or a weak offer/price | Audit the page first (message-match, mobile speed, CTA clarity). If the page is sound, the offer/price is the leak. Fix the destination before changing ads. See Meta Ads Conversion Playbook |
 | CVR (post-click) | 1-3% | Average destination performance | Test destination variants (headline, hero, CTA, social proof, form length) |
 | CVR (post-click) | > 3% | Strong destination, ad and page aligned | Scale traffic, protect the destination, document what works |
 | ROAS | < 1.0x | Losing money | Pause and diagnose |
