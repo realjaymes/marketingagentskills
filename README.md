@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-29 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+31 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -38,6 +38,7 @@ See demo:
 | [ai-humanizer](skills/ai-humanizer) | Detect AI-written text, provide line-by-line recommendations, and rewrite content to sound genuinely human |
 | [case-study-builder](skills/case-study-builder) | Create professional case studies, engagement summaries, and project summaries |
 | [clay-gtm-outbound](skills/clay-gtm-outbound) | Design and optimize Clay-powered GTM workflows for prospecting, signal detection, and outbound automation |
+| [competitive-intelligence](skills/competitive-intelligence) | Build a complete competitive intelligence pipeline: gather intel, synthesize into a SWOT, construct a one-per-competitor battlecard, then validate with win-loss interview evidence, with worked examples across business models |
 | [copy-anatomy](skills/copy-anatomy) | Reverse-engineer copy into reusable templates by identifying core components and extracting frameworks |
 | [customer-segments](skills/customer-segments) | Create customer and user segment documents divided by traits, behaviors, and lifecycle stages |
 | [experimentation](skills/experimentation) | Design, prioritize, execute, and review growth experiments using the ICEEE framework |
@@ -60,6 +61,7 @@ See demo:
 | [saas-landing-pages](skills/saas-landing-pages) | Generate complete SaaS landing page drafts using 7 framework templates for different page types |
 | [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions |
 | [skill-to-prompt](skills/skill-to-prompt) | Convert Claude skills into ChatGPT Project format (prompt instructions + knowledge files as .docx) |
+| [storytelling-framework](skills/storytelling-framework) | Build a complete product or brand storytelling framework, adaptable to B2B, B2C, and hybrid businesses, with worked examples across business models |
 | [vibe-coding](skills/vibe-coding) | Guide beginner-to-intermediate developers through web development, Claude skills creation, and AI-assisted coding |
 
 ---
@@ -134,7 +136,7 @@ You can also invoke skills directly:
 ## Skill Categories
 
 ### Strategy & Positioning
-`portfolio-positioning` `product-positioning` `product-messaging` `product-marketing-metrics` `product-launch-gtm` `marketing-advantages`
+`portfolio-positioning` `product-positioning` `product-messaging` `product-marketing-metrics` `product-launch-gtm` `marketing-advantages` `storytelling-framework` `competitive-intelligence`
 
 ### Content & Copy
 `ad-creative` `landing-page` `saas-landing-pages` `press-release` `copy-anatomy` `ai-humanizer` `ai-content-generation`
