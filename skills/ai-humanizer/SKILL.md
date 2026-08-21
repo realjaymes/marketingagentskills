@@ -1,7 +1,7 @@
 ---
 name: ai-humanizer
 description: "Detects AI-written text, scores it against a detection rubric, provides line-by-line edit recommendations, and rewrites content to sound genuinely human. Use when the user asks to 'humanize' text, detect AI writing, remove 'AI voice,' make copy 'less robotic,' pass AI detection tools, or rewrite content to 'sound human.'"
-version: "1.1.0"
+version: "1.2.0"
 ---
 
 # AI Writing Humanizer
@@ -90,7 +90,7 @@ The final, publication-ready version applying all rules.
 | **Dash & Punctuation** | Frequent em-dashes, unnatural dash habits, incorrect spacing, Title Case headings, stray smart quotes/arrows pasted from chat |
 | **Hedging/Vagueness** | "very," "really," "quite," "actually," hedge preambles ("it's worth noting that"), phantom authority ("studies show," "experts say"), generic claims without specifics |
 | **Structure/Monotony** | Repetitive sentence length (low burstiness), rule-of-three padding, "-ing" significance tails, formal transition openers ("Furthermore," "Moreover"), signposted conclusions, paragraph stuffing, no white space |
-| **Missing Humanity** | No contractions, no concrete dates/places, no honest asides, no perspective shifts, no first-person opinion or committed stance |
+| **Missing Humanity** | No contractions, no concrete dates/places, no honest asides, no perspective shifts, no first-person opinion or committed stance, verb-first sentence openers with the subject dropped ("Sounds like...," "Saw your post...," "Noticed you...") |
 | **Command Phrasing** | "Remember," "Keep in mind," "Don't forget" (always mark as AI-like) |
 
 ---
@@ -104,6 +104,10 @@ The final, publication-ready version applying all rules.
 | Question sentences | "The result? Improved conversions." | "This led to improved conversions." |
 | X/Y juxtapositions | "It's not just about features, it's about benefits." | "Features matter less than benefits." |
 | Negation-reveal fragments | "The gap isn't talent. It's action." / "It was never about the money. It was about freedom." | Collapse into one specific, provable claim: "Most people know the playbook. Under 5% ship it in week one." |
+| Subject-dropped fragment openers | "Sounds like..." / "Saw your post..." / "Noticed you..." / "Ran a quick check..." (verb-first, no "I/It/That") | Add the subject and make it a full sentence: "It sounds like..." / "I saw your post..." / "I noticed you..." / "I ran a quick check..." Reads as clipped, text-speak shorthand rather than someone actually talking, not conversational the way it's aiming for. |
+| Performative honesty preamble | "I want to be honest…" / "to be honest" / "here's the honest truth" / "the honest part most people skip" / "let me be real with you" | Cut the preamble and just say the thing. Honesty is shown by the plain claim, not announced. |
+| AI-setup opener | "Here is the move most people never think to make." / "Here is the part [they] leave out." / "Here's the thing nobody tells you." | Start with the substance. Delete the "Here is the [move/part/thing]…" scaffold and lead on the actual point. |
+| Filler crutch phrases repeated | "the loud accounts online," "the noise online," "most people never" used as a recurring tic across a piece or series | Vary or cut. A phrase that shows up in every section (or every article) reads as a template. |
 | Copula avoidance | "Notion serves as a testament to flexible workflows." / "The page boasts three tiers." | Let it "be": "Notion is flexible." / "The page has three tiers." |
 | "-ing" significance tails | "They launched a free tier, highlighting their commitment to accessibility." | End at the fact, or state the real consequence: "They launched a free tier. Signups tripled." |
 | Rule-of-three padding | "Fast, powerful, and intuitive." / "Plan, build, and scale." | Break the count. Use one, two, or four: "Fast. Almost annoyingly so." |
