@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-31 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+32 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -62,6 +62,7 @@ See demo:
 | [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions |
 | [skill-to-prompt](skills/skill-to-prompt) | Convert Claude skills into ChatGPT Project format (prompt instructions + knowledge files as .docx) |
 | [storytelling-framework](skills/storytelling-framework) | Build a complete product or brand storytelling framework, adaptable to B2B, B2C, and hybrid businesses, with worked examples across business models |
+| [tweetclaw-social-automation](skills/tweetclaw-social-automation) | Research X/Twitter conversations and run approval-gated social workflows through the TweetClaw OpenClaw plugin |
 | [vibe-coding](skills/vibe-coding) | Guide beginner-to-intermediate developers through web development, Claude skills creation, and AI-assisted coding |
 
 ---
@@ -119,6 +120,7 @@ Once installed, just describe what you need in Claude Code. Claude will automati
 - "Create an ICP document for our target customers"
 - "Design a lifecycle email campaign for trial users"
 - "Build a Clay workflow for outbound prospecting"
+- "Research the X/Twitter conversation around our launch and group recurring objections"
 - "Make this copy sound less like AI wrote it"
 
 You can also invoke skills directly:
@@ -151,7 +153,7 @@ You can also invoke skills directly:
 `seo-audit`
 
 ### Automation & Technical
-`n8n-automation` `openclaw` `clay-gtm-outbound` `remotion` `vibe-coding`
+`clay-gtm-outbound` `n8n-automation` `openclaw` `remotion` `tweetclaw-social-automation` `vibe-coding`
 
 ### Meta Skills
 `agent-skill-builder`

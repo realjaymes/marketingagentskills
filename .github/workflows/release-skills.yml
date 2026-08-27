@@ -18,6 +18,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Validate skill catalog
+        run: npm test
+
       - name: Build per-skill zips and bundle
         run: |
           set -euo pipefail
