@@ -86,6 +86,10 @@ Prefer clarity over cleverness.
 | Stakes inflation | "This template marks a new era of productivity." | State the concrete effect: "This template saves about an hour a week." (also: "an indelible mark," "a pivotal moment," "reshaping the industry") |
 | Title Case headings | "How To Improve Your Conversion Rate" | Sentence case: "How to improve your conversion rate" |
 | Em-dash overuse | "We built it—and it works" | Use periods for separate sentences |
+| Crutch-word overuse ("real," "honest") | "a real acquisition system," "real spend," repeated across a piece | Cap at 1-2 load-bearing uses per piece; cut the rest, or let a name/number/quote prove it instead |
+| Vague definite-article nouns | "the gap," "the thing," "the shape" as if already defined | Name the actual noun, don't gesture at an abstraction |
+| Setup-payoff mini-structures | "I expected X. It didn't." / "It turned out to be the right one." | State the point in one sentence, don't build to a two-sentence reveal |
+| Vague connection language | "in connection with," "associated with," "connected to" | State the actual relationship directly |
 
 ### Generic Business Jargon
 
@@ -95,7 +99,7 @@ Avoid: "leverage," "utilize," "synergy," "game-changer," "paradigm shift"
 
 The lexical core of AI-detection lists. These are the single words models reach for far more than humans do. "Delve" is the most-cited tell in the field.
 
-Avoid: "delve," "tapestry," "landscape" (as metaphor), "realm," "crucial," "pivotal," "intricate," "meticulous / meticulously," "vibrant," "showcase," "garner," "foster / fostering," "underscore," "bolster," "boasts," "harness," "unlock," "elevate," "embark," "navigate" (metaphorical)
+Avoid: "delve," "tapestry," "landscape" (as metaphor), "realm," "crucial," "pivotal," "intricate," "meticulous / meticulously," "vibrant," "showcase," "garner," "foster / fostering," "underscore," "bolster," "boasts," "harness," "unlock," "elevate," "embark," "navigate" (metaphorical), "multifaceted," "comprehensive," "robust," "seamless," "testament," "interplay," "nestled," "renowned," "unwavering," "intricacies," "align with"
 
 Fix: plain words. "delve into" → "look at." "the martech landscape" → "the 40-odd tools most SaaS teams run." "harness" → "use." "crucial" → "important" (or cut it).
 
