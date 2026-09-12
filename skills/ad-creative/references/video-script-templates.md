@@ -1148,3 +1148,58 @@ Any creative type can use a financial/data hook from the direct-response approac
 | "Companies Hiring [Role] at $[X]." | Job listing screenshots scroll, salary highlighted |
 
 These work especially well in Cost of Inaction, Pain Point, and Thought Leader creative types, but can open any video when you have strong financial data.
+
+## Section 3: Field Notes — Applying This to Creator-Sourced B2B Lead-Gen Ads
+
+The templates above assume you're scripting a video from scratch for a SaaS trial/demo funnel. This workflow runs on a different model — this section maps the template library onto it and adds the one step the general library doesn't cover: content evaluation.
+
+### How the Funnel Is Different
+
+Source, not script. Instead of writing VO from a blank page, this workflow sources existing creator video content (YouTube/Instagram) per product category (e.g., Solar Power Systems, Diesel Generator, Portable Cabin, Office Container, PUF Sandwich Panel, Chain Link Fencing, Servo Voltage Stabilizer, Bar Bending Machine, Cold Press Oil Machine, Fish Feed Making Machine) and evaluates whether it works as an ad, rather than filling in a Hook/Body/CTA table for a new shoot.
+
+End state is a lead form, not a trial signup. The funnel is creator video content → Meta ads → buy-lead form submission. The "CTA line" and "end card" fields in the templates above translate to: does the creative naturally lead into a lead-form click, not a "start free trial" moment.
+
+Usage rights decide the ad setup before any creative fields matter. Full Content Usage rights vs. channel-only boosting changes whether a piece runs as a proper Ads Manager ad from the business page or as a boosted post from the creator's own handle. This is a pre-condition checked before any content is even considered for the Body/Hook fields in Section 1.
+
+### The Content Evaluation Gate (Missing from the General Template)
+
+Before any creative goes live, it passes through a content evaluation step, owned per product category:
+
+| Category | Reviewer |
+|---|---|
+| Solar Power Systems | — |
+| Diesel Generator | — |
+| Cold Press Oil Machine | — |
+| Fish Feed Making Machine | — |
+
+This is an extra checkpoint that sits between Section 1: Universal Blank Template and production sign-off: each reviewer checks sourced content for their category against category-fit and quality before it's cleared for ad spend. Add this as a formal step in any brief built off this library.
+
+### Which Creative Types Map Best to Sourced-Not-Scripted Content
+
+Since the source is real creator footage — often product demos or usage videos filmed on-site — some creative types map onto it without a re-shoot, and others don't:
+
+| Creative type | Maps to sourced content? | Why |
+|---|---|---|
+| Product Demonstration | Yes | Creators showing the machine/product in operation is close to a natural fit |
+| Testimonial | Yes | Works when a creator is speaking to their own experience with the product |
+| Before/After | Yes | Existing footage of a working machine already tells that story visually |
+| Problem/Solution | Yes | Same — the visual narrative is often already in the raw footage |
+| Founder's Story | No — needs separate production | Assumes a produced brand asset |
+| Thought Leader | No — needs separate production | Assumes a produced brand asset |
+| Interview | No — needs separate production | Assumes a produced brand asset |
+
+### Evaluation Criteria for Picking Creators/Content
+
+- Engagement rate (via Modash): `(Likes + Comments) ÷ Followers × 100`
+- Reach and engagement quality weighted over raw follower count
+- Payment negotiated on a flat-rate basis, with usage rights (full vs. channel-only) treated as a separate negotiation variable
+
+### Outreach-to-Creative Pipeline
+
+1. Search relevant influencers per category
+2. Contact via email / call / social DM
+3. Responders become connected
+4. Negotiate pricing
+5. Outcome: interested / denied / pending (creator defers to manager for commercials)
+6. Content from interested creators enters the content evaluation gate above
+7. Cleared content becomes ad creative
