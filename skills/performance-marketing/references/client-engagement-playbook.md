@@ -268,7 +268,7 @@ Each level captures a different decision dimension. Pipe-separated for clean par
 
 **Hook (Ad-level):** the specific opening this ad tests within the ad set's angle (Pain, Outcome, Authority, FOMO, Origin-Story, Category-Frame, Social-Proof, Cost-of-Inaction, Fear-of-Replacement, Discount). The angle lives on the ad set; the hook is the ad-level test variable.
 
-**Note:** CTA is no longer part of the ad name. Track CTA at the creative level (asset tag in the brief), not in the name. Anchor names on Product + Creative Type + Hook so multi-product accounts stay legible.
+**Note:** The ad name does not include the CTA. Track CTA at the creative level (asset tag in the brief), not in the name. Anchor names on Product + Creative Type + Hook so multi-product accounts stay legible.
 
 ### Ad Set Structure: One Ad Set = One Angle
 

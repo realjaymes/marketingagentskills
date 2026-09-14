@@ -97,7 +97,7 @@ The final, publication-ready version applying all rules.
 
 ## Words and Phrases to Flag
 
-Grouped into clusters so related tells sit next to each other instead of scattered across one long table. Within a cluster, rows that were once separate but turned out to be the same underlying move have been merged, don't re-split them.
+Grouped into clusters so related tells sit next to each other instead of scattered across one long table. Within a cluster, each row covers one underlying move, and variants of that move share its row (the setup-payoff construction lives in the negation-reveal row). Keep variants together instead of splitting them into new rows.
 
 ### Contrast & Reveal Constructions
 
@@ -308,13 +308,13 @@ That's the kind of connection we build for.
 
 ---
 
-## Changelog
+## Evidence Base
 
-Provenance for patterns added after the original v1.0 rubric, kept here instead of inline in the rule text above so the rules themselves stay clean and timeless.
+Several patterns beyond the original rubric rest on specific evidence. Knowing the source helps when judging an edge case.
 
-- **2026-08-26 to 2026-08-28:** Dropped-subject fragments generalized from sentence-openers only to any clause anywhere in a piece, plus the adjective-first CTA-question variant, after both slipped through cold-email and LinkedIn outreach drafts.
-- **2026-09-04 to 2026-09-05:** "Shape of" abstract meta-naming, source-quoting-back as subject, source-lifted phrases, and the mail-merge test added after diffing James's own hand-edits against 5 real sent letters and a vault-wide grep that found the same tics in 13+ historical application files.
-- **2026-09-09:** Crutch-word overuse ("real," "honest"), vague definite-article nouns, setup-payoff mini-structures, vague connection language, expanded AI vocabulary, and the Structural Tells section added after an audit of 9+ live website pages plus a cross-check against external sources (see References). Table reorganized into clusters at the same time; several rows merged where they turned out to be the same underlying tell (negation-reveal absorbed setup-payoff; "shape of" absorbed vague definite-article nouns; the honesty-preamble and crutch-word rows were grouped together).
+- **Dropped-subject fragments anywhere in a piece**, including the adjective-first CTA question: a check limited to sentence openers let clause-level fragments through in cold-email and LinkedIn outreach drafts, so the rule covers every clause.
+- **"Shape of" meta-naming, the source document as subject, source-lifted phrases, and the mail-merge test:** a diff of James's own hand-edits against 5 sent application letters surfaced these tics, and a vault-wide grep found the same tics in 13+ earlier application files.
+- **Crutch-word overuse ("real," "honest"), vague definite-article nouns, setup-payoff constructions, vague connection language, the expanded AI vocabulary list, and the Structural Tells section:** an audit of 9+ live website pages surfaced these, cross-checked against the external sources under References.
 
 ---
 

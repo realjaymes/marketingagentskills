@@ -407,7 +407,7 @@ TikTok exposes an optional **Disclaimer** field at the creative level (Ad Detail
 - **Count it before you save.** The field rejects ≥90 characters. A common just-over example is "Testimonials & results reflect individual experiences & do not guarantee specific outcomes" — that is exactly **90** (one over). Trim to "Testimonials & results reflect individual experiences, not guaranteed outcomes" (76) or use the bank above.
 - **NG / regulated audiences:** when income or results creative targets Nigerian/diaspora or any regulated vertical, default to adding the income or testimonial line even if you are unsure.
 
-**Platform note:** this is a **TikTok-only** field. Meta has no creative-level disclaimer equivalent — Meta compliance is handled in-copy. (MIA retired its in-copy earnings-disclaimer *line* on 2026-06-11; do not reintroduce it on Meta. The TikTok disclaimer field is a separate mechanism, platform-native, and does not consume ad-text characters.)
+**Platform note:** this is a **TikTok-only** field. Meta has no creative-level disclaimer equivalent — Meta compliance is handled in-copy. (MIA's Meta ads have carried no in-copy earnings-disclaimer *line* since 2026-06-11, and none should be added. The TikTok disclaimer field is a separate mechanism, platform-native, and does not consume ad-text characters.)
 
 ---
 

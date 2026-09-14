@@ -15,7 +15,9 @@ Generate or update a diagnostic block **at every scheduled read** and **before a
 - **Day 5, Day 7, Day 12** — and at any cadence the campaign's `## Next Actions` schedules.
 - **Any time a kill or scale rule is being considered** — the decision must be gated on a fresh diagnostic, not a glance at ROAS.
 
-Each run is **appended newest-on-top** in the Live Monitoring section (most recent diagnostic first), so the history reads in reverse chronological order. Never overwrite a prior day's diagnostic — they are the append-only record of how the campaign was read over time.
+Each run is **added newest-on-top** in the Live Monitoring section (most recent diagnostic first), so the history reads in reverse chronological order. Never overwrite a prior day's diagnostic, because together they are the record of how the campaign was read over time.
+
+**Live Monitoring is the hub's designated time-series log, and the rest of the hub is current-state.** Dated diagnostic blocks belong only in Live Monitoring (and one-line rows in the Decision Log). After each read, rewrite the hub's other affected sections in place (actuals, risk callouts, budget and pacing plan, status line) so they match the latest diagnostic. Do not leave an earlier claim standing with a dated note beneath it.
 
 **Completeness rule:** a campaign that has passed a scheduled read date with no diagnostic logged is incomplete — fill it from the Meta/platform CSV export + the Selar (or platform) sales export. A campaign that is younger than its first scheduled read (e.g. Day 1) legitimately has only the delivery/pacing pre-flight check, not a full table — that is not "missing," it's pre-first-read.
 

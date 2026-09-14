@@ -23,6 +23,8 @@ This skill saves drafts to your notes or vault as markdown before producing ad c
 
 **Brand detection:** Ask which brand, product, or campaign this is for, and save it under that brand's folder.
 
+**Document integrity.** Write every draft this skill saves as a current-state document. When feedback or new facts arrive, rewrite the affected section in place and fix anything elsewhere in the file (and in related files) that the change contradicts. Never append dated addenda, update blocks, or change narration to a draft. Record each revision as one short line in the hub, and before finishing, reread every file you touched and remove stale claims, duplicate sections, and change narration.
+
 No .docx or .pdf is produced on first pass. Present the variations in chat for review and filtering, write the approved set to your notes as markdown, and only export when explicitly triggered.
 
 ## Before Starting
