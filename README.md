@@ -41,6 +41,7 @@ See demo:
 | [competitive-intelligence](skills/competitive-intelligence) | Build a complete competitive intelligence pipeline: gather intel, synthesize into a SWOT, construct a one-per-competitor battlecard, then validate with win-loss interview evidence, with worked examples across business models |
 | [copy-anatomy](skills/copy-anatomy) | Reverse-engineer copy into reusable templates by identifying core components and extracting frameworks |
 | [customer-segments](skills/customer-segments) | Create customer and user segment documents divided by traits, behaviors, and lifecycle stages |
+| [domain-health](skills/domain-health) | Audit email authentication and deliverability posture (SPF, DKIM, DMARC, MX, sender inventory) for domains you own, and score prospect domains for outbound gaps |
 | [experimentation](skills/experimentation) | Design, prioritize, execute, and review growth experiments using the ICEEE framework |
 | [icp-persona](skills/icp-persona) | Generate ICP and buyer/user persona documents for B2B and B2C products |
 | [landing-page](skills/landing-page) | Create landing page copy using modular section templates for homepages, feature pages, and campaigns |
@@ -150,8 +151,11 @@ You can also invoke skills directly:
 ### SEO
 `seo-audit`
 
+### Outbound & Deliverability
+`clay-gtm-outbound` `domain-health`
+
 ### Automation & Technical
-`n8n-automation` `openclaw` `clay-gtm-outbound` `remotion` `vibe-coding`
+`n8n-automation` `openclaw` `remotion` `vibe-coding`
 
 ### Meta Skills
 `agent-skill-builder`

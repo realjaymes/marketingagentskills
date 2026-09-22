@@ -1,0 +1,143 @@
+{
+  "_comment": "Best-effort DKIM selector and ESP-signature map. Absence of a hit NEVER proves DKIM is absent - selectors are arbitrary strings and some providers (Amazon SES, HubSpot) use per-account random selectors that cannot be guessed. Extend this list as new providers are encountered.",
+  "selectors": {
+    "google": "Google Workspace",
+    "selector1": "Microsoft 365",
+    "selector2": "Microsoft 365",
+    "zmail": "Zoho",
+    "zoho": "Zoho",
+    "mail": "Brevo / Sendinblue (also generic)",
+    "s1": "SendGrid",
+    "s2": "SendGrid",
+    "k1": "Mailchimp / Mandrill / Mailgun",
+    "k2": "Mailchimp / Mandrill",
+    "k3": "Mailchimp",
+    "mandrill": "Mandrill",
+    "pm": "Postmark",
+    "pm1": "Postmark",
+    "pm2": "Postmark",
+    "smtp": "Mailgun (common default)",
+    "mx": "Mailgun (alternate)",
+    "kl": "Klaviyo",
+    "kl2": "Klaviyo",
+    "cm": "Campaign Monitor",
+    "ctct1": "Constant Contact",
+    "ctct2": "Constant Contact",
+    "dkim": "generic",
+    "default": "generic",
+    "sig1": "generic"
+  },
+  "apex_tokens": {
+    "zoho-verification": {
+      "provider": "Zoho",
+      "mail": true
+    },
+    "brevo-code": {
+      "provider": "Brevo",
+      "mail": true
+    },
+    "sendinblue-code": {
+      "provider": "Brevo (legacy Sendinblue)",
+      "mail": true
+    },
+    "amazonses:": {
+      "provider": "Amazon SES",
+      "mail": true
+    },
+    "MS=": {
+      "provider": "Microsoft 365",
+      "mail": true
+    },
+    "mailgun-verification": {
+      "provider": "Mailgun",
+      "mail": true
+    },
+    "google-site-verification": {
+      "provider": "Google site verification",
+      "mail": false
+    },
+    "facebook-domain-verification": {
+      "provider": "Meta",
+      "mail": false
+    },
+    "atlassian-domain-verification": {
+      "provider": "Atlassian",
+      "mail": false
+    },
+    "stripe-verification": {
+      "provider": "Stripe",
+      "mail": false
+    },
+    "intercom-verification": {
+      "provider": "Intercom",
+      "mail": true
+    }
+  },
+  "cname_targets": {
+    "substack-custom-domains.com": {
+      "provider": "Substack",
+      "mail": false,
+      "note": "custom WEB domain for the publication. Substack sends from its own domain unless a custom sending domain is configured separately."
+    },
+    "ghost.io": {
+      "provider": "Ghost",
+      "mail": false,
+      "note": "web hosting, not necessarily sending"
+    },
+    "sendgrid.net": {
+      "provider": "SendGrid",
+      "mail": true
+    },
+    "mailgun.org": {
+      "provider": "Mailgun",
+      "mail": true
+    },
+    "postmarkapp.com": {
+      "provider": "Postmark",
+      "mail": true
+    },
+    "pstmrk.it": {
+      "provider": "Postmark",
+      "mail": true
+    },
+    "mcsv.net": {
+      "provider": "Mailchimp",
+      "mail": true
+    },
+    "beehiiv.com": {
+      "provider": "beehiiv",
+      "mail": true
+    },
+    "hubspotemail.net": {
+      "provider": "HubSpot",
+      "mail": true
+    },
+    "klaviyomail.com": {
+      "provider": "Klaviyo",
+      "mail": true
+    },
+    "zendesk.com": {
+      "provider": "Zendesk",
+      "mail": true
+    }
+  },
+  "spf_includes": {
+    "zohomail.com": "Zoho",
+    "_spf.google.com": "Google Workspace",
+    "spf.protection.outlook.com": "Microsoft 365",
+    "sendgrid.net": "SendGrid",
+    "mailgun.org": "Mailgun",
+    "spf.brevo.com": "Brevo",
+    "sendinblue.com": "Brevo (legacy)",
+    "amazonses.com": "Amazon SES",
+    "servers.mcsv.net": "Mailchimp",
+    "spf.mandrillapp.com": "Mandrill",
+    "_spf.psm.knowbe4.com": "KnowBe4",
+    "spf.mtasv.net": "Postmark",
+    "_spf.mx.cloudflare.net": "Cloudflare Email Routing (forwarding only)",
+    "helpscoutemail.com": "Help Scout",
+    "_spf.salesforce.com": "Salesforce",
+    "mail.zendesk.com": "Zendesk",
+    "klaviyomail.com": "Klaviyo"
+  }
+}
