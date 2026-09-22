@@ -4,7 +4,7 @@
 
 ---
 
-I'm [James](https://www.jamespraise.xyz), founder of [Marketing In Action](https://marketinginaction.xyz) and a marketing and go-to-market operator with close to a decade of startup experience. I've been a founding marketer multiple times, building marketing functions and systems from scratch.
+I'm [James](https://jamespraise.xyz), founder of [Marketing In Action](https://marketinginaction.xyz) and a marketing and go-to-market operator with close to a decade of startup experience. I've been a founding marketer multiple times, building marketing functions and systems from scratch.
 
 This repo is the Claude skills version of the [MIA Resources](https://marketinginaction.xyz/resources/) I have developed (100+ marketing templates and AI prompt frameworks for execution and consistent high-quality outputs from AI tools like ChatGPT Projects, Claude Projects, Gemini Gems, Custom GPTs & OpenAI Assistants).
 
@@ -178,7 +178,7 @@ If you have feedback or think there's a skill that should be included, drop me a
 
 ## Find Me
 
-- Website: [jamespraise.xyz](https://www.jamespraise.xyz)
+- Website: [jamespraise.xyz](https://jamespraise.xyz)
 - LinkedIn: [linkedin.com/in/jamespraise](https://www.linkedin.com/in/jamespraise)
 - X (Twitter): [x.com/realjaymes](https://x.com/realjaymes)
 
