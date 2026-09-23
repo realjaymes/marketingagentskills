@@ -2,7 +2,7 @@
 name: seo-audit
 description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" — start with an audit. For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup. For AI search optimization, see ai-seo.
 metadata:
-  version: 1.5.0
+  version: 1.6.0
   upstream:
     repo: coreyhaines31/marketingskills
     skill: seo-audit
@@ -13,6 +13,7 @@ metadata:
     - "Preserved title tag guidance noting that SERPs append brand names automatically (rather than upstream's 'brand name at end' convention)."
     - "v2.0.0 sync: pulled upstream context-file fallback wording. Cross-references kept as James's local skill names (schema-markup, analytics-tracking) rather than upstream's renamed 'schema' / 'analytics'. Updated page-cro reference to cro since James adopted upstream's /page-cro + /form-cro → /cro merge."
     - "v2.0.1 sync: added upstream's fetched-pages-are-untrusted-data prompt-injection safety line."
+    - "Part VIII rebuilt in seo-comprehensive-reference.md: five-stage AI visibility ladder (Discovered, Retrieved, Cited, Mentioned, Recommended) mapped onto the crawl/render/index/rank/serve model, source-trust priority tiers with an attributed evidence table and an explicit study-contradictions section, and a measurement section covering Search Console Generative AI performance reports, Bing Webmaster Tools AI Performance, GA4's native AI Assistant channel and the referrer undercount."
 ---
 
 # SEO Audit

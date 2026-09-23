@@ -90,33 +90,35 @@ The reference ramps quickly from foundations. Each section is self-contained.
 
 **Part VIII: Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO)**
 47. [[#How AI Search Engines Work]]
-48. [[#Optimizing for AI Citation]]
-49. [[#Measuring AI Search Visibility]]
+48. [[#The AI Visibility Ladder]]
+49. [[#Which Sources AI Tools Trust]]
+50. [[#Optimizing for AI Citation]]
+51. [[#Measuring AI Search Visibility]]
 
 **Part IX: Engagement Playbooks**
-50. [[#Days 1 to 14 – Diagnosis]]
-51. [[#Days 15 to 30 – Quick Wins]]
-52. [[#Days 30 to 90 – Roadmap Execution]]
-53. [[#Month 3 to 6 – Compounding Work]]
-54. [[#Month 6+ – Scale and Expansion]]
+52. [[#Days 1 to 14 – Diagnosis]]
+53. [[#Days 15 to 30 – Quick Wins]]
+54. [[#Days 30 to 90 – Roadmap Execution]]
+55. [[#Month 3 to 6 – Compounding Work]]
+56. [[#Month 6+ – Scale and Expansion]]
 
 **Part X: Scenario Playbooks**
-55. [[#Traffic Drop Diagnosis]]
-56. [[#Ranking Drop Diagnosis]]
-57. [[#New Site Launch]]
-58. [[#Content Refresh Campaign]]
-59. [[#Link Audit]]
-60. [[#International Expansion]]
+57. [[#Traffic Drop Diagnosis]]
+58. [[#Ranking Drop Diagnosis]]
+59. [[#New Site Launch]]
+60. [[#Content Refresh Campaign]]
+61. [[#Link Audit]]
+62. [[#International Expansion]]
 
 **Part XI: Cross-Functional Collaboration**
-61. [[#Working with Developers]]
-62. [[#Working with Content Teams]]
-63. [[#Working with Paid Media Teams]]
-64. [[#Working with Sales Teams]]
-65. [[#Working with Stakeholders]]
+63. [[#Working with Developers]]
+64. [[#Working with Content Teams]]
+65. [[#Working with Paid Media Teams]]
+66. [[#Working with Sales Teams]]
+67. [[#Working with Stakeholders]]
 
 **Part XII: Tool Stack**
-66. [[#Complete SEO Tool Reference]]
+68. [[#Part XII: Complete SEO Tool Reference]]
 
 ---
 
@@ -1803,7 +1805,7 @@ Not all backlinks are equal. Evaluate links across multiple dimensions.
 2. **Domain authority (DR or DA):** Higher-authority domains pass more value
 3. **Page authority (URL Rating):** The specific page linking matters too
 4. **Traffic:** Does the linking page get real traffic? Pages with no traffic often signal thin or low-value content
-5. **Link type:** Dofollow passes PageRank; nofollow, sponsored, UGC don't pass ranking signals but still have brand and referral value
+5. **Link type:** Dofollow passes PageRank; nofollow, sponsored, and user-generated content (UGC) links don't pass ranking signals but still have brand and referral value
 6. **Placement:** In-content editorial links pass more value than footer or sidebar links
 7. **Anchor text:** Descriptive relevance matters; excessive exact-match anchor text triggers over-optimization signals
 
@@ -2431,6 +2433,117 @@ AI answer engines (ChatGPT search, Perplexity, Google AI Overviews, Copilot, Gem
 
 ---
 
+## The AI Visibility Ladder
+
+**AI visibility** is not a single number. It is your position across five stages, and a brand can be strong at one stage and completely absent at the next. A vendor score that collapses all five into one figure hides the stage where the actual problem lives, which is the stage you have to fix.
+
+The five stages map onto the crawl, render, index, rank and serve model from Part I:
+
+| Traditional stage | AI stage | Plain meaning | What governs it |
+|---|---|---|---|
+| Crawl and render | **Discovered** | An AI crawler can reach your page and parse what is on it | `robots.txt` access for AI user agents, server-rendered HTML, clean structure |
+| Index | **Retrieved** | You sit in the index the assistant queries, and it pulled your page while building an answer | Presence in the right backend index (Google, Bing, Brave, or proprietary), query relevance |
+| Rank | **Cited** | Your URL appears as a source in the answer | Content usefulness: direct answers, statistics, freshness, extractable structure |
+| Serve | **Mentioned** | Your brand is named in the answer text, with or without a link | Entity recognition, and how the rest of the web describes you |
+| No traditional equivalent | **Recommended** | You are on the shortlist the buyer actually considers | Aggregate web consensus: reviews, forums, analysts, press, video |
+
+### Discovered, cited and recommended
+
+Three of the five stages carry the commercial weight, and they fail for different reasons.
+
+**Discovered** is a permission and parsing problem. If your `robots.txt` blocks GPTBot, or your content only exists after JavaScript executes, the model never sees you regardless of how good the page is. This is the cheapest stage to fix and the most commonly broken. Otterly.ai's February 2026 citation study found 73% of sites carry technical barriers that block AI crawlers.
+
+**Cited** is a content problem. The model found your page useful enough to pull from and attribute. Citation means your content answered the question in a shape the model could extract. It says nothing about whether the model thinks you are a good choice.
+
+**Recommended** is a consensus problem, and it is mostly decided off your own domain. The model is making a judgment about you rather than handing the user a list to judge for themselves. What it weighs is what the rest of the web says: review platforms, analyst coverage, forum discussion, earned media, video.
+
+The sentence to keep: **citation is about whether your content is useful to consult, and recommendation is about whether the rest of the web corroborates you.** A brand can be cited constantly and never recommended once.
+
+Lily Ray's analysis at Amsive is the cleanest evidence of that gap. Across 100 business-to-business "best [category] software" queries in spring 2026, self-promotional listicles earned 323 citations in AI Overviews, and in 224 of those cases (69%) the answer cited the publishing brand's own page while recommending competitors instead. The model treated the guide as a source about the category, extracted the competitor names and evaluation criteria the brand had compiled, then made its recommendation from web-wide consensus where the established players already dominate.
+
+### Why the fifth stage has no traditional counterpart
+
+Ranking serves a list and leaves the judgment to the user. Recommendation moves the judgment inside the model. That is the structural break between search engine optimization and AI visibility, and it is why off-page work matters more here than it does for ranking, not less.
+
+There is also a shadow stage: **recommended against**. On requirements-heavy prompts, models increasingly name products a buyer should avoid for a given use case, with sources attached. Weak third-party consensus is therefore no longer just absence from the shortlist, it can be an explicit rule-out. Monitor the framing around your mentions (recommended, neutral, hedged, or recommended against), not only the count.
+
+### Using the ladder as a diagnostic
+
+The stage you are stuck at determines the discipline that fixes it.
+
+| Stuck at | Symptom | Where the fix lives |
+|---|---|---|
+| Discovered | AI bots blocked or content invisible without JavaScript, zero citations anywhere | Technical SEO (Part III) |
+| Retrieved | Absent from the relevant backend index, for example not in Brave Search, so Claude cannot find you | Technical SEO and indexation (Part III) |
+| Cited | Indexed and ranking, but answers cite competitors | On-page and content SEO (Part IV) |
+| Mentioned | Cited as a source but the brand name never appears in the answer text | Entity clarity and schema (Part III), brand building (Part V) |
+| Recommended | Cited and mentioned often, but never on the shortlist | Off-page SEO, digital public relations, reviews, communities (Part V) |
+
+A rising citation count against a flat recommendation rate is a specific, diagnosable gap rather than a mystery. It means the web does not yet corroborate your content.
+
+The `ai-seo` skill carries the tactical execution layer for each stage, including per-platform ranking factors, content patterns and agent readiness. Its `citations-vs-recommendations.md` reference describes the same ladder in four rungs, with Discovered folded into Retrieved.
+
+---
+
+## Which Sources AI Tools Trust
+
+A brand's own pages earn citations. Third-party sources earn recommendations. Knowing which third-party sources the models actually lean on is what turns "do more off-page work" into a priority order.
+
+### Priority tiers
+
+The tiers below are directional and hold across the published studies. They are not percentages, deliberately, because the studies measure incompatible things and the underlying shares move whenever a platform ships a change.
+
+| Tier | Sources | Why they rank here | The play |
+|---|---|---|---|
+| **1. Universal** | Wikipedia, Reddit, YouTube | Top three on virtually every platform in every study, across every topic category | Earn an editorially warranted Wikipedia entity, participate genuinely in the subreddits where your category is discussed, publish video with transcripts |
+| **2. Consistent** | LinkedIn, review platforms (G2, Capterra), business and technology press (Forbes, Reuters, TechRadar), institutional `.gov` and `.edu`, Medium | Appear in the top ten of most multi-platform datasets, and heavily in commercial queries | Company page and executive publishing on LinkedIn, a review-generation loop, digital public relations aimed at named outlets, original data that institutions cite |
+| **3. Category-dependent** | Quora, Fandom, Yelp, Stack Exchange, and vertical authorities such as the National Institutes of Health and Mayo Clinic in health, Amazon and Shopify in e-commerce | Dominant in some categories and near-absent in others | Identify the two or three vertical authorities in your category by testing prompts, then pursue those specifically |
+| **4. Your own domain** | Your site | Still the single largest bucket of citations, at 47.5% overall and 59.8% inside Google AI Overviews per Otterly.ai (February 2026) | Necessary and high-yield for citation, but it does not buy recommendation. Do not treat a content push as an off-page substitute |
+
+**The test before investing in another self-ranked buyer's guide:** if a model ignored everything on our domain, would the rest of the web still put us on the shortlist? If the answer is no, that gap is the priority, not more content.
+
+**Stage-dependent reading of that test.** Established category leaders get both outcomes, because analysts, review sites and forums already validate them, so a definitive buyer's guide is high leverage and shapes how the whole category gets described. Emerging brands typically win the citation and influence the category framing while missing the recommendation, which is real positioning work but not the shortlist placement the tactic promises.
+
+### What the published studies actually found
+
+Every figure below carries its publisher, date, sample and, critically, the metric, because the denominators differ. A share of all citations and a percentage of responses containing a citation are not the same number and cannot be compared.
+
+| Study | Date | Sample | Metric | Finding |
+|---|---|---|---|---|
+| Zhang, Ye, Peng, Garimella and Tyson, arXiv 2512.09483 | Dec 2025 | 55,936 queries, 124,287 unique domains, 1,418,733 citation links, six AI engines and two traditional engines | Domain coverage and concentration | 37% of domains are unique to AI search engines. AI engines cite fewer sources (mean 4.3 URLs, 3.4 domains) than traditional engines (10.3 URLs, 7.3 domains), yet show lower Gini indices, meaning a more even spread across domains. Copilot and Gemini favor domains roughly 22,000 Tranco positions less popular |
+| Similarweb | Apr 2026 | ~600,000 citation events, United States, Jan to Feb 2026 | Share of all citations | ChatGPT: Wikipedia 13.15%, Reddit 11.97%, openai.com 6.21%, Walmart 2.90%, YouTube 2.67%. Google AI Mode: Fandom 7.16%, Wikipedia 5.21%, YouTube 4.91%, Reddit 4.19% |
+| Semrush | Nov 2025 | 230,000 prompts, 100M+ citations, 13 weeks (Jul to Oct 2025), three platforms | Percentage of responses citing the domain | ChatGPT's Reddit share fell from roughly 60% of responses in early August 2025 to about 10% by mid-September, and Wikipedia from roughly 55% to under 20%. The shift was isolated to ChatGPT while other platforms stayed stable |
+| Profound | Jun 2025 | 680M citations, Aug 2024 to Jun 2025 | Share of all citations | ChatGPT: Wikipedia 7.8%, Reddit 1.8%, Forbes 1.1%, G2 1.1%. Perplexity: Reddit 6.6%, YouTube 2.0%, Gartner 1.0% |
+| Ahrefs | Sep 2026 | 3M+ United States queries, updated monthly | Mention share within the top 50 sources | Google AI Overviews: YouTube 22.9%, Reddit 18.5%, Facebook 10.1%, Google 8.8%, Instagram 5.6%, Quora 4.7%, Wikipedia 4.0% |
+| Muck Rack Generative Pulse | May 2026 | 25M+ links from ChatGPT, Claude and Gemini across 17 industries | Source category | 84% of citations are earned media, 0.3% paid or advertorial, journalism alone 27% across 20,000+ outlets. Citation rate by platform: ChatGPT cites in 96% of responses, Gemini 82%, Claude 55% |
+| Otterly.ai | Feb 2026 | 1M+ citations, three platforms | Source category | Brand-owned domains 47.5% of citations, news 20.3%, community forums 5.9%. Brand share by platform: AI Overviews 59.8%, ChatGPT 44.7%, Perplexity 28.9%, with Reddit alone at 16.9% on Perplexity |
+| Ahrefs | Aug 2025 | 15,000 long-tail queries, early Jul 2025 | Overlap with Google's top 10 | ChatGPT 8.0% in-text and 6.1% in references, Gemini 8.6%, Copilot 8.2%, Perplexity 28.6%, Google AI Overviews 76% |
+| seoClarity | Oct 2025 | 362,000 United States queries, 5.1M citations | Overlap with top 20 organic | 56% of citations came from the top 20 and 44% from outside it. Average top-20 URLs per AI Overview fell from 5 in May 2025 to 3 in October 2025 |
+
+**The one robust cross-study finding on overlap:** standalone assistants overlap Google's top ten by well under 10%, Perplexity is the outlier near 29% because it is retrieval-first, and Google's own AI Overviews overlap far more than any assistant. Ranking well is necessary but nowhere near sufficient, and a page that cannot crack page one can still be cited.
+
+### Where the studies contradict each other
+
+These are stated rather than averaged, because averaging incompatible measurements produces a number no study reports.
+
+**User-generated content in ChatGPT.** BrightEdge (April 2026) puts ChatGPT at 0.5% UGC. Similarweb (January to February 2026) puts Reddit alone at 11.97% of ChatGPT citations. Both cannot be true. BrightEdge does not publish its sample size or its UGC taxonomy, while Similarweb publishes raw counts, so weight Similarweb, but the gap is unexplained.
+
+**Direction of travel on AI Overviews to organic overlap.** BrightEdge (September 2025) reports overlap rising from 32.3% to 54.5% over 16 months. seoClarity reports average top-20 URLs per AI Overview falling from 5 to 3, and Ahrefs' own top-ten figure fell from 76% in August 2025 to 37.9% in March 2026. The likely reconciliation is that BrightEdge measures whether any overlap exists, which gets easier to satisfy as AI Overviews cite more sources, while the others measure the proportion of citations. Report the reconciliation rather than picking a side.
+
+**Wikipedia's share in Google surfaces.** Four datasets give four answers, from Ahrefs' 4.0% to Surfer's roughly 18.4%. The metrics differ, and so do the surfaces, since AI Overviews, AI Mode and Gemini are routinely conflated in coverage.
+
+**The underlying point.** Source shares are product decisions, not stable facts about the web. The mid-September 2025 collapse in ChatGPT's Reddit and Wikipedia citation rates is the proof, and it happened without any change in Reddit or Wikipedia. Treat every figure in this section as a dated observation and re-verify roughly every six months.
+
+### Numbers not to repeat
+
+- **"Top 15 domains equal 68% of citations"** and **"Reddit is roughly 40%."** Neither traces to a primary source. Both circulate only on aggregator sites that cite each other.
+- **"No domain exceeds 5% of citations on any platform"** (attributed to Evertune). No primary methodology page is available, and it contradicts both Similarweb and Ahrefs.
+- **The Princeton Generative Engine Optimization paper's 30% to 40% visibility uplift** (arXiv 2311.09735, KDD 2024). The study is sound but the preprint dates to November 2023 and predates every current product. It is evidence about content optimization in general, not about how today's engines pick sources.
+- **Any Meta AI citation share.** No published domain-share study of Meta AI exists. Meta AI launched on a Bing search partnership, added a Google partnership in April 2025, and is reportedly building its own crawler and index, but its citation transparency is minimal and no dataset covers it. Percentages quoted for Meta AI are fabricated.
+- **Any claimed uplift from a G2 or Capterra listing.** G2 is a consistently top-ten cited domain for software queries, which is well established. Whether a listing causes citation is not, and the vendor claims on both sides trace to no published methodology.
+
+---
+
 ## Optimizing for AI Citation
 
 ### Entity Optimization
@@ -2487,35 +2600,71 @@ AI systems prefer sources that cover a topic comprehensively, not surface-level.
 
 ## Measuring AI Search Visibility
 
-### AI Referrer Tracking
+No single source sees the whole ladder. Platform-owned reporting shows impressions on Google and Bing surfaces, referrer tracking shows the fraction of AI-influenced traffic that arrives with a referrer attached, and prompt tracking shows citation and recommendation behavior where no click ever happens. Use all three and say plainly which one each number came from.
 
-Create a custom channel group in GA4:
+### Platform-owned reporting
 
-- perplexity.ai
-- chat.openai.com
-- chatgpt.com
-- copilot.microsoft.com
-- gemini.google.com
-- claude.ai
-- you.com
+**Google Search Console, Generative AI performance reports.** Google shipped these in 2026, rolling out through the year to all properties. There are two reports, one for Search and one for Discover. The Search report covers impressions in AI Overviews and AI Mode, excluding Search Labs experiments, with dimensions for page (the final URL after redirects), country, date and device.
 
-Segment analytics by this channel to measure traffic from AI sources.
+The limitation to communicate before anyone builds a dashboard on it: **impressions only.** No clicks, no position, no query data. The reports tell you where your pages appeared inside AI features, not what that appearance produced. Standard Performance report constraints still apply, including the 1,000-row limit and preliminary data that can shift within hours. Eligibility is controlled by the Search generative AI setting at property level in Search Console settings.
 
-**Looker Studio reporting layer:** Build a custom Looker Studio report that pulls GA4 data and filters by session source/medium for these domains, so AI traffic sits alongside organic, paid, and direct in one unified view. This makes the AI channel legible to stakeholders and clients who don't live inside GA4's custom channel group configuration, and lets you trend AI-driven sessions, engaged users, and conversions over time without rebuilding the query each report cycle.
+**Bing Webmaster Tools, AI Performance.** Shipped February 2026 and expanded in June 2026 with intents, topics, citation share and a compare view. It reports total citations, average cited pages and grounding queries for Copilot, Bing AI summaries and selected partner AI experiences. It does not cover ChatGPT, Perplexity or any Google surface. Most sites are registered with Search Console but not Bing Webmaster Tools, which makes this a cheap and frequently missed data source.
 
-### AI Citation Monitoring Tools
+### AI referrer tracking in GA4
 
-- **Profound:** Monitors brand mentions in AI responses
-- **Otterly.ai:** Tracks AI citation frequency
-- **Peec.ai:** Similar function
-- **Manual testing:** Periodically query target keywords in ChatGPT, Perplexity, Gemini to see if your brand is cited
+**Google's native AI Assistant channel.** GA4 now ships an AI Assistant default channel group, defined as traffic arriving "from sources like ChatGPT, Gemini, Deepseek, Copilot, or Grok." It matches when the medium is exactly `ai-assistant` or when the referrer matches Google's internal list, which Google does not publish. Google explicitly excludes AI Overviews and AI Mode from this channel, and keeps that traffic in Organic Search.
 
-### AI Visibility Metrics
+Because the list is unpublished and omits Perplexity, Meta AI and the smaller tools, a custom channel group is still required. Order it above Referral, and be aware that the native AI Assistant channel claims its matches first, so a custom rule intended to consolidate everything into one bucket has to sit above it.
 
-- **Citation share:** Percentage of relevant AI responses that cite your site
-- **Citation position:** Is your site cited primary, secondary, or not at all?
-- **Context quality:** Is the AI citing you in a positive, neutral, or negative context?
-- **Referral traffic from AI sources:** GA4 custom channel group
+**Referrer hostnames confirmed in measured GA4 panels:**
+
+`chatgpt.com`, `chat.openai.com`, `openai.com`, `perplexity.ai`, `claude.ai`, `gemini.google.com`, `copilot.microsoft.com`, `deepseek.com`, `grok.com`, `x.ai`, `you.com`, `phind.com`, `poe.com`, `meta.ai`, `chat.mistral.ai`
+
+**Worth adding defensively**, since they cost nothing and may appear as products shift:
+
+`claude.com`, `copilot.cloud.microsoft`, `edgeservices.bing.com`, `bing.com`, `chat.deepseek.com`, `duck.ai`, `search.brave.com`, `bard.google.com`
+
+**Starting regular expression** for the custom channel group's source condition, built from the confirmed set:
+
+```
+^(chatgpt\.com|chat\.openai\.com|openai\.com|(www\.)?perplexity\.ai|claude\.(ai|com)|gemini\.google\.com|bard\.google\.com|copilot\.microsoft\.com|copilot\.cloud\.microsoft|edgeservices\.bing\.com|(chat\.)?deepseek\.com|grok\.com|x\.ai|(www\.)?meta\.ai|you\.com|poe\.com|phind\.com|(chat\.)?mistral\.ai|duck\.ai|search\.brave\.com)$
+```
+
+Build from a confirmed list like this one rather than copying the widely circulated 100-domain regular expressions in circulation. Several of those include hostnames that have never existed, and practitioners report them returning zero traffic.
+
+**Looker Studio reporting layer.** Build a custom Looker Studio report that pulls GA4 data and filters session source and medium by these domains, so AI traffic sits alongside organic, paid and direct in one view. This makes the channel legible to stakeholders who do not live inside GA4's channel group configuration, and lets you trend AI sessions, engaged users and conversions without rebuilding the query each cycle.
+
+### What referrer tracking cannot see
+
+State this before presenting any AI channel number, because the figure is a floor rather than a measurement.
+
+- **Mobile app traffic strips referrers.** Sessions from the ChatGPT, Perplexity and Meta AI apps, including Meta AI inside Instagram and WhatsApp, land in Direct.
+- **Google AI Overviews and AI Mode clicks land in Organic Search** by Google's design and are not separable in standard GA4.
+- **Privacy browsers strip referrers.** Brave downgrades referrers aggressively, so Leo traffic largely arrives as Direct.
+- **Most AI influence never arrives as AI traffic at all.** In Similarweb's journey data, only about 9% of visits following an AI recommendation arrived as visible AI referral traffic. The largest share arrived through branded search, indistinguishable from ordinary organic visitors.
+
+### AI citation monitoring tools
+
+- **Profound:** monitors brand mentions in AI responses
+- **Otterly.ai:** tracks AI citation frequency and share of AI voice
+- **Peec.ai:** multi-platform monitoring at scale
+- **ZipTie:** brand mention and sentiment tracking
+- **Manual testing:** run your top 20 queries through ChatGPT, Perplexity, Gemini and Claude monthly, and log whether you are cited, who else is, and which page
+
+### Metrics, by stage
+
+Report the ladder rather than a single score, so the number points at the stage that needs work.
+
+| Stage | Metric | Where it comes from |
+|---|---|---|
+| Discovered | AI bot crawl activity, and whether AI user agents are allowed | Server logs, `robots.txt` audit |
+| Retrieved | Presence in each backend index | Site queries against Google, Bing and Brave Search |
+| Cited | Citation share, the percentage of relevant AI answers citing your site, and which pages | Prompt tracking tools, Search Console and Bing Webmaster Tools impressions |
+| Mentioned | Brand mention rate, and mention framing (recommended, neutral, hedged, recommended against) | Prompt tracking tools plus manual review |
+| Recommended | Shortlist rate on buying-intent prompts, and who appears instead of you | Prompt tracking on commercial prompts |
+| Downstream | Referral sessions, branded search volume, self-reported attribution | GA4, Search Console, form field, sales calls |
+
+**The measurement triad for anything the tools cannot see:** prompt tracking for visibility without clicks, a "how did you hear about us" field to catch buyers whose journey started in an AI chat but arrived by branded search, and sales call recordings, where buyers' own language often reveals an AI conversation shaped the shortlist long before any form fill. Watch sustained branded search lifts with no matching campaign as a proxy for AI influence showing up under another name.
 
 ---
 
