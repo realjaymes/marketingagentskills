@@ -2500,47 +2500,11 @@ The tiers below are directional and hold across the published studies. They are 
 | **3. Category-dependent** | Quora, Fandom, Yelp, Stack Exchange, and vertical authorities such as the National Institutes of Health and Mayo Clinic in health, Amazon and Shopify in e-commerce | Dominant in some categories and near-absent in others | Identify the two or three vertical authorities in your category by testing prompts, then pursue those specifically |
 | **4. Your own domain** | Your site | Still the single largest bucket of citations, at 47.5% overall and 59.8% inside Google AI Overviews per Otterly.ai (February 2026) | Necessary and high-yield for citation, but it does not buy recommendation. Do not treat a content push as an off-page substitute |
 
-**The test before investing in another self-ranked buyer's guide:** if a model ignored everything on our domain, would the rest of the web still put us on the shortlist? If the answer is no, that gap is the priority, not more content.
+**The test.** Before you invest in another self-ranked buyer's guide, ask: if a model ignored everything on our domain, would the rest of the web still put us on the shortlist? If no, closing that gap is the priority, not publishing more.
 
-**Stage-dependent reading of that test.** Established category leaders get both outcomes, because analysts, review sites and forums already validate them, so a definitive buyer's guide is high leverage and shapes how the whole category gets described. Emerging brands typically win the citation and influence the category framing while missing the recommendation, which is real positioning work but not the shortlist placement the tactic promises.
+**It cuts differently by stage.** Category leaders already have analysts, review sites and forums vouching for them, so a definitive guide compounds. Emerging brands usually win the citation and shape how the category gets described, but not the shortlist spot the tactic promises.
 
-### What the published studies actually found
-
-Every figure below carries its publisher, date, sample and, critically, the metric, because the denominators differ. A share of all citations and a percentage of responses containing a citation are not the same number and cannot be compared.
-
-| Study | Date | Sample | Metric | Finding |
-|---|---|---|---|---|
-| Zhang, Ye, Peng, Garimella and Tyson, arXiv 2512.09483 | Dec 2025 | 55,936 queries, 124,287 unique domains, 1,418,733 citation links, six AI engines and two traditional engines | Domain coverage and concentration | 37% of domains are unique to AI search engines. AI engines cite fewer sources (mean 4.3 URLs, 3.4 domains) than traditional engines (10.3 URLs, 7.3 domains), yet show lower Gini indices, meaning a more even spread across domains. Copilot and Gemini favor domains roughly 22,000 Tranco positions less popular |
-| Similarweb | Apr 2026 | ~600,000 citation events, United States, Jan to Feb 2026 | Share of all citations | ChatGPT: Wikipedia 13.15%, Reddit 11.97%, openai.com 6.21%, Walmart 2.90%, YouTube 2.67%. Google AI Mode: Fandom 7.16%, Wikipedia 5.21%, YouTube 4.91%, Reddit 4.19% |
-| Semrush | Nov 2025 | 230,000 prompts, 100M+ citations, 13 weeks (Jul to Oct 2025), three platforms | Percentage of responses citing the domain | ChatGPT's Reddit share fell from roughly 60% of responses in early August 2025 to about 10% by mid-September, and Wikipedia from roughly 55% to under 20%. The shift was isolated to ChatGPT while other platforms stayed stable |
-| Profound | Jun 2025 | 680M citations, Aug 2024 to Jun 2025 | Share of all citations | ChatGPT: Wikipedia 7.8%, Reddit 1.8%, Forbes 1.1%, G2 1.1%. Perplexity: Reddit 6.6%, YouTube 2.0%, Gartner 1.0% |
-| Ahrefs | Sep 2026 | 3M+ United States queries, updated monthly | Mention share within the top 50 sources | Google AI Overviews: YouTube 22.9%, Reddit 18.5%, Facebook 10.1%, Google 8.8%, Instagram 5.6%, Quora 4.7%, Wikipedia 4.0% |
-| Muck Rack Generative Pulse | May 2026 | 25M+ links from ChatGPT, Claude and Gemini across 17 industries | Source category | 84% of citations are earned media, 0.3% paid or advertorial, journalism alone 27% across 20,000+ outlets. Citation rate by platform: ChatGPT cites in 96% of responses, Gemini 82%, Claude 55% |
-| Otterly.ai | Feb 2026 | 1M+ citations, three platforms | Source category | Brand-owned domains 47.5% of citations, news 20.3%, community forums 5.9%. Brand share by platform: AI Overviews 59.8%, ChatGPT 44.7%, Perplexity 28.9%, with Reddit alone at 16.9% on Perplexity |
-| Ahrefs | Aug 2025 | 15,000 long-tail queries, early Jul 2025 | Overlap with Google's top 10 | ChatGPT 8.0% in-text and 6.1% in references, Gemini 8.6%, Copilot 8.2%, Perplexity 28.6%, Google AI Overviews 76% |
-| seoClarity | Oct 2025 | 362,000 United States queries, 5.1M citations | Overlap with top 20 organic | 56% of citations came from the top 20 and 44% from outside it. Average top-20 URLs per AI Overview fell from 5 in May 2025 to 3 in October 2025 |
-
-**The one robust cross-study finding on overlap:** standalone assistants overlap Google's top ten by well under 10%, Perplexity is the outlier near 29% because it is retrieval-first, and Google's own AI Overviews overlap far more than any assistant. Ranking well is necessary but nowhere near sufficient, and a page that cannot crack page one can still be cited.
-
-### Where the studies contradict each other
-
-These are stated rather than averaged, because averaging incompatible measurements produces a number no study reports.
-
-**User-generated content in ChatGPT.** BrightEdge (April 2026) puts ChatGPT at 0.5% UGC. Similarweb (January to February 2026) puts Reddit alone at 11.97% of ChatGPT citations. Both cannot be true. BrightEdge does not publish its sample size or its UGC taxonomy, while Similarweb publishes raw counts, so weight Similarweb, but the gap is unexplained.
-
-**Direction of travel on AI Overviews to organic overlap.** BrightEdge (September 2025) reports overlap rising from 32.3% to 54.5% over 16 months. seoClarity reports average top-20 URLs per AI Overview falling from 5 to 3, and Ahrefs' own top-ten figure fell from 76% in August 2025 to 37.9% in March 2026. The likely reconciliation is that BrightEdge measures whether any overlap exists, which gets easier to satisfy as AI Overviews cite more sources, while the others measure the proportion of citations. Report the reconciliation rather than picking a side.
-
-**Wikipedia's share in Google surfaces.** Four datasets give four answers, from Ahrefs' 4.0% to Surfer's roughly 18.4%. The metrics differ, and so do the surfaces, since AI Overviews, AI Mode and Gemini are routinely conflated in coverage.
-
-**The underlying point.** Source shares are product decisions, not stable facts about the web. The mid-September 2025 collapse in ChatGPT's Reddit and Wikipedia citation rates is the proof, and it happened without any change in Reddit or Wikipedia. Treat every figure in this section as a dated observation and re-verify roughly every six months.
-
-### Numbers not to repeat
-
-- **"Top 15 domains equal 68% of citations"** and **"Reddit is roughly 40%."** Neither traces to a primary source. Both circulate only on aggregator sites that cite each other.
-- **"No domain exceeds 5% of citations on any platform"** (attributed to Evertune). No primary methodology page is available, and it contradicts both Similarweb and Ahrefs.
-- **The Princeton Generative Engine Optimization paper's 30% to 40% visibility uplift** (arXiv 2311.09735, KDD 2024). The study is sound but the preprint dates to November 2023 and predates every current product. It is evidence about content optimization in general, not about how today's engines pick sources.
-- **Any Meta AI citation share.** No published domain-share study of Meta AI exists. Meta AI launched on a Bing search partnership, added a Google partnership in April 2025, and is reportedly building its own crawler and index, but its citation transparency is minimal and no dataset covers it. Percentages quoted for Meta AI are fabricated.
-- **Any claimed uplift from a G2 or Capterra listing.** G2 is a consistently top-ten cited domain for software queries, which is well established. Whether a listing causes citation is not, and the vendor claims on both sides trace to no published methodology.
+**Read any citation stat with its metric attached.** "Share of all citations" and "percentage of responses that cite us" are different denominators and cannot be compared. Most confusion in this space is two studies measuring different things. Treat every published share as a dated observation rather than a fact about the web, because these are product decisions that can move in weeks, and re-verify roughly every six months.
 
 ---
 
@@ -2600,7 +2564,7 @@ AI systems prefer sources that cover a topic comprehensively, not surface-level.
 
 ## Measuring AI Search Visibility
 
-No single source sees the whole ladder. Platform-owned reporting shows impressions on Google and Bing surfaces, referrer tracking shows the fraction of AI-influenced traffic that arrives with a referrer attached, and prompt tracking shows citation and recommendation behavior where no click ever happens. Use all three and say plainly which one each number came from.
+No single source sees the whole ladder. **Platform-owned reporting** shows impressions on Google and Bing surfaces, **referrer tracking** shows the fraction of AI-influenced traffic that arrives with a referrer attached, and **prompt tracking** shows citation and recommendation behavior where no click ever happens. Use all three and say plainly which one each number came from.
 
 ### Platform-owned reporting
 
