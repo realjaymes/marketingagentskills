@@ -101,24 +101,25 @@ The reference ramps quickly from foundations. Each section is self-contained.
 54. [[#Days 30 to 90 – Roadmap Execution]]
 55. [[#Month 3 to 6 – Compounding Work]]
 56. [[#Month 6+ – Scale and Expansion]]
+57. [[#Ongoing – The Steady-State Calendar]]
 
 **Part X: Scenario Playbooks**
-57. [[#Traffic Drop Diagnosis]]
-58. [[#Ranking Drop Diagnosis]]
-59. [[#New Site Launch]]
-60. [[#Content Refresh Campaign]]
-61. [[#Link Audit]]
-62. [[#International Expansion]]
+58. [[#Traffic Drop Diagnosis]]
+59. [[#Ranking Drop Diagnosis]]
+60. [[#New Site Launch]]
+61. [[#Content Refresh Campaign]]
+62. [[#Link Audit]]
+63. [[#International Expansion]]
 
 **Part XI: Cross-Functional Collaboration**
-63. [[#Working with Developers]]
-64. [[#Working with Content Teams]]
-65. [[#Working with Paid Media Teams]]
-66. [[#Working with Sales Teams]]
-67. [[#Working with Stakeholders]]
+64. [[#Working with Developers]]
+65. [[#Working with Content Teams]]
+66. [[#Working with Paid Media Teams]]
+67. [[#Working with Sales Teams]]
+68. [[#Working with Stakeholders]]
 
 **Part XII: Tool Stack**
-68. [[#Part XII: Complete SEO Tool Reference]]
+69. [[#Part XII: Complete SEO Tool Reference]]
 
 ---
 
@@ -2727,6 +2728,34 @@ Long-horizon investments.
 
 ---
 
+## Ongoing – The Steady-State Calendar
+
+The recurring calendar once the engagement arc is complete. Past month six the
+common failure is that publishing continues while measurement quietly stops.
+
+| Cadence | What you do |
+|---|---|
+| Weekly | Rebuild the generated reports. Pick the week's pages. Publish on a fixed day and submit new URLs for indexing. Check published pages for regressions. |
+| Every 2 weeks | Log indexed pages, clicks, impressions and average position. Review anything that dropped more than 5 positions. |
+| Monthly | Re-run AI visibility prompts in identical wording. Take a rank snapshot on the same day each month. Review sliding pages. Refresh the link prospect list. |
+| Quarterly | Full audit as a new report, not an edited one. Refresh keyword volumes and re-cluster if results pages moved. Rewrite the strategy where it is now wrong. |
+| Annually | Rebuild keyword research from seeds. Re-check winnability on every cluster previously ruled out. Review the pillar structure against the business. |
+
+**Audit cadence.** Quarterly. More frequent measures noise, because content work
+takes 8 to 12 weeks to move rankings. Less frequent lets a wrong assumption run
+for half a year.
+
+| On-page | Off-page |
+|---|---|
+| Runs continuously from day one | Starts once roughly 10 pages pass the on-page and trust checklists |
+| Every page brief, rewrite and refresh | Build the prospect list early from research already done, approach nobody until the pages justify a link |
+| Never pauses for off-page work | Exception: knowledge panel, Wikidata and brand-name consistency are done immediately, since they cost little and take months to take effect |
+
+**Deliverable:** A fixed calendar with a named owner per cadence, and a clear
+split between reports rebuilt from source data and documents only a human edits.
+
+---
+
 # Part X: Scenario Playbooks
 
 ## Traffic Drop Diagnosis
@@ -3092,12 +3121,40 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **MarketMuse**
 - **SEOwallet (Chrome extension):** In-browser on-page SEO checker. Surfaces title/meta/H1, word count, headings, image alt coverage, and basic schema while you read or edit a page. Useful for quick spot-checks during content review without opening Screaming Frog or running a crawl.
 
+### AI Content Production
+
+Distinct from Content Optimization above. Those tools grade and guide a human draft against the SERP. These generate the draft.
+
+- **Jasper:** Enterprise AI content platform with brand-voice training, templates and workflow. Paid. The one most often named by B2B content teams.
+- **Ocoya:** AI copy plus social scheduling in one product. Paid. Lighter than Jasper, aimed at small teams publishing to blog and social from the same place.
+- **Writesonic, Scalenut, NeuronWriter:** Cheaper alternatives. Several bundle SERP-derived briefs with generation, which collapses two steps into one tool.
+
+**The rule that governs this whole category:** these tools raise volume, not quality. The brief is what stops the output being generic, and generic content neither ranks nor gets cited. Use them for drafting against a real brief, with a human edit before publish. See [[#Content Angle Framework]] and [[#Content Quality Framework: Five Levels (Ahrefs)]].
+
+### Content Management and Publishing
+
+The CMS decides how much technical SEO is even available to you, so it belongs in the stack rather than outside it.
+
+- **WordPress:** The most common CMS in business-to-business (B2B). SEO control lives in the plugin layer rather than the core.
+- **Yoast SEO** and **RankMath:** The two standard WordPress SEO plugins. Title and meta control, schema output, sitemap generation, redirect management. Free tiers cover most of what an audit asks for.
+- **Webflow:** Designer-led CMS with clean markup and native SEO controls, no plugin layer required. WordPress to Webflow migration is a recurring SEO project, see [[#Site Migrations]].
+- **HubSpot CMS:** Content sits inside the customer relationship management (CRM) system, so organic-to-pipeline attribution is native rather than stitched together.
+
 ### Analytics
 
 - **Google Analytics 4:** Free
 - **Google Search Console:** Free
 - **Looker Studio:** Free
 - **BigQuery:** Free tier up to 10 GB/day
+- **Google Tag Manager:** Free. Deploys analytics and event tracking without a developer touching the template on every change.
+
+### Revenue Attribution and CRM
+
+Layer 4 of [[#Defining SEO Success]] needs organic sessions joined to deals, not just sessions. That join happens in the CRM, which makes the CRM an SEO tool.
+
+- **HubSpot:** The usual system of record in B2B. Original source and original source drill-down capture how a contact first arrived, which is what lets you report organic pipeline rather than organic traffic.
+- **Pipedrive, Salesforce, Zoho CRM:** Same job, different reporting depth.
+- **The wiring that makes it work:** consistent UTM parameters on every non-organic touch, lifecycle stage set on the contact, and one agreed definition of a qualified lead shared with the paid and conversion rate optimization (CRO) teams before reporting starts.
 
 ### Log File Analysis
 
@@ -3165,11 +3222,22 @@ A category in its own right because the workflow shape differs from UI-based too
 - **Ahrefs API:** Available on enterprise tiers, more expensive than DataforSEO at most scales.
 - **Semrush API:** Available on top-tier plans, similar tradeoffs to Ahrefs.
 
+### Workflow Automation
+
+Use these when SEO work becomes recurring rather than one-off: scheduled rank pulls into a sheet, brief generation from a keyword cluster, alerts when index coverage drops, competitor content monitoring.
+
+- **n8n:** Self-hostable and node-based. Best when the pipeline calls APIs directly, such as DataForSEO, Search Console or a large language model, and when cost matters at volume.
+- **Make:** Cloud-only visual builder. Strong at multi-branch logic without code.
+- **Zapier:** The widest app coverage and the simplest to start, the most expensive per operation at scale.
+
+The distinction worth holding: connecting two apps is integration. Automating a pipeline means the output of one step becomes the structured input of the next, which is what these are for.
+
 ### AI-Assisted SEO
 
 - **Claude, Claude Code:** Custom workflow automation for audit scaffolding, content brief generation, competitor analysis, schema generation
 - **ChatGPT:** General AI assistance
 - **Perplexity:** Research with citations
+- **Gemini:** Google's assistant, and the model family behind AI Overviews, which makes it the closest read on how Google's own systems summarise a topic
 - **Custom GPTs or Claude skills:** For repeat workflows (audit templates, content briefs, etc.)
 
 ---

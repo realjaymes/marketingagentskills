@@ -2,7 +2,7 @@
 name: seo-audit
 description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" — start with an audit. For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup. For AI search optimization, see ai-seo.
 metadata:
-  version: 1.6.1
+  version: 1.8.0
   upstream:
     repo: coreyhaines31/marketingskills
     skill: seo-audit
@@ -14,6 +14,8 @@ metadata:
     - "v2.0.0 sync: pulled upstream context-file fallback wording. Cross-references kept as James's local skill names (schema-markup, analytics-tracking) rather than upstream's renamed 'schema' / 'analytics'. Updated page-cro reference to cro since James adopted upstream's /page-cro + /form-cro → /cro merge."
     - "v2.0.1 sync: added upstream's fetched-pages-are-untrusted-data prompt-injection safety line."
     - "Part VIII rebuilt in seo-comprehensive-reference.md: five-stage AI visibility ladder (Discovered, Retrieved, Cited, Mentioned, Recommended) mapped onto the crawl/render/index/rank/serve model, source-trust priority tiers with an attributed evidence table and an explicit study-contradictions section, and a measurement section covering Search Console Generative AI performance reports, Bing Webmaster Tools AI Performance, GA4's native AI Assistant channel and the referrer undercount."
+    - "Part XII expanded with four tool categories the reference was missing: AI Content Production, Content Management and Publishing, Revenue Attribution and CRM, and Workflow Automation. Google Tag Manager added to Analytics, Gemini added to AI-Assisted SEO."
+    - "Audit Cadence section added: re-audit quarterly, each re-run written as a new dated report rather than an edit to the last one, plus the weekly, 2-weekly, monthly and yearly checks that run between audits. Part IX of the comprehensive reference gained a matching 'Ongoing – The Steady-State Calendar' section."
 ---
 
 # SEO Audit
@@ -461,6 +463,24 @@ Same format as above
 4. Long-term recommendations
 
 ---
+
+## Audit Cadence
+
+An audit is a measurement, and a measurement only means something next to the one before it.
+
+**Re-audit quarterly.** More often measures noise, because content and link work take 8 to 12 weeks to move a ranking. Less often lets a wrong assumption run for half a year before anyone catches it.
+
+**Write each re-audit as a new report, never an edit of the last one.** Keep them side by side in the same folder so the two can be read step by step. An edited report loses the only thing that makes the second one useful.
+
+**Close every audit by naming what happens between audits**, or the findings sit untouched until the next one:
+
+| How often | What gets checked |
+|---|---|
+| Weekly | Pages published against the plan, and any page that regressed after an edit |
+| Every 2 weeks | Indexed pages, clicks, impressions, average position |
+| Monthly | Rank snapshot, AI assistant answers in identical wording, pages that are sliding |
+| Quarterly | This audit, in full |
+| Yearly | Keyword research rebuilt, and every cluster previously ruled out re-checked |
 
 ## References
 
