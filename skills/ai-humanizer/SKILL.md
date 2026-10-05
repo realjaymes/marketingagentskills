@@ -1,7 +1,7 @@
 ---
 name: ai-humanizer
 description: "Detects AI-written text, scores it against a detection rubric, provides line-by-line edit recommendations, and rewrites content to sound genuinely human. Use when the user asks to 'humanize' text, detect AI writing, remove 'AI voice,' make copy 'less robotic,' pass AI detection tools, or rewrite content to 'sound human.'"
-version: "1.6.0"
+version: "1.8.0"
 ---
 
 # AI Writing Humanizer
@@ -86,11 +86,11 @@ The final, publication-ready version applying all rules.
 
 | Trait | What to Look For |
 |-------|------------------|
-| **Jargon/Cliche** | "leverage," "synergy," "paradigm shift," AI vocabulary (see Vocabulary & Diction below), copula avoidance ("serves as," "stands as," "boasts"), cliche transitions ("at the end of the day"), X/Y juxtapositions |
+| **Jargon/Cliche** | "leverage," "synergy," "paradigm shift," AI vocabulary (see Vocabulary & Diction below), copula avoidance ("serves as," "stands as," "boasts"), cliche transitions ("at the end of the day"), X/Y juxtapositions, phantom-foil "rather than"/"instead of" clauses, shell nouns ("the shape of," "the piece," "the space") |
 | **Dash & Punctuation** | Frequent em-dashes, unnatural dash habits, incorrect spacing, Title Case headings, stray smart quotes/arrows pasted from chat |
-| **Hedging/Vagueness** | "very," "really," "quite," "actually," hedge preambles ("it's worth noting that"), phantom authority ("studies show," "experts say"), generic claims without specifics |
-| **Structure/Monotony** | Repetitive sentence length (low burstiness), rule-of-three padding, "-ing" significance tails, formal transition openers ("Furthermore," "Moreover"), signposted conclusions, paragraph stuffing, no white space |
-| **Missing Humanity** | No contractions, no concrete dates/places, no candid asides, no perspective shifts, no first-person opinion or committed stance, dropped-subject fragments anywhere in the piece (see Dropped-Subject Fragments below) |
+| **Hedging/Vagueness** | "very," "really," "quite," "actually," hedged superlatives ("arguably the most"), hedge preambles ("it's worth noting that"), phantom authority ("studies show," "experts say"), self-generated false precision ("about 70% of outcomes"), concessive pivots ("that said," "to be fair"), generic claims without specifics |
+| **Structure/Monotony** | Repetitive sentence length (low burstiness), rule-of-three padding, pre-announced counts ("three things") and verdicts ("the launch I'd run is simple"), manufactured parallelism, compressed aphorisms ("A long, boring, unedited install is the claim."), appositive stuffing, participial openers, ", which is" conclusion tails, "-ing" significance tails, formal transition openers ("Furthermore," "Moreover"), signposted conclusions, paragraph stuffing, no white space |
+| **Missing Humanity** | No contractions, no concrete dates/places, no candid asides, evaluative self-narration ("that is a clean answer," "good question"), no perspective shifts, no first-person opinion or committed stance, dropped-subject and verbless fragments anywhere in the piece (see Dropped-Subject Fragments below), coined labels for your own work ("the full run") |
 | **Command Phrasing** | "Remember," "Keep in mind," "Don't forget" (always mark as AI-like) |
 
 ---
@@ -101,40 +101,47 @@ Grouped into clusters so related tells sit next to each other instead of scatter
 
 ### Contrast & Reveal Constructions
 
-The family of tells that withhold, then deliver a punchline, whether in one sentence or two.
+The family of tells that define a claim against something else, either by withholding and then revealing, or by inventing a foil for the claim to beat.
+
+**The phantom foil hides from a scan for the other two.** It is the same move as "it's not X, it's Y," wearing a subordinate conjunction instead of a comma, so a pass that checks for X/Y juxtapositions and negation-reveals reads it as clean prose and lets it through. Check every "rather than" and "instead of" separately, with the deletion test.
 
 | Pattern | Problem | Fix |
 |---------|---------|-----|
 | X/Y juxtapositions | "It's not just about features, it's about benefits." | State the point directly: "Features matter less than benefits." |
+| Phantom-foil "rather than" / "instead of" clauses | Makes a claim, then defines it against an alternative nobody raised, so the clause flatters instead of informing: "I built the outbound stack rather than running campaigns inside one somebody else had already built." / "They run those accounts out of that system rather than out of my head." / "That is a priced decision rather than an oversight." / "a repeatable system instead of a pile of campaigns." Variants: "as opposed to," "without having to," "not because X but because Y." | **Apply the deletion test. Cut the clause. If the sentence loses no fact, it was self-congratulation, so leave it cut:** "I built the outbound stack." / "They run those accounts out of that system." A "rather than" earns its place only when the reader would genuinely have assumed the foil, or when both options are real and live and the choice between them is the point, as in "sourced from free-first sources instead of paid per-record tools." |
 | Negation-reveal / setup-payoff constructions | Same-sentence: "The gap isn't talent. It's action." Two-sentence setup-payoff: "I expected X. It didn't." / "That felt like an awkward call. It turned out to be the right one." / "The interesting part wasn't X. What made it work was Y." | Collapse into one specific, provable claim, whether the original was one sentence or two: "Most people know the playbook. Under 5% ship it in week one." Don't build to a reveal; state the point. |
 
 ### Dropped-Subject Fragments
 
-One rule in three shapes: no clause anywhere in a piece should lack an explicit subject, not just the opening sentence.
+One rule in five shapes: no clause anywhere in a piece should lack an explicit subject and a verb, not just the opening sentence.
 
 | Pattern | Problem | Fix |
 |---------|---------|-----|
 | Verb-first fragment openers | "Sounds like..." / "Saw your post..." / "Noticed you..." / "Ran a quick check..." (no "I/It/That") | Add the subject: "It sounds like..." / "I saw your post..." / "I noticed you..." / "I ran a quick check..." |
-| Adjective-first or bare CTA questions | "Worth a look?" / "Interested?" / "Want it?" / "Want me to?" (no "Is it/Are you/Would you/Do you") | Add the subject: "Is it worth a look?" / "Are you interested?" / "Would you want it?" / "Do you want me to?" Same rule as above, the interrogative form. |
+| Adjective-first or bare CTA questions | "Worth a look?" / "Interested?" / "Want it?" / "Want me to?" / "Want me to send it?" / "Want the teardown?" (no "Is it/Are you/Would you/Do you") | Write the full question a person would say: "Is it worth a look?" / "Are you interested?" / "Would you want it?" / "Would you like me to send it?" / "Would you like the teardown?" Same rule as above, the interrogative form. |
 | Mid-piece fragments (imperative-as-declarative, label-colon, comma-appended trailing clauses) | "Built and ran the acquisition system end to end." / "Result: 1,646 MQLs." / "I'm taking on 3 this month, a free Blueprint and a 30-minute call included." (reads as a command, a resume bullet, or an appositive tacked on with a comma) | Make it a complete subject-verb statement: "I built and ran the acquisition system end to end." / "I generated 1,646 MQLs." / "I'm taking on 3 new engagements this month. You'll get a free Blueprint and a 30-minute call." |
+| Verbless noun-phrase sentences | A sentence that is only a noun phrase, often a stack of facts with an absolute "with X already done" tail: "Global banking for freelancers and businesses on fiat and stablecoin rails, with Circle, Visa Direct and Ripple partnerships already announced." / "Nineteen years, bootstrapped, more than 30 million users, and still shipping features like Ramble." It reads like a press-kit caption, and it shows up most when praising a company or summarizing a product. | Give it a subject and plain verbs, usually "you" when addressing the company: "You're bringing global banking capabilities to freelancers and businesses on fiat and stablecoin rails, and you've partnered with Circle, Visa Direct and Ripple." Turn "partnerships already announced" into "you've partnered with." |
+| Label-colon lead-ins before a link or list | A label with a comma-stacked tail and a colon standing in for the sentence that should introduce a link: "The full run, with every step the wizard took, the events it wrote and the launch plan: https://..." / "The full plan: example.com/..." | Write the sentence a person would say, then give the link: "I wrote up the full breakdown, including every step the wizard took, the events it wrote and how I'd launch it. You can read it here: https://..." In a tight space such as a tweet, the short form is still a sentence: "The full breakdown is here: example.com/..." |
 
 ### Vague & Abstract Naming
 
-Gesturing at a concept instead of stating it.
+Gesturing at a concept without stating it. Shell nouns are the core of this cluster: the sentence stays grammatical and says nothing a reader can hold.
 
 | Pattern | Problem | Fix |
 |---------|---------|-----|
-| Abstract meta-naming of structure ("the shape of") | "the player-coach shape of it," "the same shape of problem," "the exact shape of work I've built" — naming the abstract structure of a role/problem/argument instead of stating it | Cut the abstraction, state the concrete thing, or use a plain idiom: "the same shape of problem" → "a similar problem." |
+| Shell nouns, "shape" worst of all | A noun whose meaning is supplied entirely by the words around it, so the sentence points at something without naming it. Two slots. **Meta-naming a structure:** "the player-coach shape of it," "the same shape of problem," "the exact shape of work I've built." **Standing in for a concrete thing:** "the shape I'd propose is €95,000 base," "the piece I'd push hardest on," "the distribution surface," "the part I'd want fixed." The family: shape, space, piece, side, layer, element, aspect, dynamic, dimension, nature, framing, lens, surface, area, thing. AI reaches for them because they are always available, you can write "the shape of the problem" without knowing the problem. | **Substitution test: replace the shell noun with the specific noun. If a specific one exists, use it, and if the sentence reads better with the shell noun simply deleted, delete it.** "the same shape of problem" → "a similar problem." "the shape I'd propose is €95,000 base" → "I'd propose €95,000 base." "the piece I'd push hardest on is proof" → "what I'd push hardest on is proof." A shell noun is fine only when it names something real and specified, as in "the measurement layer," which is an actual layer that the next sentence describes. |
 | Vague definite-article nouns used as if already defined | "the gap," "the thing" appearing as if the reader already knows what they refer to | Name the actual noun. If it truly refers back to something already stated, repeat that word instead of folding it into a vague "the gap." |
 | Vague connection language | "in connection with," "associated with," "connected to," "in association with" | State the actual relationship: "the two events are connected" → "the second happened because of the first." |
+| Coined labels for your own work | Naming a deliverable with a word the writer chose and the reader has to decode: "The full run is in the comments." / "The full concept is in the comments." / "The full architecture is in the comments." Each post picks a different clever noun, so the series never sounds like one person. | Use the plain word a reader would use, and keep it the same everywhere: "The full breakdown is in the comments." |
 
-### Honesty-Signaling & Crutch Words
+### Self-Signaling & Crutch Words
 
-Announcing a quality instead of showing it. **Note the distinction from the Detection Rubric's "no candid asides" line above:** genuinely candid, specific asides are good and human. Repeating the *word* "honest" (or "real") to signal that quality is the tell, the stance is fine, the label is not.
+Announcing a quality about yourself instead of showing it, whether that quality is honesty, grace, or reasonableness. **Note the distinction from the Detection Rubric's "no candid asides" line above:** genuinely candid, specific asides are good and human. Repeating the *word* "honest" (or "real") to signal that quality is the tell, the stance is fine, the label is not.
 
 | Pattern | Problem | Fix |
 |---------|---------|-----|
 | Performative honesty preamble | "I want to be honest…" / "to be honest" / "here's the honest truth" / "let me be real with you" | Cut the preamble, just say the thing. Honesty is shown by the plain claim, not announced. |
+| Evaluative self-narration | Commenting on the exchange instead of conducting it, usually to perform grace or reasonableness: "If it is no, **that is a clean answer** and I will leave it there." / "Good question." / "That's totally fair." / "No hard feelings either way." / "I completely understand." / "Happy either way." The aesthetic adjective on an abstraction does the self-flattering work: a *clean* answer, a *fair* ask, a *good* problem to have. **In a negotiation it also pre-concedes, because it hands the other side a free exit and tells them it costs nothing.** | Cut the evaluation and keep the action. "If it is no, that is a clean answer and I will leave it there" → "If it is no, I will leave it there." The action is the grace; saying so undoes it. Same for "good question," which just delays the answer. |
 | Crutch-word overuse ("real," "honest") | "a real acquisition system," "real spend," "a real client" repeated across a piece | Cap at 1-2 load-bearing uses per piece (a genuine fake-vs-real distinction); cut the rest, or let a name/number/quote prove it instead of the adjective. |
 
 ### Source-Quoting-Back
@@ -152,12 +159,19 @@ Narrating the connection back to a source document (a JD, a brief, a prompt) ins
 | Pattern | Problem | Fix |
 |---------|---------|-----|
 | Question sentences | "The result? Improved conversions." | "This led to improved conversions." |
-| AI-setup opener | "Here is the move most people never think to make." / "Here's the thing nobody tells you." | Start with the substance. Delete the "Here is the [move/part/thing]…" scaffold. |
+| Pre-announcing the count or the verdict | Telling the reader what the answer will be like before giving any of it. The count: "Three things, said plainly." / "Two things worth saying." / "Two notes." The verdict: "So the launch I'd run is simple." / "The fix is easy." / "The answer is boring." | Say the first thing. If the count matters, the reader will have counted by the end. When proposing what you would do, frame it as a condition and start the plan: "If I was to do a product launch for this feature, I would start by recording the wizard, uncut, on a real open-source repo." |
+| Compressed aphorisms | A quotable one-liner that squeezes the reasoning out, so the reader has to rebuild it: "Polished demos are where developers stop believing you. A long, boring, unedited install is the claim." / "Distribution is the product." Abstract nouns do the work ("the claim," "where trust dies"), and the line sounds wise without saying what happens. | Say what happens and why, in full plain sentences: "Developers tend to distrust polished demos, because they assume the hard parts were edited out. A long, unedited recording shows them exactly what they would go through themselves, and that is what makes them believe it." Test: could a reader explain the line back without guessing? If not, write it out. |
+| Concessive pivot | Balance-signaling that costs nothing: "That said," "To be fair," "Granted," "While it's true that X, Y," "There is an argument that X, but" | Make the claim, or make the counter-claim. If both are true, say which one decides the question |
+| Manufactured parallelism | Two or three sentences built to mirror each other so the passage resolves neatly: "It gives up $35,000 a year. It buys a number he can say yes to." / "The form states the number. The email carries the conditions." | Break the symmetry. Write one of them longer, or fold them into one sentence. **Scope this carefully: anaphora is a genuine James pattern (Voice Engine, positive pattern 2). His accumulates and gets rougher as it goes; the AI version is symmetrical and resolves. Strip the tidy, keep the accumulating.** |
+| Evaluative bold mini-headers | A bolded phrase that announces significance instead of naming content: "**Why this matters.**" / "**The key point.**" / "**The upshot.**" / "**What it does and does not do.**" | Make the bold text name the actual content ("**The $35,000 the European rate gives up**"), or delete it and let the paragraph open on its claim. **Does not apply to `**Label:** value` metadata blocks**, which are house style (see the scope note below) |
+| AI-setup opener, and bare "Here's" orientation | "Here is the move most people never think to make." / "Here's the thing nobody tells you." Also the plain orientation version, which is just as much a scaffold: "Here's where everything landed." / "Here's what I'd do." / "Here's the situation." | Start with the substance. Delete the "Here is/Here's the [move/part/thing/situation]…" scaffold entirely. "Here's where everything landed" → say where it landed. |
 | Filler crutch phrases repeated | "the loud accounts online," "most people never" used as a recurring tic across a piece or series | Vary or cut. A phrase in every section (or every article) reads as a template. |
-| Formal transition openers | "Furthermore," "Moreover," "Additionally," "Notably," "Consequently" | "It also...," or start with the substance |
+| Formal transition and adverb-front openers | "Furthermore," "Moreover," "Additionally," "Consequently," plus the evaluative adverbs that announce significance before delivering it: "Notably," "Importantly," "Crucially," "Interestingly," "Significantly," "Tellingly" | "It also...," or start with the substance. If a point is important, the point shows it; the adverb only promises it |
 | Hedge preambles | "It's worth noting that," "It's important to note that," "One might argue that" | Cut the preamble, state the point |
 | Phantom authority | "Studies show...," "Experts say...," "Research suggests..." | Name the real source, or make the claim in your own voice with a number |
+| Self-generated false precision | A number derived loosely, then written as if measured: "about 70% of outcomes end badly," "roughly 27 months of runway," "~15,000 lines," "a 1.8-to-1 losing gamble." The hedge word ("about," "roughly," "~") makes it read as a careful measurement rather than an estimate. **The most costly tell on this list, because these land in negotiation documents and get quoted back.** | Separate the three cases. If it was measured, name the source. If it was derived, show the derivation or say "my estimate." If it was invented, delete it. Never dress an estimate as precision: "about 70% of outcomes" → "most outcomes, on my own rough model" or cut it |
 | Signposted conclusions | "In conclusion," "In summary," "Ultimately," "the possibilities are endless" | End on your last real point. No wind-down |
+| Reassurance close | A final line whose only job is to confirm completeness: "That's the whole thing." / "That's it." / "Nothing else needed." / "And that's the answer." | Stop at the last real point. The reader can see the piece ended |
 | Stakes inflation | "a new era of," "leaves an indelible mark," "a pivotal moment," "reshaping the industry" | State the concrete effect: "saves about an hour a week" |
 | False urgency | "you need to," "you must," "essential" | State facts, let readers decide |
 | Cliche transitions | "at the end of the day," "when all is said and done" | Natural transitions or none |
@@ -171,9 +185,14 @@ Narrating the connection back to a source document (a JD, a brief, a prompt) ins
 | Generic jargon | "leverage," "utilize," "synergy," "game-changer," "paradigm shift" | Plain, specific language |
 | Copula avoidance | "Notion serves as a testament to flexible workflows." / "The page boasts three tiers." | Let it "be": "Notion is flexible." / "The page has three tiers." |
 | "-ing" significance tails | "They launched a free tier, highlighting their commitment to accessibility." | End at the fact, or state the real consequence: "They launched a free tier. Signups tripled." |
+| ", which is" / ", which means" conclusion tails | The same move with a relative pronoun instead of a participle, and **the single highest-frequency tell in Claude's own output: 34 instances across six files in one working session.** "Usage is metered at model cost, which makes spend predictable." / "They are a generalist coworker, which means no function is owned deeply." / "Breadth players are defended by capital, which is to say they are defended by having raised $75M." It sounds analytical while never committing to a full statement, and it nests other tells inside itself (3 of those 34 hid a phantom foil in the tail). | Break it into two sentences, or cut the tail. "Usage is metered at model cost. Spend stays predictable." A "which" clause is fine when it genuinely identifies ("the round, which closed in March"), never when it draws the conclusion the sentence was avoiding |
 | Rule-of-three padding | "Fast, powerful, and intuitive." / "Plan, build, and scale." | Break the count. Use one, two, or four: "Fast. Almost annoyingly so." |
+| Appositive stuffing | Comma-chained noun phrases with explanatory or participial tails, which performs thoroughness with no number a scan can catch: "Clay for enrichment and segmentation, lemlist and Instantly for sequencing, Sales Navigator for account intelligence, HubSpot as the source of truth, and an ABM playbook sitting on top of it." | Name two and stop, or give the list its own sentences. Survives a metrics-density scan because it contains no metrics, so check it separately |
+| Compound-adjective stacking | Hyphenated premodifier chains that compress a claim into an adjective so it cannot be challenged: "execution-first marketing ecosystem," "permissions-aware index," "attribution-grade data," "revenue-ready pipeline" | Unpack it into the claim: "attribution-grade data" → "data you can trace a sale back through." If unpacking it reveals there was no claim, delete it |
+| Participial and absolute sentence openers | "Having run the numbers, the ask is defensible." / "Looking at the data, three things stand out." / "Given the timeline, the trial is the risk." Dangling-modifier-prone, and it hides who is doing the thinking | Put the subject back and lead with the finding: "I ran the numbers. The ask is defensible." |
 | Title Case headings | "How To Improve Your Conversion Rate" | Sentence case: "How to improve your conversion rate" |
 | Vague qualifiers | "very," "really," "quite," "actually" | Remove or use specific descriptors |
+| Hedged superlatives | Claims a ranking and withdraws it in the same breath: "arguably the most important," "one of the biggest," "perhaps the single greatest," "quite possibly the best" | Commit or drop it. "Arguably the most important" → "the most important," or name the thing it beats |
 | Command phrases | "Remember," "Keep in mind," "Don't forget" | Reframe as statements |
 | Intro phrases | "picture this," "in the realm of," "in the world of" | Start with substance |
 
@@ -213,22 +232,28 @@ Every pattern above is sentence- or word-level. A document can pass all of them,
 One ordered list covering both what to recommend when reviewing someone else's text and what to do when producing the Human Rewrite yourself, they're the same moves.
 
 1. Replace AI vocabulary and jargon with plain words
-2. Convert every fragment into a complete subject-verb sentence (see Dropped-Subject Fragments)
-3. Cut or reduce em dashes to a maximum of 1 per piece; use periods or commas instead
-4. Add contractions and natural "I/you" cadence
-5. Use active voice: "We launched the feature," not "The feature was launched"
-6. Ground it with a real time/place anchor (use `[region/time]` if provided, otherwise a light personal anchor like "last Tuesday")
-7. Lead with the result, number, or decision
-8. Alternate short, punchy sentences with longer, detailed ones, raise the variance in sentence length, the hardest signal for detectors to miss
-9. Keep one idea per paragraph; use white space instead of paragraph stuffing
-10. Swap inflated copulas ("serves as," "boasts") for plain "is/are"
-11. Cut "-ing" significance tails and signposted conclusions; stop when the argument stops
-12. Repeat a plain noun instead of synonym-cycling ("the tool... the tool," not "the platform... the solution... the offering")
-13. Include one aside and at least one concrete, specific example
-14. State one committed opinion or admitted limitation ("this won't work if your list is under 500"), AI hedges toward neutral balance instead
-15. Add cultural or contextual references when they fit naturally
-16. Use neutral, inclusive, collective phrasing ("team," "everyone")
-17. Follow the Punctuation Policy below for dash/hyphen spacing
+2. Convert every fragment into a complete subject-verb sentence (see Dropped-Subject Fragments), including verbless noun-phrase sentences and label-colon lead-ins before links
+3. Apply the deletion test to every "rather than" and "instead of": cut the clause, and if no fact is lost, leave it cut
+4. Apply the substitution test to every shell noun (shape, space, piece, side, layer, aspect, part, element, framing, surface, thing): name the specific noun, or delete the shell
+5. Break every ", which is" and ", which means" conclusion tail into its own sentence, or cut it. This is the highest-frequency tell in Claude's own output, so sweep for it explicitly
+6. Delete any sentence that evaluates the exchange or narrates your own reasonableness ("that is a clean answer," "good question," "totally fair")
+7. Audit every number you did not measure. Source it, show the derivation, or stop writing it as precise
+8. Cut or reduce em dashes to a maximum of 1 per piece; use periods or commas instead
+9. Add contractions and natural "I/you" cadence
+10. Use active voice: "We launched the feature," not "The feature was launched"
+11. Ground it with a real time/place anchor (use `[region/time]` if provided, otherwise a light personal anchor like "last Tuesday")
+12. Lead with the result, number, or decision
+13. Alternate short, punchy sentences with longer, detailed ones, raise the variance in sentence length, the hardest signal for detectors to miss
+14. Keep one idea per paragraph; use white space instead of paragraph stuffing. In social comments, put each sentence in its own paragraph with a blank line before the next
+15. Expand every compressed aphorism into what happens and why, and replace every coined label for your own work with the plain word a reader would use
+16. Swap inflated copulas ("serves as," "boasts") for plain "is/are"
+17. Cut "-ing" significance tails and signposted conclusions; stop when the argument stops
+18. Repeat a plain noun instead of synonym-cycling ("the tool... the tool," not "the platform... the solution... the offering")
+19. Include one aside and at least one concrete, specific example
+20. State one committed opinion or admitted limitation ("this won't work if your list is under 500"), AI hedges toward neutral balance instead
+21. Add cultural or contextual references when they fit naturally
+22. Use neutral, inclusive, collective phrasing ("team," "everyone")
+23. Follow the Punctuation Policy below for dash/hyphen spacing
 
 ---
 
@@ -314,6 +339,7 @@ Several patterns beyond the original rubric rest on specific evidence. Knowing t
 
 - **Dropped-subject fragments anywhere in a piece**, including the adjective-first CTA question: a check limited to sentence openers let clause-level fragments through in cold-email and LinkedIn outreach drafts, so the rule covers every clause.
 - **"Shape of" meta-naming, the source document as subject, source-lifted phrases, and the mail-merge test:** a diff of James's own hand-edits against 5 sent application letters surfaced these tics, and a vault-wide grep found the same tics in 13+ earlier application files.
+- **Verbless noun-phrase sentences, label-colon link lead-ins, coined labels for your own work, pre-announced verdicts, compressed aphorisms and one-sentence comment paragraphs:** an author's hand-edits to a series of LinkedIn and X build posts caught each of these in Claude drafts that had already passed the rest of this list.
 - **Crutch-word overuse ("real," "honest"), vague definite-article nouns, setup-payoff constructions, vague connection language, the expanded AI vocabulary list, and the Structural Tells section:** an audit of 9+ live website pages surfaced these, cross-checked against the external sources under References.
 
 ---
