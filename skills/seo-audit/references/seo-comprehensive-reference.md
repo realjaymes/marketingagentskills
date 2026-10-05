@@ -360,6 +360,8 @@ Every term used in this handbook, in plain English.
 
 Good SEO programs measure success at four layers. Weak programs report only on the first layer.
 
+**Each layer now has two surfaces, the results page and the answer.** The layers do not change and there is no fifth layer for AI, because an answer engine is another place the same funnel starts, not a funnel of its own. What changes is that every layer carries a search metric and an answer metric, and they are collected from different sources that disagree with each other. [[#Optimizing for AI Citation]] holds the six-stage ladder, Discovered, Retrieved, Cited, Mentioned, Recommended and Downstream, which is the diagnostic instrument: it tells you which stage is broken. The four layers here are the reporting instrument: they tell the business what the work is worth. Five of the six ladder stages collapse into Layer 1, and only Downstream reaches Layers 2 to 4. That is the whole reason AI measurement goes wrong in both directions. Stop at Layer 1 and you report a citation rate with no money attached. Judge it at Layer 2 and it looks worthless, because the answer was the destination and the click never happened.
+
 ### Layer 1: Visibility
 
 - Impressions (how often your pages appear in search)
@@ -367,7 +369,16 @@ Good SEO programs measure success at four layers. Weak programs report only on t
 - Share of voice (your rankings vs competitors on a keyword set)
 - Indexation rate (percentage of submitted URLs indexed)
 
-**Tools:** GSC Performance report, Ahrefs Rank Tracker, Semrush Position Tracking, Accuranker.
+**On answer surfaces:**
+
+- Citation share on a tracked prompt set, reported separately for brand prompts and buying prompts, because being named on your own name is not visibility
+- Shortlist rate on buying-intent prompts, and who appears instead of you
+- **Which source the answer cited: your own page, or a third party describing you.** This is the metric that decides whether the fix is a content fix or an off-site one, and it is the one most often skipped. A brand that is only ever cited through a review site, a forum or a competitor's listicle has a retrieval-layer problem no amount of publishing will reach
+- Mention framing: recommended, neutral, hedged, or recommended against
+- AI Overview and AI Mode impressions on target queries
+- Whether AI crawlers are allowed in `robots.txt` and actually fetching in the logs, which is the answer-side equivalent of indexation rate
+
+**Tools:** GSC Performance report, Ahrefs Rank Tracker, Semrush Position Tracking, Accuranker. For answer surfaces: GSC Generative AI performance reports, Bing Webmaster Tools AI Performance, prompt tracking (Profound, Otterly, Peec, ZipTie, or a logged-in browser run by hand), server logs.
 
 ### Layer 2: Traffic
 
@@ -376,7 +387,12 @@ Good SEO programs measure success at four layers. Weak programs report only on t
 - Organic sessions by country (for international sites)
 - Returning vs new organic users
 
-**Tools:** GA4 (Traffic Acquisition report, Landing Page report), Looker Studio Report.
+**On answer surfaces:**
+
+- Sessions from the GA4 AI Assistant channel, plus a custom channel group for the assistants Google's unpublished list omits
+- **Expect this number to be small, and do not read small as failure.** Most AI visibility produces no click at all, app traffic arrives with the referrer stripped, and Google keeps AI Overview and AI Mode traffic inside Organic Search. A rising Direct line next to a rising citation rate is the normal shape
+
+**Tools:** GA4 (Traffic Acquisition report, Landing Page report, AI Assistant channel plus custom channel groups), Looker Studio Report.
 
 ### Layer 3: Conversion
 
@@ -386,7 +402,12 @@ Good SEO programs measure success at four layers. Weak programs report only on t
 - Purchases from organic (for e-commerce)
 - Engagement events (downloads, video plays, scroll depth)
 
-**Tools:** GA4 (Events, Conversions, Exploration reports), Looker Studio Report, HubSpot, Salesforce.
+**On answer surfaces:**
+
+- Conversion rate of assistant-referred sessions against organic search sessions. It usually runs higher, because the assistant did the shortlisting before the click
+- Count of "how did you hear about us" answers naming an assistant, which is a conversion-layer signal even when no referrer exists
+
+**Tools:** GA4 (Events, Conversions, Exploration reports), Looker Studio Report, HubSpot, Salesforce, plus a free-text source field on the form.
 
 ### Layer 4: Revenue
 
@@ -396,9 +417,16 @@ Good SEO programs measure success at four layers. Weak programs report only on t
 - Lifetime value (LTV) of organic customers
 - Revenue attributed to organic
 
-**Tools:** HubSpot (Marketing Attribution, Revenue Attribution), Salesforce, custom attribution models.
+**On answer surfaces:**
+
+- Pipeline and revenue on deals where the source field or a sales call names an assistant. **This is where AI's Layer 4 has to live, because a zero-click citation leaves no analytics trail at all**, which is why the measurement triad in [[#Optimizing for AI Citation]] exists
+- Sustained branded search lift with no matching campaign, as a proxy for AI influence arriving under another name
+
+**Tools:** HubSpot (Marketing Attribution, Revenue Attribution), Salesforce, custom attribution models, call recordings, the form's source field.
 
 **Reporting rule:** Always report at Layer 4 when the audience is executive. Layer 1 and 2 are internal or operational. Most SEO reports lose their audience by staying at Layer 1.
+
+**Reporting rule for answer surfaces:** name the source of every AI number in the same line as the number. Platform reporting, referrer tracking and prompt tracking measure different things and disagree, and a figure with no source attached cannot be compared to last month's. Report brand prompts and buying prompts as two series, never as one average, because the most common real shape is named on every brand question and absent from every buying question, and an average hides exactly that.
 
 ---
 
@@ -688,6 +716,24 @@ Internal links are one of the strongest signals for crawl priority. A page linke
 
 ---
 
+## Reading Crawler Output Honestly
+
+A crawler hands back hundreds of fields and almost none of them mean exactly what their name suggests. Most wrong audits are not wrong about the site, they are wrong about the field. Four rules prevent the common failures.
+
+**Parse structured files, never string-match them.** A `robots.txt` file is a set of user-agent groups, each with its own rules. Testing whether a bot name appears anywhere in the file and whether the string `Disallow: /` appears anywhere in the file will report a site-wide block on any site that has `Disallow: /wp-admin/`, which is most WordPress sites, and the finding is the exact opposite of the truth. Read the group that matches the bot, then read that group's rules. The same discipline applies to matching a brand name in a body of text: match on word boundaries, or a company called Near is found inside "nearshore" and a brand whose name is an ordinary word is found inside every phrase that happens to use it.
+
+**A site-wide counter cannot answer a per-page question.** Duplicate meta tags counts pages that carry two of the same tag. Duplicate descriptions counts pages that share a description with another page. They are different questions with similar names, and reading the first as the second turns 43 pages sharing 18 descriptions into a reported 180 duplicates.
+
+**Three fields measure something other than their names.**
+
+- **Low content rate** is a ratio of visible text bytes to total HTML bytes. A heavy template pushes it down on a page with 2,000 good words. Thin content is a word count, so count words.
+- **Structured data detection** in most crawlers looks for microdata attributes in the markup. It does not see JSON-LD, which is how nearly every modern site ships schema. Read the `@type` values out of the raw HTML instead, or a site with full Organization and Article markup reports as having none.
+- **Orphan page flags** are computed against what the crawler was given. If the crawler was not handed the sitemap, every page reads as non-orphaned and the flag is structurally incapable of firing. Real orphan detection is a set difference: URLs in the sitemap minus URLs the crawl reached by following links. Where the crawl hit a page cap, say so in the finding, because the cap and a genuine orphan look identical in the output.
+
+**Money pages come from the site's own navigation.** Deriving them from URL patterns misses whatever the site names differently, and the header and footer are the site telling you directly which pages it considers worth putting in front of every visitor. Parse the navigation, then add anything the business names that the navigation leaves out.
+
+---
+
 ## Indexation
 
 Being crawled does not guarantee being indexed. Google decides whether to include a URL in its searchable index based on perceived quality, uniqueness, and value.
@@ -962,6 +1008,30 @@ Breadcrumbs are navigational aids showing the user's location in the site hierar
 - Keep redirects in place for at least a year after a URL change
 - Map every old URL to a new URL during migrations; never mass-redirect to homepage
 
+### Verifying Redirect Chains
+
+Knowing that a 302 leaks signal is useless until you check what a given URL actually does. This is a single HTTP request per URL, following the chain and reading the status code at the end of it. It takes under a minute and it catches broken migrations, redirect loops, and chains that terminate in a 404 while the source URL is still indexed and ranking.
+
+**In the terminal, with curl.** The flags are `-s` silent, `-I` headers only, `-L` follow redirects, and `-w` to print the final URL and its status code.
+
+```
+curl -sIL -o /dev/null -w '%{url_effective} %{http_code}\n' https://example.com/some-page/
+```
+
+Across a set of paths in one pass:
+
+```
+for u in / /pricing/ /blog/ /robots.txt /sitemap.xml; do curl -sIL -o /dev/null -w "$u -> %{url_effective} %{http_code}\n" "https://example.com$u"; done
+```
+
+To read every hop rather than only the destination, drop `-o /dev/null -w` and read the headers directly.
+
+**In a browser, with [httpstatus.io](https://httpstatus.io/).** Paste the URL list, leave "Follow redirects" on, and run it. It returns every hop and its status code as a table. Reach for this version when the result has to be shown to someone who does not read command-line output, when you are on a machine without terminal access, or when you want something you can screenshot into a ticket or a report. Reach for curl when the check needs to run across a large URL set, repeat on a schedule, or sit inside a script.
+
+**Rule out geographic routing before calling it a finding.** Edge routing, Cloudflare rules, and country redirects can make a chain look broken from one location and fine from another. Re-run the same list from a second exit, for example a different country or a proxy, and only treat it as a site-wide problem when the chain holds from more than one vantage point.
+
+**The limit.** curl is not Googlebot. A chain that resolves badly for you is strong evidence, not proof that search engines see the same thing. Confirm impact in Google Search Console under Pages, in the Not Found and Page with redirect reports, and in Crawl Stats.
+
 ### Managing 404s
 
 - Use a custom 404 page that helps users find what they wanted (search bar, popular pages)
@@ -1222,6 +1292,7 @@ High-stakes engagements. Getting migrations wrong causes permanent ranking loss.
 - **Daily GA4 organic sessions comparison** vs pre-migration baseline
 - **Expected pattern:** 10 to 15% traffic dip in first 2 weeks is normal, with recovery to baseline by week 4 to 6
 - **Red flags:** Over 20% traffic drop beyond week 2, large-scale de-indexation, 404 error spikes
+- **Verify the redirect map itself, not just the reports:** run the old URL set through a redirect chain check on day one and confirm every one lands on a live 200 via a single 301. See [[#Verifying Redirect Chains]].
 
 ### Post-Migration Recovery (if things go wrong)
 
@@ -1251,18 +1322,33 @@ Don't start with a flat 10–20-term brainstorm. A senior SEO operator approache
 
 **Step 1a — Identify the dimensions for the business.**
 
-Map the variables that define the keyword universe. Six dimensions cover most B2B and B2C scenarios:
+Map the variables that define the keyword universe. Seventeen dimensions cover the field, and the brand itself is the first of them. Check the business against all seventeen every time, and record a reason for each one that does not apply, because a dimension left silent is a gap nobody can see later.
 
-| Dimension | What it captures | Example values (B2B consulting) |
+| Dimension | What it captures | Example values |
 |---|---|---|
-| `[service]` | Top-level service line | AI Consulting, Microsoft Consulting, Data Analytics, Cybersecurity |
-| `[subservice]` | Specific offering within a service | Microsoft → Azure, Dynamics 365, M365, Power Platform, Copilot |
-| `[category]` | Industry/analyst-recognized solution category (RFP, Gartner, Forrester language) | Generative AI, Predictive Analytics, CRM, Cloud Infrastructure, Business Intelligence |
-| `[industry]` | Vertical the buyer operates in | Financial services, healthcare, manufacturing, retail, public sector |
-| `[use case]` | The job/problem the buyer wants solved (pain-point language) | Customer churn prediction, fraud detection, ERP modernization, cloud migration |
-| `[location]` | Geographic served market | Boston, Chicago, Seattle, Indianapolis |
+| `[brand name]` | The business itself, written exactly as buyers type it, plus the spellings and the domain they also type. It owns the whole navigational tier, and every comparison and alternative-to query is built from it. | Scale Army, scalearmy.com, Scale Army agency |
+| `[product name]` | The thing being sold, by the name buyers type. Distinct from the brand where a company sells several named products. | Sales Pod, Postpartum Reset, Copilot |
+| `[service]` | The top-level service line. What the business would say it does in one phrase. | AI consulting, staffing, cybersecurity |
+| `[subservice]` | A specific offering inside a service line. Usually where the money queries live, because buyers search the specific thing rather than the category. | Azure, Dynamics 365, hire a content marketing manager |
+| `[industry]` | The vertical the buyer operates in. Same offering, different buyer, different page. | Financial services, healthcare, B2B SaaS, direct to consumer |
+| `[category]` | The recognised solution category a buyer or an analyst files this under, in their words rather than the brand's. | Generative AI, CRM, employer of record, staffing agency |
+| `[target persona]` | Who does the searching and who signs. Often two different people, and both belong here. | Founder, head of marketing, hiring manager, first time mother |
+| `[use case]` | The job the buyer wants done, written as the problem rather than the product. Pain-point language belongs here. | Customer churn prediction, filling a seat in two weeks, cutting payroll cost |
+| `[capability]` | What the offering can do, at the level a buyer evaluates. Broader than a feature, narrower than a category. | Candidate vetting, payroll, fertile window calculation |
+| `[feature]` | A specific named part of the product. Buyers search features by name once they are comparing. | Replacement guarantee, flat monthly fee, printable checklist |
+| `[benefit]` | The outcome the buyer gets. Feature is what it is, benefit is what changes for them. | Lower cost per hire, faster time to hire, knowing when to see a doctor |
+| `[solution]` | The packaged answer to a use case, which is how the business bundles capabilities for a particular buyer. | Sales pod, marketing team, first pregnancy plan |
+| `[integration]` | Another tool this one connects to. Every integration is a query and usually a page, because buyers search the pair. | Slack, HubSpot, Shopify, Klaviyo |
+| `[location]` | The geography served, and the geography the buyer is in, which are not always the same. | Boston, United States, LATAM, Africa, Lagos |
+| `[direct competitor]` | Sells the same thing to the same buyer. These names carry the comparison and alternative-to queries. | The two or three names a buyer actually shortlists against |
+| `[secondary competitor]` | Overlaps on part of the offering or part of the buyer, so it appears on some shortlists and not others. | The adjacent players |
+| `[indirect competitor]` | Solves the same problem a different way, including doing it in-house or not at all. This is where the largest unserved demand usually sits. | In-house hiring, a spreadsheet, a WhatsApp group, doing nothing |
 
-Not every business uses all six. E-commerce often skips `[use case]` and `[industry]`. SaaS often skips `[location]`. Local services lean heavily on `[location]`. Pick the dimensions that genuinely apply.
+Not every business uses all seventeen, and forcing a value where none exists produces seeds nobody searches. `[brand name]` is the one that always applies, because every business has a name. What is not allowed is skipping a dimension without noticing. An e-commerce brand may have no `[use case]` in the B2B sense and no `[integration]` at all; a local service may have one `[location]` value that carries half the universe. Write down which ones do not apply and why, then build from the rest.
+
+**Two dimensions are routinely skipped and should not be.** `[indirect competitor]` is where the real alternative usually lives, because most buyers are not choosing between two vendors, they are choosing between a vendor and carrying on as they are, and queries like "do I need X" or "X vs doing it myself" are unclaimed almost everywhere. `[location]` gets dropped by software businesses on the grounds that they serve everyone, which confuses where the buyer is with where the service is delivered, and leaves the whole served-market tier of the universe unbuilt.
+
+**Where the business already uses its own dimension names, keep them and record which standard dimension each one covers.** A staffing business thinks in roles, not subservices, and forcing its vocabulary into this table makes the grid harder to check rather than easier. Map `role` to `[subservice]`, keep writing `role`, and the coverage is still provable.
 
 **Step 1b — Prioritize intent stages by revenue distance.**
 
@@ -1305,6 +1391,56 @@ Worked example formula library for B2B consulting:
 1. `how to [use case]` / `how to implement [subservice] / [category]` / `how to choose [service] consulting partner`
 2. `what is [subservice] / [category]` / `[subservice] / [category] vs [alternative]` / `[subservice] / [category] best practices for [industry]`
 3. `[use case] / [subservice] / [category] roi / cost / benefits / use cases for [industry]`
+
+**Formulas for the dimensions the consulting library above does not reach.** The six-dimension formulas cover the service-shaped part of a universe. These cover the rest, and each one maps to a page type:
+
+1. `[product name] pricing / reviews / alternatives` and `[product name] for [target persona] / [industry]` (product-led demand, and the queries a brand almost always owns but rarely builds for)
+2. `[product A] [integration] integration` / `[product name] + [integration]` / `how to connect [product name] to [integration]` (one page per integration, the highest-volume templated set most software businesses never build)
+3. `[capability] software / tool for [industry]` and `does [product name] do [capability]` (capability queries sit above features and below categories, and they catch buyers who do not know the category name)
+4. `[feature] in [category] software` / `[category] with [feature]` (comparison-stage filtering language)
+5. `how to [benefit]` / `[benefit] without [common obstacle]` (benefit queries read as informational and convert like commercial ones, because the searcher has already named their desired outcome)
+6. `[solution] for [target persona] / [industry]` (the bundle page, which is what a buyer searches once they know the shape of the answer but not the vendor)
+7. `[direct competitor] alternatives` / `[direct competitor] vs [brand]` / `[secondary competitor] vs [direct competitor]` (the third pattern is the one most brands skip, and it ranks because it is genuinely useful to someone who has not shortlisted you yet)
+8. `[indirect competitor] vs [category]` / `do I need [category]` / `[use case] without [category]` (the largest and least contested tier, aimed at the buyer who has not accepted the category yet)
+9. `how much do [service] charge` / `how much do [service] charge [target persona]` / `how much do [service] charge for [subservice]` / `[qualifier] [service] [fee noun]` / `[service] pricing` / `[direct competitor] pricing` (the price question for a service business. The bare question reads as informational, and it turns commercial the moment the query names who pays, "for employers", "for companies", or what is bought, "for direct hire". On a staffing company in September 2026 the family returned 540 searches a month, 280 of them commercial, at keyword difficulty zero, and none of it existed in a 438-phrase universe built from the six dimensions, because no formula generated it)
+
+**Record the formula on every seed, and derive it rather than trust it.** A seed list without its formulas is indistinguishable from a brainstorm, and nobody reading it later can tell which combinations were worked and which were never reached. Do not carry the formula as a note somebody types in: read it back off the finished seed. Find the dimension values inside the phrase, using word boundaries rather than bare substrings, and put the slot names where the values stood.
+
+- `amazon ppc manager in north america` → `[subservice] in [location]`
+- `best staffing agency for saas` → `best [category] for [industry]`
+- `hire a klaviyo email manager` → `hire a [integration] email manager`
+
+A seed that matches no dimension value at all prints as **not built from the grid**. That is a finding, not a formatting problem. It means the phrase was brainstormed, so the grid never had a chance to cover it, and either the phrase should be rebuilt from a formula or the dimension it implies is missing from Step 1a. The share of off-grid seeds is itself a signal: a service business should come back mostly on-grid, while a content site seeded from its own published pages will come back mostly off-grid, which is correct for that shape of business and tells you the grid is not where its universe comes from.
+
+Two columns come out of this and both are derived, never hand-filled: the formula, and the list of dimensions that filled its slots. Seeds using two dimensions reach a more specific searcher than seeds using one, so the second column is how you find the shallow half of a seed list.
+
+**Carry the formula and the intent tier all the way through the workbook, not just the seed list.** Both are free once derived and both change what the reader does, so they belong on every tab where a decision gets made.
+
+The formula travels by reading it back off whatever phrase the row is about: a keyword, a cluster primary, a competitor's keyword. That gives one definition of "formula" across the whole file and makes three things visible that a seed list alone cannot show.
+
+- **Keywords and clusters sharing a formula are the same page shape with different values.** That is a template to build once and fill many times, and without the column you build them one at a time by hand.
+- **On the competitor gap, a keyword that matches no formula is the important row.** It means your dimensions cannot express what the competitor is ranking for, so the gap is in the grid itself and no amount of seed writing from the current dimensions will reach it. On a staffing company audited in September 2026, 600 of 1,068 gap keywords came back outside the grid, which is a dimension problem wearing a content problem's clothes.
+- **A column is hand-filled only when the data cannot answer it, and that is checked before it is declared.** Their angle, page quality and the formula were all declared hand-filled columns and shipped blank across a thousand rows before anyone noticed. Each derives: the formula by reading it back off the phrase, the angle and the quality score by fetching the competing page and measuring what is on it, meaning prices on the page, a stated method, FAQ schema, a visible byline and date, first-party data with a sample size, an outside rating, and a comparison table. A first-person claim is not first-party data; the detector requires a sample size or a period, because "our clients typically fill roles faster" is a sentence a reader cannot check. The derivation is tuned against pages that demonstrably rank, and a metric that disagrees with the results page is the metric that is wrong: a page ranking fourth on ten named practitioners scored one until named people counted as first-party evidence. The competitor gap now carries three derived columns and one hand-filled one, the assigned cluster, because that is a decision.
+- **On the editorial calendar, batching by formula means one brief covers several pieces**, because the shape is identical and only the values change.
+
+The intent tier travels onto the Questions, Forecast and Rank tracking tabs. A question sitting under a transactional cluster is a buying objection and gets answered near the top of the page, not filed under a frequently-asked list at the bottom. A forecast totalled across all four tiers is a number nobody should act on, because traffic in informational clusters is worth a fraction of the same traffic in transactional ones. Rank movement is not comparable across tiers either.
+
+Where the tier we assigned and the search engine's own classifier disagree, show both columns and trust the results page. The disagreement is the engine telling you which intent it will actually serve.
+
+**Where the two intent columns go, and where only one of them can honestly go.** Every tab keyed on a keyword or a cluster carries the intent, because the tier changes what the reader should do on that row and a tab that hides it invites someone to total across tiers and act on the total.
+
+*What the searcher wants* is ours. It is the tier the phrase was built for, and it can always be filled: from the seed's own tier, from the cluster the row belongs to, or, for a phrase we never seeded, inherited from the seeds sharing its dimensions. It goes on every keyword tab, every cluster tab, and on the prompt tracking tab too, where it is the tier the question was generated from.
+
+*What Google thinks they want* is not ours. It is the search engine's own classifier, and it rides along free inside the ranked-keywords payload, so it costs nothing where the phrase was bought. It cannot be filled by inference, and it must never be guessed, because an empty cell reads as "informational" to a tired person and a guessed tier is worse than an admitted gap. Where it is missing, print the reason instead of a blank: the phrase was never bought, or the cached file predates the field and needs re-fetching.
+
+Two cases where the column has no business appearing at all:
+
+- **The row is not measuring Google.** Prompt tracking records what an assistant answered. There is no search engine classifier on a question asked of ChatGPT, so the tab carries our tier and nothing else.
+- **The row is not a phrase.** The dimension grid, the source tiers, the quality levels, the ladder and the page-quality tabs are not keyed on anything a classifier reads.
+
+**Put the two columns next to each other on every tab they appear on.** The disagreement is the whole reason for carrying both, and a reader only spots it when the two values sit side by side. Split them across a tab and the column becomes decoration.
+
+The disagreement between the two columns is the point of having both. Ours is the intent we built the phrase for; the engine's is the intent the results page will actually serve. Where they differ, the results page wins, and the page you were planning is probably the wrong shape.
 
 **Step 1d — Use formulas to brainstorm all possible keywords.**
 
@@ -1431,6 +1567,8 @@ The single most common SEO mistake: trying to rank a blog post for a transaction
 ## Keyword Clustering
 
 Keyword clustering groups semantically related keywords into single content targets. Prevents keyword cannibalization (multiple pages competing for the same keyword).
+
+**Positions belong to URLs, not topics.** Before giving a keyword-targeting verdict on any page, confirm in the domain's ranked-keyword pull which URL actually holds the rankings for its cluster. A page audited in September 2026 ranked for nothing five months after publishing, while an older page on the same site held the whole cluster at positions 2 to 16, and neither linked to the other. The verdict there is a merge into the URL that already has the links and the rankings, not a rewrite of the page that was handed over, and the check takes one query.
 
 ### SERP-Overlap Clustering Method
 
@@ -1613,6 +1751,23 @@ Google evaluates content quality using E-E-A-T signals, especially for Your Mone
 - **HTTPS and clean technical hygiene**
 
 ---
+
+## ARTICLES Content Generation Framework
+
+ARTICLES is a content generation framework to be used for SEO and AI answers in blog & article writing. ARTICLES stands for audience, reach, take, intent, claim, layout, evidence, and snippet.
+
+The table below describes each section of ARTICLES and what to include / key considerations for each.
+
+| Section | What to include |
+|---|---|
+| **Audience** (audience & jobs to be done) | Who is this for?<br>What ICP and persona?<br>What job are they trying to do?<br>What question would they type, or ask an assistant, to get here? |
+| **Reach** (channels & distribution) | Where is this going to be published?<br>How is it being distributed?<br>Will this link to existing assets?<br>Where does this need to appear off our own site? Assistants lean on review sites, directories, forums and other people's roundups, so a claim that only ever appears on our own domain stays invisible to them. |
+| **Take** (unique point of view) | What's the unique takeaway or point of view?<br>How does this add value for your audience?<br>What can we say here that nobody else can? A number we own, something we did, someone who was there. Without one of those, an assistant summarising this topic has no reason to name us. |
+| **Intent** (goals) | What story are you trying to tell with this article?<br>What search intent does the article fulfill?<br>Is there an AI answer above the results for this query? If there is, being quoted in it matters more than the ranking. |
+| **Claim** (the answer) | The direct answer to the article's question, in about 40 words, written before the article is written.<br>It goes in the first 100 words of the page, above anything else.<br>Assistants do not read articles. They pull out passages and quote the page the passage came from, so the answer has to stand on its own when it is lifted away from everything around it.<br>Write the year, the market and the subject into the answer itself. "Directors earn more" is not quotable. "In 2026, US marketing directors earn $110,000 to $160,000, against $80,000 to $110,000 for managers" is. |
+| **Layout** (structure) | Which questions become the H2s. Take them from People Also Ask and from what the audience actually asks, so each heading is a question the page answers directly underneath it.<br>Each section answers its own heading in its first sentence, then expands. A section that needs the section above it to make sense will not survive being quoted on its own.<br>Which facts belong in a table. A comparison split across a list and a paragraph gets read as two separate things and rarely gets pulled back together.<br>Which schema the page carries, including FAQPage wherever there is a question and answer block. |
+| **Evidence** (evidence & attribution) | Who is the named author, with a role and a link to a page about them. A byline with nothing behind it is not a trust signal.<br>Who reviewed it, where the subject needs a qualified check.<br>At least one link out to a real source, with the date the figure was collected. An unsourced number is not quotable, and a page full of them is a page an assistant reads and then cites somebody else.<br>Where our own data is the source, say so and give the sample size and the period. That turns a claim into a primary source, which is the one thing a competitor cannot copy by writing harder. |
+| **Snippet** (article title & SEO meta description) | Primary Title: A clear and concise headline description of the post's content in under 60 characters.<br>SEO Title: The SEO title should include the main search keywords in a way that is relevant to the search intent.<br>SEO Meta Description: A brief summary of your post on search engine result pages, in under 160 characters.<br>The SEO description should include new context and information that will ultimately make people want to click.<br>It can include other keywords and phrases that are relevant but don't fit in the title. |
 
 ## On-Page Optimization
 
@@ -2629,6 +2784,16 @@ Report the ladder rather than a single score, so the number points at the stage 
 | Recommended | Shortlist rate on buying-intent prompts, and who appears instead of you | Prompt tracking on commercial prompts |
 | Downstream | Referral sessions, branded search volume, self-reported attribution | GA4, Search Console, form field, sales calls |
 
+**Build the prompt set off the dimension grid, not off the brand name.** The prompts are the same combinatorial exercise as Step 1c, asked out loud instead of typed into a search box: dimensions crossed with the four intent tiers. That keeps the prompt set and the keyword universe answerable to the same grid, so a gap can be traced back to a dimension rather than to an unlucky phrase.
+
+Weight it by revenue distance, the same order the seeds use. **Transactional and commercial are the priority set,** because those are the questions a buyer asks with a card in hand: recommend a provider, who should I hire for this role in this market, which vendor offers this, this competitor versus that one, what should I compare. Navigational and informational still get asked, because a brand question is the only way to find out whether the assistant has the business right at all, but a miss there costs less. Roughly two thirds buying intent is the right mix.
+
+Being named on a brand question and absent from the buying questions is the most common shape this produces, and it reads as visibility when it is the opposite of it. On a staffing company run in September 2026, the brand was named in all three navigational prompts and in only three of the thirteen a buyer would actually ask. Report the two tiers separately or the average hides the finding.
+
+**Collect the answers on the surface the buyer uses.** The paid answer endpoints and a logged-in browser disagreed on the same twenty prompts in the same hour, and the browser is what a buyer sees. Use a clean account where you can. On a logged-in one, prefix every prompt with an instruction to ignore saved memory and past conversations, which suppresses conversational recall but does **not** suppress the account's own custom instructions, so switch those off as well. Start a fresh chat per prompt: within a thread, the previous answer contaminates the next. Record which surface every answer came from and never mix surfaces in one month-on-month series.
+
+Record the position too, not just whether the brand appeared. Named eighth in a list of nine is much closer to absent than to recommended, and only the position column shows the difference.
+
 **The measurement triad for anything the tools cannot see:** prompt tracking for visibility without clicks, a "how did you hear about us" field to catch buyers whose journey started in an AI chat but arrived by branded search, and sales call recordings, where buyers' own language often reveals an AI conversation shaped the shortlist long before any form fill. Watch sustained branded search lifts with no matching campaign as a proxy for AI influence showing up under another name.
 
 ---
@@ -2738,6 +2903,8 @@ common failure is that publishing continues while measurement quietly stops.
 | Weekly | Rebuild the generated reports. Pick the week's pages. Publish on a fixed day and submit new URLs for indexing. Check published pages for regressions. |
 | Every 2 weeks | Log indexed pages, clicks, impressions and average position. Review anything that dropped more than 5 positions. |
 | Monthly | Re-run AI visibility prompts in identical wording. Take a rank snapshot on the same day each month. Review sliding pages. Refresh the link prospect list. |
+
+Take the rank snapshot **with the intent tier attached to every tracked phrase**, carried over from the cluster it came from. Movement is not comparable across tiers: a transactional phrase climbing ten places is worth more than an informational one climbing thirty, and an average across all four says nothing about either. Report the tiers separately or the number that matters gets buried under the number that does not.
 | Quarterly | Full audit as a new report, not an edited one. Refresh keyword volumes and re-cluster if results pages moved. Rewrite the strategy where it is now wrong. |
 | Annually | Rebuild keyword research from seeds. Re-check winnability on every cluster previously ruled out. Review the pillar structure against the business. |
 
@@ -3080,6 +3247,11 @@ Every tool a senior SEO should know, by category. Free vs paid noted.
 - **DeepCrawl (Lumar):** Cloud-based, enterprise.
 - **OnCrawl:** Cloud-based, technical SEO focus, integrates with logs.
 - **Botify:** Enterprise crawler with log file analysis.
+
+### Status Code and Redirect Checking
+
+- **[httpstatus.io](https://httpstatus.io/):** Free. Bulk redirect chain checker in the browser. Paste a URL list and it returns every hop and status code as a table, which makes it the version to use when the output has to be readable by someone other than you.
+- **curl:** Free, preinstalled on macOS and Linux. The same check from the command line, and the one to use across a large URL set, on a schedule, or inside a script. Usage in [[#Verifying Redirect Chains]].
 
 ### Historical Site Data & Diagnostics
 
