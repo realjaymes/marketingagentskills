@@ -11,6 +11,12 @@ on:
 permissions:
   contents: write
 
+# Every run deletes and recreates the single 'latest' release, so two runs at once
+# race on the tag (HTTP 422 "tag_name already exists"). Queue them instead.
+concurrency:
+  group: release-latest
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
