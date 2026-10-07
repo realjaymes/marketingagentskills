@@ -19,7 +19,7 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 
 | Job | Tool | Notes |
 |---|---|---|
-| Describe your face, write animation prompts | ChatGPT (or Gemini) | Gemini Nano Banana makes the anchor stills |
+| Describe your face, write animation prompts | ChatGPT (or Gemini) | ChatGPT makes the anchor stills too |
 | Talking video | Google Flow with Gemini Omni (speaks natively) or Veo 3.1 | Higgsfield (Kling) for one-off clips. HeyGen for a reusable avatar |
 | Voice clone and re-voicing the video | ElevenLabs on a paid plan (clone plus Voice Changer) | Cartesia and MiniMax are swap options |
 | Editing | CapCut | Descript and Premiere also work |
@@ -34,7 +34,7 @@ Planning notes (reference, script, shot table) live in your notes. Clips, audio 
 
 This is the primary way to clone yourself in your own voice, and it solves lip sync. The HeyGen and Higgsfield routes still work and are kept below as alternatives. The detailed how-to for each step lives in the sections that follow. This is the map.
 
-1. **Build your character anchors in ChatGPT and Nano Banana** (Steps 4 and 5). Multiple reference angles, a written face and body breakdown, one clean reference image, a multi-angle mashup to confirm consistency, a reusable JavaScript Object Notation (JSON) prompt, and a two-image anchor (close-up, then wide).
+1. **Build your character anchors in ChatGPT** (Steps 4 and 5). Multiple reference angles, a written face and body breakdown, one clean reference image, a multi-angle mashup to confirm consistency, a reusable JavaScript Object Notation (JSON) prompt, and a two-image anchor (close-up, then wide).
 2. **Lock the scene and environment** (Step 5). Decide where the character is and lock the outfit, background, camera angle, lighting and style. Write it once as a reusable scene description.
 3. **Generate each beat in Flow with the model speaking** (Step 9). One clip per beat, each from its anchor still, each with the dialogue accuracy line, each sized to its line.
 4. **Assemble the clips** in Flow's scene builder and export.
@@ -146,7 +146,7 @@ If any angle drifts into a different person, regenerate the reference image befo
 
 ### Step 5: Build the two-image anchor and lock the scene
 
-Every clip starts from a still. Make two once, in Nano Banana (inside Flow or the Gemini app), and save them in your reusable folder:
+Every clip starts from a still. Make two once in ChatGPT, the same tool that built the character, and save them in your reusable folder:
 
 1. **The close-up.** Chest up, 9:16, from your reference image, with a full description of age, look, clothes, setting and lighting. No text in the image.
 2. **The wide.** Generate it with the close-up attached as the reference image, so the face matches. Same outfit and room, more of the setting, 9:16, no text.

@@ -2,7 +2,7 @@
 name: ai-content-generation
 description: "When the user wants to create AI-generated video or image content: a faceless influencer or persona, an AI clone or talking head, AI ad creative and AI UGC, a faceless YouTube channel, a product or launch video with motion graphics and an AI voice, or a sharp edit of their own recording (including a Hormozi-style edit). Also use when the user wants to copy a creator's editing style or a brand's motion style, tear down a reference video, or mentions 'faceless,' 'AI avatar,' 'AI UGC,' 'talking head,' 'clone myself,' 'AI video ad,' 'launch video,' 'motion graphics,' 'video edit,' 'reference teardown,' or tools like Veo, Gemini Omni, Google Flow, Kling, Higgsfield, Seedance, Runway, ElevenLabs, HeyGen, Arcads, Nano Banana, Midjourney, Ideogram, Remotion or Whisper. Runs one six-step, reference-first workflow with two approval points, and routes to a playbook per use case. For paid-ad strategy and targeting, see performance-marketing or paid-ads; for Remotion code, it calls remotion."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # AI Content Generation
@@ -57,6 +57,9 @@ The full text is in `references/00-workflow-and-rules.md`. These never get dropp
 - **AI disclosure:** the platform's AI label where offered. An AI person never poses as a real customer.
 - **Realism:** a phone-camera look, no "cinematic", "8K" or "perfect", no text rendered inside video prompts.
 - **Credits:** fix the script and frames first, draft at 720p, change one thing per retry, three tries per shot.
+- **People and characters:** ChatGPT (GPT Image) makes every image of a person or character, by hand or by API. One tool per character, one master each, and each new image attaches only the sheets of the people in it.
+- **Real product screens:** a product or tool on screen is built from the product's own code with real outputs (`remotion` rule `site-ui-from-code.md`), never mocked.
+- **Launch films:** 45 to 60 seconds, in 16:9 (X, LinkedIn, the website) and 9:16 (TikTok, Reels, Stories, WhatsApp Status). No separate short ad cut unless the brief asks.
 
 ## Other skills this calls
 

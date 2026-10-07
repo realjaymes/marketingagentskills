@@ -246,15 +246,23 @@ Run the render check, then run the "Final check" section of the 00-workflow-and-
 
 A launch video is screens, cards and animated text over an AI voice. It is built entirely in Remotion, and it is the strongest thing this setup does.
 
+**Default length and formats.** A launch video runs 45 to 60 seconds and ships in two versions: 16:9 for X, LinkedIn and the website, and 9:16 for TikTok, Instagram Reels, Instagram Stories and WhatsApp Status. Make no separate short ad cut unless the brief asks for one.
+
 **What works well.** Kinetic type, UI walkthroughs, SaaS launch videos, shape and mask transitions, 2.5D parallax camera moves, charts and Lottie animations. Real product screens make the video look authentic. Easing and timing come from the measured style spec.
 
 **Inputs that set the ceiling.** Missing brand assets hurt more than any other gap. Bring:
 
-- product screens, screen recordings or Figma files
+- the product itself (its code or a running copy), or else product screens, screen recordings or Figma files
 - vector logos
 - the brand fonts and colours
 
-Do not ask Claude to redraw a product screen. If the screen does not exist yet, make it first.
+**Build product screens from the product's own code.** Do not ask Claude to redraw a product screen by hand. If the screen does not exist yet, make it first. Pick the route by how the product is built:
+
+- **A React product.** Remotion imports the real components and the product's own stylesheet, then animates them frame by frame. The UI matches the product exactly.
+- **A plain HTML, CSS and JavaScript site**. There are no components to import, so a site capture kit (see the remotion skill's site-ui-from-code rule) does it instead. It runs the live page in a headless browser and saves the page's real HTML at each step (empty, filled in, result shown). Remotion then shows that HTML with the site's own CSS and fonts and animates the changes. See Site Motion Kit — Code & How It Works.
+- **When the real behaviour is the point** (a live search, a loading state), the same kit records the real page, and Remotion adds motion on top.
+
+Every result on screen must be one the live product produced for the inputs shown. Capture the result from the live tool, then recapture whenever the inputs or the page change.
 
 **Cold audience first scene.** The `remotion` skill applies a cold audience rule by default: a visual pattern interrupt, text that names a problem or result the viewer recognises, and no brand card in scene 1. Keep that rule unless the video is for existing users.
 
@@ -262,7 +270,7 @@ Do not ask Claude to redraw a product screen. If the screen does not exist yet, 
 
 | Style                                       | Can we match it? | Workaround                                                                                         |
 | ------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------- |
-| Kinetic type, UI walkthroughs, launch videos | Yes              | Build in Remotion from the measured spec                                                           |
+| Kinetic type, UI walkthroughs, launch videos | Yes              | Build in Remotion from the measured spec, with product screens built from the product's own code |
 | Shape transitions, masks, 2.5D parallax      | Yes              | Take easing and timing from the spec                                                               |
 | 3D product hero shots                        | Partly           | Generate the shot with Veo or an image tool, or build it in Spline or Three.js, then place it in Remotion |
 | Hand-drawn or character animation            | Rarely           | Use AI video clips where the quality holds, or hire an animator                                    |

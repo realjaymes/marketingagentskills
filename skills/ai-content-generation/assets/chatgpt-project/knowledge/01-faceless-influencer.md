@@ -19,7 +19,7 @@ Build an AI character that posts short videos on TikTok and Instagram without yo
 
 | Job | Tool | Notes |
 |---|---|---|
-| Character, scripts, reference breakdown | ChatGPT (or Gemini, Claude) | Gemini Nano Banana also makes face-locked stills |
+| Character, scripts, reference breakdown | ChatGPT (or Gemini, Claude) | ChatGPT also makes the character images. Keep every image of one character in one tool |
 | Voice | ElevenLabs on a paid plan | Voice Changer locks one voice across clips. The free plan has no commercial licence, so it cannot be used in ads. Cartesia is a swap option |
 | Ad-safe cheap voice (optional) | Google Cloud Text to Speech (TTS), Studio voice | See Ad-safe voice options below |
 | Video | Google Flow with Gemini Omni or Veo 3.1 for talking shots | Kling 3.0 or Seedance inside Higgsfield for bulk b-roll. Runway is a swap option |

@@ -1,6 +1,6 @@
 ---
 name: remotion
-version: 4.1.0
+version: 4.2.0
 description: Remotion video creation in React - dynamic concept catalog for video briefs, cold audience optimization, and technical best practices
 metadata:
   tags: remotion, video, react, animation, composition, programmatic-video
@@ -14,6 +14,7 @@ Use this skill when:
 - Modifying an existing Remotion composition
 - Debugging Remotion animation or rendering issues
 - Working with any Remotion-specific APIs or components
+- Showing a real website, tool or product UI in a video (use [rules/site-ui-from-code.md](rules/site-ui-from-code.md))
 
 ## Video Creation Process
 
@@ -178,6 +179,8 @@ Agent resolves this based on scene complexity:
 
 Always use a centralized timing constant (`const T = { ... }`).
 
+When a scene shows a real site, tool or product UI, build it from the site's own code, never redrawn by hand. Follow [rules/site-ui-from-code.md](rules/site-ui-from-code.md): import the components for a React product, or capture and rebuild a plain HTML site with the site motion kit. Every result on screen must be a real output.
+
 ### Step 7: Implementation
 
 Write code against locked decisions. All animation must follow Remotion rules (see Technical Reference below).
@@ -228,6 +231,7 @@ Read individual rule files for API details and code examples.
 - [rules/charts.md](rules/charts.md) - SVG/D3.js charts animated via `useCurrentFrame()`
 - [rules/lottie.md](rules/lottie.md) - `<Lottie>` component with `@remotion/lottie`
 - [rules/tailwind.md](rules/tailwind.md) - TailwindCSS (no `transition-*` or `animate-*` classes)
+- [rules/site-ui-from-code.md](rules/site-ui-from-code.md) - Real site and tool UI built from the site's own HTML and CSS, with real outputs (site motion kit)
 
 ### Media Utilities (Mediabunny)
 

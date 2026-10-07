@@ -142,6 +142,10 @@ Video models mangle lines, cut them short and add filler words. Every speaking p
 
 Colours always come from the product's own screens or the brand kit. For a software product, sample the colours from its screenshots, so the video looks like the app. For a client, use their brand kit. A reference's palette never overrides the brand.
 
+### Real product screens
+
+A product, tool or website on screen is built from the product's own code, never redrawn. A React product's components are imported into Remotion. A plain HTML site goes through the site motion kit, which captures the live page's real HTML at each step and rebuilds it in Remotion with the site's own CSS and fonts. Every result shown is one the live tool produced. The method is in the "Type A: Launch and Product Videos" section of the 05-launch-videos-and-recording-edits knowledge file and Site Motion Kit — Code & How It Works.
+
 ### Audio and licensing
 
 - **Voice for ads:** use a paid voice plan. The ElevenLabs free tier carries no commercial licence and requires attribution, so it never goes in an ad. Google Cloud text to speech (TTS) Studio voices (`en-US-Studio-Q` male, `en-US-Studio-O` female) are a low-cost option for narration.
@@ -193,8 +197,8 @@ Prices verified 2026-10-07. Check the source link before buying. Items marked (s
 | Tool | Job | Price and free tier | OK in ads? | Source |
 | --- | --- | --- | --- | --- |
 | Claude (Fable, Opus, Sonnet, Haiku) | Scripts, teardowns, coding agent | Plans per Anthropic | Yes | [anthropic.com](https://www.anthropic.com/pricing) |
-| ChatGPT (GPT Image) | Ad images and thumbnails with text | Free (limited), Go $8, Plus $20 (s) | Yes | [OpenAI](https://openai.com/chatgpt/pricing/) |
-| Gemini with Nano Banana | Face-locked character stills and start frames | Free in the app (about 20 a day) (s) | Yes (s) | [felloai.com](https://felloai.com/is-nano-banana-free/) |
+| ChatGPT (GPT Image) | The default for every image of a person or character (cast, personas, clone anchors, start frames), plus ad images and thumbnails with text | Free (limited), Go $8, Plus $20 (s) | Yes | [OpenAI](https://openai.com/chatgpt/pricing/) |
+| Gemini with Nano Banana | Fallback for stills when ChatGPT falls short. Never remake a character ChatGPT already made | Free in the app (about 20 a day) (s) | Yes (s) | [felloai.com](https://felloai.com/is-nano-banana-free/) |
 | Google Flow | Directs Gemini Omni and Veo 3.1 shots | Free 50 credits a day at 720p; Pro $19.99 for 1,000 credits (s) | Paid plans yes; treat the free tier as no | [costgoat.com](https://costgoat.com/pricing/google-flow) |
 | Gemini Omni 1.1 Flash | Quick, consistent clips of 3 to 10 seconds with sound; conversational edits | Free in Google Vids and YouTube Shorts; paid in the Gemini app | Check Google's terms before ad use | [Google blog](https://blog.google/products-and-platforms/products/workspace/gemini-omni-in-google-vids/) |
 | Veo 3.1 | Cinematic and 4K shots | API $0.05 to $0.60 per second by tier | Yes on the paid API | [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing) |
