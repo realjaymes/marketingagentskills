@@ -4,11 +4,11 @@ Build an AI character that posts short videos on TikTok and Instagram without yo
 
 > Mindset: the whole game is making the same face appear every time and look like a real person. Everything else is a simple loop.
 
-**Tier:** this playbook runs the quick social tier of the "Workflow" section of the 00-workflow-and-rules knowledge file. You build the persona's anchors once (Do This Once), then run all six steps in short form on every post. Tool prices live in the "Tools and prices" section of the 00-workflow-and-rules knowledge file.
+**Tier:** this playbook runs the quick social tier of the "Workflow" section of `00-workflow-and-rules.md`. You build the persona's anchors once (Do This Once), then run all six steps in short form on every post. Tool prices live in the "Tools and prices" section of `00-workflow-and-rules.md`.
 
 | Workflow step | Where it happens here |
 |---|---|
-| 1 Reference brief | Step 5, one reference, structure only, using the the reference-teardown knowledge file |
+| 1 Reference brief | Step 5, one reference, structure only, using the `reference-teardown.md` |
 | 2 Script | Step 6, a beat table with a word budget per beat |
 | 3 Scenes and anchors | Step 3 builds the anchors once. Step 8 makes start frames only for new setups |
 | 4 Voice | Step 4 picks the persona voice. Step 7 sets the route. Step 9 locks it |
@@ -27,7 +27,7 @@ Build an AI character that posts short videos on TikTok and Instagram without yo
 
 **End result:** a recurring AI persona posting 1 to 3 short videos a day.
 
-Planning notes (reference, script, shot table) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of the 00-workflow-and-rules knowledge file.
+Planning notes (reference, script, shot table) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of `00-workflow-and-rules.md`.
 
 ---
 
@@ -104,7 +104,7 @@ Once your character exists, every video is these six steps.
 
 ### Step 5: Start from a proven reference
 
-Open TikTok or Instagram and search your niche. Find 3 to 5 videos getting far more views than the account's normal numbers. Pick the best one as your reference and run the the reference-teardown knowledge file on it. You get the hook move, the beats with word counts, the caption style and the sound. For a quick post, one reference and its structure is enough. You copy the structure and timing. You never copy the words, people, footage, music or claims.
+Open TikTok or Instagram and search your niche. Find 3 to 5 videos getting far more views than the account's normal numbers. Pick the best one as your reference and run the `reference-teardown.md` on it. You get the hook move, the beats with word counts, the caption style and the sound. For a quick post, one reference and its structure is enough. You copy the structure and timing. You never copy the words, people, footage, music or claims.
 
 ### Step 6: Write your script in ChatGPT
 
@@ -181,13 +181,13 @@ The person says: "[THE LINE FOR THIS BEAT]"
 Ensure that each word is pronounced correctly and you do not add any extra words.
 ```
 
-If the model mispronounces a name, say so in the next try: "The model says [wrong sound]. The word is [name], pronounced [phonetic]." The full rule is in the "Dialogue accuracy" section of the 00-workflow-and-rules knowledge file.
+If the model mispronounces a name, say so in the next try: "The model says [wrong sound]. The word is [name], pronounced [phonetic]." The full rule is in the "Dialogue accuracy" section of `00-workflow-and-rules.md`.
 
 **Continuity inside one shot.** When the next clip continues the same shot, take the last frame of the previous clip and use it as the first frame of the next. When the next clip cuts to a different framing, use the other anchor still instead.
 
 **B-roll.** Make the talking shots plus 2 or 3 b-roll shots (the thing they are talking about). For b-roll, swap the line above for the object or scene, same "phone-camera, real-time, slight grain" ending.
 
-**One take, three tries.** Generate one output per shot from its start frame. Regenerate only the shots that fail. After three failed tries, change the prompt or the start frame instead of rolling again. Do not ask for the whole video in one prompt. Short separate clips stay consistent. Long single clips drift, warp, and change the face. See the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
+**One take, three tries.** Generate one output per shot from its start frame. Regenerate only the shots that fail. After three failed tries, change the prompt or the start frame instead of rolling again. Do not ask for the whole video in one prompt. Short separate clips stay consistent. Long single clips drift, warp, and change the face. See the "Credits and retries" section of `00-workflow-and-rules.md`.
 
 Do not ask the prompt for any on-screen text. Video models garble it. All captions and text overlays go on in CapCut in the next step.
 
@@ -195,11 +195,11 @@ Do not ask the prompt for any on-screen text. Video models garble it. All captio
 
 1. **Lock the voice.** On Route 1, run each clip's audio through Voice Changer with your persona voice and replace the clip's audio track. Run Whisper on the finished track for word timings.
 2. **Cut to the voice.** Drop your clips on the timeline in order. Cut to a b-roll shot at least every 8 seconds so the viewer is not staring at the face the whole time. Trim each cut to the pace of the audio.
-3. **Captions.** Use word-timed captions, three to five words at a time, in the style of your reference. Keep them off every face and out of the bottom fifth of the 9:16 frame, where the app buttons sit. See the "Captions" section of the 00-workflow-and-rules knowledge file.
-4. **Sound.** Add music low under the voice, ducked during speech, and a small effect on cuts. Use only music you are licensed to use. See the "Audio and licensing" section of the 00-workflow-and-rules knowledge file.
+3. **Captions.** Use word-timed captions, three to five words at a time, in the style of your reference. Keep them off every face and out of the bottom fifth of the 9:16 frame, where the app buttons sit. See the "Captions" section of `00-workflow-and-rules.md`.
+4. **Sound.** Add music low under the voice, ducked during speech, and a small effect on cuts. Use only music you are licensed to use. See the "Audio and licensing" section of `00-workflow-and-rules.md`.
 5. **Match the colour** across clips so they read as one video.
-6. **Set the AI label** on the post. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
-7. **Run the final check** in the "Final check" section of the 00-workflow-and-rules knowledge file, then watch it once in a normal player.
+6. **Set the AI label** on the post. See the "AI disclosure" section of `00-workflow-and-rules.md`.
+7. **Run the final check** in the "Final check" section of `00-workflow-and-rules.md`, then watch it once in a normal player.
 
 ### Step 10: Post natively and repeat
 
@@ -227,7 +227,7 @@ The difference between a video that grows and one that gets scrolled is whether 
 
 ## Going Further (when the basics work)
 
-- **Go cheaper or higher-volume on video** by using Kling or Seedance for bulk b-roll and saving Veo 3.1 or Gemini Omni for the talking and hero shots. Compare current costs in the "Tools and prices" section of the 00-workflow-and-rules knowledge file, because per-second price and plan price differ.
+- **Go cheaper or higher-volume on video** by using Kling or Seedance for bulk b-roll and saving Veo 3.1 or Gemini Omni for the talking and hero shots. Compare current costs in the "Tools and prices" section of `00-workflow-and-rules.md`, because per-second price and plan price differ.
 
 - **Batch and schedule.** Film a week of videos in one sitting. Auto-post with a scheduler (Metricool, Postiz, or Buffer). For full hands-off automation, an n8n flow can chain script to voice to video to caption to post.
 
@@ -262,13 +262,13 @@ The difference between a video that grows and one that gets scrolled is whether 
 - Same face as your other videos, and no stray props in any frame
 - Same voice as your other videos
 - Hook lands in the first 1 to 2 seconds
-- Captions word-timed, in the reference's style, never over a face, nothing in the bottom fifth (the "Captions" section of the 00-workflow-and-rules knowledge file)
-- Music and sound effects come from a source you are licensed to use (the "Audio and licensing" section of the 00-workflow-and-rules knowledge file)
-- AI label set on the post (the "AI disclosure" section of the 00-workflow-and-rules knowledge file)
+- Captions word-timed, in the reference's style, never over a face, nothing in the bottom fifth (the "Captions" section of `00-workflow-and-rules.md`)
+- Music and sound effects come from a source you are licensed to use (the "Audio and licensing" section of `00-workflow-and-rules.md`)
+- AI label set on the post (the "AI disclosure" section of `00-workflow-and-rules.md`)
 - No waxy or warping moments (cut them)
-- Final check done and watched once in a normal player (the "Final check" section of the 00-workflow-and-rules knowledge file)
+- Final check done and watched once in a normal player (the "Final check" section of `00-workflow-and-rules.md`)
 - Posted natively, caption written, ready to reply to comments
 
 ---
 
-Related: the 00-workflow-and-rules knowledge file · the reference-teardown knowledge file · the 02-ai-clone-talking-head knowledge file · the 03-ai-ad-creative knowledge file · the 04-faceless-youtube knowledge file · the 05-launch-videos-and-recording-edits knowledge file
+Related: `00-workflow-and-rules.md` · `reference-teardown.md` · `02-ai-clone-talking-head.md` · `03-ai-ad-creative.md` · `04-faceless-youtube.md` · `05-launch-videos-and-recording-edits.md`

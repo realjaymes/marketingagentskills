@@ -8,7 +8,7 @@ A structured process for creating programmatic videos with Remotion. Follow thes
 
 Before any creative work, identify the brand. Ask the user: **"What brand is this video for?"**
 
-**If the brand has a preset** (see Step 5), use it directly. No further brand questions needed.
+**If the brand is MIA** (see Step 5), use its theme directly. No further brand questions needed.
 
 **If the brand is not listed**, ask the user to provide a brand website URL or brand guidelines document. Extract from the website/guidelines: background color, primary accent, secondary accent, text colors, font family, and theme (light/dark). If no guidelines exist, ask for at minimum: primary color, background color, and font preference.
 
@@ -22,13 +22,13 @@ Gather and lock the following before any creative work begins.
 |-------|-------------|---------|
 | **Purpose** | Why does this video exist? What problem does it solve? | "Explain the Agentic Loop Framework for prospects who land on the homepage" |
 | **Audience** | Who is watching? What do they already know? | "B2B marketing leaders evaluating growth partners" |
-| **Core message** | One sentence. If the viewer remembers one thing, what is it? | "GrowthNode runs a continuous insight-hypothesis-action loop that compounds over time" |
+| **Core message** | One sentence. If the viewer remembers one thing, what is it? | "The product runs a continuous insight-hypothesis-action loop that compounds over time" |
 | **Content type** | What kind of asset is this video promoting? | blog-post, case-study, tool-launch, webinar, etc. |
 | **Distribution channels** | Where will this video live? List all intended placements | Website embed, LinkedIn post, sales deck |
-| **CTA** | What should the viewer do after watching? | Visit growthnode.ai |
+| **CTA** | What should the viewer do after watching? | Visit the product site |
 | **Source assets** | Existing brand components, website sections, design files to reference | `LoopFramework.astro`, brand color palette |
 | **Tone** | Technical, conversational, bold, minimal, playful? | "Minimal, confident, technical but accessible" |
-| **Brand** | Brand identified in Step 0 | FunnelEnvy, Reform, GrowthNode, MIA, or custom |
+| **Brand** | Brand identified in Step 0 | MIA or custom |
 
 ### Brief Template
 
@@ -186,7 +186,7 @@ For each scene, define:
 | # | Name | Time | Copy | Animation | Purpose |
 |---|------|------|------|-----------|---------|
 | 1 | Hook | 0-3.5s | "You have the data." / "You have the tools." / "You're missing **the loop**." | Lines fade up sequentially, 0.7s apart. "the loop" highlighted in accent color. All fade out together | Stop the scroll. Name the tension |
-| 2 | Brand | 3.5-6s | "GrowthNode" / "AI Native Growth Engineers" | Logo springs in with bounce. Description fades in below | Brand identification |
+| 2 | Brand | 3.5-6s | "Product name" / one-line descriptor | Logo springs in with bounce. Description fades in below | Brand identification |
 | ... | ... | ... | ... | ... | ... |
 
 ### Timing Guidelines
@@ -212,20 +212,17 @@ Present the complete scene table to the user for approval. Lock copy, timing, an
 
 ## Step 5: Visual Design
 
-### Brand Theme Presets
+### Brand Theme Preset
 
-Use these for known brands. Skip color questions if the brand matches a preset.
+Use this for MIA. Skip color questions when the brand is MIA.
 
 | Brand | Background | Primary Accent | Secondary Accent | Text Primary | Text Muted | Font | Theme |
 |-------|-----------|---------------|-----------------|-------------|-----------|------|-------|
-| FunnelEnvy | `#FFFFFF` / `#1a1a2e` (terminal) | `#3B82F6` (Blue) | `#8B5CF6` (Purple) | `#000000` | `#6B7280` | Inter, system | Light |
-| Reform | `#FFFFFF` / `#1a1a2e` (terminal) | `#48EC80` (Green) | `#EDE630` (Yellow) | `#000000` | `#6B7280` | Inter, system | Light |
-| GrowthNode | `#0f0a1a` (all scenes) | `#8B5CF6` (Purple) | `#3B82F6` (Blue) | `#FFFFFF` | `#a1a1aa` | Inter, system | Dark |
 | MIA | `#F7F4FA` / `#1c1422` (dark) | `#F1DE71` (Yellow) | `#7184F1` (Purple) | `#1c1422` / `#f7f4fa` (dark) | `rgba(28,20,34,0.62)` | system-ui, -apple-system, Segoe UI | Light |
 
 **MIA accent palette**: Blue `#71C4F1`, Purple `#7184F1`, Pink `#F171C4`, Green `#71F19E`
 
-**Custom brands**: If the brand is not listed above, extract colors from the brand website or guidelines provided in Step 0. Fill the same roles below.
+**Custom brands**: Colors come from the product's own screens or the brand kit. Extract them from the brand website or guidelines provided in Step 0. Fill the same roles below.
 
 ### Color Palette
 
@@ -413,7 +410,7 @@ Generate an output document for every completed video. This serves as the refere
 ## Process Summary
 
 ```
-Step 0: Brand Identification      → Identify brand, use preset or extract from website/guidelines
+Step 0: Brand Identification      → Identify brand, use the MIA theme or extract from website/guidelines
 Step 1: Creative Brief            → Lock purpose, audience, message, content type, channels, CTA, brand
 Step 2: Concept Selection       → Analyze brief, select 3-5 concepts from catalog, optimize for cold audience
 Step 3: Format and Specs          → Resolve dimensions, duration, fps from brief + selected variant

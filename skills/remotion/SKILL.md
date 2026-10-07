@@ -1,6 +1,6 @@
 ---
 name: remotion
-version: 4.0.0
+version: 4.1.0
 description: Remotion video creation in React - dynamic concept catalog for video briefs, cold audience optimization, and technical best practices
 metadata:
   tags: remotion, video, react, animation, composition, programmatic-video
@@ -25,7 +25,7 @@ For the full process document with templates and decision matrices, read [refere
 
 Before any creative work, identify the brand. Ask the user: **"What brand is this video for?"**
 
-**If the brand has a preset below**, use it directly. No further brand questions needed.
+**If the brand is MIA**, use the MIA theme below. No further brand questions needed.
 
 **If the brand is not listed**, ask the user to provide a brand website URL or brand guidelines. Extract: background color, primary accent, secondary accent, text colors, font family, and theme (light/dark). If no guidelines exist, ask for at minimum: primary color, background color, and font preference.
 
@@ -150,18 +150,15 @@ Lock before implementation:
 - Text primary, Text secondary, Text tertiary
 - Border/divider
 
-**Brand theme presets** (use for known brands, skip color questions):
+**Brand theme preset** (MIA only, skip color questions):
 
 | Brand | Background | Primary Accent | Secondary Accent | Text Primary | Text Muted | Font | Theme |
 |-------|-----------|---------------|-----------------|-------------|-----------|------|-------|
-| FunnelEnvy | `#FFFFFF` / `#1a1a2e` (terminal) | `#3B82F6` (Blue) | `#8B5CF6` (Purple) | `#000000` | `#6B7280` | Inter, system | Light |
-| Reform | `#FFFFFF` / `#1a1a2e` (terminal) | `#48EC80` (Green) | `#EDE630` (Yellow) | `#000000` | `#6B7280` | Inter, system | Light |
-| GrowthNode | `#0f0a1a` (all scenes) | `#8B5CF6` (Purple) | `#3B82F6` (Blue) | `#FFFFFF` | `#a1a1aa` | Inter, system | Dark |
 | MIA | `#F7F4FA` / `#1c1422` (dark) | `#F1DE71` (Yellow) | `#7184F1` (Purple) | `#1c1422` / `#f7f4fa` (dark) | `rgba(28,20,34,0.62)` | system-ui, -apple-system, Segoe UI | Light |
 
 **MIA accent palette**: Blue `#71C4F1`, Purple `#7184F1`, Pink `#F171C4`, Green `#71F19E`
 
-**Custom brands**: If the brand is not listed above, define colors from the brand website or guidelines provided in Step 0. Fill the same roles: background, primary accent, secondary accent, text primary, text muted, font, theme.
+**Custom brands**: Colors come from the product's own screens or the brand kit, never from guesses. Define them from the brand website or guidelines provided in Step 0. Fill the same roles: background, primary accent, secondary accent, text primary, text muted, font, theme.
 
 **Typography**: Font family, weight hierarchy, sizes at target resolution.
 
@@ -263,3 +260,18 @@ These apply to all Remotion code. Violations will produce incorrect output.
 4. **Time in seconds**: multiply by `fps` from `useVideoConfig()` to get frames
 5. **No third-party animation libraries** driving motion (disable their animations, use `useCurrentFrame()` instead)
 6. **Every concept must be self-explanatory.** A viewer scrolling with zero context should understand the value from the video alone. No scene should depend on external knowledge. Copy must carry the full message independently. Always assume a cold audience unless the brief says otherwise.
+
+---
+
+## Production Rules
+
+These govern any voiced or reference-matched video. Follow the full launch-video and recording-edit workflow if one is provided.
+
+1. **Voice track first.** Record or generate the voice before building scenes: Google Cloud Text-to-Speech Studio voices, paid ElevenLabs, or a recording of the presenter. Scene timing follows the voice, not the other way round.
+2. **Word-timed captions from Whisper.** Transcribe the voice track to a `words.json` (see [rules/transcribe-captions.md](rules/transcribe-captions.md) and [rules/display-captions.md](rules/display-captions.md)) and time every caption word by word. The caption style copies the reference video. These safety rules always apply on top: never place captions over a face, and keep the bottom fifth of a 9:16 frame empty.
+3. **Music ducked under voice.** Music sits well under the voice and drops further whenever the voice speaks.
+4. **Sound effects on cuts.** Each hard cut and key on-screen change gets a sound effect.
+5. **No fade transitions** unless the reference uses them. Match the reference's cut and transition style.
+6. **Loudness about -16 LUFS** for the final mix.
+7. **Colors from the product screens or the brand kit.** This is a hard rule. Never invent a palette.
+8. **Style template pattern.** Measure a reference once (cut rhythm, caption look, motion, sound placement) and write it as a style spec. Turn that spec into a reusable composition with the values as props, so the next video in the same style is a new script and new screens in the same composition.

@@ -4,11 +4,11 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 
 > Mindset: lip sync is mostly solved now, so a flat robot voice is the biggest tell that exposes an AI clone. Fix the voice first and the face follows.
 
-**Tier:** this playbook runs the performance tier of the "Workflow" section of the 00-workflow-and-rules knowledge file for a clone of you. You build the clone's anchors and voice once (Do This Once), then run the six steps on every video. Tool prices live in the "Tools and prices" section of the 00-workflow-and-rules knowledge file.
+**Tier:** this playbook runs the performance tier of the "Workflow" section of `00-workflow-and-rules.md` for a clone of you. You build the clone's anchors and voice once (Do This Once), then run the six steps on every video. Tool prices live in the "Tools and prices" section of `00-workflow-and-rules.md`.
 
 | Workflow step | Where it happens here |
 |---|---|
-| 1 Reference brief | Step 7, a reference-first path using the the reference-teardown knowledge file |
+| 1 Reference brief | Step 7, a reference-first path using the `reference-teardown.md` |
 | 2 Script | Step 7, a beat table with a word budget per beat. You approve it |
 | 3 Scenes and anchors | Steps 4 and 5 build the anchors once. Step 8 makes start frames for new setups and a contact sheet |
 | 4 Voice | Step 2 clones the voice. Step 10 locks it onto the clips |
@@ -26,7 +26,7 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 
 **End result:** an AI version of you that says any script on camera. You write the script and a clip comes out the other side.
 
-Planning notes (reference, script, shot table) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of the 00-workflow-and-rules knowledge file.
+Planning notes (reference, script, shot table) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of `00-workflow-and-rules.md`.
 
 ---
 
@@ -105,7 +105,7 @@ ELEVENLABS VOICE SETTINGS (for natural delivery):
   are rolling out, so confirm in the app which model your clone supports.
 ```
 
-This is the single most important step in the whole playbook. The voice carries the realism. Voice Changer draws from the same credit pool as text to speech and costs far more per minute, so plan credits for it. Check the rate in the "Tools and prices" section of the 00-workflow-and-rules knowledge file.
+This is the single most important step in the whole playbook. The voice carries the realism. Voice Changer draws from the same credit pool as text to speech and costs far more per minute, so plan credits for it. Check the rate in the "Tools and prices" section of `00-workflow-and-rules.md`.
 
 ### Step 3: Take or choose your face photo
 
@@ -173,7 +173,7 @@ Once your voice and anchors exist, every video is these steps.
 
 ### Step 7: Start from a reference, then write the beat table
 
-If a proven talking-head video exists for your topic, run the the reference-teardown knowledge file on it first. You get the hook move, the beats with word counts and the caption style. Copy the structure and timing. Never copy the words, footage, music or claims. For a quick post with no reference, write from your own notes.
+If a proven talking-head video exists for your topic, run the `reference-teardown.md` on it first. You get the hook move, the beats with word counts and the caption style. Copy the structure and timing. Never copy the words, footage, music or claims. For a quick post with no reference, write from your own notes.
 
 Paste your script or the teardown's beats into ChatGPT:
 
@@ -211,7 +211,7 @@ The person says: "[THE LINE FOR THIS BEAT]"
 Ensure that each word is pronounced correctly and you do not add any extra words.
 ```
 
-**Dialogue accuracy.** Flow's biggest weakness is getting spoken words wrong, and every redo costs credits. The line above fixes most of it, so keep it in every speaking prompt. If the model mispronounces a name, say so in the next try: "The model says [wrong sound]. The word is [name], pronounced [phonetic]." See the "Dialogue accuracy" section of the 00-workflow-and-rules knowledge file.
+**Dialogue accuracy.** Flow's biggest weakness is getting spoken words wrong, and every redo costs credits. The line above fixes most of it, so keep it in every speaking prompt. If the model mispronounces a name, say so in the next try: "The model says [wrong sound]. The word is [name], pronounced [phonetic]." See the "Dialogue accuracy" section of `00-workflow-and-rules.md`.
 
 **Match the clip length to the line.** One line per clip. As a starting estimate, a short line of about 8 to 10 words fits 4 seconds and a long line fits 8. A clip that is too short fails or cuts the line off. A clip that is too long makes the model invent filler actions you have to cut away. Merge two neighbouring lines into one clip only when they share a framing. The talking-face ceiling is about 8 seconds, so the 10 second option stays off faces. Test one short clip before you generate the whole video.
 
@@ -219,7 +219,7 @@ Ensure that each word is pronounced correctly and you do not add any extra words
 
 **One thing per generation.** A prompt that asks for several actions confuses the model. Keep busy scenes simple.
 
-**One take, three tries.** Regenerate only the clips that fail. After three failed tries, change the prompt or the start frame. After two failed fixes in Flow, hand the bad outputs to the assistant and ask it to rewrite the prompt in the tool's language. Change one thing per fix. See the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
+**One take, three tries.** Regenerate only the clips that fail. After three failed tries, change the prompt or the start frame. After two failed fixes in Flow, hand the bad outputs to the assistant and ask it to rewrite the prompt in the tool's language. Change one thing per fix. See the "Credits and retries" section of `00-workflow-and-rules.md`.
 
 Use Flow's scene builder to sequence the clips into one continuous scene, and export. Name the clips `clip-1`, `clip-2` and so on.
 
@@ -240,14 +240,14 @@ Skip this step if you used HeyGen, because it already spoke in your cloned voice
 Drop the clip (or the assembled scene) on the CapCut timeline in order. First replace the audio: mute or delete the original voice track, drop in the Voice Changer track, and nudge it into alignment. Then do the moves that hide the weak spots.
 
 - **Cut away** to b-roll at least every 8 seconds so the viewer is not staring at the face the whole time. This is also where you hide any moment where the lip sync looks slightly off: cut to a supporting visual and let your voice carry.
-- **Captions.** Use word-timed captions, three to five words at a time, in the style of your reference. Keep them off your face and out of the bottom fifth of the 9:16 frame. Add any on-screen text here and never in the generation prompt. See the "Captions" section of the 00-workflow-and-rules knowledge file.
-- **Sound.** Keep music low and ducked under speech, with a small effect on cuts. Use only licensed music. See the "Audio and licensing" section of the 00-workflow-and-rules knowledge file.
+- **Captions.** Use word-timed captions, three to five words at a time, in the style of your reference. Keep them off your face and out of the bottom fifth of the 9:16 frame. Add any on-screen text here and never in the generation prompt. See the "Captions" section of `00-workflow-and-rules.md`.
+- **Sound.** Keep music low and ducked under speech, with a small effect on cuts. Use only licensed music. See the "Audio and licensing" section of `00-workflow-and-rules.md`.
 - **Texture and colour.** Add a light grain layer to re-inject texture, since AI renders look a bit plastic. Colour grade the whole thing. It is the single biggest fix for the synthetic look.
-- **Run the final check** in the "Final check" section of the 00-workflow-and-rules knowledge file and watch the export once in a normal player.
+- **Run the final check** in the "Final check" section of `00-workflow-and-rules.md` and watch the export once in a normal player.
 
 ### Step 12: Publish
 
-Post natively in the app you are publishing to (do not post an obvious cross-post). Lead the caption with your hook. Set the AI label where the platform asks (see the "AI disclosure" section of the 00-workflow-and-rules knowledge file and the ethics section below). Then go back to Step 7 for the next video.
+Post natively in the app you are publishing to (do not post an obvious cross-post). Lead the caption with your hook. Set the AI label where the platform asks (see the "AI disclosure" section of `00-workflow-and-rules.md` and the ethics section below). Then go back to Step 7 for the next video.
 
 ---
 
@@ -279,7 +279,7 @@ The clone passes or fails on these few moves.
 
 - **Reuse the prompt that worked.** In Flow, "Reuse prompt" shows the original prompt of a clip that worked. Once a prompt works, only the anchor still and the line change. After the first slow video, turn the run into a template or skill.
 
-- **Repurpose one talk into many.** Take a recorded talk or podcast and edit it into short clips with a transcript-first cut. That is the job of the 05-launch-videos-and-recording-edits knowledge file. Regenerating the talk through your clone is a different job, and it needs your consent on the script and the AI label.
+- **Repurpose one talk into many.** Take a recorded talk or podcast and edit it into short clips with a transcript-first cut. That is the job of `05-launch-videos-and-recording-edits.md`. Regenerating the talk through your clone is a different job, and it needs your consent on the script and the AI label.
 
 - **Automate it.** An n8n flow can chain script to ElevenLabs voice to HeyGen clip to caption to post. Keep a human approval gate before publishing, since clone content carries likeness and disclosure risk.
 
@@ -297,7 +297,7 @@ Four different things get called an AI clone. Pick the one that matches what you
 
 - **Full digital twin.** Face plus voice plus a knowledge base that answers questions and talks back live (tools like Delphi). This is an interactive product and has no content pipeline. Use when you want an always-on version of you that coaches and answers around the clock.
 
-- **Scene-insertion avatar (Google Flow).** A face-scan avatar you drop into any generated scene. It does not turn a script into a talking head. It is fast for putting yourself in places and slow for delivering a script. It sits behind a voice verification step, so check the current flow in Flow before you plan around it. This playbook's pipeline uses the anchor stills from Steps 4 and 5 instead. See the appendix in the 00-workflow-and-rules knowledge file.
+- **Scene-insertion avatar (Google Flow).** A face-scan avatar you drop into any generated scene. It does not turn a script into a talking head. It is fast for putting yourself in places and slow for delivering a script. It sits behind a voice verification step, so check the current flow in Flow before you plan around it. This playbook's pipeline uses the anchor stills from Steps 4 and 5 instead. See the appendix in `00-workflow-and-rules.md`.
 
 ---
 
@@ -305,7 +305,7 @@ Four different things get called an AI clone. Pick the one that matches what you
 
 - **Consent.** Clone yourself freely. To clone anyone else (a spokesperson, a partner), get written consent first, covering what it is used for, where, and for how long. Never imply a real person endorsed something without their consent.
 
-- **Platform AI labeling.** YouTube, TikTok, and Meta all require disclosure of realistic AI media. Set the AI label when you post, and consider a small burned-in "AI-generated" label in a top corner. Undisclosed realistic AI can get reduced in reach or removed. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
+- **Platform AI labeling.** YouTube, TikTok, and Meta all require disclosure of realistic AI media. Set the AI label when you post, and consider a small burned-in "AI-generated" label in a top corner. Undisclosed realistic AI can get reduced in reach or removed. See the "AI disclosure" section of `00-workflow-and-rules.md`.
 
 - **Paid ads.** If a clone runs in a paid ad, conspicuous AI disclosure is legally required (New York synthetic-performer law, effective Jun 9 2026, plus Federal Trade Commission scrutiny). Build the disclosure into the ad as well as the platform toggle.
 
@@ -345,14 +345,14 @@ Four different things get called an AI clone. Pick the one that matches what you
 - Talking-face clips about 8 seconds or less, then a cut
 - B-roll cutaways at least every 8 seconds, weak lip sync hidden under them
 - Real footage mixed into the b-roll
-- Captions word-timed, in the reference's style, never over a face, nothing in the bottom fifth (the "Captions" section of the 00-workflow-and-rules knowledge file)
-- Music and effects licensed (the "Audio and licensing" section of the 00-workflow-and-rules knowledge file)
+- Captions word-timed, in the reference's style, never over a face, nothing in the bottom fifth (the "Captions" section of `00-workflow-and-rules.md`)
+- Music and effects licensed (the "Audio and licensing" section of `00-workflow-and-rules.md`)
 - Light grain and color grade applied
-- AI label set on the platform (the "AI disclosure" section of the 00-workflow-and-rules knowledge file)
+- AI label set on the platform (the "AI disclosure" section of `00-workflow-and-rules.md`)
 - Consent on file if you cloned anyone but yourself
-- Final check done and watched once in a normal player (the "Final check" section of the 00-workflow-and-rules knowledge file)
+- Final check done and watched once in a normal player (the "Final check" section of `00-workflow-and-rules.md`)
 - Posted natively, caption leads with the hook
 
 ---
 
-Related: the 00-workflow-and-rules knowledge file · the reference-teardown knowledge file · the 01-faceless-influencer knowledge file · the 03-ai-ad-creative knowledge file · the 04-faceless-youtube knowledge file · the 05-launch-videos-and-recording-edits knowledge file
+Related: `00-workflow-and-rules.md` · `reference-teardown.md` · `01-faceless-influencer.md` · `03-ai-ad-creative.md` · `04-faceless-youtube.md` · `05-launch-videos-and-recording-edits.md`

@@ -813,3 +813,4 @@ node tools/clis/google-ads.js reports get --type ad_performance --date-range las
 - **ab-test-setup**: For structuring creative tests with statistical rigor
 - **marketing-psychology**: For psychological principles behind high-performing creative
 - **copy-editing**: For polishing ad copy before launch
+- **ai-content-generation**: For AI video generation (UGC, product video, talking heads). Remotion builds run through `remotion`

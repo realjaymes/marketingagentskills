@@ -1,12 +1,13 @@
 ---
 name: agent-skill-builder
 description: "Quickly creates new Claude Code skills or translates ChatGPT projects into Claude Code skills. Handles skill scaffolding, frontmatter, directory structure, and ChatGPT-to-Claude migration. Use when the user wants to 'create a skill,' 'make a new slash command,' 'convert a ChatGPT project,' 'translate a GPT to Claude,' or 'migrate prompts to Claude Code.' For full eval/testing/benchmarking workflows, use skill-creator instead."
+version: "1.1.0"
 argument-hint: "[new|translate] [skill-name or ChatGPT-project-name]"
 ---
 
 # Agent Skill Builder
 
-Quickly scaffolds new Claude Code skills or translates ChatGPT projects into Claude Code format. This skill focuses on fast creation and correct structure. For iterative testing, benchmarking, and description optimization, use `/skill-creator`.
+Quickly scaffolds new Claude Code skills or translates ChatGPT projects into Claude Code format. This skill focuses on fast creation and correct structure. For iterative testing, benchmarking, and description optimization, use Anthropic's official skill-creator plugin.
 
 ## Two Modes
 
@@ -182,6 +183,23 @@ These come from Anthropic's official skill authoring guide:
 - **No extraneous files.** No README.md, CHANGELOG.md, INSTALLATION_GUIDE.md. Skills contain only what an AI agent needs to do the job.
 - **Forward slashes only.** Use `scripts/helper.py`, never `scripts\helper.py`.
 
+## Prompt Skeleton (every skill and project prompt)
+
+Every skill prompt and every ChatGPT or Claude project prompt uses the same five blocks, in this order:
+
+1. **Goal.** One or two sentences on what the prompt produces and for whom.
+2. **Persona.** Who the agent acts as, and how that person thinks about the work.
+3. **Chat protocol.** How the conversation runs: one question per message, the stage name at the top of every message, a short explanation before each stage, and how to check the result after it.
+4. **Stages.** Numbered stages. Each one ends with a stop point where the agent waits for the user's approval ("go") before the next stage starts.
+5. **Hard rules.** The things the agent never does, written as plain rules.
+
+Two more rules sit inside the skeleton:
+
+- **Capped revision rounds.** Each stage allows one or two rounds of changes, then moves on. State the cap in the stage.
+- **No invention.** The agent never invents facts, data, names or numbers. When something is missing, it marks the gap (for example `[MISSING: price]`) and asks, instead of filling it in.
+
+When a handoff between stages is needed, have each stage write a markdown file the next stage reads.
+
 ## After Creation Checklist
 
 - [ ] SKILL.md created with `name` and `description` in frontmatter
@@ -190,5 +208,6 @@ These come from Anthropic's official skill authoring guide:
 - [ ] Knowledge files converted to Markdown in `references/`
 - [ ] References are one level deep from SKILL.md
 - [ ] Large reference files (>100 lines) have table of contents
+- [ ] Prompt follows the five-block skeleton, with stop points, capped revision rounds and the no-invention rule
 - [ ] Skill tested with `/skill-name` and auto-invocation
 - [ ] No extraneous documentation files

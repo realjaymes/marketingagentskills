@@ -1,21 +1,33 @@
-
-# Faceless YouTube Automation
+# 04 - Faceless YouTube Automation
 
 Build a YouTube channel (long-form videos and shorts) where you are never on camera and AI makes the narration and visuals.
 
 > Mindset: faceless YouTube is information packaging. The AI just makes the assets. The title and the thumbnail carry the video. A perfect AI render under a dead title gets zero views. A plain slideshow under a great title gets a million.
 
+**Tier:** this playbook runs the long-form version of the "Workflow" section of the 00-workflow-and-rules knowledge file. The shot table runs over b-roll and stills, and start frames are needed only for the few generated shots. Tool prices live in the "Tools and prices" section of the 00-workflow-and-rules knowledge file.
+
+| Workflow step | Where it happens here |
+|---|---|
+| 1 Reference brief | Loop Step 1 (topic demand) and Step 3 (the reference-first path using the the reference-teardown knowledge file) |
+| 2 Script | Step 3, a beat table with a word budget per beat. You approve it |
+| 3 Scenes and anchors | Step 5, one row per beat. Start frames only for generated shots |
+| 4 Voice | Step 4, narration first, then Whisper word timings |
+| 5 Shots | Step 6, stills and stock first, AI video for a few beats, three tries at most |
+| 6 Finish and check | Step 7 and the Before You Post list |
+
 **What you need**
 
-| Job | Tool | Cost | Swap options |
-|---|---|---|---|
-| Research + script | ChatGPT (or Claude) | Free or ~$20/mo | Gemini for cited research |
-| Narration | ElevenLabs | ~$22/mo (Creator unlocks voice cloning) | MiniMax, Hume, Speechma (free, no cloning) |
-| Moving visuals | Veo 3 or Kling, plus free stock (Pexels, Pixabay) | Veo via AI Pro; Kling ~$34/mo; stock free | Google Flow (direct Veo), Runway, Luma, Seedance |
-| Thumbnail text | ChatGPT (GPT Image) | ~$20/mo (free tier limited) | Ideogram or Gemini Nano Banana (fallback when ChatGPT falls short), Midjourney + type text in Canva |
-| Edit | CapCut or Premiere | CapCut free; Premiere sub | Descript, DaVinci Resolve |
+| Job | Tool | Notes |
+|---|---|---|
+| Research and script | ChatGPT (or Claude) | Gemini for cited research |
+| Narration | ElevenLabs on a paid plan | Voice cloning needs a plan with Professional Voice Cloning. Speechma and Google Cloud Text to Speech (TTS) are lower-cost options. MiniMax and Hume are swap options |
+| Moving visuals | Gemini Omni or Veo 3.1 in Google Flow, Kling, plus free stock (Pexels, Pixabay) | Runway, Luma, Seedance and Hailuo are swap options |
+| Thumbnail text | ChatGPT Images (GPT Image) | Ideogram or Gemini Nano Banana when ChatGPT falls short, Midjourney plus type text in Canva |
+| Edit | CapCut or Premiere | Descript and DaVinci Resolve also work |
 
 **End result:** a faceless channel publishing 2 to 4 retention-built videos a week.
+
+Planning notes (idea, reference, script, shot table) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of the 00-workflow-and-rules knowledge file.
 
 ---
 
@@ -23,9 +35,9 @@ Build a YouTube channel (long-form videos and shorts) where you are never on cam
 
 You do this part one time. After that you reuse the same niche, voice, and channel on every video.
 
-### Step 1 — Pick a niche and a model
+### Step 1: Pick a niche and a model
 
-Choose one niche you can speak to with some judgment. It needs three things: people are already searching and watching it at volume, advertisers pay well in it (finance, business, tech, software, history, psychology pay far more than entertainment), and you can run 50+ videos without going dry.
+Choose one niche you can speak to with some judgment. It needs three things: people are already searching and watching it at volume, advertisers pay well in it, measured as revenue per thousand views (RPM) (finance, business, tech, software, history, psychology pay far more than entertainment), and you can run 50+ videos without going dry.
 
 Then pick your model:
 
@@ -47,9 +59,9 @@ Constraint: I want high-RPM and low policy risk. Plain language, no hype.
 Output a ranked table, then name the single niche you would start and why.
 ```
 
-### Step 2 — Lock your narrator voice
+### Step 2: Lock your narrator voice
 
-Go to ElevenLabs. Pick a library voice that fits the channel, or clone one (the Creator plan at ~$22/mo unlocks Professional Voice Cloning). Save it as your channel narrator and never switch it casually. Set Stability to Natural or Creative (never Robust, which reads monotone), Similarity high enough to stay on-voice, Style low for documentary reads, Speaker boost on for clones. Save these exact settings as a preset. This same voice on every video is what makes the channel feel like one real thing.
+Go to ElevenLabs on a paid plan. Pick a library voice that fits the channel, or clone one (Professional Voice Cloning needs a higher plan, see the "Tools and prices" section of the 00-workflow-and-rules knowledge file). Save it as your channel narrator and never switch it casually. Set Stability to Natural or Creative (never Robust, which reads monotone), Similarity high enough to stay on-voice, Style low for documentary reads, Speaker boost on for clones. Save these exact settings as a preset. This same voice on every video is what makes the channel feel like one real thing. For a lower-cost narrator, see the options in Step 4.
 
 ---
 
@@ -57,7 +69,7 @@ Go to ElevenLabs. Pick a library voice that fits the channel, or clone one (the 
 
 Once your niche, voice, and channel exist, every video runs through these eight steps in order. The critical rule lives in Step 2: write the title and design the thumbnail before you write a single line of script.
 
-### Step 1 — Research a topic with demand
+### Step 1: Research a topic with demand
 
 Never script a topic you have not validated. Validation means real people are already searching for or watching this, and there is an angle that is not saturated. Open YouTube, type your topic, and read the autocomplete and "people also watch." Sort search results by views and filter to the last month to see what packaging is winning right now. To mine 20 candidates at once, paste this into ChatGPT, Claude, or a cited tool like Perplexity:
 
@@ -77,7 +89,7 @@ low saturation first). Plain language.
 
 Pick one topic where the demand is real and you can take an angle the sidebar has not seen ten times.
 
-### Step 2 — Write the title and design the thumbnail FIRST
+### Step 2: Write the title and design the thumbnail FIRST
 
 This is the most important habit in the whole loop. The title and thumbnail decide whether anyone clicks, and that is about 70% of the outcome. If you cannot produce a title and thumbnail you would click, the topic is not worth scripting. Writing them first commits you to the promise the script then has to deliver.
 
@@ -124,7 +136,9 @@ not cartoonish.
 
 If the text comes out garbled even at high accuracy, generate the image clean and type the text yourself in Canva. Typed text always beats generated text for legibility. Gut-check: in a row of 12 sidebar videos, would yours win the click? Only move on if the answer is yes.
 
-### Step 3 — Write the long-form script
+### Step 3: Write the long-form script
+
+**Reference-first path.** Before you write, find one proven video in your niche with the packaging and retention you want. Run the the reference-teardown knowledge file on it. You get the cold open move, the section order, the re-hook points, the beats with word counts and the pacing. Copy the structure and timing. Never copy the words, footage, music, thumbnail art or claims. Then write your script in the same shape, with each beat within a sensible range of the reference beat's word count and every fact grounded in your own research. Anything you cannot source becomes `[NEED: fact]`. You approve the script before any narration or visuals are generated.
 
 The script controls retention, and retention controls the algorithm. Structure matters more than pretty prose. Three rules: a cold open in the first 15 seconds that states the promise and the stakes (no "hey guys," no intro), a re-hook line every 60 to 90 seconds at each section boundary, and open loops you tease early and pay off later. Paste your verified research in and tell the model to use only those facts (invented stats get videos removed, not just demonetized). Paste this:
 
@@ -157,9 +171,9 @@ After the 5, flag the strongest and the one line that makes it work.
 
 Read the whole script aloud. Anything you stumble on, the narration model will stumble on too. Rewrite it.
 
-### Step 4 — Narrate it in ElevenLabs
+### Step 4: Narrate it (voice first)
 
-Use your locked voice and saved preset (Multilingual v2 for cloned voices, not v3 yet). Punctuation is your delivery control: commas make breath, "..." makes a pause or trail-off, and ONE word in CAPS per line gives a single emphasis beat. Drop occasional spoken connectors in the script where you want delivery to break the metronome:
+Narration comes before the visuals, so every visual is cut to a timed line. Use your locked voice and saved preset, with the same model and settings on every chunk. Punctuation is your delivery control: commas make breath, "..." makes a pause or trail-off, and ONE word in CAPS per line gives a single emphasis beat. Drop occasional spoken connectors in the script where you want delivery to break the metronome:
 
 ```
 So… [pause] here's what nobody tells you. [breathes]
@@ -169,22 +183,29 @@ Look, this is the part that matters.
 
 Do not generate a 1,200-word script in one block. It drifts and glitches. Generate in chunks, one script section or every ~300 to 500 words, using the same voice, model, and settings every time so they stitch together. If one chunk glitches, regenerate only that chunk, not the whole thing.
 
-**Free alternative if you are not cloning a voice.** When you just need clean narration and not your own cloned voice, Speechma (speechma.com) is a 100% free, no-signup browser TTS with 400+ library voices and a commercial license on the output. It clones nothing, so the voice is a library voice, not yours. Use it to ship for free, then move to a cloned ElevenLabs voice once you want a narrator that is uniquely your channel's. A common zero-cost stack is ChatGPT for the script, Speechma for the narration, and CapCut for the edit.
+When the narration is done, run Whisper on the finished track to get word-level timings. The captions and the cut points in Step 7 come from those timings.
 
-### Step 5 — Plan the visuals scene by scene
+**Lower-cost narration.** When you need clean narration and not a cloned voice, two options work:
 
-Before you generate anything, go through the script line by line and answer one question for each beat: what should the viewer SEE right now? A visual that does not earn its place loses retention. Turn the script into a per-beat plan with this prompt:
+- **Speechma** (speechma.com) is a free, no-signup browser text to speech (TTS) tool with a large library of voices. It states that output can be used commercially, but check its terms before client work or a monetized channel. It clones nothing, so the voice is a library voice.
+- **Google Cloud TTS, Studio voice** `en-US-Studio-Q` or `en-US-Studio-O`, with Speech Synthesis Markup Language (SSML) sentence tags and short breaks. It needs a Google Cloud project with billing on. See the setup in the "Ad-safe voice options" section of the 01-faceless-influencer knowledge file. Studio voices are US accents.
+
+Use either to ship cheaply, then move to a cloned ElevenLabs voice once you want a narrator that is uniquely your channel's.
+
+### Step 5: Plan the visuals scene by scene
+
+Before you generate anything, go through the script line by line and answer one question for each beat: what should the viewer SEE right now? A visual that does not earn its place loses retention. The result is your shot table: one row per beat with the line, the timing from Whisper, the visual type (still, stock or generated) and, for generated shots, the start frame. Turn the script into it with this prompt:
 
 ```
 SYSTEM: You convert a finished video script into per-scene generation prompts for AI
-image/video tools (Veo, Kling, Midjourney, Seedance). You write as a director
+image/video tools (Gemini Omni, Veo, Kling, Midjourney, Seedance). You write as a director
 instructing a camera operator and actor, never as someone describing a painting.
 Every prompt follows: [Camera Movement] + [Scene Setup/Setting] + [Subject + Action]
 + [Vibe/Lighting] + [Time of day/Audio]. Push realism: natural/imperfect lighting,
 handheld or subtle motion, candid framing, real texture; avoid plastic, over-
 saturated, symmetrical AI look.
 
-USER: Tool target: [Veo 3.1 / Kling 3.0 / Midjourney V8 / Seedance 2.0].
+USER: Tool target: [Gemini Omni or Veo 3.1 in Flow / Kling 3.0 / Midjourney / Seedance 2.0].
 Aspect ratio: [16:9]. Visual style lock: [paste 1-2 reference descriptors].
 Script: [PASTE SCRIPT WITH BEATS]. For each scene/beat output a row: Scene # |
 Spoken line it covers | Duration | Generation prompt (5-part structure) | Negative
@@ -195,7 +216,7 @@ into every prompt.
 
 The output is your shooting plan: every line of narration mapped to a generation prompt, with a continuity lock so the style stays coherent across the whole video.
 
-### Step 6 — Generate or pull each visual
+### Step 6: Generate or pull each visual
 
 For each beat, make a quick decision. Most documentary and educational video runs on the cheap paths, not on AI video.
 
@@ -213,7 +234,7 @@ extra fingers.
 
 - **Free stock (Pexels, Pixabay).** Real footage of cities, nature, hands, offices, crowds. Free, instant, and more credible than fake AI footage. Mix it in to break the all-AI smoothness that reads as slop.
 
-- **AI video (Veo or Kling).** The most expensive and most slop-prone path. Save it for a few hero or narrative beats. Keep clips 3 to 10 seconds (identity and physics break past ~10 to 15 seconds). Prompt:
+- **AI video (Gemini Omni or Veo 3.1 in Flow, or Kling).** The most expensive and most slop-prone path. Save it for a few hero or narrative beats. Generate each from an approved still as its start frame, one output per shot, and keep clips to 8 seconds or less (identity and physics break on long clips). If a generated shot has a person speaking, add the dialogue accuracy line: "Ensure that each word is pronounced correctly and you do not add any extra words." Most faceless videos have no on-camera speech, so this seldom applies. Regenerate only the clips that fail, three tries at most. See the "Credits and retries" section of the 00-workflow-and-rules knowledge file. Prompt:
 
 ```
 BLOCK 1 SUBJECT+SCENE: [subject with wardrobe/age/texture], [single present-tense
@@ -225,13 +246,15 @@ Negative: morphing, warping, melting, face changes, floating, jelly motion,
 slow-motion, plastic, oversaturated.
 ```
 
-Say "push in" or "dolly in," never "zoom" (zoom produces lens warp). For a longer take, generate sequential clips, each seeded from the end frame of the prior clip. Never ask a video model (Veo, Kling) for on-screen text, it garbles it. Any titles, lower-thirds, or callouts go on in CapCut at Step 7. (This is video only, your thumbnail text at Step 2 is baked in by an image model, GPT Image or Ideogram, which renders text cleanly.)
+Say "push in" or "dolly in," never "zoom" (zoom produces lens warp). For a longer take within one continuous shot, generate sequential clips, each starting from the last frame of the prior clip. A cut to a new framing starts from a new still. Never ask a video model (Gemini Omni, Veo, Kling) for on-screen text, because it garbles it. Any titles, lower-thirds, or callouts go on in CapCut at Step 7. (This is video only, your thumbnail text at Step 2 is baked in by an image model, GPT Image or Ideogram, which renders text cleanly.)
 
-### Step 7 — Edit and assemble
+### Step 7: Edit and assemble
 
-Drop everything on the timeline in CapCut (or Premiere). Lay the narration down first, then cut visuals to it. No clip should sit longer than the line it covers. Change the visual every 4 to 8 seconds. Add a slow Ken Burns push to every still so nothing is truly static. Cut every breath gap and stumble out of the narration. Add an instrumental music bed, kept low under the voice. Burn in captions (CapCut auto-generates, then proofread). The single highest-impact move: apply ONE consistent color grade across every clip, still, and stock shot. That is what makes mixed AI, stock, and stills feel like one deliberate video instead of a pile of generated assets.
+Drop everything on the timeline in CapCut (or Premiere). Lay the narration down first, then cut visuals to it. No clip should sit longer than the line it covers. Change the visual every 4 to 8 seconds. Add a slow Ken Burns push to every still so nothing is truly static. Cut every breath gap and stumble out of the narration. Add an instrumental music bed, kept low and ducked under the voice, with a small effect on the cuts that need one. Use only music you are licensed to use. Tracks from the YouTube Audio Library are cleared for YouTube, but each track has its own terms, and some need credit. Do not reuse them in ads or on other platforms. Log every source. See the "Audio and licensing" section of the 00-workflow-and-rules knowledge file. Burn in word-timed captions from the Whisper timings (CapCut auto-generates, then proofread), in the style of your reference, never over a face. See the "Captions" section of the 00-workflow-and-rules knowledge file. The single highest-impact move: apply ONE consistent color grade across every clip, still, and stock shot. That is what makes mixed AI, stock, and stills feel like one deliberate video instead of a pile of generated assets. Then run the the "Final check" section of the 00-workflow-and-rules knowledge file and watch the export once in a normal player.
 
-### Step 8 — Publish with SEO and repeat
+**Shorts.** A Short is a 9:16 video at 1080 by 1920. Keep captions word-timed, three to five words at a time, and keep everything out of the bottom fifth of the frame, where the app buttons sit. Put the hook in the first 2 seconds. Cut Shorts from the hero moments of your long-form videos.
+
+### Step 8: Publish with search optimization (SEO) and repeat
 
 Upload your custom thumbnail (the one you designed in Step 2), never an auto-generated frame. Then generate the metadata:
 
@@ -247,7 +270,7 @@ at [AUDIENCE], produce:
 Match real search intent. No keyword stuffing, no em-dashes.
 ```
 
-Paste the description, add the timestamped chapters (they boost watch time and surface in search), set an end screen to your most-watched video, and disclose AI honestly per YouTube's labeling rules. Then go back to Step 1 for the next video. Aim for 2 to 4 a week, each one different.
+Paste the description, add the timestamped chapters (they boost watch time and surface in search), set an end screen to your most-watched video, and set YouTube's altered or synthetic content disclosure when the video contains realistic AI-generated scenes or voices. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file. Then go back to Step 1 for the next video. Aim for 2 to 4 a week, each one different.
 
 ---
 
@@ -261,7 +284,7 @@ The fastest way to look machine-made is to chase perfection. Stop maximizing it.
 
 - **Let negative prompts do the work.** Paste these into any documentary visual prompt: `plastic skin, oversmoothed, waxy, 3D render, cartoon, oversaturated, airbrushed`. For video, add: `subject obeys gravity, feet contact the ground, no floating, no morphing, real-time motion, NOT slow motion`.
 
-- **Keep AI clips short and mix in real stock.** Clips 3 to 10 seconds, then cut. Mixing real Pexels footage into AI video breaks the mathematically smooth all-AI motion that flags as slop.
+- **Keep AI clips short and mix in real stock.** Clips of 8 seconds or less, then cut. Mixing real Pexels footage into AI video breaks the mathematically smooth all-AI motion that flags as slop.
 
 - **One consistent color grade across everything.** This is the strongest anti-slop move in the edit. It unifies AI footage, stills, and stock into one look.
 
@@ -273,13 +296,15 @@ The fastest way to look machine-made is to chase perfection. Stop maximizing it.
 
 ## Going Further (when the basics work)
 
-- **Go cheaper on visuals.** Stock plus AI stills with Ken Burns covers about 80% of documentary and educational video at near-zero cost. Reserve Veo and Kling for the few hero beats that need real motion. Seedance and MiniMax Hailuo are the cheapest AI video paths at volume.
+- **Go cheaper on visuals.** Stock plus AI stills with Ken Burns covers about 80% of documentary and educational video at near-zero cost. Reserve Gemini Omni, Veo 3.1 and Kling for the few hero beats that need real motion. Kling and Hailuo are the lower-cost AI video paths at volume. Seedance is not the cheapest route in general, so compare current costs in the "Tools and prices" section of the 00-workflow-and-rules knowledge file.
 
 - **Run a portfolio.** A long-form channel feeding a shorts channel (cut shorts from long-form hero moments), both funneling to a product or email list. Keep topic, title, thumbnail, and final review manual per channel.
 
 - **Automate the repeatable parts only.** A self-hosted n8n pipeline can chain script to narration to visual prompts to assets to render, but put a human-approval gate before publish. Automate production, never judgment.
 
-- **Monetize on a stack, not just ads.** YouTube Partner Program needs 1,000 subscribers plus 4,000 watch hours in 12 months (or 10M Shorts views in 90 days) for the full tier; an early-access tier opens at 500 subs plus 3,000 watch hours. But ad revenue is usually only 30 to 50% of a successful channel. Seed an affiliate link and a small product from video #1 (no follower minimum), layer in AdSense after YPP, add sponsorships and a flagship course later. RPM varies 10x by niche, which is why niche choice in setup weighted advertiser pay.
+- **Monetize on a stack, not just ads.** YouTube Partner Program needs 1,000 subscribers plus 4,000 watch hours in 12 months (or 10M Shorts views in 90 days) for the full tier; an early-access tier opens at 500 subs plus 3,000 watch hours. But ad revenue is usually only 30 to 50% of a successful channel. Seed an affiliate link and a small product from video #1 (no follower minimum), layer in AdSense after you join the Partner Program, add sponsorships and a flagship course later. RPM varies 10x by niche, which is why niche choice in setup weighted advertiser pay.
+
+- **Quick-video path.** Google Vids makes AI clips with Gemini Omni and turns slides into a narrated video (File, then Convert Slides). Use it for a fast draft or to repurpose a deck. Check its current limits and commercial terms in the "Tools and prices" section of the 00-workflow-and-rules knowledge file before you publish its output. See also the 00-workflow-and-rules knowledge file.
 
 ---
 
@@ -297,6 +322,8 @@ The fastest way to look machine-made is to chase perfection. Stop maximizing it.
 
 - Robust stability on narration. It reads monotone. Use Natural or Creative.
 
+- Unlicensed music or a free-plan voice on a monetized channel. Check the licence for every source and log it.
+
 - Inventing stats in the script. False claims get videos removed, not just demonetized. Ground every claim in pasted research.
 
 - Daily templated output. This is the exact "Inauthentic Content" signature that gets channels demonetized and deleted. Publish 2 to 4 differentiated videos a week with original commentary and your own editing.
@@ -305,20 +332,24 @@ The fastest way to look machine-made is to chase perfection. Stop maximizing it.
 
 ## Before You Post
 
-- [ ] Title promises a specific payoff, under ~60 characters
-- [ ] Custom thumbnail uploaded, text legible at sidebar size, adds info the title doesn't
-- [ ] Would win the click in a row of 12 sidebar videos
-- [ ] Cold-open hook in the first 15 seconds, no intro fluff
-- [ ] A re-hook at every section boundary (every 60 to 90s)
-- [ ] Every factual claim grounded in real research (no invented stats)
-- [ ] Channel-locked voice, same settings preset, chunks stitched cleanly
-- [ ] Every beat maps to "what does the viewer see?"
-- [ ] AI clips 3 to 10s, no morphing or warping, real-time pace
-- [ ] One consistent color grade across all clips, stills, and stock
-- [ ] Captions burned in and proofread
-- [ ] Description (hook + keyword first), chapters, and tags set
-- [ ] AI disclosure set honestly
-- [ ] Original commentary and your own editing present (not a raw auto-generated draft)
+- Title promises a specific payoff, under ~60 characters
+- Custom thumbnail uploaded, text legible at sidebar size, adds info the title doesn't
+- Would win the click in a row of 12 sidebar videos
+- Cold-open hook in the first 15 seconds, no intro fluff
+- A re-hook at every section boundary (every 60 to 90s)
+- Every factual claim grounded in real research (no invented stats)
+- Channel-locked voice, same settings preset, chunks stitched cleanly
+- Every beat maps to "what does the viewer see?"
+- AI clips 8 seconds or less, no morphing or warping, real-time pace
+- One consistent color grade across all clips, stills, and stock
+- Captions word-timed from the narration, proofread, in the reference's style, never over a face (the "Captions" section of the 00-workflow-and-rules knowledge file)
+- Shorts only: 9:16, nothing in the bottom fifth of the frame
+- Music and effects come from a source you are licensed to use, and the source is logged (the "Audio and licensing" section of the 00-workflow-and-rules knowledge file)
+- Description (hook + keyword first), chapters, and tags set
+- AI disclosure set where the video has realistic synthetic scenes or voices (the "AI disclosure" section of the 00-workflow-and-rules knowledge file)
+- Final check done and watched once in a normal player (the "Final check" section of the 00-workflow-and-rules knowledge file)
+- Original commentary and your own editing present (not a raw auto-generated draft)
 
 ---
 
+Related: the 00-workflow-and-rules knowledge file · the reference-teardown knowledge file · the 01-faceless-influencer knowledge file · the 02-ai-clone-talking-head knowledge file · the 03-ai-ad-creative knowledge file · the 05-launch-videos-and-recording-edits knowledge file

@@ -4,7 +4,7 @@ Make paid ad creative with AI at volume: user-generated content (UGC) style acto
 
 > Mindset: one perfect ad is a guess. The job is to ship ten genuinely different ads (different hooks, different angles, different formats) so the auction picks the winner for you. The UGC ones have to look amateur and candid.
 
-**Tier:** this playbook runs the performance ad tier of the "Workflow" section of the 00-workflow-and-rules knowledge file. Variants are the main payoff, so step 6 of the workflow is where most of the value sits. Tool prices live in the "Tools and prices" section of the 00-workflow-and-rules knowledge file.
+**Tier:** this playbook runs the performance ad tier of the "Workflow" section of `00-workflow-and-rules.md`. Variants are the main payoff, so step 6 of the workflow is where most of the value sits. Tool prices live in the "Tools and prices" section of `00-workflow-and-rules.md`.
 
 | Workflow step | Where it happens here |
 |---|---|
@@ -28,7 +28,7 @@ Make paid ad creative with AI at volume: user-generated content (UGC) style acto
 
 **End result:** 10 to 30 distinct ad cuts per test round, named and exported to spec, ready to hand to a platform playbook.
 
-Planning notes (reference, script, shot table, naming log) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of the 00-workflow-and-rules knowledge file.
+Planning notes (reference, script, shot table, naming log) live in your notes. Clips, audio and renders live in a linked work folder outside it. See the "Folders and files" section of `00-workflow-and-rules.md`.
 
 ---
 
@@ -36,7 +36,7 @@ Planning notes (reference, script, shot table, naming log) live in your notes. C
 
 You do this part once per offer, then reuse it on every ad. A thin brief is why most AI ads fail. If you do not give the tool the real specifics, it invents fake ones, and invented specifics convert worse than honest vagueness.
 
-Capture five things: the offer (exact product, price, the one action you want), the audience (who they are and their real words for the pain), an angle bank (5 to 10 different ways into the problem), proof (specific numbers, results, screenshots, testimonials), and the platform spec (Meta or TikTok, ratio, duration). Add a sixth for software or branded products: the brand kit or the product's own screens. Every colour in the ad comes from there. See the "Brand colours" section of the 00-workflow-and-rules knowledge file.
+Capture five things: the offer (exact product, price, the one action you want), the audience (who they are and their real words for the pain), an angle bank (5 to 10 different ways into the problem), proof (specific numbers, results, screenshots, testimonials), and the platform spec (Meta or TikTok, ratio, duration). Add a sixth for software or branded products: the brand kit or the product's own screens. Every colour in the ad comes from there. See the "Brand colours" section of `00-workflow-and-rules.md`.
 
 For audience phrasing, do not guess. Paste in real comments, direct messages, and reviews. The single most valuable input is the audience's own words for their problem.
 
@@ -71,7 +71,7 @@ Once the brief exists, every ad runs through these six steps.
 
 ### Step 1: Pick a reference, write the hook and the script
 
-**Reference-first path.** If a proven ad already does this job, start there. Run the the reference-teardown knowledge file on it. You get the shot table, the exact words, the hook move, the beats with word counts, the caption style and the sound. Then write your script beat for beat in the same shape, within 5 words of each reference beat. Copy structure and timing. Never copy the words, people, footage, music, brand marks or claims. If you have a swipe folder, choose proven ads first, then check what they lack (a call to action (CTA), the brand). Use the hook generator below to fill the gaps. With no reference, use the brief and the generator alone.
+**Reference-first path.** If a proven ad already does this job, start there. Run the `reference-teardown.md` on it. You get the shot table, the exact words, the hook move, the beats with word counts, the caption style and the sound. Then write your script beat for beat in the same shape, within 5 words of each reference beat. Copy structure and timing. Never copy the words, people, footage, music, brand marks or claims. If you have a swipe folder, choose proven ads first, then check what they lack (a call to action (CTA), the brand). Use the hook generator below to fill the gaps. With no reference, use the brief and the generator alone.
 
 The hook is the ad. If the first 1 to 2 seconds do not stop the scroll, nothing after it matters. Write the hook first, lock the best one, then build the script under it.
 
@@ -151,7 +151,7 @@ The mocap-trained tools (Arcads especially) make the face and lip-sync look real
 
 - **A peer of the viewer.** Pick an actor who looks like the audience. Mismatched polish reads as a paid actor instantly.
 
-**Compliance rule for UGC.** An AI creator never poses as a real customer giving a testimonial. No first-person "I used this and it changed my life" lines from a person who does not exist, and no invented reviews, results or names. Use an AI presenter for explainers, demos and claims you can stand behind. Real customer words come from real customers, with their permission, as their own video or quoted text. Every ad with an AI actor carries the AI label, and a burned-in "AI-generated" tag in a top corner is the simplest way to do it. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
+**Compliance rule for UGC.** An AI creator never poses as a real customer giving a testimonial. No first-person "I used this and it changed my life" lines from a person who does not exist, and no invented reviews, results or names. Use an AI presenter for explainers, demos and claims you can stand behind. Real customer words come from real customers, with their permission, as their own video or quoted text. Every ad with an AI actor carries the AI label, and a burned-in "AI-generated" tag in a top corner is the simplest way to do it. See the "AI disclosure" section of `00-workflow-and-rules.md`.
 
 **Limits to plan around.** Product labels and hands drift. Whenever the product must be readable, or fingers wrap around it, cut away to real product footage for the close-up. Lip sync slips on long lines, so keep each line under about 8 seconds and each face take to about 8 seconds, then cut.
 
@@ -180,7 +180,7 @@ Keep each face take to about 8 seconds before a cutaway.
 
 When you want your own consistent presenter, a built faceless persona or your own clone, delivering the ad instead of a stock Arcads actor, run the same character-to-video pipeline the clone playbook uses, driven by the ad script from Step 1.
 
-1. **Build or reuse the presenter and the anchors.** Build a faceless character (see the 01-faceless-influencer knowledge file) or clone yourself (see the 02-ai-clone-talking-head knowledge file). Lock the face with the multi-angle mashup and a reusable JavaScript Object Notation (JSON) prompt. Make the two-image anchor once: a close-up, then a wide generated with the close-up as its reference, both 9:16 with no text. Check both for stray props. Attach the right still to every clip, and tell the model "keep every other thing consistent" when you vary one detail.
+1. **Build or reuse the presenter and the anchors.** Build a faceless character (see `01-faceless-influencer.md`) or clone yourself (see `02-ai-clone-talking-head.md`). Lock the face with the multi-angle mashup and a reusable JavaScript Object Notation (JSON) prompt. Make the two-image anchor once: a close-up, then a wide generated with the close-up as its reference, both 9:16 with no text. Check both for stray props. Attach the right still to every clip, and tell the model "keep every other thing consistent" when you vary one detail.
 
 2. **Set the scene, then turn the script into a shot table.** Decide the environment (a room, a podcast desk, a stage, outdoors, a studio) and lock the outfit, background, camera angle, lighting and style. Paste:
 
@@ -205,7 +205,7 @@ Platform: [Meta/TikTok]. Ratio: [9:16 / 4:5 / 1:1].
 
 3. **Make the start-frame contact sheet.** Generate one start still per shot from the anchors and view them together. Check that the face, outfit, room and props hold from shot to shot, and that no stray prop has appeared. You approve the set before you pay for video.
 
-4. **Generate each shot in Flow, with the model speaking.** Use Gemini Omni for most talking shots, or Veo 3.1 for its look or 4K. One output per shot, from its start frame. The prompt carries the exact line and the dialogue accuracy line, and the clip length matches the line: about 4 seconds for a short line, up to 8 for a long one, never the 10 second option on a face. Too short cuts the line. Too long invents filler. If the model mispronounces the brand name, say so in the next try and give the phonetic. When a shot continues the same framing, use the last frame of the previous clip as the first frame of the next. When it cuts to a new framing, start from the other anchor still. Regenerate only the shots that fail, three tries at most. See the "Dialogue accuracy" section of the 00-workflow-and-rules knowledge file and the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
+4. **Generate each shot in Flow, with the model speaking.** Use Gemini Omni for most talking shots, or Veo 3.1 for its look or 4K. One output per shot, from its start frame. The prompt carries the exact line and the dialogue accuracy line, and the clip length matches the line: about 4 seconds for a short line, up to 8 for a long one, never the 10 second option on a face. Too short cuts the line. Too long invents filler. If the model mispronounces the brand name, say so in the next try and give the phonetic. When a shot continues the same framing, use the last frame of the previous clip as the first frame of the next. When it cuts to a new framing, start from the other anchor still. Regenerate only the shots that fail, three tries at most. See the "Dialogue accuracy" section of `00-workflow-and-rules.md` and the "Credits and retries" section of `00-workflow-and-rules.md`.
 
 5. **Lock one voice.** The model's native voice differs from clip to clip. For a clone, run every clip's audio through ElevenLabs Voice Changer with your cloned voice. For a built persona, pick one paid ElevenLabs voice and run every clip through Voice Changer with it. Voice Changer keeps the timing, so the mouth still matches.
 
@@ -304,10 +304,10 @@ Name every cut consistently, like `tiktok_9x16_speed_resultfirst_ada_v03`. When 
 
 Drop the clips into CapCut in order, lay the voiceover underneath, and cut to a b-roll or product shot at least every 8 seconds. Then finish in this order:
 
-1. **Captions.** Most paid impressions play muted. Use word-timed captions, three to five words at a time, in the reference's style, never over a face. Keep the hook and CTA inside the safe zone. See the "Captions" section of the 00-workflow-and-rules knowledge file.
-2. **Sound.** Add music ducked under the voice and a small effect on cuts. Ad audio must be licensed for ads. Do not use the YouTube Audio Library in ads, use a source whose licence covers online ads, and log each source. See the "Audio and licensing" section of the 00-workflow-and-rules knowledge file.
-3. **Colour.** Match colour across shots. Brand colours come from the brand kit or the product's screens. See the "Brand colours" section of the 00-workflow-and-rules knowledge file.
-4. **Label.** Add the AI-generated label where an AI actor or presenter appears. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
+1. **Captions.** Most paid impressions play muted. Use word-timed captions, three to five words at a time, in the reference's style, never over a face. Keep the hook and CTA inside the safe zone. See the "Captions" section of `00-workflow-and-rules.md`.
+2. **Sound.** Add music ducked under the voice and a small effect on cuts. Ad audio must be licensed for ads. Do not use the YouTube Audio Library in ads, use a source whose licence covers online ads, and log each source. See the "Audio and licensing" section of `00-workflow-and-rules.md`.
+3. **Colour.** Match colour across shots. Brand colours come from the brand kit or the product's screens. See the "Brand colours" section of `00-workflow-and-rules.md`.
+4. **Label.** Add the AI-generated label where an AI actor or presenter appears. See the "AI disclosure" section of `00-workflow-and-rules.md`.
 5. **Export to the right spec per placement.**
 
 | Spec | Meta (Feed/Reels) | TikTok | YouTube Shorts |
@@ -318,7 +318,7 @@ Drop the clips into CapCut in order, lay the voiceover underneath, and cut to a 
 | Captions | Burn in | Burn in, native-style | Burn in |
 | Safe zone | Keep hook + CTA clear of bottom ~20% | Key text in middle 60% | Central safe zone |
 
-Keep the hook line and the CTA inside the central safe zone so the platform's buttons and text never cover them. Export the ratios you are actually buying, not one size for everything. Then run the the "Final check" section of the 00-workflow-and-rules knowledge file.
+Keep the hook line and the CTA inside the central safe zone so the platform's buttons and text never cover them. Export the ratios you are actually buying, not one size for everything. Then run the the "Final check" section of `00-workflow-and-rules.md`.
 
 ### Step 6: Test and iterate
 
@@ -356,13 +356,13 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 
 ## Going Further (when the basics work)
 
-- **Go cheaper at volume.** Kling and Seedance are the usual volume routes for UGC and product b-roll. Per-second price and plan price differ, so compare current costs in the "Tools and prices" section of the 00-workflow-and-rules knowledge file before you commit. Save Veo 3.1 or Gemini Omni for the talking and hero shots.
+- **Go cheaper at volume.** Kling and Seedance are the usual volume routes for UGC and product b-roll. Per-second price and plan price differ, so compare current costs in the "Tools and prices" section of `00-workflow-and-rules.md` before you commit. Save Veo 3.1 or Gemini Omni for the talking and hero shots.
 
 - **Batch-render the matrix.** Once a format works, tools like Creatomate or JSON2Video can render the whole variation matrix off a template instead of cutting each by hand.
 
 - **Insert your real product into AI scenes.** Pika (Pikadditions) drops a real product clip into AI footage, which is the most reliable way to keep the product exact in motion. Check that your plan's licence covers ad use before you rely on it.
 
-- **Build a recurring spokesperson.** For founder or expertise-led offers, a consistent presenter (clone or stock avatar) builds authority over time. See the 02-ai-clone-talking-head knowledge file.
+- **Build a recurring spokesperson.** For founder or expertise-led offers, a consistent presenter (clone or stock avatar) builds authority over time. See `02-ai-clone-talking-head.md`.
 
 - **Turn a working run into a template.** After the first slow ad, keep the prompt that worked. Next time only the start frame and the line change.
 
@@ -404,7 +404,7 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 
 - **Avoid the over-polished AI look.** It reads as a brand faking authenticity, and that trust collapse tanks conversion even when the ad is approved.
 
-- **Follow AI-disclosure rules.** Meta and TikTok auto-label realistic AI, and paid ads using a synthetic performer (an AI actor or avatar) increasingly need conspicuous disclosure. Set the platform label and burn a small AI-generated tag into the video. Never imply a real named person endorsed the product without their consent. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
+- **Follow AI-disclosure rules.** Meta and TikTok auto-label realistic AI, and paid ads using a synthetic performer (an AI actor or avatar) increasingly need conspicuous disclosure. Set the platform label and burn a small AI-generated tag into the video. Never imply a real named person endorsed the product without their consent. See the "AI disclosure" section of `00-workflow-and-rules.md`.
 
 - **No fabricated customers.** An AI person never gives a testimonial, a review or a result as if it were a real customer's.
 
@@ -427,14 +427,14 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 - Real product footage used wherever a label must read or a hand holds the product
 - No 8K / cinematic / hyperreal language left in prompts
 - Correct ratio and duration per placement
-- Captions word-timed in the reference's style, never over a face, hook and CTA inside the safe zone, nothing in the bottom fifth (the "Captions" section of the 00-workflow-and-rules knowledge file)
-- Colours come from the brand kit or the product's screens (the "Brand colours" section of the 00-workflow-and-rules knowledge file)
-- Music and effects licensed for ads, sources logged (the "Audio and licensing" section of the 00-workflow-and-rules knowledge file)
-- AI label set on the platform and burned in where an AI actor appears (the "AI disclosure" section of the 00-workflow-and-rules knowledge file)
+- Captions word-timed in the reference's style, never over a face, hook and CTA inside the safe zone, nothing in the bottom fifth (the "Captions" section of `00-workflow-and-rules.md`)
+- Colours come from the brand kit or the product's screens (the "Brand colours" section of `00-workflow-and-rules.md`)
+- Music and effects licensed for ads, sources logged (the "Audio and licensing" section of `00-workflow-and-rules.md`)
+- AI label set on the platform and burned in where an AI actor appears (the "AI disclosure" section of `00-workflow-and-rules.md`)
 - Earnings disclaimer present after any income or outcome claim
-- Final check done and watched once in a normal player (the "Final check" section of the 00-workflow-and-rules knowledge file)
+- Final check done and watched once in a normal player (the "Final check" section of `00-workflow-and-rules.md`)
 - Handed off to Meta Ads Playbook / TikTok Ads Playbook
 
 ---
 
-Related: the 00-workflow-and-rules knowledge file · the reference-teardown knowledge file · the 01-faceless-influencer knowledge file · the 02-ai-clone-talking-head knowledge file · the 04-faceless-youtube knowledge file · the 05-launch-videos-and-recording-edits knowledge file
+Related: `00-workflow-and-rules.md` · `reference-teardown.md` · `01-faceless-influencer.md` · `02-ai-clone-talking-head.md` · `04-faceless-youtube.md` · `05-launch-videos-and-recording-edits.md`

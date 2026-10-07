@@ -1,0 +1,92 @@
+{
+  "skill_name": "ai-content-generation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We need a 45-second launch video for our SaaS app. No one on camera. Here is a launch video I like: [link].",
+      "assertions": [
+        "Routes to the launch-videos playbook, type A",
+        "Starts with a reference teardown of the linked video",
+        "Writes a beat table with word budgets that follows the reference",
+        "Stops for script approval before building",
+        "Uses real product screens and brand-kit colours, never AI-generated UI",
+        "Builds in Remotion with voice first and word-timed captions",
+        "Runs the final check including safe zones and loudness"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I filmed a 3-minute talking-head video. Edit it like Alex Hormozi's videos.",
+      "assertions": [
+        "Routes to type C in the launch-videos and recording-edits playbook",
+        "Measures the style in numbers from two or three Hormozi clips",
+        "Does a transcript-first paper edit with silence and filler removal",
+        "Applies jump cuts, punch-ins, highlighted captions, sound effects and callouts",
+        "Proposes B-roll inserts for approval instead of inserting them silently",
+        "Notes that footage and delivery set the ceiling"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Make me an AI UGC ad of a woman talking about our skincare serum for Meta.",
+      "assertions": [
+        "Routes to the AI ad creative playbook",
+        "Asks for or finds a proven UGC reference",
+        "Never presents the AI creator as a real customer and adds the AI label",
+        "Uses real product photos as anchors and cuts to real product footage for close-ups",
+        "Puts the dialogue accuracy line in every speaking prompt and keeps clips at 8 seconds or less",
+        "Uses a paid voice plan and licensed music for the ad"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Generate a 10-second clip of hands typing on a laptop in a coffee shop for our landing page.",
+      "assertions": [
+        "Writes the prompt as subject, action, camera, look, light, specs",
+        "Names a camera movement or says static",
+        "Keeps the prompt between 50 and 100 words",
+        "Avoids cinematic, 8K and perfect, and asks for no on-screen text",
+        "Recommends a start frame and image-to-video",
+        "Names the model for the step"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I want to start a faceless Instagram account with an AI character who posts daily.",
+      "assertions": [
+        "Routes to the faceless influencer playbook at the quick-social tier",
+        "Builds the character's two-image anchor once and reuses it",
+        "Explains faceless means the operator's face is absent, not that no face appears",
+        "Keeps each post to the six steps with reused anchors"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Copy the motion style of this brand's launch video for our product: [link].",
+      "assertions": [
+        "Captures frames densely around transitions because Claude reads frames, not motion",
+        "Writes a style spec with animation timing, easing and signature moves",
+        "Turns the spec into a reusable Remotion template",
+        "Asks for product screens, vector logos and brand fonts",
+        "Checks the build side by side with the reference",
+        "Flags 3D or hand-drawn elements as hard to match and offers a workaround"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Should we make an animatic before generating the shots for our 30-second ad?",
+      "assertions": [
+        "Explains the workflow has no animatic step",
+        "Explains the reference, word budgets and voice-first timing set the pacing",
+        "Recommends the start-frame contact sheet as the visual check before video"
+      ],
+      "files": []
+    }
+  ]
+}
