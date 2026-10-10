@@ -8,11 +8,11 @@ Build an AI character that posts short videos on TikTok and Instagram without yo
 
 | Workflow step | Where it happens here |
 |---|---|
-| 1 Reference brief | Step 5, one reference, structure only, using the the reference-teardown knowledge file |
+| 1 Reference brief | Step 5, one reference, structure only, using the reference-teardown knowledge file |
 | 2 Script | Step 6, a beat table with a word budget per beat |
 | 3 Scenes and anchors | Step 3 builds the anchors once. Step 8 makes start frames only for new setups |
 | 4 Voice | Step 4 picks the persona voice. Step 7 sets the route. Step 9 locks it |
-| 5 Shots | Step 8, one take per shot, three tries at most |
+| 5 Shots | Step 8, one take per shot, faults fixed in the edit, at most one retry |
 | 6 Finish and check | Step 9 and the Before You Post list |
 
 **What you need**
@@ -22,7 +22,7 @@ Build an AI character that posts short videos on TikTok and Instagram without yo
 | Character, scripts, reference breakdown | ChatGPT (or Gemini, Claude) | ChatGPT also makes the character images. Keep every image of one character in one tool |
 | Voice | ElevenLabs on a paid plan | Voice Changer locks one voice across clips. The free plan has no commercial licence, so it cannot be used in ads. Cartesia is a swap option |
 | Ad-safe cheap voice (optional) | Google Cloud Text to Speech (TTS), Studio voice | See Ad-safe voice options below |
-| Video | Google Flow with Gemini Omni or Veo 3.1 for talking shots | Kling 3.0 or Seedance inside Higgsfield for bulk b-roll. Runway is a swap option |
+| Video | Google Flow with Veo 3.1 Fast for talking shots and b-roll | Veo 3.1 Quality for a hero close-up. Runway is a swap option |
 | Editing | CapCut | Descript and Premiere also work |
 
 **End result:** a recurring AI persona posting 1 to 3 short videos a day.
@@ -104,7 +104,7 @@ Once your character exists, every video is these six steps.
 
 ### Step 5: Start from a proven reference
 
-Open TikTok or Instagram and search your niche. Find 3 to 5 videos getting far more views than the account's normal numbers. Pick the best one as your reference and run the the reference-teardown knowledge file on it. You get the hook move, the beats with word counts, the caption style and the sound. For a quick post, one reference and its structure is enough. You copy the structure and timing. You never copy the words, people, footage, music or claims.
+Open TikTok or Instagram and search your niche. Find 3 to 5 videos getting far more views than the account's normal numbers. Pick the best one as your reference and run the reference-teardown knowledge file on it. You get the hook move, the beats with word counts, the caption style and the sound. For a quick post, one reference and its structure is enough. You copy the structure and timing. You never copy the words, people, footage, music or claims.
 
 ### Step 6: Write your script in ChatGPT
 
@@ -165,7 +165,7 @@ Join the lines into one file, normalise it to about -16 LUFS (Loudness Units rel
 
 ### Step 8: Animate your character, one shot at a time
 
-Use Google Flow with Gemini Omni for talking shots (clips of 4, 6, 8 or 10 seconds, native speech), or Veo 3.1 when you want its look or 4K. Use Kling 3.0 or Seedance inside Higgsfield for bulk b-roll.
+Use Google Flow for every clip, with the settings and the per-shot model choice in the "Google Flow" section of the 00-workflow-and-rules knowledge file: Veo 3.1 Fast for talking shots (8 second clips, native speech, trimmed in the edit) and bulk b-roll, and Veo 3.1 Quality only for a hero close-up.
 
 **Start frame.** Reuse your saved anchors. If this video needs a new setup, generate its start frame from the anchors first and check it against the hero. Look for a changed face, a changed outfit and stray props. A wrong start frame wastes the credits on the clip.
 
@@ -187,7 +187,7 @@ If the model mispronounces a name, say so in the next try: "The model says [wron
 
 **B-roll.** Make the talking shots plus 2 or 3 b-roll shots (the thing they are talking about). For b-roll, swap the line above for the object or scene, same "phone-camera, real-time, slight grain" ending.
 
-**One take, three tries.** Generate one output per shot from its start frame. Regenerate only the shots that fail. After three failed tries, change the prompt or the start frame instead of rolling again. Do not ask for the whole video in one prompt. Short separate clips stay consistent. Long single clips drift, warp, and change the face. See the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
+**One take, fixes in the edit.** Generate one output per shot from its start frame. Fix faults in the edit first. Reshoot a clip only when the edit cannot save it, at most once, with one thing changed and with the owner's go-ahead. Do not ask for the whole video in one prompt. Short separate clips stay consistent. Long single clips drift, warp, and change the face. See the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
 
 Do not ask the prompt for any on-screen text. Video models garble it. All captions and text overlays go on in CapCut in the next step.
 

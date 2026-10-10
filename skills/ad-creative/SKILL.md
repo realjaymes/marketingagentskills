@@ -249,7 +249,7 @@ All template files are structured for dual use: Claude can auto-fill them from p
 For image and video ad creative, use generative AI tools and code-based video rendering. See [references/generative-tools.md](references/generative-tools.md) for the complete guide covering:
 
 - **Image generation** — Nano Banana Pro (Gemini), Flux, Ideogram for static ad images
-- **Video generation** — Veo, Kling, Runway, Sora, Seedance, Higgsfield for video ads
+- **Video generation** — Veo, Kling, Runway, Sora, Seedance for video ads
 - **Voice & audio** — ElevenLabs, OpenAI TTS, Cartesia for voiceovers, cloning, multilingual
 - **Code-based video** — Remotion for templated, data-driven video at scale
 - **Platform image specs** — Correct dimensions for every ad placement

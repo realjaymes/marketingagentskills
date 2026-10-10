@@ -12,7 +12,7 @@ Build a YouTube channel (long-form videos and shorts) where you are never on cam
 | 2 Script | Step 3, a beat table with a word budget per beat. You approve it |
 | 3 Scenes and anchors | Step 5, one row per beat. Start frames only for generated shots |
 | 4 Voice | Step 4, narration first, then Whisper word timings |
-| 5 Shots | Step 6, stills and stock first, AI video for a few beats, three tries at most |
+| 5 Shots | Step 6, stills and stock first, AI video for a few beats, at most one retry |
 | 6 Finish and check | Step 7 and the Before You Post list |
 
 **What you need**
@@ -234,7 +234,7 @@ extra fingers.
 
 - **Free stock (Pexels, Pixabay).** Real footage of cities, nature, hands, offices, crowds. Free, instant, and more credible than fake AI footage. Mix it in to break the all-AI smoothness that reads as slop.
 
-- **AI video (Gemini Omni or Veo 3.1 in Flow, or Kling).** The most expensive and most slop-prone path. Save it for a few hero or narrative beats. Generate each from an approved still as its start frame, one output per shot, and keep clips to 8 seconds or less (identity and physics break on long clips). If a generated shot has a person speaking, add the dialogue accuracy line: "Ensure that each word is pronounced correctly and you do not add any extra words." Most faceless videos have no on-camera speech, so this seldom applies. Regenerate only the clips that fail, three tries at most. See the "Credits and retries" section of `00-workflow-and-rules.md`. Prompt:
+- **AI video (Veo 3.1 Fast in Flow).** The most expensive and most slop-prone path. Save it for a few hero or narrative beats. Generate each from an approved still as its start frame, one output per shot, and keep clips to 8 seconds or less (identity and physics break on long clips). If a generated shot has a person speaking, add the dialogue accuracy line: "Ensure that each word is pronounced correctly and you do not add any extra words." Most faceless videos have no on-camera speech, so this seldom applies. Fix faults in the edit first, and reshoot a clip at most once. See the "Credits and retries" section of `00-workflow-and-rules.md`. Prompt:
 
 ```
 BLOCK 1 SUBJECT+SCENE: [subject with wardrobe/age/texture], [single present-tense
@@ -250,7 +250,7 @@ Say "push in" or "dolly in," never "zoom" (zoom produces lens warp). For a longe
 
 ### Step 7: Edit and assemble
 
-Drop everything on the timeline in CapCut (or Premiere). Lay the narration down first, then cut visuals to it. No clip should sit longer than the line it covers. Change the visual every 4 to 8 seconds. Add a slow Ken Burns push to every still so nothing is truly static. Cut every breath gap and stumble out of the narration. Add an instrumental music bed, kept low and ducked under the voice, with a small effect on the cuts that need one. Use only music you are licensed to use. Tracks from the YouTube Audio Library are cleared for YouTube, but each track has its own terms, and some need credit. Do not reuse them in ads or on other platforms. Log every source. See the "Audio and licensing" section of `00-workflow-and-rules.md`. Burn in word-timed captions from the Whisper timings (CapCut auto-generates, then proofread), in the style of your reference, never over a face. See the "Captions" section of `00-workflow-and-rules.md`. The single highest-impact move: apply ONE consistent color grade across every clip, still, and stock shot. That is what makes mixed AI, stock, and stills feel like one deliberate video instead of a pile of generated assets. Then run the the "Final check" section of `00-workflow-and-rules.md` and watch the export once in a normal player.
+Drop everything on the timeline in CapCut (or Premiere). Lay the narration down first, then cut visuals to it. No clip should sit longer than the line it covers. Change the visual every 4 to 8 seconds. Add a slow Ken Burns push to every still so nothing is truly static. Cut every breath gap and stumble out of the narration. Add an instrumental music bed, kept low and ducked under the voice, with a small effect on the cuts that need one. Use only music you are licensed to use. Tracks from the YouTube Audio Library are cleared for YouTube, but each track has its own terms, and some need credit. Do not reuse them in ads or on other platforms. Log every source. See the "Audio and licensing" section of `00-workflow-and-rules.md`. Burn in word-timed captions from the Whisper timings (CapCut auto-generates, then proofread), in the style of your reference, never over a face. See the "Captions" section of `00-workflow-and-rules.md`. The single highest-impact move: apply ONE consistent color grade across every clip, still, and stock shot. That is what makes mixed AI, stock, and stills feel like one deliberate video instead of a pile of generated assets. Then run the "Final check" section of `00-workflow-and-rules.md` and watch the export once in a normal player.
 
 **Shorts.** A Short is a 9:16 video at 1080 by 1920. Keep captions word-timed, three to five words at a time, and keep everything out of the bottom fifth of the frame, where the app buttons sit. Put the hook in the first 2 seconds. Cut Shorts from the hero moments of your long-form videos.
 

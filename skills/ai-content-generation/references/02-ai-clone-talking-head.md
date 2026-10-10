@@ -12,7 +12,7 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 | 2 Script | Step 7, a beat table with a word budget per beat. You approve it |
 | 3 Scenes and anchors | Steps 4 and 5 build the anchors once. Step 8 makes start frames for new setups and a contact sheet |
 | 4 Voice | Step 2 clones the voice. Step 10 locks it onto the clips |
-| 5 Shots | Step 9, one take per shot, three tries at most |
+| 5 Shots | Step 9, one take per shot, faults fixed in the edit, at most one retry |
 | 6 Finish and check | Step 11 and the Before You Post list |
 
 **What you need**
@@ -20,7 +20,7 @@ Clone your own face and voice into an AI talking head, then generate endless vid
 | Job | Tool | Notes |
 |---|---|---|
 | Describe your face, write animation prompts | ChatGPT (or Gemini) | ChatGPT makes the anchor stills too |
-| Talking video | Google Flow with Gemini Omni (speaks natively) or Veo 3.1 | Higgsfield (Kling) for one-off clips. HeyGen for a reusable avatar |
+| Talking video | Google Flow with Veo 3.1 Fast (speaks natively) | HeyGen for a reusable avatar |
 | Voice clone and re-voicing the video | ElevenLabs on a paid plan (clone plus Voice Changer) | Cartesia and MiniMax are swap options |
 | Editing | CapCut | Descript and Premiere also work |
 
@@ -32,7 +32,7 @@ Planning notes (reference, script, shot table) live in your notes. Clips, audio 
 
 ## The recommended pipeline (start here)
 
-This is the primary way to clone yourself in your own voice, and it solves lip sync. The HeyGen and Higgsfield routes still work and are kept below as alternatives. The detailed how-to for each step lives in the sections that follow. This is the map.
+This is the primary way to clone yourself in your own voice, and it solves lip sync. The HeyGen route still works and is kept below as an alternative. The detailed how-to for each step lives in the sections that follow. This is the map.
 
 1. **Build your character anchors in ChatGPT** (Steps 4 and 5). Multiple reference angles, a written face and body breakdown, one clean reference image, a multi-angle mashup to confirm consistency, a reusable JavaScript Object Notation (JSON) prompt, and a two-image anchor (close-up, then wide).
 2. **Lock the scene and environment** (Step 5). Decide where the character is and lock the outfit, background, camera angle, lighting and style. Write it once as a reusable scene description.
@@ -219,17 +219,15 @@ Ensure that each word is pronounced correctly and you do not add any extra words
 
 **One thing per generation.** A prompt that asks for several actions confuses the model. Keep busy scenes simple.
 
-**One take, three tries.** Regenerate only the clips that fail. After three failed tries, change the prompt or the start frame. After two failed fixes in Flow, hand the bad outputs to the assistant and ask it to rewrite the prompt in the tool's language. Change one thing per fix. See the "Credits and retries" section of `00-workflow-and-rules.md`.
+**One take, fixes in the edit.** Generate one output per shot from its start frame. Fix faults in the edit first. Reshoot a clip only when the edit cannot save it, at most once, with one thing changed and with the owner's go-ahead. If the retry fails, hand the bad output to the assistant and ask it to rewrite the prompt in the tool's language. See the "Credits and retries" section of `00-workflow-and-rules.md`.
 
-Use Flow's scene builder to sequence the clips into one continuous scene, and export. Name the clips `clip-1`, `clip-2` and so on.
-
-**Alternative: Higgsfield (Kling).** Scroll to Create Video. Upload your anchor still. Paste the prompt. Generate. Keep clips short. Long single clips drift and the face warps.
+Use Flow's scene builder to sequence the clips into one continuous scene, and export. Name the clips by shot (`Shot 01.mp4`, `Shot 02.mp4`).
 
 **Alternative: HeyGen.** Pick your avatar, paste your script straight in, and generate. HeyGen lip syncs to your cloned voice directly, so skip Step 10. Keep each talking take short, then plan a cut.
 
 ### Step 10: Re-voice the video in your own voice
 
-If you animated in Flow or Higgsfield, the clip is speaking in a generic AI voice. Swap it to your cloned voice without breaking lip sync.
+If you animated in Flow, the clip is speaking in a generic AI voice. Swap it to your cloned voice without breaking lip sync.
 
 Open ElevenLabs, go to Voice Changer (speech to speech), upload the exported video or its extracted audio, and select your cloned voice from Step 2. It regenerates the same dialogue in your voice and keeps the original timing, so the mouth movements still match. Download the new audio, then run Whisper on it to get word-level timing for the captions.
 
@@ -265,7 +263,7 @@ The clone passes or fails on these few moves.
 
 - **Hide weak lip sync under cutaways.** Plan a cut to b-roll on the hardest lines (fast lists, long words, hard consonants). The viewer hears you and never sees the weak frames.
 
-- **Use a medium shot instead of an extreme close-up.** Close-ups amplify every uncanny tell. Eyes slightly off-lens, never a dead-center stare.
+- **Use a medium shot instead of an extreme close-up.** Close-ups amplify every uncanny tell. Eyes on the lens the whole time, as a person talking to their own phone would, with no stage directions that send the gaze elsewhere.
 
 - **Mix real footage into the b-roll.** Pure AI b-roll over an AI face compounds the synthetic look. One real stock clip (Pexels, Pixabay) grounds the whole piece.
 

@@ -1,8 +1,8 @@
 # 05 - Launch Videos and Recording Edits
 
-Build two kinds of video with Claude Code and Remotion: launch and product videos made of motion graphics and an AI voice with no person on screen (type A), and edits of your own recordings, including a Hormozi-style edit (type C). Both can copy the style of a video that already works.
+Build two kinds of video with Claude Code and Remotion: launch and product videos made of motion graphics with no person on screen, carried by an AI voice or by on-screen text alone (type A), and edits of your own recordings, including a Hormozi-style edit (type C). Both can copy the style of a video that already works.
 
-> Mindset: the reference does the creative planning. You measure a proven video, rebuild its structure with your product and your facts, and let code do the editing. The result is only as good as the reference you pick and the inputs you supply.
+> Mindset: the story and the reference do the creative planning. You lock what the video must make people understand, measure a proven video for the style, rebuild its structure with your product and your facts, and let code do the editing. The result is only as good as the story, the reference and the brand assets you supply.
 
 **What you need**
 
@@ -13,7 +13,8 @@ Build two kinds of video with Claude Code and Remotion: launch and product video
 | Cuts, stills, loudness   | ffmpeg                                           | Free                                              | CapCut for manual touch-ups                                     |
 | Word timings, transcript | whisper.cpp (Whisper)                            | Free                                              | Whisper Transcript desktop app for a quick `.srt` file          |
 | AI voice (type A)        | Google Cloud Text-to-Speech (TTS), Studio voice  | Free allowance each month, then billed            | ElevenLabs for a cloned voice                                   |
-| Music and sound effects  | Mixkit, Freesound (CC0 or CC BY sounds only) | Free | Other packs with a clear licence |
+| Music and sound effects  | Mixkit, Freesound, Openverse (CC0 or CC BY only) | Free | Other packs with a clear licence |
+| Motion sources           | Prompt Motion, Raylight, React Bits, Magic UI, GSAP and the others in the "Motion library" section | Free to browse | None needed |
 | Frames from a reference  | A frame extractor, or ffmpeg                     | Free                                              | None needed                                                     |
 
 **End result:** a vertical master (1080 by 1920, 30 frames per second) plus the planning notes and a reusable Remotion style template.
@@ -63,13 +64,15 @@ If a command is "not found" after an install, open a fresh terminal. If the voic
 
 ## Do This For Every Video (the loop)
 
-Each step writes one file, and the next step reads it. Claude can run steps 1 to 3 in one sitting. You approve twice, at the script and at the scenes. For the full workflow and the tier table, see the "Workflow" section of `00-workflow-and-rules.md`.
+Each step writes one file, and the next step reads it. Claude can run steps 1 to 3 in one sitting. You approve the script and the scenes before any code is written, then the review stills before the full render. For the full workflow and the tier table, see the "Workflow" section of `00-workflow-and-rules.md`.
 
 Planning notes live in your notes asset folder for the video: REFERENCE, SCRIPT, SCENES and the hub. Clips, audio, frames and renders live in a linked work folder outside your notes. See the "Folders and files" section of `00-workflow-and-rules.md`.
 
 ### Step 1. Reference brief
 
-Write five lines: goal, audience, message, platform and length, and the call to action. Then pick one to three proven videos that do the same job. Save each one into the work folder. If a type A video has no good reference, ask Claude for three scored concepts instead.
+Write five lines: goal, audience, message, platform and length, and the call to action. Then pick one to three proven videos that do the same job. Save each one into the work folder.
+
+If no reference fits the job, find the story first with the four stops and the launch story angles in the "Story craft" section of `00-workflow-and-rules.md`: the founder answers Claude's questions, picks an angle and a hook, and approves the story as numbered lines marked hook, pain, solution and CTA. Then pick a reference for the style only, and the beat-for-beat rewrite in Stage 4 below becomes a fit of the approved story to the reference's pacing.
 
 Run the reference teardown from `reference-teardown.md`. It produces a REFERENCE note with the shot list, the hook, the beats with word counts, the captions, the graphics and the sound.
 
@@ -183,7 +186,9 @@ Caption style copies the reference each time, and the safety rules still apply o
 
 ### Step 4. Voice
 
-**Type A.** Claude generates the voice with Google Cloud Text-to-Speech and the `en-US-Studio-Q` Studio voice, one script line per request. It wraps each sentence in an SSML `<s>` tag and adds a break of about 400 milliseconds after it. The voice then pauses and drops at the end of each sentence like a person. Claude joins the lines into one file.
+**Type A with no voice over.** Most launch films on X have none, so the on-screen text carries the story. There is no voice track, so on-screen text sets the timing by the reading minimums in the "Pace" section of `00-workflow-and-rules.md` (at least 1 second plus 0.3 seconds per word), with the picture changing every 2 to 4 seconds at uneven gaps. The music bed carries the pace. Skip the rest of this step.
+
+**Type A with a voice.** Claude generates the voice with Google Cloud Text-to-Speech and the `en-US-Studio-Q` Studio voice, one script line per request. It wraps each sentence in an SSML `<s>` tag and adds a break of about 400 milliseconds after it. The voice then pauses and drops at the end of each sentence like a person. Claude joins the lines into one file.
 
 **Type C.** The recording is the voice. Claude transcribes it, finds pauses, false starts and filler words, and says which lines it will cut before it cuts them. Where you said a line twice, it keeps the best take.
 
@@ -217,15 +222,24 @@ Stage 2, build.
 - Product screens and screen recordings appear exactly as captured. Never
   redraw them.
 - Music is one track at low volume, ducked lower under speech. Sound effects
-  go on each cut and each graphic entrance, quieter than the voice. Log every
-  source and licence in SOUNDS.md.
+  follow the rule for this video type in 00 - START HERE, Audio and
+  licensing: on each cut and graphic entrance for a voiced video, soft and on
+  key moments only for a film with no voice. Use real sound files only. Log
+  every source and licence in SOUNDS.md.
+- Motion comes from the brand's motion library. No two scenes share the
+  same text or background motion. The screen is never empty while the next
+  element waits.
 - No fades. Something moves in every shot.
 - For type C, apply the approved cuts, jump cuts, punch-in zooms, callouts
   and inserts only. Put a whoosh, pop or ding on each cut, zoom and graphic.
-- Open Remotion Studio, warn me that audio stutters while scrubbing, and show
-  stills from the start, middle and end.
+- Build to stills, never to a full render. Make the review stills sheet from
+  the "Review stills" rule in 00 - START HERE: one still per beat in order,
+  end card last, every line shown complete. Check it against that rule's list,
+  fix every frame that fails, then show me the sheet and stop. Render nothing
+  until I approve it.
 
-Stage 3, render and self-check. Render video/out/final.mp4. Pull one still per
+Stage 3, render and self-check, after I approve the stills. Render
+video/out/final.mp4. Pull one still per
 scene with ffmpeg and compare it side by side with the matching reference
 beat. Fix layout or timing mismatches. Check length against SCRIPT.md, size
 1080 by 1920, that audio is present, that no caption covers a face and that
@@ -246,11 +260,11 @@ Run the render check, then run the "Final check" section of `00-workflow-and-rul
 
 A launch video is screens, cards and animated text over an AI voice. It is built entirely in Remotion, and it is the strongest thing this setup does.
 
-**Default length and formats.** A launch video runs 45 to 60 seconds and ships in two versions: 16:9 for X, LinkedIn and the website, and 9:16 for TikTok, Instagram Reels, Instagram Stories and WhatsApp Status. Make no separate short ad cut unless the brief asks for one.
+**Default length and formats.** A launch video runs 45 to 60 seconds. When it is assembled in Remotion it ships in three versions: 9:16 for TikTok, Instagram Reels, Instagram Stories and WhatsApp Status, 4:5 for Instagram and Facebook feeds, and 16:9 for X, LinkedIn and the website. Clips generated in an AI video tool (Flow) are generated once in 9:16, and Remotion frames them for the other two versions, so no credits are spent twice. A video made entirely in Flow, such as UGC or an AI talking head, ships in 9:16 only. Make no separate short ad cut unless the brief asks for one.
 
 **What works well.** Kinetic type, UI walkthroughs, SaaS launch videos, shape and mask transitions, 2.5D parallax camera moves, charts and Lottie animations. Real product screens make the video look authentic. Easing and timing come from the measured style spec.
 
-**Inputs that set the ceiling.** Missing brand assets hurt more than any other gap. Bring:
+**Inputs that set the ceiling.** Missing brand assets hurt more than any other gap. They come from the brand's asset library (the "Brand asset library" section of `00-workflow-and-rules.md`), including the Figma and test-account routes for client products. Bring:
 
 - the product itself (its code or a running copy), or else product screens, screen recordings or Figma files
 - vector logos
@@ -304,6 +318,25 @@ Use this for a talking head, a podcast clip or any recording you already have. T
 - **The delivery.** Fast cuts sharpen strong delivery. They cannot rescue flat delivery.
 
 After one or two tuning rounds most viewers will read the edit as the same style. Every later recording then runs through the template in minutes.
+
+---
+
+## Motion library
+
+The reference sets one video's motion. A brand that makes videos often also keeps a motion library: a set of reusable moves in the brand's colours and fonts, built once from several sources, approved as a preview reel and saved in the brand's asset library. Claude learns each technique and rebuilds it in the brand. It never copies someone else's work, and anything borrowed directly gets a credit.
+
+| Source | What it gives us |
+| --- | --- |
+| [Prompt Motion](https://www.prompt-motion.com) | A gallery of motion videos made with Claude, with the prompts and skills behind them (kinetic type, particles, charts, 3D). The closest match to how we build |
+| [Raylight](https://www.raylight.app) | Product motion videos and stills, with an MCP server that connects to Claude |
+| [React Bits](https://reactbits.dev) and [Magic UI](https://magicui.design) | Animated React components (text effects, backgrounds, UI reveals) that drop into Remotion |
+| [GSAP](https://gsap.com) | The animation library behind many web motion effects, and a showcase of techniques |
+| [Jitter](https://jitter.video) | A motion design tool with AI agents. It exports video, GIF and Lottie |
+| [AutoAE](https://autoae.online) | An AI motion graphics generator for text, flowcharts, mockups and transitions |
+| [Animos](https://animos.app) | Motion design showcases |
+| [Apple](https://developer.apple.com/design/human-interface-guidelines/motion) and [Material](https://m3.material.io/styles/motion/overview) motion guidelines | The easing and timing rules behind native app motion |
+
+**Building it.** Give Claude three or four videos whose motion you like (launch films, UI animation reels). It breaks each one down, looks for matching techniques in the sources above, and builds a library of named moves in the brand: text entrances, background moves, screen reveals, transitions and the end card. It renders a short preview reel of every move for approval. From then on, SCENES picks a move from the library for each scene, and no two scenes share the same text or background motion.
 
 ---
 

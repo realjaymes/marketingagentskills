@@ -8,7 +8,7 @@ Reference for using AI image generators, video generators, and code-based video 
 
 | Need | Tool Category | Best Fit |
 |------|---------------|----------|
-| Static ad images (banners, social) | Image generation | Nano Banana Pro, Flux, Ideogram |
+| Static ad images (banners, social) | Image generation | ChatGPT Images 2.0, Nano Banana Pro, Flux, Ideogram |
 | Ad images with text overlays | Image generation (text-capable) | Ideogram, Nano Banana Pro |
 | Short video ads (6-30 sec) | Video generation | Veo, Kling, Runway, Sora, Seedance |
 | Video ads with voiceover | Video gen + voice | Veo/Sora (native), or Runway + ElevenLabs |
@@ -246,27 +246,6 @@ ByteDance's video generation model with simultaneous audio-visual generation and
 
 ---
 
-### Higgsfield
-
-Full-stack video creation platform with cinematic camera controls.
-
-**Best for:** Social video ads, cinematic style, mobile-first content
-**Platform:** [higgsfield.ai](https://higgsfield.ai/)
-
-**Capabilities:**
-- 50+ professional camera movements (zooms, pans, FPV drone shots)
-- Image-to-video animation
-- Built-in editing, transitions, and keyframing
-- All-in-one workflow: image gen, animation, editing
-
-**Ad creative use cases:**
-- Social media video ads with cinematic feel
-- Animate product images into dynamic video
-- Create multiple video variations with different camera styles
-- Quick-turn video content for social campaigns
-
----
-
 ### Video Tool Comparison
 
 | Tool | Max Length | Audio | Resolution | API | Best For |
@@ -276,7 +255,6 @@ Full-stack video creation platform with cinematic camera controls.
 | **Runway Gen-4** | 10 sec | No | 1080p | Official | Controlled, consistent |
 | **Sora 2** | 60 sec | Native | 1080p | Official | Dialogue-heavy |
 | **Seedance 2.0** | 20 sec | Native | 2K | Official + third-party | Affordable high-volume |
-| **Higgsfield** | Varies | Yes | 1080p | Web-based | Social, mobile-first |
 
 ---
 
@@ -584,7 +562,7 @@ Need video ads?
 │   ├── Need consistency across scenes? → Runway Gen-4
 │   ├── Need vertical social video? → Veo 3.1 (native 9:16)
 │   ├── Need high volume at low cost? → Seedance 2.0
-│   └── Need cinematic camera work? → Higgsfield, Kling
+│   └── Need cinematic camera work? → Veo 3.1 (Quality) in Google Flow, Kling
 └── Both → Use AI gen for hero creative, Remotion for variations
 
 Need image ads?

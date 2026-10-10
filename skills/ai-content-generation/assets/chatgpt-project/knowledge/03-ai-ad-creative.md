@@ -12,7 +12,7 @@ Make paid ad creative with AI at volume: user-generated content (UGC) style acto
 | 2 Script | Step 1, a beat table with a word budget per beat. You approve it |
 | 3 Scenes and anchors | Step 3, anchors for the actor or presenter and the real product, one row per shot, a start-frame contact sheet. You approve it |
 | 4 Voice | Step 3, speech to speech for UGC, or Voice Changer on a presenter |
-| 5 Shots | Step 3, one take per shot, three tries at most |
+| 5 Shots | Step 3, one take per shot, faults fixed in the edit first, at most one retry with your go-ahead |
 | 6 Finish and check | Steps 4 and 5 (variants, assembly to spec) and the Before You Publish list |
 
 **What you need**
@@ -21,7 +21,7 @@ Make paid ad creative with AI at volume: user-generated content (UGC) style acto
 |---|---|---|
 | Brief, hooks, scripts | ChatGPT (or Claude, Gemini) | Claude for scripts, Gemini for bulk hooks |
 | AI UGC actors | Arcads or Creatify | HeyGen for a recurring presenter |
-| Presenter and product video | Google Flow with Gemini Omni (speaks natively) or Veo 3.1 | Kling, Seedance, Runway and Pika are swap options. Seedance is not the cheapest path in general, so compare costs before you pick it for volume |
+| Presenter and product video | Google Flow with Veo 3.1 Fast (speaks natively), the model chosen per shot as in the "Google Flow" section of the 00-workflow-and-rules knowledge file | Kling, Seedance, Runway and Pika are swap options. Seedance is not the cheapest path in general, so compare costs before you pick it for volume |
 | Static image ads | ChatGPT Images (GPT Image) | Gemini Nano Banana or Ideogram when ChatGPT falls short, FLUX, Midjourney, Recraft for logos and vector |
 | Voiceover | ElevenLabs on a paid plan | The free plan has no commercial licence and cannot be used in ads. MiniMax Audio is a swap option |
 | Assemble | CapCut | Descript and Premiere also work. Use Pro assets or your own for ads |
@@ -71,7 +71,7 @@ Once the brief exists, every ad runs through these six steps.
 
 ### Step 1: Pick a reference, write the hook and the script
 
-**Reference-first path.** If a proven ad already does this job, start there. Run the the reference-teardown knowledge file on it. You get the shot table, the exact words, the hook move, the beats with word counts, the caption style and the sound. Then write your script beat for beat in the same shape, within 5 words of each reference beat. Copy structure and timing. Never copy the words, people, footage, music, brand marks or claims. If you have a swipe folder, choose proven ads first, then check what they lack (a call to action (CTA), the brand). Use the hook generator below to fill the gaps. With no reference, use the brief and the generator alone.
+**Reference-first path.** If a proven ad already does this job, start there. Run the reference-teardown knowledge file on it. You get the shot table, the exact words, the hook move, the beats with word counts, the caption style and the sound. Then write your script beat for beat in the same shape, within 5 words of each reference beat. Copy structure and timing. Never copy the words, people, footage, music, brand marks or claims. If you have a swipe folder, choose proven ads first, then check what they lack (a call to action (CTA), the brand). Use the hook generator below to fill the gaps. With no reference, use the brief and the generator alone.
 
 The hook is the ad. If the first 1 to 2 seconds do not stop the scroll, nothing after it matters. Write the hook first, lock the best one, then build the script under it.
 
@@ -117,7 +117,7 @@ same emotional core.
 
 The ON-SCREEN-TEXT lines are instructions for your CapCut editor and never go to the video model. Strip them out before you paste anything into Flow, Veo, or Kling, because video models garble text you ask them to render on screen. You burn these captions in during assembly (Step 5).
 
-Match the length to the placement before you generate. A 15 to 20 second script fits TikTok and Reels cold creative. A 30 to 45 second script suits Meta feed.
+Match the length to the placement before you generate. A 15 to 20 second script fits TikTok and Reels cold creative. A 30 to 45 second script suits Meta feed. A video that sells a program, a course or an offer runs 90 to 120 seconds (see the "Story and sale videos" section).
 
 **You approve the script before any generation.** Every change after this point costs credits.
 
@@ -130,6 +130,10 @@ Pick the format from the angle, not from the tool you happen to own.
 - **Product or b-roll video** when you need to show the thing moving (a demo, a pour, a rotate). Rarely a whole ad on its own, usually a cutaway inside UGC.
 
 - **Static image ad** when you want to test an angle and headline cheaply before spending video budget.
+
+- **Talking head or dialogue story** when a 60 second character story fits the offer: one person telling a private moment, or two people in a scene. See the "Talking head and dialogue stories" section.
+
+- **Story or sale video** when the product is a program, a course or an offer that needs the problem, the value and the ask told in order. See the "Story and sale videos" section.
 
 - **AI character or presenter video ad** when you want a consistent branded presenter, a built faceless persona or your own clone, delivering the ad at volume, beyond a stock UGC actor. You lock the character once and animate it in Flow from the ad script. See the presenter route in Step 3.
 
@@ -151,7 +155,7 @@ The mocap-trained tools (Arcads especially) make the face and lip-sync look real
 
 - **A peer of the viewer.** Pick an actor who looks like the audience. Mismatched polish reads as a paid actor instantly.
 
-**Compliance rule for UGC.** An AI creator never poses as a real customer giving a testimonial. No first-person "I used this and it changed my life" lines from a person who does not exist, and no invented reviews, results or names. Use an AI presenter for explainers, demos and claims you can stand behind. Real customer words come from real customers, with their permission, as their own video or quoted text. Every ad with an AI actor carries the AI label, and a burned-in "AI-generated" tag in a top corner is the simplest way to do it. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
+**Compliance rule for UGC.** An AI creator never poses as a real customer giving a testimonial. No first-person "I used this and it changed my life" lines from a person who does not exist, and no invented reviews, results or names. Use an AI presenter for explainers, demos and claims you can stand behind. Real customer words come from real customers, with their permission, as their own video or quoted text. Every ad with an AI actor carries the platform's AI label, switched on at posting. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
 
 **Limits to plan around.** Product labels and hands drift. Whenever the product must be readable, or fingers wrap around it, cut away to real product footage for the close-up. Lip sync slips on long lines, so keep each line under about 8 seconds and each face take to about 8 seconds, then cut.
 
@@ -205,13 +209,91 @@ Platform: [Meta/TikTok]. Ratio: [9:16 / 4:5 / 1:1].
 
 3. **Make the start-frame contact sheet.** Generate one start still per shot from the anchors and view them together. Check that the face, outfit, room and props hold from shot to shot, and that no stray prop has appeared. You approve the set before you pay for video.
 
-4. **Generate each shot in Flow, with the model speaking.** Use Gemini Omni for most talking shots, or Veo 3.1 for its look or 4K. One output per shot, from its start frame. The prompt carries the exact line and the dialogue accuracy line, and the clip length matches the line: about 4 seconds for a short line, up to 8 for a long one, never the 10 second option on a face. Too short cuts the line. Too long invents filler. If the model mispronounces the brand name, say so in the next try and give the phonetic. When a shot continues the same framing, use the last frame of the previous clip as the first frame of the next. When it cuts to a new framing, start from the other anchor still. Regenerate only the shots that fail, three tries at most. See the "Dialogue accuracy" section of the 00-workflow-and-rules knowledge file and the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
+4. **Generate each shot in Flow, with the model speaking.** Use Veo 3.1 Fast for talking shots, with the settings in the "Google Flow" section of the 00-workflow-and-rules knowledge file. One output per shot, from its start frame. The prompt carries the exact line, the dialogue accuracy line and the still finish, and each 8 second clip holds one short line that the edit trims to its speech. When a shot continues the same framing, use the last frame of the previous clip as the first frame of the next. When it cuts to a new framing, start from the other anchor still. Fix faults in the edit first, and reshoot a clip at most once, with your go-ahead. See the "Dialogue accuracy" section of the 00-workflow-and-rules knowledge file and the "Credits and retries" section of the 00-workflow-and-rules knowledge file.
 
 5. **Lock one voice.** The model's native voice differs from clip to clip. For a clone, run every clip's audio through ElevenLabs Voice Changer with your cloned voice. For a built persona, pick one paid ElevenLabs voice and run every clip through Voice Changer with it. Voice Changer keeps the timing, so the mouth still matches.
 
 6. **Assemble in CapCut** (Step 5), with the captions, the colour grade and one palette from the brand kit.
 
 This is how you run branded-presenter or founder-face ads at volume: one locked character, many scripts, each script split into short shots.
+
+#### Talking head and dialogue stories
+
+Two formats carry a character story in about 60 seconds. A talking head suits a private subject that one person would tell a camera alone. A dialogue suits a situation with a second person in it. Dialogue has only organic proof so far, so in paid, test one talking head against one dialogue per offer before scaling either. Every line follows the "Story craft" section of the 00-workflow-and-rules knowledge file.
+
+**Talking head beat sheet.** A spoken sentence lands in each beat, and a new picture arrives about every 3 to 4 seconds.
+
+| Seconds | Beat | What it does |
+| --- | --- | --- |
+| 0 to 3 | Hook | A first-person moment with a thing in it. The contrast or the question is spoken in the first 2.5 seconds |
+| 3 to 15 | The specific scene | Where she is, who was there, what was in the room and what someone said. A telling object beats a date |
+| 15 to 30 | What it cost her | Small, felt costs in her time, her meals, her phone, how she saw her week |
+| 30 to 45 | The turn and the product | One plain action she took, with the real product on screen showing its real output |
+| 45 to 55 | What changed | A change in her plan or her habit, never a promised result |
+| 55 to 60 | The ask | A separate voice over or card names the product and the address, after her last line |
+
+Four b-roll inserts of 1 to 2 seconds, taken from objects named in her lines (shoes by the door, a cold mug, the phone), hide the joins between clips.
+
+**Dialogue beat sheet.** A speaker change or a new picture lands about every 3 to 4 seconds.
+
+| Seconds | Beat | What it does |
+| --- | --- | --- |
+| 0 to 3.5 | Open mid-scene | One character says one line of a conversation already running. It names a person or a thing, and it carries the doubt or the pressure |
+| 3.5 to 13 | The situation | Place, an object in the room, a family role, set by the two characters answering each other |
+| 13 to 25 | The doubt lands | The second character voices the objection in their own words. She answers in one line that names her position, ending on her opening the product |
+| 25 to 34 | The turn | The real product on a phone, with her voice over it. No new face on screen |
+| 34 to 44 | The plan changes | The doubter reacts to what the product showed and takes a role in the new plan |
+| 44 to 55 | The plan carries forward | The changed choice happens on screen. The doubter stays a little unconvinced |
+| 55 to 60 | Close and one ask | The last spoken line belongs to the characters, then a separate voice over or card and the end card |
+
+**How a dialogue maps to Flow clips.**
+
+- **One speaker per clip**, with the other character out of frame or facing away with mouth closed, as set in the "Dialogue accuracy" section of the 00-workflow-and-rules knowledge file. Each speaker change cuts to the other person's close-up, framed to match: same height, same eyeline direction, same light. Aim for six to nine speaking clips.
+- **Listener coverage.** One silent listening clip per character, used in a call window or as an L cut at the line that lands hardest.
+- **Over the shoulder** at the doubt, and when the doubter reads the phone. It is a medium-risk clip, so the second face's mouth stays closed in the prompt.
+- **One silent two-shot** at the point the plan lands, generated last and replaced with a cutaway of the phone on the table if it fails.
+- **The product insert** runs 8 to 12 seconds with one voice over it. It is built from the product's own code, so it is the cheapest part of the video.
+- **Cut rhythm.** One punch in on the second sentence of a clip, and a hard cut between speakers with the next line starting in the first third of a second.
+
+**Supporting cast.** Any character who speaks in two or more clips gets their own persona sheet. Each offer keeps its own cast, so a husband is never shared across offers. One outfit per character per video, each a different colour.
+
+**Guardrails.** Characters talk to each other, never to the viewer about the viewer's situation. Jokes land on the situation or the aunties, never on a character's body, loss or choices. Nobody claims a purchase or a result. The doubter is a person with their own reason, ends the video inside the plan, and is never a villain or a lecture.
+
+**Where the retries come from,** and the fix for each:
+
+- **Wrong mouth.** The line lands on the other face. Fix it with one speaker per clip and the silent, facing-away line.
+- **Faces blending.** Two people of similar age drift together. Fix it with different outfit colours and different hair or head coverings.
+- **Voices sounding alike.** Fix it with a different pitch and age in each voice line.
+- **An extra person** in the background of a wide frame. Keep wide shots rare, and never ask for a crowd.
+- **The two-shot.** It fails most, so it goes last and has a cutaway ready.
+
+#### Story and sale videos
+
+A video that sells a program, a course or an offer is a dramatic transformation story, not a quiet slice of life. It runs 90 to 120 seconds, with a 30 to 45 second cutdown for people who already watched it. References that sell a course, a book or a program run 85 to 180 seconds, and under 40 seconds only works for a simple product.
+
+**Build it from the offer's own landing page.** The headline is the promise. The problem section is the first story angle. The offer is what is inside the product, the app tools the buyer gets and the community. A second angle comes from research into a different problem the same offer solves. The voice over states the promise in the page's own words and never strengthens a claim.
+
+**Study first.** Read the strongest story and long running paid references closely, with word timed transcripts and frames, and get a Codex second opinion before drafting. Copy structure, never words.
+
+**The story.**
+
+- It opens on a relatable, high stakes moment, lets the cost grow, shows the person using the product in her life (reads it on her phone, takes notes, uses the app tools, talks to the community), and ends on the outcome she wants. What the outcome may show is limited per niche, and the story never claims a result the offer cannot promise.
+- Persuasion and emotional triggers belong here: desire, fear, identity, status, the cost of doing nothing. Name the trigger for each beat in the storyboard.
+- Every line is something a person says. No calendar markers or odd counts as fake specificity. Each beat causes the next, and every line is read aloud as the character.
+- Real testimonials come only from published customers, word for word. An AI character never gives one.
+
+**Shot caps and pace.** No picture holds past its cap, and reading time sets the minimum. Both rules are in the "Pace" section of the 00-workflow-and-rules knowledge file. A clip reused under the voice over has its own sound muted.
+
+**The close.**
+
+1. The story ends on its last emotional beat.
+2. A short brand voice over plays over the outcome. It says what the viewer gets in use terms: "Get the [program] to [what it helps you do]. It comes with the [app], whose [tools] help you [jobs], and a community of [who] going through the same thing." The community line appears only if the community is real. It never counts parts or names packaging, so "all five parts, both bonuses and the app" is out.
+3. The picture follows the voice phrase by phrase. Each phrase gets its own picture for 2 to 3 seconds: the outcome under the promise, the person using the product under what it helps her do, each named tool's real screen under that tool, the community under the community line. No single image holds longer than about 3 seconds while the voice speaks, and most of these pictures reuse clips and inserts the story already has. Only the last 2 to 3 seconds are the product mockup, with only the short domain as a caption.
+4. The voice over never speaks an address, and the full page path never goes on screen. The post caption and the ad button carry the link. There is no boilerplate end card and no small type disclaimer in the picture, because the disclaimer goes in the post caption. This is how the strongest story ads close: Thai Life's "Unsung Hero" and John Lewis hold the brand back to the final seconds.
+
+**The mockup.** A digital product is never shown as a printed book. The 3D mockup appears only as the product shot at the close.
+
+**Storyboard.** The script ships with its storyboard inside the same brief, as set out in the "Review stills" section of the 00-workflow-and-rules knowledge file. The script and the storyboard are approved together before any face or start frame is made.
 
 #### Product and b-roll video (ecommerce)
 
@@ -245,7 +327,7 @@ PACE: real-time, natural everyday pace, NOT slow motion.
 LOOK: phone-grade, soft grain, unretouched.
 ```
 
-Generate one short shot per prompt in Flow (Gemini Omni or Veo 3.1) or Kling, and never ask for on-screen text in the shot, because video models garble it and faces and physics drift on long clips. If the script is longer, break it into shots and generate one clip per shot, then stitch. All captions and headlines go on in CapCut.
+Generate one short shot per prompt in Flow, and never ask for on-screen text in the shot, because video models garble it and faces and physics drift on long clips. If the script is longer, break it into shots and generate one clip per shot, then stitch. All captions and headlines go on in CapCut.
 
 The ecommerce UGC archetypes worth templating: unboxing or first-look, problem-then-solution demo, before and after, "it made me buy it" reaction, founder or origin story, lifestyle or aspirational, and comparison ("why this versus that"). Cold traffic usually wins on problem-then-solution or the reaction. Warmer audiences respond to founder story and comparison. An in-hand testimonial needs a real customer, so see the compliance rule above.
 
@@ -318,7 +400,7 @@ Drop the clips into CapCut in order, lay the voiceover underneath, and cut to a 
 | Captions | Burn in | Burn in, native-style | Burn in |
 | Safe zone | Keep hook + CTA clear of bottom ~20% | Key text in middle 60% | Central safe zone |
 
-Keep the hook line and the CTA inside the central safe zone so the platform's buttons and text never cover them. Export the ratios you are actually buying, not one size for everything. Then run the the "Final check" section of the 00-workflow-and-rules knowledge file.
+Keep the hook line and the CTA inside the central safe zone so the platform's buttons and text never cover them. Export the ratios you are actually buying, not one size for everything. Then run the "Final check" section of the 00-workflow-and-rules knowledge file.
 
 ### Step 6: Test and iterate
 
@@ -356,7 +438,7 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 
 ## Going Further (when the basics work)
 
-- **Go cheaper at volume.** Kling and Seedance are the usual volume routes for UGC and product b-roll. Per-second price and plan price differ, so compare current costs in the "Tools and prices" section of the 00-workflow-and-rules knowledge file before you commit. Save Veo 3.1 or Gemini Omni for the talking and hero shots.
+- **Go cheaper at volume.** Veo 3.1 Fast in Flow, at 20 credits a clip, is the volume route for UGC and product b-roll. Save Veo 3.1 Quality for the one hero close-up. See the "Google Flow" section of the 00-workflow-and-rules knowledge file.
 
 - **Batch-render the matrix.** Once a format works, tools like Creatomate or JSON2Video can render the whole variation matrix off a template instead of cutting each by hand.
 
@@ -404,7 +486,7 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 
 - **Avoid the over-polished AI look.** It reads as a brand faking authenticity, and that trust collapse tanks conversion even when the ad is approved.
 
-- **Follow AI-disclosure rules.** Meta and TikTok auto-label realistic AI, and paid ads using a synthetic performer (an AI actor or avatar) increasingly need conspicuous disclosure. Set the platform label and burn a small AI-generated tag into the video. Never imply a real named person endorsed the product without their consent. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
+- **Follow AI-disclosure rules.** Meta and TikTok auto-label realistic AI, and paid ads using a synthetic performer (an AI actor or avatar) increasingly need conspicuous disclosure. Switch on the platform's AI label at posting, and burn a tag into the picture only where the platform has no label and the policy requires one. Never imply a real named person endorsed the product without their consent. See the "AI disclosure" section of the 00-workflow-and-rules knowledge file.
 
 - **No fabricated customers.** An AI person never gives a testimonial, a review or a result as if it were a real customer's.
 
@@ -417,20 +499,21 @@ When a winner emerges, read its name to find the winning hook, angle, and actor,
 - Hook lands in the first 1 to 2 seconds (visual and line)
 - Hook is paid off by the script, no over-promise
 - One clear CTA, one action
+- A story or sale video: 90 to 120 seconds, every line sayable by a person, the close ends on the outcome, the voice over is cut phrase by phrase with a new picture every 2 to 3 seconds, and the mockup holds only the last 2 to 3 seconds with the short domain, and the storyboard was approved with the script
 - At least 10 to 30 distinct variations in the round
 - Every cut named: `[platform]_[ratio]_[angle]_[hook]_[actor]_[v##]`
 - UGC reads amateur and candid, with handheld framing, phone light and a real setting
 - No AI actor posing as a real customer, and no invented testimonial
 - Speech to speech used for UGC voice where the tool supports it, on a paid voice plan
 - Every speaking prompt carried the dialogue accuracy line
-- Talking-face takes about 8 seconds or less, with cutaways at least every 8 seconds
+- Talking-face takes trimmed to their speech, with a new picture every 2 to 4 seconds (the "Pace" section of the 00-workflow-and-rules knowledge file)
 - Real product footage used wherever a label must read or a hand holds the product
 - No 8K / cinematic / hyperreal language left in prompts
 - Correct ratio and duration per placement
 - Captions word-timed in the reference's style, never over a face, hook and CTA inside the safe zone, nothing in the bottom fifth (the "Captions" section of the 00-workflow-and-rules knowledge file)
 - Colours come from the brand kit or the product's screens (the "Brand colours" section of the 00-workflow-and-rules knowledge file)
 - Music and effects licensed for ads, sources logged (the "Audio and licensing" section of the 00-workflow-and-rules knowledge file)
-- AI label set on the platform and burned in where an AI actor appears (the "AI disclosure" section of the 00-workflow-and-rules knowledge file)
+- AI label switched on at posting wherever an AI actor appears (the "AI disclosure" section of the 00-workflow-and-rules knowledge file)
 - Earnings disclaimer present after any income or outcome claim
 - Final check done and watched once in a normal player (the "Final check" section of the 00-workflow-and-rules knowledge file)
 - Handed off to Meta Ads Playbook / TikTok Ads Playbook
