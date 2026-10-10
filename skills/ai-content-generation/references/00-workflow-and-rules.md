@@ -79,6 +79,7 @@ Each step writes one file that the next step reads. Claude can run steps 1 to 3 
 
 - Record or generate the final voice before any shot is made, then time every word with Whisper. The timed voice sets each shot's exact length.
 - **When the video model speaks the line itself** (a talking AI person in Flow), the script fixes each line and its clip length instead. Generate the shots first, then run ElevenLabs Voice Changer over the clips to lock one voice, and time the words with Whisper after that.
+- **A coded film that gets a voice after its picture is approved** (Remotion or the site motion kit) is the one exception to voice first. The picture and its timing stay fixed, one short line is generated per beat and fitted to it, and a manifest of line lengths places each line. The method is in the "Type A: Voiceover for a Coded Film" section of `05-launch-videos-and-recording-edits.md`.
 - **Output:** the voice file and `words.json`.
 
 ### 5. Shots
@@ -254,13 +255,13 @@ A product, tool or website on screen is built from the product's own code, never
 
 ### Audio and licensing
 
-- **Voice for ads:** use a paid voice plan. The ElevenLabs free tier carries no commercial licence and requires attribution, so it never goes in an ad. Google Cloud text to speech (TTS) Studio voices (`en-US-Studio-Q` male, `en-US-Studio-O` female) are a low-cost option for narration.
+- **Voice for ads:** use a paid voice plan or a paid API. Gemini text to speech (TTS) with billing on is the default for narration and host voices, because it takes an accent, pace and register instruction in plain words. OpenAI gpt-4o-mini-tts is the comparison provider. The ElevenLabs free tier carries no commercial licence and requires attribution, so it never goes in an ad. Google Cloud TTS Studio voices (`en-US-Studio-Q` male, `en-US-Studio-O` female) are a low-cost option for long narration. Check the provider's commercial terms before ad use, and read keys from the shared keys file without printing them.
 - **Music for ads:** use Mixkit (check each item's licence tag), Freesound or Openverse tracks licensed CC0 or CC BY, or original music from a paid Suno plan. Avoid the YouTube Audio Library for Meta ads, because its licence covers YouTube. A recurring series rotates its music beds (see step 1).
 - **Sound by video type.** Each type gets its own sound rule.
 
   | Video type | Music | Sound effects |
   | --- | --- | --- |
-  | Voiced launch or product video, recording edit | One bed, ducked under the voice | One on each cut and graphic entrance, quieter than the voice |
+  | Voiced launch or product video, recording edit | One bed, ducked under the voice (about 55% under a narrator, about 40% under short host stings, with a quick dip in and a slower release) | One on each cut and graphic entrance, quieter than the voice |
   | Launch film with no voice over | One bed carries the pace | Soft and muted, on the key moments only, never on every element |
   | UGC, dialogue and talking head | A mood bed about 4 to 6 LUFS under the speech, dipped under each line and lifted on the end card | Room tone plus the real sounds of the scene, each placed on its action (footsteps, a cup set down, a car horn outside, a message pop) |
   | Tool short | An upbeat bed | A soft tap or pop on each interaction |
@@ -271,7 +272,7 @@ A product, tool or website on screen is built from the product's own code, never
 
 ### AI disclosure
 
-- Turn on the platform's AI label at posting wherever it offers one. Burn an "AI-generated" label into the picture only where the platform has no label and the ad policy requires one. Otherwise the picture carries no AI tag, and post captions never mention AI.
+- Turn on the platform's AI label at posting wherever it offers one. A synthetic voice is AI-generated audio, so the label goes on for a voiced film even when nothing in the picture is generated. Burn an "AI-generated" label into the picture only where the platform has no label and the ad policy requires one. Otherwise the picture carries no AI tag, and post captions never mention AI.
 - An AI person never poses as a real customer giving a testimonial. AI creators in ads are presented as presenters or actors.
 - Testimonials come only from real, published customers with permission.
 
@@ -360,6 +361,8 @@ Prices verified 2026-10-07. Check the source link before buying. Items marked (s
 | Midjourney | The best-looking stills | From $10 a month, no free trial (s) | Yes; companies over $1M revenue need Pro | [Midjourney](https://www.midjourney.com/account) |
 | Ideogram | Text inside images, fallback to GPT Image | Free 10 slow credits a week; Plus $20 (s) | Yes (s) | [eesel.ai](https://www.eesel.ai/blog/ideogram-pricing) |
 | ElevenLabs (Eleven v4) | Voiceover, voice clone, Voice Changer | Free 10,000 credits; Starter $6; Creator $22 | Paid plans only | [elevenlabs.io](https://elevenlabs.io/pricing) |
+| Gemini text to speech (Flash TTS) | Narrator and host voices that take an accent, pace and register instruction in plain words | Billed per use on the Gemini API, billing on | Check Google's terms before ad use | [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing) |
+| OpenAI text to speech (gpt-4o-mini-tts) | Comparison voices from a second provider; takes the same kind of style instruction | Billed per use on the OpenAI API | Yes on the paid API; disclose that the voice is AI | [OpenAI pricing](https://openai.com/api/pricing/) |
 | Google Cloud TTS (Studio, Chirp 3 HD) | Low-cost narration | 1M free characters a month each, then $160 or $30 per million; billing must be on | Yes | [cloud.google.com](https://cloud.google.com/text-to-speech/pricing) |
 | HeyGen | Avatars and clones of you | Free 3 videos a month; Creator $29 | Paid yes | [heygen.com](https://www.heygen.com/pricing) |
 | Arcads | AI UGC actors | About $110 a month for 10 videos (s) | Yes (s) | [ugcgen.ai](https://ugcgen.ai/arcads-pricing) |
@@ -372,7 +375,7 @@ Prices verified 2026-10-07. Check the source link before buying. Items marked (s
 | Openverse | Search across openly licensed audio and images | Free | CC0 and CC BY items only; never CC BY-NC | [openverse.org](https://openverse.org/) |
 | Suno | Original music | Free has no commercial rights; Pro $8 a month annual | Pro and Premier only | [suno.com](https://suno.com/pricing) |
 
-**Default picks.** ChatGPT for every image of a person. Flow for every generated clip, with the model chosen per shot in the "Google Flow" section. Remotion for every edit that can be built in code. We do not use Higgsfield. Kling, Seedance and Runway stay listed for reference.
+**Default picks.** ChatGPT for every image of a person. Flow for every generated clip, with the model chosen per shot in the "Google Flow" section. Remotion for every edit that can be built in code. Gemini text to speech for a coded film's voice. We do not use Higgsfield. Kling, Seedance and Runway stay listed for reference.
 
 **Start lean.** Free tiers are enough to test. Pay for one tool per layer only when an ad or volume needs it. Sora is discontinued.
 

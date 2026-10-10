@@ -149,8 +149,9 @@ Then pick one of three routes. The video model and the voice tool must not both 
 
 ### Ad-safe voice options
 
-Any voice that goes into an ad needs a commercial licence. Two options work:
+Any voice that goes into an ad needs a commercial licence. Three options work:
 
+- **Gemini text to speech (TTS)** on the paid Gemini API. It takes a plain-words persona instruction (city, age, accent, pace, register), so it is the first test for an accent a stock voice list lacks. The method and a worked persona instruction are in the "Type A: Voiceover for a Coded Film" section of the 05-launch-videos-and-recording-edits knowledge file.
 - **Paid ElevenLabs.** Use Starter or above. The free plan cannot be used in ads and requires attribution.
 - **Google Cloud Text to Speech, Studio voice** `en-US-Studio-Q` (male) or `en-US-Studio-O` (female). It needs a Google Cloud project with billing switched on and a service account key, so treat it as the optional path. Send one script line per request. Wrap each sentence in Speech Synthesis Markup Language (SSML) `<s>` tags with a short break after it, so the voice pauses and drops at sentence ends like a person:
 
@@ -161,7 +162,7 @@ Any voice that goes into an ad needs a commercial licence. Two options work:
 </speak>
 ```
 
-Join the lines into one file, normalise it to about -16 LUFS (Loudness Units relative to Full Scale), then run Whisper on the final track to get word-level timing for the captions. These are US accents. If your audience is Nigerian or diaspora, test an accent-matched ElevenLabs voice or the video model's own voice first. Studio voices take SSML, but the newer Chirp 3 HD voices do not.
+Join the lines into one file, normalise it to about -16 LUFS (Loudness Units relative to Full Scale), then run Whisper on the final track to get word-level timing for the captions. These are US accents. If your audience is Nigerian or diaspora, test Gemini text to speech with an accent instruction, an accent-matched ElevenLabs voice or the video model's own voice first, and judge the accent by ear. Studio voices take SSML, but the newer Chirp 3 HD voices do not.
 
 ### Step 8: Animate your character, one shot at a time
 

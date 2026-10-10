@@ -185,12 +185,13 @@ Do not generate a 1,200-word script in one block. It drifts and glitches. Genera
 
 When the narration is done, run Whisper on the finished track to get word-level timings. The captions and the cut points in Step 7 come from those timings.
 
-**Lower-cost narration.** When you need clean narration and not a cloned voice, two options work:
+**Lower-cost narration.** When you need clean narration and not a cloned voice, three options work:
 
+- **Gemini text to speech (TTS)** on the paid Gemini API. A plain-words persona instruction sets the accent, pace and register, and one short line per request keeps the pacing under your control. See the "Type A: Voiceover for a Coded Film" section of `05-launch-videos-and-recording-edits.md` for the method.
 - **Speechma** (speechma.com) is a free, no-signup browser text to speech (TTS) tool with a large library of voices. It states that output can be used commercially, but check its terms before client work or a monetized channel. It clones nothing, so the voice is a library voice.
 - **Google Cloud TTS, Studio voice** `en-US-Studio-Q` or `en-US-Studio-O`, with Speech Synthesis Markup Language (SSML) sentence tags and short breaks. It needs a Google Cloud project with billing on. See the setup in the "Ad-safe voice options" section of `01-faceless-influencer.md`. Studio voices are US accents.
 
-Use either to ship cheaply, then move to a cloned ElevenLabs voice once you want a narrator that is uniquely your channel's.
+Use any of them to ship cheaply, then move to a cloned ElevenLabs voice once you want a narrator that is uniquely your channel's.
 
 ### Step 5: Plan the visuals scene by scene
 

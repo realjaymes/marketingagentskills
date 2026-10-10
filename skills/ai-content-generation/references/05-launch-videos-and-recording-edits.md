@@ -12,7 +12,7 @@ Build two kinds of video with Claude Code and Remotion: launch and product video
 | Video build              | Remotion (code to video)                         | Free for individuals and companies up to 3 people | Company licence for 4 or more people                            |
 | Cuts, stills, loudness   | ffmpeg                                           | Free                                              | CapCut for manual touch-ups                                     |
 | Word timings, transcript | whisper.cpp (Whisper)                            | Free                                              | Whisper Transcript desktop app for a quick `.srt` file          |
-| AI voice (type A)        | Google Cloud Text-to-Speech (TTS), Studio voice  | Free allowance each month, then billed            | ElevenLabs for a cloned voice                                   |
+| AI voice (type A)        | Gemini text to speech (TTS), through the Gemini API | Billed per use, billing on                        | OpenAI gpt-4o-mini-tts for comparison voices, Google Cloud TTS Studio voice for a long script that needs sentence breaks, ElevenLabs for a cloned voice |
 | Music and sound effects  | Mixkit, Freesound, Openverse (CC0 or CC BY only) | Free | Other packs with a clear licence |
 | Motion sources           | Prompt Motion, Raylight, React Bits, Magic UI, GSAP and the others in the "Motion library" section | Free to browse | None needed |
 | Frames from a reference  | A frame extractor, or ffmpeg                     | Free                                              | None needed                                                     |
@@ -43,7 +43,9 @@ Setup takes about 30 minutes. Ask Claude Code to install and verify each tool, a
 
 **Remotion.** Nothing to install up front. Claude scaffolds a project per video with `npx`. Remotion is free for individuals and companies of up to 3 people. A team of 4 or more needs a company licence. In Remotion Studio, audio stutters while you scrub the timeline. The final render is clean.
 
-**Google Cloud Text-to-Speech (type A).** Create a Google Cloud project with billing turned on. Enable the Cloud Text-to-Speech API. Create a service account (it needs no role), create a JSON key for it, and store the key in a private folder outside the video folder and outside your notes. Give Claude the folder path only. Never paste the key contents into chat and never save the key in your notes or a repo. A Gemini API key does not work for this. The Studio voice sits under Google's legacy voices. It has a monthly free allowance, and the current limit is on Google's pricing page, so check it in the console before you plan volume. Chirp 3 HD, the newer voice, does not take Speech Synthesis Markup Language (SSML), so the pacing method below needs Studio.
+**Gemini text to speech (type A).** Turn on billing for the Gemini API and keep its key in a local secrets file or an environment variable. Scripts read the key from there. A key value is never printed, logged or written into a project file, and it never goes into chat. A voice takes a plain-words persona instruction (city, age, accent, pace, register), which suits accents a stock voice list does not cover. OpenAI's gpt-4o-mini-tts takes the same kind of instruction and gives comparison voices from a second provider. Check the provider's commercial terms before ad use.
+
+**Google Cloud Text-to-Speech (alternative for a long script).** Create a Google Cloud project with billing turned on. Enable the Cloud Text-to-Speech API. Create a service account (it needs no role), create a JSON key for it, and store the key in a private folder outside the video folder and outside your notes. Give Claude the folder path only. Never paste the key contents into chat and never save the key in your notes or a repo. A Gemini API key does not work for this. The Studio voice sits under Google's legacy voices. It has a monthly free allowance, and the current limit is on Google's pricing page, so check it in the console before you plan volume. Chirp 3 HD, the newer voice, does not take Speech Synthesis Markup Language (SSML), so the sentence-break method in step 4 needs Studio.
 
 **Frame extractor.** Use a browser frame extractor or ffmpeg to turn a reference into a folder of frames. Pair it with a Whisper `.srt` file. With both in the project folder, Claude reads the pre-made frames and transcript and does not spend plan usage watching the video.
 
@@ -52,13 +54,14 @@ Setup takes about 30 minutes. Ask Claude Code to install and verify each tool, a
 ```
 Run a pre-flight check for a video project. Report one line each: node version,
 ffmpeg version, whisper-cli and which model file is downloaded, and whether npx
-can reach Remotion. For type A, also confirm the path I give you to the Google
-service account file exists. Check the path only. Never open, print or search
-for the contents of any credential file. If anything is missing, tell me the
-fix and stop.
+can reach Remotion. For type A with a voice, also confirm the voice key's name is in the shared
+keys file (check the name only), or for a Google Cloud voice that the path I
+give you to the service account file exists. Check names and paths only.
+Never open, print or search for the contents of any credential file, and never
+print a key value. If anything is missing, tell me the fix and stop.
 ```
 
-If a command is "not found" after an install, open a fresh terminal. If the voice step fails, check that the API and the service account sit in the same project, that billing is on and that the key path is correct. For tool prices see the "Tools and prices" section of `00-workflow-and-rules.md`.
+If a command is "not found" after an install, open a fresh terminal. If a Gemini voice call fails, check that billing is on and that the key name matches the keys file. If a Google Cloud voice step fails, check that the API and the service account sit in the same project, that billing is on and that the key path is correct. For tool prices see the "Tools and prices" section of `00-workflow-and-rules.md`.
 
 ---
 
@@ -186,13 +189,15 @@ Caption style copies the reference each time, and the safety rules still apply o
 
 ### Step 4. Voice
 
-**Type A with no voice over.** Most launch films on X have none, so the on-screen text carries the story. There is no voice track, so on-screen text sets the timing by the reading minimums in the "Pace" section of `00-workflow-and-rules.md` (at least 1 second plus 0.3 seconds per word), with the picture changing every 2 to 4 seconds at uneven gaps. The music bed carries the pace. Skip the rest of this step.
+**Type A: decide whether it gets a voice.** Add a voice only where it adds something. Two cases earn one: a walkthrough where a narrator adds information the screen does not show, and a game or show format where short host stings add energy. Keep a film silent when its characters speak in dialogue, a chat or speech bubbles, because text to speech on characters sounds fake and those films are built for sound-off viewing. Most launch films on X have no voice, so the on-screen text carries the story.
 
-**Type A with a voice.** Claude generates the voice with Google Cloud Text-to-Speech and the `en-US-Studio-Q` Studio voice, one script line per request. It wraps each sentence in an SSML `<s>` tag and adds a break of about 400 milliseconds after it. The voice then pauses and drops at the end of each sentence like a person. Claude joins the lines into one file.
+**Type A with no voice over.** There is no voice track, so on-screen text sets the timing by the reading minimums in the "Pace" section of `00-workflow-and-rules.md` (at least 1 second plus 0.3 seconds per word), with the picture changing every 2 to 4 seconds at uneven gaps. The music bed carries the pace. Skip the rest of this step.
+
+**Type A with a voice.** Follow the "Type A: Voiceover for a Coded Film" section: Claude generates one short line per beat, places each from a manifest of line lengths and fits the line to the beat. For a long continuous narration, Google Cloud Text-to-Speech with the `en-US-Studio-Q` Studio voice is the alternative. Claude sends one script line per request, wraps each sentence in an SSML `<s>` tag and adds a break of about 400 milliseconds after it, so the voice pauses and drops at the end of each sentence like a person, then joins the lines into one file.
 
 **Type C.** The recording is the voice. Claude transcribes it, finds pauses, false starts and filler words, and says which lines it will cut before it cuts them. Where you said a line twice, it keeps the best take.
 
-For both types, Claude normalises the track to -16 LUFS (Loudness Units relative to Full Scale), then runs Whisper on the final track to get word-level timing into `words.json`. Claude reports the length and the first and last word times. It does not play the audio. Save `voice.wav` and `words.json` in the work folder. For music and effects licensing see the "Audio and licensing" section of `00-workflow-and-rules.md`.
+For both types, Claude normalises the track to -16 LUFS (Loudness Units relative to Full Scale), then runs Whisper on the final track to get word-level timing into `words.json`. Claude reports the length and the first and last word times. It does not play the audio. Save `voice.wav` and `words.json` in the work folder. A per-beat voiceover keeps its manifest of line lengths in place of `words.json`, because each line starts at a set second, and the finished film is mastered to -16 LUFS as a whole. For music and effects licensing see the "Audio and licensing" section of `00-workflow-and-rules.md`.
 
 ### Step 5. Shots
 
@@ -258,7 +263,7 @@ Run the render check, then run the "Final check" section of `00-workflow-and-rul
 
 ## Type A: Launch and Product Videos
 
-A launch video is screens, cards and animated text over an AI voice. It is built entirely in Remotion, and it is the strongest thing this setup does.
+A launch video is screens, cards and animated text over music, with an AI voice when the story needs one (the "Type A: Voiceover for a Coded Film" section). It is built entirely in Remotion, and it is the strongest thing this setup does.
 
 **Default length and formats.** A launch video runs 45 to 60 seconds. When it is assembled in Remotion it ships in three versions: 9:16 for TikTok, Instagram Reels, Instagram Stories and WhatsApp Status, 4:5 for Instagram and Facebook feeds, and 16:9 for X, LinkedIn and the website. Clips generated in an AI video tool (Flow) are generated once in 9:16, and Remotion frames them for the other two versions, so no credits are spent twice. A video made entirely in Flow, such as UGC or an AI talking head, ships in 9:16 only. Make no separate short ad cut unless the brief asks for one.
 
@@ -291,6 +296,48 @@ Every result on screen must be one the live product produced for the inputs show
 | Heavy particles, fluids, After Effects plugin looks | Rarely    | Use licensed stock elements or pick a different style                                              |
 
 Expect two or three tuning rounds against the reference. A first build rarely matches the polish of a top launch studio. It can beat the reference on fit, because the video uses your real product and message. You can also combine references: pacing from one, type from a second and transitions from a third.
+
+---
+
+## Type A: Voiceover for a Coded Film
+
+A coded launch film (Remotion, or the site motion kit) can carry a text to speech voice without changing its picture. Wholesome Girlies (WG) did this for two of its four launch films, and the owner approved the voiced cuts as the films. The rules hold for any brand.
+
+**When a voice earns its place.**
+
+- A walkthrough where a narrator adds information the screen does not show (WG film 2, the Girlies app).
+- A game or show format where short host stings add energy (WG film 4, Game Night).
+- Keep dialogue, chat and speech-bubble films silent (WG films 1 and 3). Voicing characters with text to speech sounds fake, and those films are built for sound-off viewing.
+
+**Write the lines.**
+
+- A narrator line says the next thing and never reads the caption. The caption says what the tool does, and the voice adds a fact beyond it. Over the caption "Six questions, then the words to ask him.", WG's narrator says "Answer for the man he is today."
+- One short line per beat, at 3 words a second or less. WG film 2's seven lines ran 2.05 to 2.84 words a second.
+- Fit the line to the beat. Never speed up or retime the picture to suit a line.
+- Host stings are 1 to 5 words: "Round two.", "Which one are you sending?"
+
+**Choose the voice by ear.**
+
+1. Generate the same few lines in several voices, across providers where the budget allows (Gemini TTS and OpenAI gpt-4o-mini-tts).
+2. Save the clips in a samples folder named by provider, model and voice, for example "Film 2 Gemini 3.1 Flash TTS Preview Sulafat - baby.wav".
+3. The human judges the accent by ear. The model cannot.
+4. Write a persona instruction that names the city, age, accent, pace and register. For a Nigerian audience on Gemini Flash TTS, this narrator instruction worked with the voice Sulafat: "A warm Nigerian woman from Lagos in her early thirties, speaking English with a natural Lagos accent. Easy, unhurried pace, friendly and reassuring, like a close friend on a voice note. Plain delivery, no acting." This host instruction worked with the voice Puck: "A bright, warm Nigerian game show host from Lagos, speaking English with a natural Lagos accent. Big smiling energy but a slow, clear stage delivery: about two words a second, every word fully pronounced, never rushed, never shouting. Each line is a short on-stage announcement."
+5. A line the model reads badly gets its own instruction. WG's closing line asks for one smooth phrase with no long pause after the brand name.
+
+**Build it.**
+
+1. One lines file per film: the provider, model, voice and instruction as defaults, then each line's id and text.
+2. One script that writes one audio file per line and a manifest of every line's seconds, words and words per second. WG's `wg-tts.mjs` also trims silence, normalises each line, transcribes each file to catch an added, dropped or changed word, and regenerates a line that is too fast. One command regenerates a whole voice.
+3. A timing file that places each line at a set second inside its beat window. The composition reads the manifest and the timing file, so swapping a voice never means editing the film.
+4. Duck the music under each line: a quick dip in (about 6 frames at 30 frames per second), held while the voice speaks, and a slower release (about 15 frames). Pull the bed down by about 55% under a narrator and about 40% under short host stings. Keep the sound effects.
+5. Audit every line. Rebuild the voice track alone, run silence detection, and check that each line starts and ends inside its beat at 3 words a second or less. WG's `vo-audit.mjs` fails on any line that does not. Master the film to -16 LUFS.
+6. Read the API keys from the shared keys file or the environment. Never print them, log them or write them to a file in the project or your notes.
+
+**Ship the voiced cut as a test against the silent cut.** Render both and let the owner compare. WG's owner approved the voiced cuts and they replaced the silent ones. The silent cuts stay renderable by name.
+
+**Disclose it.** A synthetic voice is AI-generated audio, so switch on the platform's AI label at posting, even when nothing in the picture is generated. See the "AI disclosure" section of `00-workflow-and-rules.md`.
+
+The code for the WG films is in Site Motion Kit — Code & How It Works.
 
 ---
 
@@ -395,7 +442,7 @@ Check the template side by side with the reference, beat by beat. Tune it until 
 
 *The prompts above already carry these rules. Use this as a pre-post pass.*
 
-- **Pause the voice.** Studio voice with sentence tags and breaks sounds human. A voice with no pauses is the most common tell.
+- **Pause the voice.** One short line per beat with silence around it sounds human, and so does a Studio voice with sentence tags and breaks. A voice with no pauses is the most common tell.
 - **Move the captions.** Captions that appear word by word at the pace of speech read as edited. Static captions read as automated.
 - **One style.** Use one look across every scene. A different style per scene is a tell.
 - **No fades.** Hard cuts and motion. Fades between scenes look like a slideshow.
@@ -411,7 +458,10 @@ Check the template side by side with the reference, beat by beat. Tune it until 
 - Letting Claude invent a claim, a number or a quote to fill a beat. Use `[NEED: ...]` and supply the fact.
 - Asking ffmpeg to burn in captions. This build has no `libass`. Render captions in Remotion.
 - Colours chosen by taste. Take them from the product screens or brand kit.
-- Pasting a service account key into chat or saving it in your notes. Share the path only.
+- Pasting a service account key or an API key into chat, or saving it in your notes. Share the path or the key name only.
+- Voicing cartoon characters, chat messages or speech bubbles with text to speech. It sounds fake, so those films stay silent.
+- Letting the narrator read the caption, or retiming the picture to fit a line. Say the next fact and fit the line to the beat.
+- Trusting the model to judge an accent. A human listens to the samples and picks.
 - Treating a first render as final. Plan two or three tuning rounds against the reference.
 - Copying the reference's music, footage or logos.
 - Running more than one or two revision rounds per file. Decide what to change, then change it.
@@ -427,11 +477,12 @@ Check the template side by side with the reference, beat by beat. Tune it until 
 - Captions are 3 to 5 words, word-timed, clear of faces and the bottom fifth
 - No fades, no black frames, something moves in every shot
 - Loudness is about -16 LUFS, and music sits under the voice
+- Voiced coded film: every line sits inside its beat at 3 words a second or less, and the audit passes
 - Music, effects and inserts have a licence that covers the platform, logged in SOUNDS.md
 - Side-by-side stills against the reference match on timing and layout
 - Type C only: every cut, zoom and insert was approved, and no clip is lifted from another creator
 - AI label added where the voice or footage is generated
-- Credential files stayed outside your notes and out of chat
+- Credential files and API keys stayed outside your notes, out of chat and out of logs
 - Template and reference logged in the hub if the style will be reused
 
 ---
