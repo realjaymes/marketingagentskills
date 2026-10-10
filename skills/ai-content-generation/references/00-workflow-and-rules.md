@@ -314,7 +314,27 @@ Run this check before anything is posted. Each item is a yes or a no.
 
 ### Folders and files
 
-- **In your notes:** the asset hub and the REFERENCE, SCRIPT, SCENES and SOUNDS notes, in the project's notes folder.
+- **In your notes:** one brief per video, in the project's notes folder. The REFERENCE, SCRIPT, SCENES and SOUNDS outputs become sections of the brief, or separate notes linked from it on a large project. The brief's status runs brief, approved, in production, draft, final, and nothing is generated until it is approved.
+- **The brief's sections,** in order:
+  - **In one line:** what the video is, who it is for, and what they do after watching.
+  - **The job:** who watches it, the moment they are in, the one action we want, the market, and whether it is organic only or can run as an ad.
+  - **Reference it copies:** the link, its numbers, and exactly what we copy (opening, pacing, structure, shot type).
+  - **Hooks:** three, best first, drafted or reviewed by Codex and passed through the voice scan.
+  - **Script, shot by shot:** a table of time, on screen, what we see and audio, within the "Pace" section caps.
+  - **Storyboard:** for a story script, the code-drawn sheet from the "Review stills" section.
+  - **Who appears:** the character and their persona sheet, or no people, with outfit, setting and props.
+  - **Inputs and real output:** for a product or tool on screen, the exact inputs and the exact result the live tool showed.
+  - **How it gets made:** the method, the style, and each step's credit cost.
+  - **Audio:** the music bed, and a cue list of real sounds with each sound's moment, file, source and licence.
+  - **Formats and destination:** ratios, length, where it posts first and the address the end card shows.
+  - **Post caption:** ready to paste between two horizontal rules. It never mentions AI.
+  - **Compliance check:** each item marked pass or to check.
+  - **Build checklist.**
+  - **Flow generation, scene by scene:** the prompt log from the "Google Flow" section.
+  - **The finished edit:** file, length and any reshoot still open with its credit cost.
+  - **Open questions:** numbered, each with a recommendation.
+  - **the owner's feedback:** read before any change to the brief.
+  - **Revision log.**
 - **Outside your notes:** heavy media lives in a work folder linked from the hub, with `Reference/`, `Frames/`, `Voice/`, `Clips/` and `Renders/` inside.
 - **Names the owner reads** use title case and readable words, with no dates, slugs or dashes, and the version at the end: a folder `Acme Launch Video`, a file `Acme Launch Video v1.mp4`. Clips are named by shot (`Shot 01.mp4`). Scratch and intermediate files stay in the session scratchpad.
 - **Templates:** after the first slow run of a new format, turn it into a template (a Remotion composition, a saved prompt set, or saved anchors), so the next run is fast.

@@ -2,7 +2,7 @@
 name: ai-content-generation
 description: "When the user wants to create AI-generated video or image content: a faceless influencer or persona, an AI clone or talking head, AI ad creative and AI UGC, a faceless YouTube channel, a product or launch video with motion graphics (with an AI voice or none), or a sharp edit of their own recording (including a Hormozi-style edit). Also use when the user wants to copy a creator's editing style or a brand's motion style, tear down a reference video, or mentions 'faceless,' 'AI avatar,' 'AI UGC,' 'talking head,' 'clone myself,' 'AI video ad,' 'launch video,' 'motion graphics,' 'video edit,' 'reference teardown,' or tools like Veo, Gemini Omni, Google Flow, Kling, Seedance, Runway, ElevenLabs, HeyGen, Arcads, Nano Banana, Midjourney, Ideogram, Remotion or Whisper. Runs one six-step, reference-first workflow with two approval points, and routes to a playbook per use case. For paid-ad strategy and targeting, see performance-marketing or paid-ads; for Remotion code, it calls remotion."
 metadata:
-  version: 2.3.0
+  version: 2.3.1
 ---
 
 # AI Content Generation
@@ -22,6 +22,7 @@ Ask first: **is there a proven reference?** If not, find the story first with th
 | Make paid ad creative at volume, including AI UGC | An AI person or product (type B) | `references/03-ai-ad-creative.md` |
 | Build a faceless YouTube channel | B-roll under narration (type A) | `references/04-faceless-youtube.md` |
 | Make a product or launch video with motion graphics, with an AI voice or none | No person (type A) | `references/05-launch-videos-and-recording-edits.md` |
+| Make 15 to 25 second demos of a product feature or free tool (tool shorts, twelve styles) | No person (type A) | `references/05-launch-videos-and-recording-edits.md` |
 | Edit their own recording, or copy a creator's edit style | Themselves (type C) | `references/05-launch-videos-and-recording-edits.md` |
 
 "Faceless" means the operator's own face is absent. An AI character in a faceless account has a face. Never pass a generated or stock person off as a real, named individual.
@@ -61,7 +62,7 @@ The full text is in `references/00-workflow-and-rules.md`. These never get dropp
 - **Credits:** fix the script, storyboard and frames first. Veo 3.1 Fast at 720p by default. Wait, never resubmit. Credits go on new scenes, faults are fixed in the edit, and a clip gets at most one retry with the user's go-ahead. No Higgsfield.
 - **People and characters:** ChatGPT (GPT Image) makes every image of a person or character, by hand or by API. One tool per character, one master each, and each new image attaches only the sheets of the people in it.
 - **Real product screens:** a product or tool on screen is built from the product's own code with real outputs (`remotion` rule `site-ui-from-code.md`), never mocked.
-- **Story and sale videos:** 90 to 120 seconds with a 30 to 45 second cutdown. They end on the outcome, then a short brand voice over that says what the viewer gets in use terms, then the product mockup with only the short domain. No spoken address, no full page path on screen, no end card, no small type disclaimer. A digital product is never shown as a printed book. No image or video credits go into storyboards.
+- **Story and sale videos:** 90 to 120 seconds on the seven-beat sale sheet, with a 30 to 45 second cutdown and an outcome-limits table per offer. They end on the outcome, then a short brand voice over that says what the viewer gets in use terms, then the product mockup with only the short domain. No spoken address, no full page path on screen, no end card, no small type disclaimer. A digital product is never shown as a printed book. No image or video credits go into storyboards.
 - **Launch films:** 45 to 60 seconds, in 16:9 (X, LinkedIn, the website) and 9:16 (TikTok, Reels, Stories, WhatsApp Status). No separate short ad cut unless the brief asks.
 
 ## Other skills this calls

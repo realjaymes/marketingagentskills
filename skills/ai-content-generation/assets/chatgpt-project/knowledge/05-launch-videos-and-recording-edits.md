@@ -25,7 +25,7 @@ Build two kinds of video with Claude Code and Remotion: launch and product video
 
 | What is on screen                          | Use                                                                  |
 | ------------------------------------------ | -------------------------------------------------------------------- |
-| Nothing but screens, cards and animated text, with an AI voice | This playbook, type A                                    |
+| Nothing but screens, cards and animated text, with an AI voice or none, including tool shorts | This playbook, type A |
 | You, from a recording you already have     | This playbook, type C                                                |
 | An AI person generated from a prompt       | the 02-ai-clone-talking-head knowledge file or the 03-ai-ad-creative knowledge file         |
 
@@ -291,6 +291,37 @@ Every result on screen must be one the live product produced for the inputs show
 | Heavy particles, fluids, After Effects plugin looks | Rarely    | Use licensed stock elements or pick a different style                                              |
 
 Expect two or three tuning rounds against the reference. A first build rarely matches the polish of a top launch studio. It can beat the reference on fit, because the video uses your real product and message. You can also combine references: pacing from one, type from a second and transitions from a third.
+
+---
+
+## Type A: Tool Shorts
+
+A tool short shows one product feature or free tool doing its job in 15 to 25 seconds, with no voice over and no generated footage, so it spends no credits. The footage is the real tool, captured and rebuilt from its own code. Rotate them so the feed never shows the same style twice in a row.
+
+| # | Style | What the viewer sees |
+| --- | --- | --- |
+| 1 | Phone demo | A caption, a phone slides up, a tap, the real result, a scroll |
+| 2 | Big reveal | The tool's answer fills the screen in huge type, then the phone shows where it came from |
+| 3 | Card stack | The tool's real list items land one at a time as full-width cards, ticking as they go |
+| 4 | Chat in | A group chat message arrives, someone says "use this", and the chat opens into the tool |
+| 5 | Character skit | Two or three character stills with speech bubbles, then a split screen of the characters and the tool |
+| 6 | Printable fly-out | The tool builds a list, taps print, and the real sheet lifts out of the phone |
+| 7 | Quiet page | One page, one slow push in, no characters, no tap sounds. For private or sensitive tools |
+| 8 | Side by side | Two phones use the same tool at once, and a badge marks each answer the same or different |
+| 9 | Speed round | A big live count at the top, a quick run of taps, the tool's own headline as the finish |
+| 10 | Guess first | The real answers appear as cards, a 3-2-1 beat to guess, then the taps and the real reveal |
+| 11 | Group chat reacts | She sends her real result card to a group chat, friends reply with theirs, then the tool shows where it came from |
+| 12 | Rank it | The tool's own tiers as a board, the real items landing in them one at a time, then the result |
+
+**Rules for every style.**
+
+- **Real output.** Every result, date, list item and number on screen is what the live tool produced for the inputs shown. Scripted lines (a chat message, a speech bubble, a caption) are setup only and never claim a result. When the tool changes, the short is recaptured and rendered again.
+- **The first two seconds** carry a felt moment or a plain question in the viewer's own words, set big, with movement on frame 1. The hook never tells the viewer what condition or problem they have.
+- **Pace** follows the "Pace" section of the 00-workflow-and-rules knowledge file: captions hold at least 1 second plus 0.3 seconds per word, taps land at least 0.8 seconds apart, and the real result holds at least 1.5 seconds before anything moves.
+- **A result card.** A quiz or game with a shareable result card shows that card full screen for 2 to 2.5 seconds after the result, before the end card.
+- **The end card** holds four seconds: the tool name, the address on a solid pill, and one try-it line that names the input and the payoff ("Put in your delivery date and see your week.").
+- **Audio.** No voice over. One music bed at a low level, rotated so neighbouring shorts never share it, a soft tap on each interaction, mastered to -16 LUFS. A quiet page opens on two seconds of silence and drops the taps.
+- **Formats.** One composition renders 9:16, 4:5 and 16:9 from a layout per format.
 
 ---
 

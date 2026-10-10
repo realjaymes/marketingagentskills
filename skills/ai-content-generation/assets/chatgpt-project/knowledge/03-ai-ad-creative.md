@@ -282,6 +282,24 @@ A video that sells a program, a course or an offer is a dramatic transformation 
 - Every line is something a person says. No calendar markers or odd counts as fake specificity. Each beat causes the next, and every line is read aloud as the character.
 - Real testimonials come only from published customers, word for word. An AI character never gives one.
 
+**Sale video beat sheet (90 to 120 seconds).**
+
+| Seconds | Beat | What happens |
+| --- | --- | --- |
+| 0 to 6 | Hook | A confession or a sharp spoken line that puts the stakes on the table |
+| 6 to 25 | The want and the first failure | Who wants what, in a line someone would say. Her own way fails the first time |
+| 25 to 45 | The problem grows | A second failure, worse than the first and caused by it. The second character's own want pushes against hers |
+| 45 to 55 | The low point | One line of reflection in her own voice: what she now sees, or the question she asks out loud |
+| 55 to 85 | The guide | The product enters as the answer to that question. The doubter's questions pull out three or four things it gives, each answering a failure we watched, and the doubter pushes back at least once |
+| 85 to 105 | The change and the outcome | She acts on what she learned, then the outcome, with time passing shown by a card or a visual change |
+| 100 to 120 | The close | The brand voice over, phrase by phrase, as set out below |
+
+The 30 to 45 second cutdown keeps the hook, the worst failure, one value step, the changed choice and the end card.
+
+**Outcome limits per offer.** Before writing, make a two-column table for the offer: what the outcome may show (taken from the landing page's own promise) and what it never shows (a health, body, money or timeline result the page does not promise). Every sale script in that offer stays inside it.
+
+**Real proof only.** A sale video may close on one real testimonial from a published customer, copied word for word with its attribution, on a plain brand card.
+
 **Shot caps and pace.** No picture holds past its cap, and reading time sets the minimum. Both rules are in the "Pace" section of the 00-workflow-and-rules knowledge file. A clip reused under the voice over has its own sound muted.
 
 **The close.**
