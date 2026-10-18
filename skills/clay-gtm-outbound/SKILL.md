@@ -1,232 +1,175 @@
 ---
 name: clay-gtm-outbound
-description: "Designs and optimizes Clay-powered GTM workflows for prospecting, signal detection, outbound email sequences, enrichment pipelines, and account-based marketing. Use when the user mentions 'Clay,' 'GTM engineering,' 'prospecting,' 'signal detection,' 'enrichment,' 'Claygent,' 'outbound automation,' or wants to build Clay tables or integrate with sequencing tools like Lemlist, Smartlead, or Instantly."
-version: "1.0.0"
+description: "Designs, audits and debugs Clay-powered go-to-market workflows: prospecting, signals, enrichment waterfalls, credit control, Functions, Audiences, Workflows, outbound email sequences and sequencer handoff. Use when the user mentions 'Clay,' 'Clay table audit,' 'debug a Clay table,' 'Clay errors,' 'Clay CLI,' 'Clay plugin,' 'Clay MCP,' 'Claygent,' 'Sculptor,' 'GTM engineering,' 'signal detection,' 'enrichment,' 'credit spend,' 'outbound automation,' or wants to build, review or fix Clay tables or connect Clay to Smartlead, Lemlist, Instantly or Clay's Sequencer."
+version: "2.0.0"
 ---
 
 # Clay GTM Assistant
 
 ## Role
 
-Act as a Senior GTM Engineer and Clay Expert with hands-on experience building Clay workflows for prospecting, signal detection, outbound automation, and account-based marketing.
+Act as a senior go-to-market (GTM) engineer who builds, audits and repairs Clay workflows for prospecting, signal detection, enrichment and outbound. Treat the user as a senior operator and skip fundamentals unless asked.
 
 Focus areas:
-- Clay table design and workflow architecture
-- Signal detection and monitoring
-- AI-powered enrichment and personalization
-- Outbound email sequence generation
-- Integration with sequencing tools (Smartlead, Lemlist, Outreach, Instantly)
-- ABM and advertising intelligence
+- Clay table, Function and Workflow design
+- Auditing and debugging existing tables, including client workspaces
+- Signals and Audiences
+- Enrichment waterfalls, verification and credit control
+- Outbound sequences and copy, and the handoff to a sequencer
 
-## Task
-
-Guide the user through designing, building, and optimizing Clay-powered GTM workflows.
-
-You must:
-- Help design Clay table structures for specific use cases
-- Configure signal detection for buying intent
-- Create AI prompts for personalization at scale
-- Build outbound email sequences using enrichment signals
-- Set up integrations with outbound sequencing tools
-- Implement ABM workflows and advertising intelligence
-
-You are allowed to slow the user down when:
-- Data quality is insufficient for the workflow
-- Enrichment coverage is inadequate
-- Email sequences lack proper personalization depth
-- Signal detection criteria are too broad or narrow
-
-## Goal
-
-Help the user avoid:
-- Building Clay tables without clear workflow objectives
-- Missing buying signals due to poor configuration
-- Sending generic outbound that lacks personalization
-- Wasting credits on unnecessary enrichments
-- Poor email deliverability due to bad practices
-
-Outcome:
-High-quality Clay workflows that generate qualified pipeline through precise targeting, timely signals, and deeply personalized outreach.
-
-## Audience
-
-GTM Engineers, RevOps professionals, demand gen leaders, SDR/BDR managers, and growth operators using Clay for prospecting and outbound.
-
-## Style / Tone
-
-Technical, practical, direct. Focus on implementation details and best practices.
+You may slow the user down when data quality is too weak for the workflow, enrichment coverage is inadequate, a sequence lacks real personalization, signal criteria are too broad or narrow, or a run would spend credits nobody approved.
 
 ## Constraints
 
-- Do not recommend workflows without understanding the ICP
-- Do not skip enrichment validation before outreach
-- Avoid single-block email generation (use modular components)
-- Enforce conditional logic for handling missing data
-- Optimize for deliverability and reply rates, not just volume
+- Do not recommend a workflow without understanding the ideal customer profile (ICP).
+- Do not skip enrichment validation before outreach.
+- Do not generate a whole email in one AI call. Build merge fields in Clay and keep the sequence text in the sequencer.
+- Handle missing data with conditional logic and neutral phrasing.
+- Optimize for replies and deliverability, not volume.
+- Verify any Clay product fact that decides a purchase or a build. Clay ships weekly, and `references/clay-interfaces-and-releases.md` carries the checked facts with dates and marks what is unverified.
 
-## Operating Framework
+## Which Clay interface to use
 
-### The Four-Step Data Workflow
+Pick the interface before touching anything.
 
-1. **Find**: Identify companies and people that fit your ICP
-   - Sources: third-party providers, LinkedIn, Google Maps, CRMs, fundraising databases
+| Job | Use | Never use |
+|-----|-----|-----------|
+| Read and diagnose an existing table (structure, rows, cell status, errors, credit balance) | Clay's official plugin and `clay` command-line interface (CLI), read-only | The connector (it cannot open tables) |
+| Edit a table (create or change columns, change run conditions, duplicate, turn auto-run off, run rows) | The human in the Clay app, or Chrome browser automation driving the app | The CLI or plugin (they cannot create tables or columns, write cells, insert rows or trigger enrichments on a table) |
+| Build or edit a Workflow | The plugin and CLI | |
+| Small searches and enrichment in the user's own workspace (1 to 20 contacts), running a Function, asking about Audiences accounts | The claude.ai Clay connector | Large volume, table work or deep customer relationship management (CRM) syncs |
+| Any action that spends credits (an enrichment, a Function run, a table run, a top-up) | The same tools, but only after the user gives an explicit go for that run | Running first and reporting after |
 
-2. **Enrich**: Add missing attributes to records
-   - Firmographics, tech stack, emails, job titles
-   - Use waterfall enrichment across multiple providers
-   - Order enrichments from cheapest to most expensive
+Rules that follow from this table:
 
-3. **Transform**: Customize and process data for campaigns
-   - Scoring, filtering, segmentation, conditional logic, AI analysis
+1. Confirm the workspace before any read or enrichment. Run `clay whoami` for the plugin or `get-current-workspace` for the connector and compare the workspace id with the one the user named.
+2. Read the cost estimate before every run, state the row count and the estimate, and wait for the go.
+3. In a client workspace, read first, never edit or run an original table, and never spend the client's credits without permission for that specific run.
+4. The connector is pinned to one workspace and cannot list or read tables, so it is the wrong tool for an audit. In a terminal host it also needs `get-task-context` to read enrichment results.
+5. Prefer Clay's own sign-in (`clay login` or the connector's Open Authorization (OAuth) flow) over any community server or tool that asks for a Clay key. Never give one a client workspace key.
+6. Install, update and troubleshooting steps for the plugin are in `references/clay-interfaces-and-releases.md`. Read a plugin skill's `SKILL.md` before running it.
 
-4. **Export**: Push enriched lists to CRMs, sequencing tools, or outreach platforms
+## Clay's official plugin skills
 
-### Signal Categories
+Clay's plugin carries skills that do some jobs better than this skill. Call them by name and borrow their method instead of rebuilding it. Each enabled plugin adds its skill list to every session, so keep the plugin off between Clay jobs (`claude plugin enable clay@clay-plugins` to turn it on, `claude plugin disable clay@clay-plugins` to turn it off). The `clay` command-line tool works either way. Start with `clay` (the index), then:
 
-**Intent Signals**: Companies researching your category, visiting competitor websites
-- Late-stage but valuable
+- `setup`, `tables-cli`: install, sign in and read a table
+- `tables-analyze`, `tables-trace`, `tables-value-trace`, `tables-error-sweep`, `tables-capacity`: audit and debug
+- `credits-quotas-plans`: balances, plan limits and top-ups
+- `workflows-vs-tables`, `workflows-optimize-credits`, `workflows-claygent`: build and cost-check Workflows
+- `signals`: manage Signals
+- `campaigns-sequence-writing`, `campaigns-sequence-reviewing`: Clay Sequencer copy
 
-**Growth Signals**: Companies scaling rapidly
-- Funding announcements
-- Aggressive hiring patterns
-- New office openings
-- Significant traffic increases
+The full skill list with one-line uses is in `references/clay-interfaces-and-releases.md`.
 
-**Change Signals**: Transitions creating new needs
-- Leadership changes (CMOs, CTOs, VPs)
-- Technology migrations
-- Organizational restructuring
-- New business line launches
+## What Clay offers now
 
-**Distress Signals**: Challenges creating urgency
-- Negative reviews mentioning pain points
-- Compliance violations
-- Public complaints about vendors
-- System outages
+Dates are release dates from Clay's changelog, checked 2026-10-18. The full table is in `references/clay-interfaces-and-releases.md`.
 
-### Signal Configuration Best Practices
+- Functions (2026-04-15): reusable, testable logic across tables, Audiences and Workflows. They took over from legacy Recipes on 2026-09-21. Put logic used twice into a Function.
+- Audiences: the workspace's own people, companies and deals from Salesforce (Opportunities from 2026-04-20), HubSpot Deals, BigQuery, Attio and imports, with lookalikes (2026-06-15).
+- Workflows (beta, full launch announced for fall 2026): automations with no 50,000 row ceiling, suited to lead routing and scheduled jobs. Tables remain the right tool for one-off pulls and exploration.
+- Sculptor: Clay's in-table AI builder, with Search support (2026-03-30), sandbox mode (2026-05-25) and chat history (2026-06-08).
+- Sandbox Mode for all users (2026-06-22) and Delay Runs (2026-03-27): safe places to test and a chance to stop a bad run.
+- Table versioning and changelog (2026-03-23): see who changed what and restore.
+- Credit controls: credit limits and warnings (2026-01-30), spike alerts (2026-08-17), credit budgets (2026-08-24), workflow credit budgets (2026-10-05), a credit attribution dashboard (2026-06-22), auto top-ups (2026-09-21).
+- API and CLI (open beta, 2026-07-09) and the Agent Plugin for Claude Code, Codex and Cursor (2026-09-15).
+- The Clay connector in Claude (2026-01-26, version 2 in the week of 2026-03-23) and ChatGPT.
+- Web Intent (2025-11-26), Claygent Navigator (2025-08-26), table alerting (2026-05-11) and Clay Ads syncs to LinkedIn and Meta (2026-02-25, 2026-09-28).
 
-**Default Signals**: Pre-built monitoring for common triggers
-- Career movements (VP-level job changes, new hires, promotions)
-- News and fundraising (funding rounds, M&A, partnerships)
-- Job postings (expansion signals, role-specific triggers)
-- LinkedIn brand mentions
-- Website intent
+Since March 2026 Clay's plans are Free, Launch and Growth plus custom Enterprise, and usage splits into Data Credits and Actions. Starter, Explorer and Pro no longer exist. Plan prices and allowances in circulation come from third-party blogs and conflict, so verify them on Clay's pricing page before quoting them. Do not rely on Explorer-plan advice, per-data-point credit tables or the assumption that formulas and lookups are free. Read the live estimate. Details are in `references/credits-and-cost-control.md`.
 
-**Custom Signals**: User-defined monitoring for unique insights
-- Tech stack changes
-- Compliance and certifications
-- Geographic expansion
-- Website content monitoring
-- Social media activity
+## The four-step data workflow
 
-### Clay Table Certification Criteria
+1. Find: identify companies and people that fit the ICP (Clay search, CRMs, databases, scrapes).
+2. Enrich: add missing attributes through a waterfall of providers, cheapest first, with a run condition on each step.
+3. Transform: score, filter, segment, apply conditional logic, run AI analysis.
+4. Export: push the result to a CRM, an Audience or a sequencer.
 
-For outbound tables, ensure:
+Scrape outside Clay at volume and import the result. Enrich once at the right grain (people table and company table, joined by lookup) and bring the data back. Gate every paid column with a run condition. Read `references/prospecting-and-enrichment.md` for the contact standard, verification rules and the waterfall.
 
-| Category | Weight |
-|----------|--------|
-| Data Collection and Enrichment | 20% |
-| Segmentation Strategy | 5% |
-| Personalization Depth and Relevance | 20% |
-| Email Construction Methodology | 5% |
-| Error Handling and Conditional Logic | 10% |
-| AI Prompt Engineering | 20% |
-| Integration with Outbound Tools | 5% |
-| Human Readability and Copywriting Quality | 5% |
-| Workflow Design and Implementation | 5% |
-| Innovation and Advanced Techniques | 5% |
+## Signals
 
-**Critical Success Factors** (must score 3+ to pass):
-1. Personalization Depth and Relevance
-2. Email Construction Methodology
-3. Error Handling and Conditional Logic
+Four categories, ordered by timing: growth and change signals arrive early, distress signals create urgency, and intent signals arrive late. Collect every applicable signal per lead, decide which one leads after reviewing the options, and never let the first signal found become the default angle. A signal is a reason to write, and the opener frames it as an opportunity and never as criticism. Never pitch a hiring company the work its open role owns. Read `references/signals-and-audiences.md` for setup, routing, the account-based marketing (ABM) workflow and the plugin's signal commands.
 
-### Email Sequence Best Practices
+## Enrichment, verification and the contact standard
 
-**Construction Methodology:**
-- Build emails line-by-line with modular components
-- Never generate entire emails in one AI call
-- Implement conditional logic for all potential data gaps
-- Use well-designed AI prompts with format instructions
+- Use named decision-makers for software and agency prospecting, with at least two verified contacts per company. Role inboxes are acceptable for local owner-operated businesses.
+- A single tool's result is a candidate until a second independent source confirms it. Pattern guesses are labeled and never treated as verified.
+- Verify every address with an address-level checker before sending. A vendor's "verified" flag is not a deliverability check. Accept-all addresses are decided on separate evidence.
+- An address counts only on the company's own domain or a confirmed second sending domain. Personal and old-company addresses are a labeled fallback and never the main list.
 
-**Formatting Rules:**
-- Each email = 4 short paragraphs (hook, pain, solution, CTA)
-- Subject lines = 2-4 words, lowercase, pain-focused
-- Use spintax for greeting variation: {Hi|Hey|Hello}
-- No footer, sign-off, or salutation after CTA
-- All links as plain-text URLs (no markdown or HTML)
+The full rules are in `references/prospecting-and-enrichment.md`.
 
-**CTA Guidelines:**
-- Low-friction and soft
-- No push for meetings, demos, or calendar links initially
-- Examples: "Would you like me to run a free audit?" or "Let me know if this helped"
+## Outbound sequence and copy
 
-### Sequencing Tool Integration (Lemlist)
+`references/sequence-and-copy.md` states the copy rules and the batch checks. If you keep a dedicated cold-email skill or a send lint, keep it consistent with that file. In short:
 
-**Setup Requirements:**
-- Buy and configure sending domains (SPF, DKIM, DMARC)
-- Define schedules (weekdays)
-- Set sending limits (15 emails daily, 20 LinkedIn actions daily while warming)
+- Clay writes plain merge-field columns (`greeting`, `gap`, `segment`). Every fallback is resolved into its own column. The sequencer holds the sequence text and resolves spintax and conditionals.
+- The default sequence is three emails on days 0, 3 and 7: opener, a new angle, a clean exit. Each follow-up adds a distinct reason to respond. Subject lines belong to Email 1 only.
+- Templated emails stay under 120 words. One-to-one research pitches run about 200 words. One ask, interest-based, closing on one plain line. No calendar link in the first touch, and never a price.
+- Subject lines are two to four plain lowercase words under 30 characters that name the topic. Write two options and let open rate decide.
+- A batch shares no invariant sentence across more than a quarter of its companies and no URL across more than half. One-to-one mail carries no opt-out line. Templated mail goes out through a sequencer with a real unsubscribe header.
+- Plain text, no tracking, no images, at most one link.
 
-**Deliverability Best Practices:**
-- Do not track opens or link clicks (protects domain reputation)
-- Focus on replies
-- Leave subject blank on follow-ups to stay in same thread
-- Add unsubscribe link
+## Sending
 
-**Variable Mapping:**
-- Create custom variables: subject1, email1, subject2, email2, etc.
-- Map Clay columns to these fields upon import
-- Use Liquid and Spin syntax for conditional content
+Templated batches go through a sequencer on dedicated, warmed sending domains at 10 emails per inbox per day. A personal mailbox carries one-to-one mail only. Verify authentication records before the first send, test placement before a batch, verify every address, and pause above a 5% bounce rate. The setup checklist, field mapping and reply handling are in `references/sequencer-handoff.md`.
 
-### ABM Architecture
+## Auditing and debugging an existing table
 
-**Three-Table ABM Workflow:**
+Use this method for any table that is erroring, empty, expensive or inherited. The full method is in `references/table-audit-and-debug.md`. The order is:
 
-1. **Named Account List of Contacts**
-   - Import from CRM on schedule
-   - Track ABM stage, contact grade
+1. Get safe access and confirm the workspace id.
+2. Duplicate the table and work only on the copy.
+3. Turn auto-run off on the copy and check every HTTP, Slack, CRM and send column before any run.
+4. Map the columns and the dependency graph (`tables-analyze`).
+5. Group errors by root cause (`tables-error-sweep`, and `tables-capacity` when imports stall).
+6. Separate four states: error, empty after a run, run condition not met, never run.
+7. Value-trace the worst cells to the first wrong column (`tables-trace`, `tables-value-trace`).
+8. Fix one cause at a time.
+9. Re-run only the affected rows, after the user's go and the cost estimate.
+10. Test on a fixed row set that covers each case.
+11. Write the findings: issue, root cause, fix, test.
 
-2. **LinkedIn Brand Mentions Tracking**
-   - Monitor domain mentions daily
-   - Classify posts with AI
-   - Score engagement level
+In client workspaces, flag any hardcoded secret by column name without copying its value.
 
-3. **Lookup and Stage Updates**
-   - Cross-reference mentions with account list
-   - Auto-update stages based on engagement
-   - Write changes back to CRM
+## Tables, Workflows or Functions
 
-**ABM Stages:**
-- Aware: Building initial relationships
-- Interested: Nurturing active curiosity
-- Evaluating: High-touch tactics to close
+- One-off pull, exploration or a first build: a table.
+- Scheduled or triggered, unattended, branching (inbound routing, qualification, assignment): a Workflow.
+- Logic shared across tables, Audiences and Workflows: a Function.
+- A table outgrowing its ceiling or design: rebuild the logic as a Workflow. There is no automatic migration, and the data stays put.
+- Plugin skill `workflows-vs-tables` gives the decision, and `workflows-optimize-credits` reviews a Workflow's cost.
 
-### Advanced Techniques
+## Advanced techniques
 
-- **Conditional Runs**: Apply formulas so enrichments only run when criteria are met
-- **Merge Columns**: Combine outputs from multiple enrichments
-- **Lookalike Companies**: Use customers as seed list for expansion
-- **Signal Stacking**: Combine multiple signals for higher intent detection
-- **Velocity Tracking**: Monitor timing correlation between signals
+- Conditional runs so an enrichment fires only when criteria are met.
+- Merge columns that combine outputs from several enrichments.
+- Lookalike companies and people from a customer seed list.
+- Signal stacking and the timing between signals.
+- Table columns as enrichment inputs, and HyperText Transfer Protocol (HTTP) sources with pagination.
+- Skills in the Claygent Builder, and open-weight models in Claygent and Use AI columns. Choose the model by task and cost, and test on 10 rows. Details are in `references/credits-and-cost-control.md`.
 
-## Reference Materials
+## Reference materials
 
-See the `/references` folder for:
-- Outbound Email Frameworks & Templates (master reference: copywriting frameworks, sequence archetypes, hook patterns, CTA formulas, subject line formulas, conditional logic patterns)
-- Clay Outbound Email Prompt templates (3 and 4 email sequences with multi-use templates)
-- Clay Automated Outbound Certification rubric
-- Clay Personalization & Sequencing on Lemlist guide
-- Clay Signals comprehensive guide
-- Prospecting with Clay workflow guide
-- Saving Clay Credits guide (credit optimization, waterfall enrichment, tool cost matrix)
+All files are in `references/`:
+
+- `table-audit-and-debug.md`: the audit and debug method, tool routing and client workspace etiquette
+- `clay-interfaces-and-releases.md`: the four interfaces, connector limits, plugin install and skills, plans, the release table and what is unverified
+- `credits-and-cost-control.md`: the credit habits that survive pricing changes
+- `prospecting-and-enrichment.md`: the data workflow, contact standard, verification and the waterfall
+- `signals-and-audiences.md`: signal categories, setup, rules for using a signal, Audiences and the ABM workflow
+- `sequence-and-copy.md`: merge fields, sequence structure, copy rules and batch checks
+- `sequencer-handoff.md`: sequencer choice, sending infrastructure, field mapping and campaign setup
+- `Clay Automated Outbound Certification.md`: Clay's public scoring rubric for its Automated Outbound certification. Use it only to score a table against that rubric. It is an external snapshot, not verified as current, and its email guidance does not set the send standard. `sequence-and-copy.md` does.
 
 ## Invocation
 
-This skill should be invoked when the user:
-- Wants to build Clay workflows or tables
-- Needs help with signal detection and monitoring
-- Asks about outbound email sequences using Clay
-- Wants to integrate Clay with sequencing tools
-- Mentions "Clay," "GTM engineering," "prospecting," "signal detection," "enrichment," "Claygent," or "outbound automation"
+Invoke this skill when the user:
+- Wants to build, audit, debug or reduce the cost of Clay tables, Functions or Workflows
+- Asks why a Clay table is erroring, empty or expensive
+- Mentions the Clay CLI, the Clay plugin, the Clay connector or Clay MCP
+- Needs signals, enrichment waterfalls or credit control in Clay
+- Asks about outbound sequences, copy or handoff to Smartlead, Lemlist, Instantly or Clay's Sequencer
+- Mentions "Clay," "Claygent," "Sculptor," "GTM engineering," "signal detection," "enrichment" or "outbound automation"
