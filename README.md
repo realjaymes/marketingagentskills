@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-31 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+32 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -158,7 +158,7 @@ You can also invoke skills directly:
 `n8n-automation` `openclaw` `remotion` `vibe-coding`
 
 ### Meta Skills
-`agent-skill-builder`
+`agent-skill-builder` `skill-to-prompt`
 
 ---
 

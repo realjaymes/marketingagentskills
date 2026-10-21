@@ -1,0 +1,24 @@
+name: Skill Count
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check README count and skill lists
+        run: python3 scripts/sync-skill-count.py --check
+
+      - name: Check GitHub description
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/sync-skill-count.py --check --repo "${{ github.repository }}"
