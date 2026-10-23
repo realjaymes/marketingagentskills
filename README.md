@@ -1,6 +1,6 @@
 # Marketing Agent Skills
 
-32 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
+34 AI agent skills for marketing tasks, built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants (Cursor, Windsurf, Codex, Cline, Roo Code).
 
 ---
 
@@ -50,6 +50,7 @@ See demo:
 | [marketing-product-ideas](skills/marketing-product-ideas) | Generate marketing and product ideas grounded in behavioral principles and proven PLG experiments |
 | [n8n-automation](skills/n8n-automation) | Design, build, debug, and document n8n workflows and AI agent automations |
 | [openclaw](skills/openclaw) | Design, build, debug, and document OpenClaw workflows and AI assistant configurations |
+| [outbound-engine](skills/outbound-engine) | Turn a scored prospect list into a personalized, reply-first cold-email campaign: signal-based personalization, spintax and merge fields that render correctly in Smartlead, a self-built HTML preview and QA tool, a Smartlead setup checklist, and a reply-filing standard that carries real prospects through to close |
 | [performance-marketing](skills/performance-marketing) | Plan, review, and optimize paid campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, Snapchat |
 | [portfolio-positioning](skills/portfolio-positioning) | Position, audit, or launch into a multi-product company. Forces a brand architecture decision (branded house / house of brands / endorsed) before producing core narrative, per-product positioning cascade, messaging hierarchy, and launch sequencing |
 | [press-release](skills/press-release) | Create complete press release packages with newsworthiness evaluation and multiple headlines |
@@ -58,6 +59,7 @@ See demo:
 | [product-messaging](skills/product-messaging) | Create complete messaging frameworks including value propositions, taglines, and elevator pitches |
 | [product-onboarding-activation](skills/product-onboarding-activation) | Design complete onboarding, activation, retention, and expansion lifecycles for SaaS products |
 | [product-positioning](skills/product-positioning) | Create complete positioning frameworks with target customers, competitive differentiation, and market categories |
+| [prospect-scraper](skills/prospect-scraper) | Build free-first prospect lists from open data, SEC Form D, chambers of commerce, trade associations, Yelp and Clutch, with a source qualification ladder, an enrichment waterfall, a two-verified-contacts-per-company standard, and signal-based scoring |
 | [remotion](skills/remotion) | Create programmatic videos in React with a structured 7-step process from creative brief to rendered output |
 | [saas-landing-pages](skills/saas-landing-pages) | Generate complete SaaS landing page drafts using 7 framework templates for different page types |
 | [seo-audit](skills/seo-audit) | Audit, review, and diagnose SEO issues across technical, on-page, content quality, and authority dimensions |
@@ -152,7 +154,7 @@ You can also invoke skills directly:
 `seo-audit`
 
 ### Outbound & Deliverability
-`clay-gtm-outbound` `domain-health`
+`prospect-scraper` `outbound-engine` `clay-gtm-outbound` `domain-health`
 
 ### Automation & Technical
 `n8n-automation` `openclaw` `remotion` `vibe-coding`

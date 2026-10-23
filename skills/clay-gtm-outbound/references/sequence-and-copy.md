@@ -9,6 +9,10 @@ This file sets the sequence structure, the copy rules and the pre-send checks fo
 - A Clay AI column writes one bounded merge field at most (an opener line, a segment label). One call, one field, one job.
 - The sequencer resolves variation (spintax and conditionals). Clay output carries no braces, no pipes and no placeholders.
 
+## Clay's own guidance, as context
+
+Clay's plugin teaches its own sequence method for Clay Sequencer campaigns, and it differs from the rules in this file in several places: up to four emails and per-lead AI snippets, fallback tokens inside the Sequencer, about 20 emails per inbox per day, no word limit and punctuation chosen by the writer. The rules in this file stay the default. `sequencer-and-campaigns.md` lists each difference and states which rule applies. Two of Clay's ideas fit these rules and are worth borrowing: review each sequence as the recipient asking "Why wouldn't I respond?", and give every follow-up a distinct reason to respond.
+
 ## Merge fields built in Clay
 
 Precompute every field into its own plain column at generation time:

@@ -1,7 +1,7 @@
 ---
 name: clay-gtm-outbound
-description: "Designs, audits and debugs Clay-powered go-to-market workflows: prospecting, signals, enrichment waterfalls, credit control, Functions, Audiences, Workflows, outbound email sequences and sequencer handoff. Use when the user mentions 'Clay,' 'Clay table audit,' 'debug a Clay table,' 'Clay errors,' 'Clay CLI,' 'Clay plugin,' 'Clay MCP,' 'Claygent,' 'Sculptor,' 'GTM engineering,' 'signal detection,' 'enrichment,' 'credit spend,' 'outbound automation,' or wants to build, review or fix Clay tables or connect Clay to Smartlead, Lemlist, Instantly or Clay's Sequencer."
-version: "2.0.0"
+description: "Designs, audits and debugs Clay-powered go-to-market workflows: prospecting, signals, enrichment waterfalls, credit control, Functions, Audiences, Workflows, outbound email sequences and sequencer handoff. Use when the user mentions 'Clay,' 'Clay table audit,' 'debug a Clay table,' 'Clay errors,' 'Clay CLI,' 'Clay plugin,' 'Clay MCP,' 'Clay Sequencer,' 'Clay campaigns,' 'Clay Workflows,' 'Clay routines,' 'Clay Audiences,' 'Clay Signals,' 'Clay Ads sync,' 'Clay credits,' 'Claygent,' 'Sculptor,' 'GTM engineering,' 'signal detection,' 'enrichment,' 'credit spend,' 'outbound automation,' or wants to build, review or fix Clay tables or connect Clay to Smartlead, Lemlist, Instantly or Clay's Sequencer."
+version: "2.1.0"
 ---
 
 # Clay GTM Assistant
@@ -53,14 +53,16 @@ Rules that follow from this table:
 
 Clay's plugin carries skills that do some jobs better than this skill. Call them by name and borrow their method instead of rebuilding it. Each enabled plugin adds its skill list to every session, so keep the plugin off between Clay jobs (`claude plugin enable clay@clay-plugins` to turn it on, `claude plugin disable clay@clay-plugins` to turn it off). The `clay` command-line tool works either way. Start with `clay` (the index), then:
 
-- `setup`, `tables-cli`: install, sign in and read a table
+- `setup`, `update`, `cli`, `tables-cli`: install, sign in, update and read a table
 - `tables-analyze`, `tables-trace`, `tables-value-trace`, `tables-error-sweep`, `tables-capacity`: audit and debug
 - `credits-quotas-plans`: balances, plan limits and top-ups
-- `workflows-vs-tables`, `workflows-optimize-credits`, `workflows-claygent`: build and cost-check Workflows
-- `signals`: manage Signals
-- `campaigns-sequence-writing`, `campaigns-sequence-reviewing`: Clay Sequencer copy
+- `workflows` and its siblings (`workflows-vs-tables`, `workflows-optimize-credits`, `workflows-simplify`, `workflows-claygent`, `workflows-discover-actions`, `workflows-snapshots`, `workflows-audience-enrichment`, `workflows-inbound-lead-routing`, `workflows-campaign-enrollment`): build, review and cost-check Workflows
+- `routines`, `searches`, `schedules`, `public-api`: run saved functions, find net-new records, recurring agent prompts, HTTP access
+- `signals`, `audiences`, `ad-syncs`: Signals, the workspace's own records, ad platform syncs
+- `campaigns`, `campaigns-interview`, `campaigns-sequence-writing`, `campaigns-sequence-reviewing`: Clay Sequencer campaigns and copy
+- `clay-docs`: answer a product question from live Clay documentation
 
-The full skill list with one-line uses is in `references/clay-interfaces-and-releases.md`.
+The full skill list with the reference file for each is in `references/clay-interfaces-and-releases.md`. Command names and which commands write, spend credits or send mail are in `references/clay-cli-commands.md`. Commands that write, spend or send need the user's go for that specific action. Clay's plugin hook skips its own permission prompt for plain `clay` calls, and that never counts as a go.
 
 ## What Clay offers now
 
@@ -68,7 +70,9 @@ Dates are release dates from Clay's changelog, checked 2026-10-18. The full tabl
 
 - Functions (2026-04-15): reusable, testable logic across tables, Audiences and Workflows. They took over from legacy Recipes on 2026-09-21. Put logic used twice into a Function.
 - Audiences: the workspace's own people, companies and deals from Salesforce (Opportunities from 2026-04-20), HubSpot Deals, BigQuery, Attio and imports, with lookalikes (2026-06-15).
-- Workflows (beta, full launch announced for fall 2026): automations with no 50,000 row ceiling, suited to lead routing and scheduled jobs. Tables remain the right tool for one-off pulls and exploration.
+- Workflows (beta per Clay's October recap, Alpha per its developer docs, full launch announced for fall 2026): automations with no 50,000 row ceiling, suited to lead routing and scheduled jobs. Tables remain the right tool for one-off pulls and exploration. Detail, limits and the plugin skill for each Workflow job are in `references/workflows-and-routines.md`.
+- Clay Sequencer: up to four emails per lead, 1 Action per lead enrolled, launch only in the app. Detail in `references/sequencer-and-campaigns.md`.
+- Routines, Searches, Schedules and the Public API: ways to run saved functions, find net-new records, run recurring GTM Agent prompts and call Clay from a service. Detail in `references/workflows-and-routines.md`.
 - Sculptor: Clay's in-table AI builder, with Search support (2026-03-30), sandbox mode (2026-05-25) and chat history (2026-06-08).
 - Sandbox Mode for all users (2026-06-22) and Delay Runs (2026-03-27): safe places to test and a chance to stop a bad run.
 - Table versioning and changelog (2026-03-23): see who changed what and restore.
@@ -77,7 +81,7 @@ Dates are release dates from Clay's changelog, checked 2026-10-18. The full tabl
 - The Clay connector in Claude (2026-01-26, version 2 in the week of 2026-03-23) and ChatGPT.
 - Web Intent (2025-11-26), Claygent Navigator (2025-08-26), table alerting (2026-05-11) and Clay Ads syncs to LinkedIn and Meta (2026-02-25, 2026-09-28).
 
-Since March 2026 Clay's plans are Free, Launch and Growth plus custom Enterprise, and usage splits into Data Credits and Actions. Starter, Explorer and Pro no longer exist. Plan prices and allowances in circulation come from third-party blogs and conflict, so verify them on Clay's pricing page before quoting them. Do not rely on Explorer-plan advice, per-data-point credit tables or the assumption that formulas and lookups are free. Read the live estimate. Details are in `references/credits-and-cost-control.md`.
+Since March 2026 Clay's plans are Free, Launch and Growth plus custom Enterprise, and usage splits into Data Credits and Actions. Starter, Explorer and Pro no longer exist. Clay's own pricing page and credits documentation are the source for plan prices and allowances, and `references/credits-and-cost-control.md` carries them with their conflicts. Do not rely on Explorer-plan advice or per-data-point credit tables. Read the live estimate before every run. Details are in `references/credits-and-cost-control.md`.
 
 ## The four-step data workflow
 
@@ -90,7 +94,7 @@ Scrape outside Clay at volume and import the result. Enrich once at the right gr
 
 ## Signals
 
-Four categories, ordered by timing: growth and change signals arrive early, distress signals create urgency, and intent signals arrive late. Collect every applicable signal per lead, decide which one leads after reviewing the options, and never let the first signal found become the default angle. A signal is a reason to write, and the opener frames it as an opportunity and never as criticism. Never pitch a hiring company the work its open role owns. Read `references/signals-and-audiences.md` for setup, routing, the account-based marketing (ABM) workflow and the plugin's signal commands.
+Four categories, ordered by timing: growth and change signals arrive early, distress signals create urgency, and intent signals arrive late. Collect every applicable signal per lead, decide which one leads after reviewing the options, and never let the first signal found become the default angle. A signal is a reason to write, and the opener frames it as an opportunity and never as criticism. Never pitch a hiring company the work its open role owns. Read `references/signals-and-audiences.md` for signal types and billing, setup, routing, the account-based marketing (ABM) workflow, Audiences and ad syncs. LinkedIn brand mention signals are discontinued.
 
 ## Enrichment, verification and the contact standard
 
@@ -103,7 +107,7 @@ The full rules are in `references/prospecting-and-enrichment.md`.
 
 ## Outbound sequence and copy
 
-`references/sequence-and-copy.md` states the copy rules and the batch checks. If you keep a dedicated cold-email skill or a send lint, keep it consistent with that file. In short:
+`references/sequence-and-copy.md` states the copy rules and the batch checks. Where Clay's own guidance differs, those rules stay the default and the differences are listed in `references/sequencer-and-campaigns.md`. If you keep a dedicated cold-email skill or a send lint, keep it consistent with that file. In short:
 
 - Clay writes plain merge-field columns (`greeting`, `gap`, `segment`). Every fallback is resolved into its own column. The sequencer holds the sequence text and resolves spintax and conditionals.
 - The default sequence is three emails on days 0, 3 and 7: opener, a new angle, a clean exit. Each follow-up adds a distinct reason to respond. Subject lines belong to Email 1 only.
@@ -156,10 +160,13 @@ In client workspaces, flag any hardcoded secret by column name without copying i
 All files are in `references/`:
 
 - `table-audit-and-debug.md`: the audit and debug method, tool routing and client workspace etiquette
-- `clay-interfaces-and-releases.md`: the four interfaces, connector limits, plugin install and skills, plans, the release table and what is unverified
-- `credits-and-cost-control.md`: the credit habits that survive pricing changes
+- `clay-interfaces-and-releases.md`: the four interfaces, connector limits, plugin install and skills, the release table and what is unverified
+- `clay-cli-commands.md`: CLI command groups, flags, exit codes and which commands write, spend or send
+- `workflows-and-routines.md`: Workflows, Routines, Searches, Schedules, the Public API and Clay's cost policy
+- `sequencer-and-campaigns.md`: Clay Sequencer limits, CLI boundaries, Clay's writing and review method and where it differs from this skill
+- `credits-and-cost-control.md`: what each meter charges for, plans from Clay's pricing page, top-ups and the credit habits that survive pricing changes
 - `prospecting-and-enrichment.md`: the data workflow, contact standard, verification and the waterfall
-- `signals-and-audiences.md`: signal categories, setup, rules for using a signal, Audiences and the ABM workflow
+- `signals-and-audiences.md`: signal categories and types, setup, rules for using a signal, Audiences, ad syncs and the ABM workflow
 - `sequence-and-copy.md`: merge fields, sequence structure, copy rules and batch checks
 - `sequencer-handoff.md`: sequencer choice, sending infrastructure, field mapping and campaign setup
 - `Clay Automated Outbound Certification.md`: Clay's public scoring rubric for its Automated Outbound certification. Use it only to score a table against that rubric. It is an external snapshot, not verified as current, and its email guidance does not set the send standard. `sequence-and-copy.md` does.
@@ -170,6 +177,7 @@ Invoke this skill when the user:
 - Wants to build, audit, debug or reduce the cost of Clay tables, Functions or Workflows
 - Asks why a Clay table is erroring, empty or expensive
 - Mentions the Clay CLI, the Clay plugin, the Clay connector or Clay MCP
+- Asks about Clay Workflows, routines, searches, schedules, Audiences, Signals, Ads syncs, the Sequencer or Clay credits and plans
 - Needs signals, enrichment waterfalls or credit control in Clay
 - Asks about outbound sequences, copy or handoff to Smartlead, Lemlist, Instantly or Clay's Sequencer
 - Mentions "Clay," "Claygent," "Sculptor," "GTM engineering," "signal detection," "enrichment" or "outbound automation"
