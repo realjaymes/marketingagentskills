@@ -49,7 +49,7 @@ See demo:
 | [marketing-advantages](skills/marketing-advantages) | Identify product marketing advantages and develop strategies across PLG, Market/Ecosystem, and Brand categories |
 | [marketing-product-ideas](skills/marketing-product-ideas) | Generate marketing and product ideas grounded in behavioral principles and proven PLG experiments |
 | [n8n-automation](skills/n8n-automation) | Design, build, debug, and document n8n workflows and AI agent automations |
-| [openclaw](skills/openclaw) | Design, build, debug, and document OpenClaw workflows and AI assistant configurations |
+| [obsidian-ops](skills/obsidian-ops) | Turn meeting transcripts into structured Obsidian notes with decisions and action items, track projects by status, and keep linked hub notes current after every vault edit |
 | [outbound-engine](skills/outbound-engine) | Turn a scored prospect list into a personalized, reply-first cold-email campaign: signal-based personalization, spintax and merge fields that render correctly in Smartlead, a self-built HTML preview and QA tool, a Smartlead setup checklist, and a reply-filing standard that carries real prospects through to close |
 | [performance-marketing](skills/performance-marketing) | Plan, review, and optimize paid campaigns across Google, Meta, LinkedIn, TikTok, YouTube, Reddit, X, Snapchat |
 | [portfolio-positioning](skills/portfolio-positioning) | Position, audit, or launch into a multi-product company. Forces a brand architecture decision (branded house / house of brands / endorsed) before producing core narrative, per-product positioning cascade, messaging hierarchy, and launch sequencing |
@@ -157,7 +157,7 @@ You can also invoke skills directly:
 `prospect-scraper` `outbound-engine` `clay-gtm-outbound` `domain-health`
 
 ### Automation & Technical
-`n8n-automation` `openclaw` `remotion` `vibe-coding`
+`n8n-automation` `obsidian-ops` `remotion` `vibe-coding`
 
 ### Meta Skills
 `agent-skill-builder` `skill-to-prompt`
