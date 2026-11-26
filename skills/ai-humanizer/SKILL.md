@@ -1,7 +1,7 @@
 ---
 name: ai-humanizer
 description: "Detects AI-written text, scores it against a detection rubric, provides line-by-line edit recommendations, and rewrites content to sound genuinely human. Use when the user asks to 'humanize' text, detect AI writing, remove 'AI voice,' make copy 'less robotic,' pass AI detection tools, or rewrite content to 'sound human.'"
-version: "1.8.0"
+version: "1.9.0"
 ---
 
 # AI Writing Humanizer
@@ -90,7 +90,7 @@ The final, publication-ready version applying all rules.
 | **Dash & Punctuation** | Frequent em-dashes, unnatural dash habits, incorrect spacing, Title Case headings, stray smart quotes/arrows pasted from chat |
 | **Hedging/Vagueness** | "very," "really," "quite," "actually," hedged superlatives ("arguably the most"), hedge preambles ("it's worth noting that"), phantom authority ("studies show," "experts say"), self-generated false precision ("about 70% of outcomes"), concessive pivots ("that said," "to be fair"), generic claims without specifics |
 | **Structure/Monotony** | Repetitive sentence length (low burstiness), rule-of-three padding, pre-announced counts ("three things") and verdicts ("the launch I'd run is simple"), manufactured parallelism, compressed aphorisms ("A long, boring, unedited install is the claim."), appositive stuffing, participial openers, ", which is" conclusion tails, "-ing" significance tails, formal transition openers ("Furthermore," "Moreover"), signposted conclusions, paragraph stuffing, no white space |
-| **Missing Humanity** | No contractions, no concrete dates/places, no candid asides, evaluative self-narration ("that is a clean answer," "good question"), no perspective shifts, no first-person opinion or committed stance, dropped-subject and verbless fragments anywhere in the piece (see Dropped-Subject Fragments below), coined labels for your own work ("the full run") |
+| **Missing Humanity** | Assumed context (internal names, offers, metrics and decisions used without explanation, see Vague & Abstract Naming), no contractions, no concrete dates/places, no candid asides, evaluative self-narration ("that is a clean answer," "good question"), no perspective shifts, no first-person opinion or committed stance, dropped-subject and verbless fragments anywhere in the piece (see Dropped-Subject Fragments below), coined labels for your own work ("the full run") |
 | **Command Phrasing** | "Remember," "Keep in mind," "Don't forget" (always mark as AI-like) |
 
 ---
@@ -132,7 +132,19 @@ Gesturing at a concept without stating it. Shell nouns are the core of this clus
 | Shell nouns, "shape" worst of all | A noun whose meaning is supplied entirely by the words around it, so the sentence points at something without naming it. Two slots. **Meta-naming a structure:** "the player-coach shape of it," "the same shape of problem," "the exact shape of work I've built." **Standing in for a concrete thing:** "the shape I'd propose is €95,000 base," "the piece I'd push hardest on," "the distribution surface," "the part I'd want fixed." The family: shape, space, piece, side, layer, element, aspect, dynamic, dimension, nature, framing, lens, surface, area, thing. AI reaches for them because they are always available, you can write "the shape of the problem" without knowing the problem. | **Substitution test: replace the shell noun with the specific noun. If a specific one exists, use it, and if the sentence reads better with the shell noun simply deleted, delete it.** "the same shape of problem" → "a similar problem." "the shape I'd propose is €95,000 base" → "I'd propose €95,000 base." "the piece I'd push hardest on is proof" → "what I'd push hardest on is proof." A shell noun is fine only when it names something real and specified, as in "the measurement layer," which is an actual layer that the next sentence describes. |
 | Vague definite-article nouns used as if already defined | "the gap," "the thing" appearing as if the reader already knows what they refer to | Name the actual noun. If it truly refers back to something already stated, repeat that word instead of folding it into a vague "the gap." |
 | Vague connection language | "in connection with," "associated with," "connected to," "in association with" | State the actual relationship: "the two events are connected" → "the second happened because of the first." |
-| Coined labels for your own work | Naming a deliverable with a word the writer chose and the reader has to decode: "The full run is in the comments." / "The full concept is in the comments." / "The full architecture is in the comments." Each post picks a different clever noun, so the series never sounds like one person. | Use the plain word a reader would use, and keep it the same everywhere: "The full breakdown is in the comments." |
+| Assumed context (insider shorthand) | Writing as if the reader already knows the writer's project, history and vocabulary. Internal names, offers, experiments, metrics and past decisions appear with no explanation, so a cold reader (an investor, a hiring manager, a stranger on LinkedIn) has to guess: "the First 100 offer now comes before we ask her to pay," "we read the 14-day baseline on 21 November," "capped tests, each with a gate," "one next step for her state," "the page between our ads and the sales page," "the bridge," "the Q3 reset." It reads fluent to the writer and to the AI that drafted it from the writer's notes, because both hold the missing context. It is most common when a draft is built from a vault, a brief or a long session. | **Cold-reader test: read each sentence as someone who has never seen the writer's notes. Every name, number, event and decision must be explained in that sentence or one already read.** Say what the thing is in everyday words, or cut it: "the First 100 offer" → "we started giving our first 100 users a program free for a month." "capped tests" → "small ad tests with a fixed budget." "the 14-day baseline" → "the first two weeks of data from the new site." If explaining a term costs more words than the point is worth, drop the point. |
+| Coined labels for your own work | Naming a deliverable with a word the writer chose and the reader has to decode: "The full run is in the comments." / "The full concept is in the comments." / "The full architecture is in the comments." Each post picks a different clever noun, so the series never sounds like one person. | Use the plain word a reader would use, and keep it the same everywhere: "See the full breakdown." |
+
+### Broken Links Between Sentences
+
+Sentences that each read fine alone but fail when read together. The writer holds the missing piece, so these pass every word-level check and only show when a reader asks "what?" or "why?" It is one of the most frequent problems an author finds when editing AI-drafted pitches and letters.
+
+| Pattern | Problem | Fix |
+|---------|---------|-----|
+| Lost object | A verb or claim whose object was dropped, often because the sentence was lifted from a source that supplied it: "Your story shows that many women only find out when infertility forces the conversation." (Find out what? The article said women find out *they have PCOS*.) Also "people are already missing out" (on what?) and "it only works if it reaches them" (what does?). | **"What?" test: after every verb such as find out, miss out, learn, see, reach, change or matter, ask "what?" or "about what?". If the sentence does not answer, put the object in:** "many women only find out they have PCOS when infertility forces the conversation." |
+| Connector that does not follow | A link word or sentence that claims a logical step the text never makes: "This is why my wife and I built..." after a sentence that gives no reason; "We asked what women find when they search for help." straight after a point about data costs; "So..." or "That's why..." opening a sentence that is not a consequence; "We looked at another barrier:" followed by something that is not a barrier. | **"Why does this follow?" test: read each pair of neighbouring sentences and say in your own words why the second comes after the first.** If you can't, state the real link ("Women find out late. We wanted to know what a woman finds before then, when she searches for help online."), or drop the connector and let the two facts stand. Never claim cause or order that did not happen, such as "that made us ask" for a study done before the article. |
+| Template bridge across a batch | The same linking sentence in every personalised piece ("Your story shows that [X]. We asked what women find when they search for help."), with only the slot changed. The slot gets filled with a phrase grabbed from each source, so it usually fails the two tests above too. | Write each link from that source's actual point. Before sending a batch, list the linking sentence of every piece side by side; any wording that repeats is a mail-merge tell. |
+| Clever link | The gap between two sentences closed with a one-liner instead of reasoning: "Accountability needs a baseline, and we built one." / "We studied access of another kind." / "Health advice earns trust the same way." A variant of the compressed aphorism. | Say the step in plain words: "holding anyone to account needs numbers. We have a new one on..." |
 
 ### Self-Signaling & Crutch Words
 
@@ -246,14 +258,16 @@ One ordered list covering both what to recommend when reviewing someone else's t
 13. Alternate short, punchy sentences with longer, detailed ones, raise the variance in sentence length, the hardest signal for detectors to miss
 14. Keep one idea per paragraph; use white space instead of paragraph stuffing. In social comments, put each sentence in its own paragraph with a blank line before the next
 15. Expand every compressed aphorism into what happens and why, and replace every coined label for your own work with the plain word a reader would use
-16. Swap inflated copulas ("serves as," "boasts") for plain "is/are"
-17. Cut "-ing" significance tails and signposted conclusions; stop when the argument stops
-18. Repeat a plain noun instead of synonym-cycling ("the tool... the tool," not "the platform... the solution... the offering")
-19. Include one aside and at least one concrete, specific example
-20. State one committed opinion or admitted limitation ("this won't work if your list is under 500"), AI hedges toward neutral balance instead
-21. Add cultural or contextual references when they fit naturally
-22. Use neutral, inclusive, collective phrasing ("team," "everyone")
-23. Follow the Punctuation Policy below for dash/hyphen spacing
+16. Run the two link tests on every sentence and every pair of neighbouring sentences (see Broken Links Between Sentences): ask "what?" after each verb until its object is on the page, and say why each sentence follows the one before. In a batch of personalised pieces, line up the linking sentences side by side and rewrite any that repeat
+17. Run the cold-reader test on every sentence: explain each internal name, offer, experiment, metric and past decision in everyday words, or cut it. The writer can't fully run this on their own draft, because they hold the missing context. For anything external-facing (cover letters, proof pages, pitches, pages, emails), hand the finished text alone to a reader that saw none of the notes, Codex (`codex exec --sandbox read-only`) or a fresh subagent, and ask for one plain sentence per paragraph on what it claims plus every name, term or number it couldn't follow. Rewrite until each paragraph restates correctly and the list is empty.
+18. Swap inflated copulas ("serves as," "boasts") for plain "is/are"
+19. Cut "-ing" significance tails and signposted conclusions; stop when the argument stops
+20. Repeat a plain noun instead of synonym-cycling ("the tool... the tool," not "the platform... the solution... the offering")
+21. Include one aside and at least one concrete, specific example
+22. State one committed opinion or admitted limitation ("this won't work if your list is under 500"), AI hedges toward neutral balance instead
+23. Add cultural or contextual references when they fit naturally
+24. Use neutral, inclusive, collective phrasing ("team," "everyone")
+25. Follow the Punctuation Policy below for dash/hyphen spacing
 
 ---
 
@@ -338,11 +352,19 @@ That's the kind of connection we build for.
 Several patterns beyond the original rubric rest on specific evidence. Knowing the source helps when judging an edge case.
 
 - **Dropped-subject fragments anywhere in a piece**, including the adjective-first CTA question: a check limited to sentence openers let clause-level fragments through in cold-email and LinkedIn outreach drafts, so the rule covers every clause.
-- **"Shape of" meta-naming, the source document as subject, source-lifted phrases, and the mail-merge test:** a diff of James's own hand-edits against 5 sent application letters surfaced these tics, and a vault-wide grep found the same tics in 13+ earlier application files.
+- **"Shape of" meta-naming, the source document as subject, source-lifted phrases, and the mail-merge test:** a diff of an author's own hand-edits against 5 sent application letters surfaced these tics, and a vault-wide grep found the same tics in 13+ earlier application files.
+- **Assumed context (insider shorthand):** a review of accelerator application answers drafted from private notes found them full of internal offer names, experiment terms and dates a cold investor could not decode, after they had passed every other check on this list.
 - **Verbless noun-phrase sentences, label-colon link lead-ins, coined labels for your own work, pre-announced verdicts, compressed aphorisms and one-sentence comment paragraphs:** an author's hand-edits to a series of LinkedIn and X build posts caught each of these in Claude drafts that had already passed the rest of this list.
+- **Lost objects, connectors that do not follow, template bridges and clever links:** an author's edits to a batch of press and partner pitches caught all four repeatedly: "This is why" after a sentence that gave no reason, a close whose second line did not follow, and 14 press pitches sharing one bridge that dropped each article's subject ("find out" what?).
 - **Crutch-word overuse ("real," "honest"), vague definite-article nouns, setup-payoff constructions, vague connection language, the expanded AI vocabulary list, and the Structural Tells section:** an audit of 9+ live website pages surfaced these, cross-checked against the external sources under References.
 
 ---
+
+## Companion Skill for Visual Slop
+
+This skill covers prose only. The visual equivalent, pages and interfaces that look machine-made or
+template-made, lives in the `design-taste` skill (`references/visual-ai-tells.md`). The two compose:
+run `design-taste` on the layout, colour, type, and shape; run this skill on the sentences.
 
 ## References
 
